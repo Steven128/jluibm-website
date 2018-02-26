@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>社员管理-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../css/Normalize.css" />
+    <link type="text/css" rel="stylesheet" href="../css/page.css" />
+    <link type="text/css" rel="stylesheet" href="../css/user.css" />
+    <link type="text/css" rel="stylesheet" href="../css/tablesort.css" />
+    <link type="text/css" rel="stylesheet" href="../css/admin.css" />
+
+    <link type="text/css" rel="stylesheet" href="../css/overview.css" />
+    <link rel="stylesheet" href="../animsition/dist/css/animsition.min.css">
+
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/page.js"></script>
+    <script type="text/javascript" src="../js/check-login.js"></script>
+    <script type="text/javascript" src="../js/highcharts.js"></script>
+    <script type="text/javascript" src="../js/ratio.js"></script>
+    <script type="text/javascript" src="../js/overview.js"></script>
+    <script type="text/javascript" src="../js/calendar.js"></script>
+    <script type="text/javascript" src="../js/xcConfirm.js"></script>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../" rel="home">吉林大学IBM俱乐部</a>
+                    <h5>管理员系统</h5>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="bar-box">
+                <div class="left-bar">
+                    <div class="admin-box">
+                        <img class="userPic" src="../src/user.png" />
+                        <h4 class="online-user"></h4><img class="certificated-icon" src="../src/icon/certificated.png" />
+                        <h5>管理员</h5>
+                    </div>
+                    <h4 id='index-item' class='bar-item overview-item'><span class="item-text">总览</span></h4>
+                    <h4 class="bar-item display-item"><span><img class="icon" src="../src/icon/display.png" /></span><span class="item-text">查看社员信息</span></h4>
+                    <h4 class="bar-item update-item"><span><img class="icon" src="../src/icon/settings.png" /></span><span class="item-text">修改社员信息</span></h4>
+                    <h4 class="bar-item activity-item"><span><img class="icon" src="../src/icon/update.png" /></span><span class="item-text">活动管理</span></h4>
+                </div>
+                <div class="top-nav">
+                    <table class="top-nav-box">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h4 class="bar-item bar-item-4 overview-item">
+                                        <div class="item-text">社团总览</div>
+                                    </h4>
+                                </th>
+                                <th>
+                                    <h4 class="bar-item bar-item-6 display-item"><span><img class="icon" src="../src/icon/display.png" /></span>
+                                        <div class="item-text">查看社员信息</div>
+                                    </h4>
+                                </th>
+                                <th>
+                                    <h4 class="bar-item bar-item-6 update-item"><span><img class="icon" src="../src/icon/settings.png" /></span>
+                                        <div class="item-text">修改社员信息</div>
+                                    </h4>
+                                </th>
+                                <th>
+                                    <h4 class="bar-item bar-item-4 activity-item"><span><img class="icon" src="../src/icon/update.png" /></span>
+                                        <div class="item-text">活动管理</div>
+                                    </h4>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="main-bar row">
+                    <div class="overview-box box col-xs-12">
+                        <div class="text-outer col-xs-12">
+                            <div class="overview-text text col-xs-12">
+                                <div class="highcharts-container">
+                                    <div class="title">近10天新增人数</div>
+                                    <div class="highcharts"></div>
+                                </div>
+
+                                <div class="ratio">
+                                    <div class="title">成员分布</div>
+                                    <div class="inner-ratio-gender">
+                                        <div class="ratio-title">性别</div>
+                                    </div>
+                                    <hr>
+                                    <div class="inner-ratio-grade">
+                                        <div class="ratio-title">年级</div>
+                                    </div>
+                                    <hr>
+                                    <div class="inner-ratio-group">
+                                        <div class="ratio-title">组别</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="display-box box col-xs-12">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">社团成员信息</h4>
+                        </div>
+                        <div class="text-outer col-xs-12">
+                            <div class="display-text text col-xs-12">
+                                <table class='display-all table-sort table-sort-search'>
+                                    <thead>
+                                        <tr>
+                                            <th class="table-sort">序号</th>
+                                            <th class="table-sort">类别</th>
+                                            <th class="table-sort">姓名</th>
+                                            <th class="table-sort">学号</th>
+                                            <th class="table-sort">学院</th>
+                                            <th class="table-sort">专业</th>
+                                            <th class="table-sort">性别</th>
+                                            <th class="table-sort">年级</th>
+                                            <th>QQ</th>
+                                            <th>手机号码</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="display-form"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="main-statistics" class="statistics col-xs-12"></div>
+                    </div>
+                    <div class="update-box box col-xs-12">
+
+                    </div>
+                    <div class="activity-box box col-xs-12">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">活动管理</h4>
+                        </div>
+                        <div class="text-outer col-xs-12">
+                            <div class="activity-text text col-xs-12">
+                                <table class='display-all table-sort table-sort-search'>
+                                    <thead>
+                                        <tr>
+                                            <th class="table-sort">序号</th>
+                                            <th class='activityCode'></th>
+                                            <th>活动名称</th>
+                                            <th class="table-sort">组别</th>
+                                            <th class="table-sort">举办时间</th>
+                                            <th class="table-sort">活动状态</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="activity-form">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="btn-area col-xs-12">
+                                <button id="createActivity" type="button" class="submit">创建活动签到</button>
+                            </div>
+
+                        </div>
+                        <div id="activity-statistics" class="statistics col-xs-12"></div>
+                    </div>
+                    <div class="activity-info box col-xs-12"></div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <div class="copyright-text">&copy;&nbsp;2018&nbsp;JLUIBMclub&nbsp;&nbsp;<a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../">返回主页</a><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../user/">返回上一级</a></div>
+            </div>
+        </div>
+    </div>
+    <img id="back_to_top" src="../src/icon/back_to_top.png" />
+    <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+    <script src="js/xlsx.core.min.js"></script>
+    <script src="js/blob.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+    <script src="js/tableexport.js"></script>
+    <script type="text/javascript" src="../js/admin.js"></script>
+    <script type="text/javascript" src="../js/admin-update.js"></script>
+    <script type="text/javascript" src="../js/activity.js"></script>
+    <script type="text/javascript" src="../js/tablesort.js"></script>
+    <!-- animsition js -->
+    <script src="../animsition/dist/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".animsition").animsition({
+
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 1500,
+                outDuration: 800,
+                linkElement: '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                unSupportCss: ['animation-duration',
+                    '-webkit-animation-duration',
+                    '-o-animation-duration'
+                ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay: false,
+                overlayClass: 'animsition-overlay-slide',
+                overlayParentElement: 'body'
+            });
+        });
+    </script>
+    <div class="add-box">
+        <h4>添加成员</h4>
+        <div class="form-group">
+            <div class="section__title">请输入要添加成员的学号</div>
+            <input id="addNumber" type="text" class="input-text form-control" name="number" />
+        </div>
+        <div class="add-box-btn-area">
+            <button id="add-group-member" type="button">添加</button>
+        </div>
+
+    </div>
+    <div class="shelter"></div>
+</body>
+
+</html>

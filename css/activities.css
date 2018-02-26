@@ -1,0 +1,43 @@
+.title {
+    margin: 0;
+    padding: 15px 10px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 1px 1px 10px #ccc;
+}
+
+.main-box {
+    padding: 0px 20px;
+}
+
+.box-title {
+    display: inline-block;
+}
+
+.text-box {
+    margin: 0px;
+}
+
+.text-box p {
+    margin: 20px 0;
+}
+
+.text-title {
+    display: inline-block;
+}
+
+.sub-title {
+    display: inline-block;
+    color: #888;
+}
+
+.img-wrap {
+    float: right;
+    margin: 40px 0 0 5px;
+    width: 250px;
+}
+
+.text-img {
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}

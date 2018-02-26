@@ -1,0 +1,1443 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>科普之窗-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/Normalize.css" />
+
+    <link rel="stylesheet" type="text/css" href="../css/wiki-lemma_2e0b0ff.css">
+    <link rel="stylesheet" type="text/css" href="../css/wiki-common-base_641773b.css">
+    <link rel="stylesheet" type="text/css" href="../css/wiki-lemma-module_d12cf7b.css">
+    <link rel="stylesheet" type="text/css" href="../css/shCoreDefault_3f91dc3.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainContent_98e3702.css">
+
+    <link type="text/css" rel="stylesheet" href="../../css/page.css" />
+    <link type="text/css" rel="stylesheet" href="../css/navigation.css" />
+    <link rel="stylesheet" href="../../animsition/dist/css/animsition.min.css" />
+
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/page.js"></script>
+    <!-- <script type="text/javascript" src="../js/navigation.js"></script> -->
+    <script type="text/javascript" src="../js/check-login.js"></script>
+    <style>
+        .main-text {
+            font-family: arial, SimSun, 宋体, sans-serif;
+            padding: 29px 29px 0 29px;
+            float: left;
+            font-size: 13px;
+            line-height: 1.8;
+            background-color: #fff;
+            width: 100%;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Microsoft YaHei';
+        }
+        
+        .lemmaWgt-lemmaTitle-title h1 {
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 992px) {
+            .basicInfo-block {
+                width: 270px !important;
+            }
+            .basic-info {
+                font-size: 12px;
+            }
+            .basicInfo-item {
+                padding-left: 0 !important;
+            }
+            .basicInfo-item.name {
+                width: 70px !important;
+            }
+            .basicInfo-item.value {
+                width: 200px !important;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog ol {
+                width: 170px !important;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level1 .text {
+                width: auto;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level2 .text {
+                width: auto;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level2 .index {
+                padding-left: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../" class="site-title" rel="home">吉林大学IBM俱乐部</a>
+                    <div class="menu-button">
+                        <img src="../../src/icon/menu.png" width="30px" height="30px" />
+                    </div>
+                </div>
+            </div>
+            <!-- menu on larger devices -->
+            <nav id="nav" class="main-navigation hidden-xs hidden-sm" role="navigation">
+                <ul id="primary-menu" class="menu">
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../">首页</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../activities/">活动介绍</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../score/">成绩查询</a></li>
+                    <li id="wiki-item" class="menu-item">
+                        <div style="display: inline">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></div>
+                    </li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../joinus/">加入我们</a></li>
+                    <ul class="sub-menu">
+                        <li id="sub-menu-wrap" class="sub-menu-item"></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/算法/">算法</a></li>
+                        <li id="web-item" class="sub-menu-item">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></span></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Java/">Java</a></li>
+                    </ul>
+                    <ul class="sub-menu-web">
+                        <li id="web-1" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Web前端/">Web前端</a></li>
+                        <li id="web-2" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Python/">Python</a></li>
+                        <li id="web-3" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/PHP/">PHP</a></li>
+                    </ul>
+                </ul>
+            </nav>
+
+            <!-- menu on mobile devices -->
+            <nav id="nav" class="main-navigation-mobile col-xs-12" role="navigation">
+                <ul id="primary-menu" class="menu col-xs-12">
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../">首页</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../activities/">活动介绍</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../score/">成绩查询</a></li>
+                    <li id="wiki-item-mobile" class="menu-item col-xs-12">
+                        <div class="col-xs-12" style="display: inline;padding: 0;">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></div>
+                    </li>
+                    <ul class="sub-menu sub-menu-mobile col-xs-12">
+                        <li id="sub-menu-wrap col-xs-12"></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/算法/">算法</a></li>
+                        <li id="web-item-mobile" class="sub-menu-item col-xs-12">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></span></li>
+                        <ul class="sub-menu-web sub-menu-web-mobile col-xs-12">
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Web前端/">Web前端</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Python/">Python</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/PHP/">PHP</a></li>
+                        </ul>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Java/">Java</a></li>
+                    </ul>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../joinus/">加入我们</a></li>
+
+                </ul>
+            </nav>
+            <!-- #site-navigation -->
+
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <span class="location">位置</span>
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../"><img class="index-icon" src="../../src/icon/index-icon.png" /></a> &gt; 科普之窗 &gt; <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="">C++</a>
+                <div class="login">
+                    <div class="online">
+                        <h5 class="greeting">你好，<span class="online-user"></span></h5>
+                        <img class="userPic" src="../../src/user.png" width="40px" />
+                        <div class="user-info">
+                            <img class="userPic" src="../../src/user.png" width="50px" />
+                            <h4 class="online-user"></h4>
+                            <h5><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../user/">查看个人信息</a></h5>
+                            <h5 class="logout">退出登录</h5>
+                        </div>
+                    </div>
+                    <div class="offline">
+                        <h5 class="greeting"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../login/">登录</a></h5>
+                        <img class="userPic" src="../../src/user.png" width="50px" />
+                    </div>
+                </div>
+            </div>
+            <div class="bar-box row">
+                <div class="left-bar col-lg-2 hidden-md  hidden-xs hidden-sm">
+                    <nav id="wiki-nav" class="wiki-nav col-lg-12 hidden-md  hidden-xs hidden-sm">
+                        <div class="title"></div>
+                        <ul>
+                            <li><a href="../C语言/">C语言</a></li>
+                            <li><a href="../C++/">C++</a></li>
+                            <li><a href="../算法/">算法</a></li>
+                            <li><a href="../Web前端/">Web前端</a></li>
+                            <li><a href="../Python/">Python</a></li>
+                            <li><a href="../PHP/">PHP</a></li>
+                            <li><a href="../Linux/">Linux</a></li>
+                            <li><a href="../Java/">Java</a></li>
+                        </ul>
+                    </nav>
+                    <script type="text/javascript">
+                        window.onload =
+                            function() {
+                                var oDiv = document.getElementById("wiki-nav"),
+                                    H = 0,
+                                    Y = oDiv
+                                while (Y) {
+                                    H += Y.offsetTop;
+                                    Y = Y.offsetParent
+                                }
+                                window.onscroll = function() {
+                                    var s = document.body.scrollTop || document.documentElement.scrollTop
+                                    if (s > H) {
+                                        oDiv.style = "position:fixed;top:0;"
+                                        $("#wiki-nav").removeClass("col-lg-12");
+                                        $("#wiki-nav").addClass("col-lg-2");
+                                    } else {
+                                        oDiv.style = "position:static;"
+                                        $("#wiki-nav").removeClass("col-lg-2");
+                                        $("#wiki-nav").addClass("col-lg-12");
+                                    }
+                                }
+                            }
+                    </script>
+                </div>
+                <div class="left-wrap hidden-xs">
+                </div>
+                <div class="main-bar col-lg-8 col-md-9 col-sm-9 col-xs-12">
+                    <div class="main-text">
+                        <dl class="lemmaWgt-lemmaTitle lemmaWgt-lemmaTitle-">
+                            <dd class="lemmaWgt-lemmaTitle-title">
+                                <h1>C++</h1>
+                            </dd>
+                        </dl>
+                        <div class="promotion-declaration">
+                        </div>
+                        <div class="lemma-summary" label-module="lemmaSummary">
+                            <div class="para" label-module="para">C++是C语言的继承，它既可以进行C语言的过程化程序设计，又可以进行以抽象数据类型为特点的基于对象的程序设计，还可以进行以继承和多态为特点的面向对象的程序设计。C++擅长面向对象程序设计的同时，还可以进行基于过程的程序设计，因而C++就适应的问题规模而论，大小由之。
+                            </div>
+                            <div class="para" label-module="para">C++不仅拥有计算机高效运行的实用性特征，同时还致力于提高大规模程序的编程质量与程序设计语言的问题描述能力。
+                            </div>
+                        </div>
+                        <div class="configModuleBanner">
+                        </div>
+                        <div class="basic-info cmn-clearfix">
+                            <dl class="basicInfo-block basicInfo-left">
+                                <dt class="basicInfo-item name">中文名</dt>
+                                <dd class="basicInfo-item value">
+                                    C++语言
+                                </dd>
+                                <dt class="basicInfo-item name">外文名</dt>
+                                <dd class="basicInfo-item value">
+                                    The C++ Programming Language/c plus plus
+                                </dd>
+                                <dt class="basicInfo-item name">类&nbsp;&nbsp;&nbsp;&nbsp;别</dt>
+                                <dd class="basicInfo-item value">
+                                    计算机程序设计语言
+                                </dd>
+                            </dl>
+                            <dl class="basicInfo-block basicInfo-right">
+                                <dt class="basicInfo-item name">创始人</dt>
+                                <dd class="basicInfo-item value">
+                                    Bjarne Stroustrup
+                                </dd>
+                                <dt class="basicInfo-item name">创始公司</dt>
+                                <dd class="basicInfo-item value">
+                                    贝尔实验室
+                                </dd>
+                                <dt class="basicInfo-item name">基本内容</dt>
+                                <dd class="basicInfo-item value">
+                                    类、封装、重载、继承、模版
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="lemmaWgt-lemmaCatalog">
+                            <div class="lemma-catalog">
+                                <h2 class="block-title">目录</h2>
+                                <div class="catalog-list column-4">
+                                    <ol>
+                                        <li class="level1">
+                                            <span class="index">1</span>
+                                            <span class="text"><a href="#1">发展历程</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">2</span>
+                                            <span class="text"><a href="#2">编程开发</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#2_1">集成开发环境(IDE)</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#2_2">编译器</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">3</span>
+                                            <span class="text"><a href="#3">语言特点</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#3_1">支持数据封装和数据隐藏</a></span>
+                                        </li>
+                                    </ol>
+                                    <ol>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#3_2">支持继承和重用</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#3_3">支持多态性</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">4</span>
+                                            <span class="text"><a href="#4">工作原理</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">5</span>
+                                            <span class="text"><a href="#5">学习指南</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#5_1">入门书籍</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#5_2">进阶书籍</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">6</span>
+                                            <span class="text"><a href="#6">语言基础</a></span>
+                                        </li>
+                                    </ol>
+                                    <ol>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#6_1">基本类型</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#6_2">运算符与表达式</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#6_3">类和对象</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#6_4">关键字</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">7</span>
+                                            <span class="text"><a href="#7">语言标准</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#7_1">C++ 98 标准</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#7_2">C++ 03 标准</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#7_3">C++ 11 标准</a></span>
+                                        </li>
+                                    </ol>
+                                    <ol>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#7_4">C++ 14 标准</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">8</span>
+                                            <span class="text"><a href="#8">技术应用</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">9</span>
+                                            <span class="text"><a href="#9">语言评价</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">10</span>
+                                            <span class="text"><a href="#10">常见问题</a></span>
+                                        </li>
+                                    </ol>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="1" class="lemma-anchor para-title"></a>
+                            <a name="sub824_1" class="lemma-anchor "></a>
+                            <a name="发展历程" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">发展历程</h2>
+
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="lemma-picture text-pic layout-right" style="width:220px; float: right;">
+                                <img class="" src="../../src/wiki/cpp/cpp01.jpg" alt="" style="width:220px;height:130px;">
+
+                            </div>世界上第一种计算机高级语言是诞生于1954年的FORTRAN语言。之后出现了多种计算机高级语言。1970年，AT&amp;T的Bell实验室的D.Ritchie和K.Thompson共同发明了C语言。研制C语言的初衷是用它编写UNIX系统程序，因此，它实际上是UNIX的“副产品”。它充分结合了汇编语言和高级语言的优点，高效而灵活，又容易移植。</div>
+                        <div class="para" label-module="para">1971年，瑞士联邦技术学院N.Wirth教授发明了Pascal语言。Pascal语言语法严谨，层次分明，程序易写，具有很强的可读性，是第一个结构化的编程语言。</div>
+                        <div class="para" label-module="para">20世纪70年代中期，Bjarne Stroustrup在剑桥大学计算机中心工作。他使用过Simula和ALGOL，接触过C。他对Simula的类体系感受颇深，对ALGOL的结构也很有研究，深知运行效率的意义。既要编程简单、正确可靠，又要运行高效、可移植，是Bjarne Stroustrup的初衷。以C为背景，以Simula思想为基础，正好符合他的设想。1979年，Bjame Sgoustrup到了Bell实验室，开始从事将C改良为带类的C（<i>C with classes</i>）的工作。1983年该语言被正式命名为C++。自从C++被发明以来，它经历了3次主要的修订，每一次修订都为C++增加了新的特征并作了一些修改。第一次修订是在1985年，第二次修订是在1990年，而第三次修订发生在c++的标准化过程中。在20世纪90年代早期，人们开始为C++建立一个标准，并成立了一个ANSI和ISO（<i>Intemational Standards Organization</i>）国际标准化组织的联合标准化委员会。该委员会在1994年1月25曰提出了第一个标准化草案。在这个草案中，委员会在保持Stroustrup最初定义的所有特征的同时，还增加了一些新的特征。</div>
+                        <div class="para" label-module="para">在完成C++标准化的第一个草案后不久，发生了一件事情使得C++标准被极大地扩展了：Alexander stepanov创建了标准模板库（Standard Template Library，STL）。STL不仅功能强大，同时非常优雅，然而，它也是非常庞大的。在通过了第一个草案之后，委员会投票并通过了将STL包含到C++标准中的提议。STL对C++的扩展超出了C++的最初定义范围。虽然在标准中增加STL是个很重要的决定，但也因此延缓了C++标准化的进程。</div>
+                        <div class="para" label-module="para">委员会于1997年11月14日通过了该标准的最终草案，1998年，C++的ANSI/IS0标准被投入使用。通常，这个版本的C++被认为是标准C++。所有的主流C++编译器都支持这个版本的C++，包括微软的Visual C++和Borland公司的C++Builder。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="2" class="lemma-anchor para-title"></a>
+                            <a name="sub824_2" class="lemma-anchor "></a>
+                            <a name="编程开发" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">编程开发</h2>
+
+                        </div>
+                        <div class="anchor-list">
+                            <a name="2_1" class="lemma-anchor para-title"></a>
+                            <a name="sub824_2_1" class="lemma-anchor "></a>
+                            <a name="集成开发环境(IDE)" class="lemma-anchor "></a>
+                            <a name="2-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">集成开发环境(IDE)</h3>
+                        </div>
+                        <div class="para" label-module="para">
+                            <a class="lemma-album layout-right nslog:10000206" title="C++代码" href="/pic/C%2B%2B/99272/13974295/7aec54e736d12f2e9e1dc3474cc2d562853568f8?fr=lemma&amp;ct=cover" target="_blank" style="width:221px;" nslog-type="10000206">
+                                <div class="album-wrap" style="width:219px;height:180px;">
+                                    <img class="picture" alt="C++代码" src="../../src/wiki/cpp/cpp02.jpg" style="width:219px;height:180px;">
+                                </div>
+                                <div class="description">
+                                    C++代码
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="para" label-module="para">Visual Studio (Visual C++)</div>
+                        <div class="para" label-module="para">C++ Builder</div>
+                        <div class="para" label-module="para">kDevelop</div>
+                        <div class="para" label-module="para">Anjuta</div>
+                        <div class="para" label-module="para">Code::Blocks：开放源码的全功能的跨平台C/C++集成开发环境 。
+                        </div>
+                        <div class="para" label-module="para">Visual Mingw</div>
+                        <div class="para" label-module="para">Ideone</div>
+                        <div class="para" label-module="para">Eclipse CDT</div>
+                        <div class="para" label-module="para">Compilr</div>
+                        <div class="para" label-module="para">Code Lite</div>
+                        <div class="para" label-module="para">Netbeans C++
+                        </div>
+                        <div class="para" label-module="para">集成开发环境（<i>IDE</i>），功能齐全，调试功能很强，程序编好后，可以立刻在环境中调试以获得初步测试结果，然后，可以方便地做成beta版形式，拿到实际环境中进一步测试，最后做成软件发行版。
+                            <a name="ref_9"></a>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="2_2" class="lemma-anchor para-title"></a>
+                            <a name="sub824_2_2" class="lemma-anchor "></a>
+                            <a name="编译器" class="lemma-anchor "></a>
+                            <a name="2-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">编译器</h3>
+                        </div>
+                        <div class="para" label-module="para">Dev C++</div>
+                        <div class="para" label-module="para">Ultimate++</div>
+                        <div class="para" label-module="para">Digital Mars</div>
+                        <div class="para" label-module="para">C-Free</div>
+                        <div class="para" label-module="para">MinGW</div>
+                        <div class="para" label-module="para">Tiny C Compiler
+                        </div>
+                        <div class="anchor-list">
+                            <a name="3" class="lemma-anchor para-title"></a>
+                            <a name="sub824_3" class="lemma-anchor "></a>
+                            <a name="语言特点" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">语言特点</h2>
+
+                        </div>
+                        <div class="anchor-list">
+                            <a name="3_1" class="lemma-anchor para-title"></a>
+                            <a name="sub824_3_1" class="lemma-anchor "></a>
+                            <a name="支持数据封装" class="lemma-anchor "></a>
+                            <a name="3-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">支持数据封装</h3>
+                        </div>
+                        <div class="para" label-module="para">在C++中，类是支持数据封装的工具，对象则是数据封装的实现。C++通过建立用户定义类支持数据封装和数据隐藏。</div>
+                        <div class="para" label-module="para">在面向对象的程序设计中，将数据和对该数据进行合法操作的函数封装在一起作为一个类的定义。对象被说明为具有一个给定类的变量。每个给定类的对象包含这个类所规定的若干私有成员、公有成员及保护成员。完好定义的类一旦建立，就可看成完全封装的实体，可以作为一个整体单元使用。类的实际内部工作隐藏起来，使用完好定义的类的用户不需要知道类是如何工作的，只要知道如何使用它即可。</div>
+                        <div class="anchor-list">
+                            <a name="3_2" class="lemma-anchor para-title"></a>
+                            <a name="sub824_3_2" class="lemma-anchor "></a>
+                            <a name="支持继承和重用" class="lemma-anchor "></a>
+                            <a name="3-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">支持继承和重用</h3>
+                        </div>
+                        <div class="para" label-module="para">在C++现有类的基础上可以声明新类型，这就是继承和重用的思想。通过继承和重用可以更有效地组织程序结构，明确类间关系，并且充分利用已有的类来完成更复杂、深入的开发。新定义的类为子类，成为派生类。它可以从父类那里继承所有非私有的属性和方法，作为自己的成员。</div>
+                        <div class="anchor-list">
+                            <a name="3_3" class="lemma-anchor para-title"></a>
+                            <a name="sub824_3_3" class="lemma-anchor "></a>
+                            <a name="支持多态性" class="lemma-anchor "></a>
+                            <a name="3-3" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">支持多态性</h3>
+                        </div>
+                        <div class="para" label-module="para">采用多态性为每个类指定表现行为。多态性形成由父类和它们的子类组成的一个树型结构。在这个树中的每个子类可以接收一个或多个具有相同名字的消息。当一个消息被这个树中一个类的一个对象接收时，这个对象动态地决定给予子类对象的消息的某种用法。多态性的这一特性允许使用高级抽象。</div>
+                        <div class="para" label-module="para">继承性和多态性的组合，可以轻易地生成一系列虽然类似但独一无二的对象。由于继承性，这些对象共享许多相似的特征。由于多态性，一个对象可有独特的表现方式，而另一个对象有另一种表现方式。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="4" class="lemma-anchor para-title"></a>
+                            <a name="sub824_4" class="lemma-anchor "></a>
+                            <a name="工作原理" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">工作原理</h2>
+
+                        </div>
+                        <div class="para" label-module="para">C++语言的程序因为要体现高性能，所以都是编译型的。但其开发环境，为了方便测试，将调试环境做成解释型的。即开发过程中，以解释型的逐条语句执行方式来进行调试，以编译型的脱离开发环境而启动运行的方式来生成程序最终的执行代码。
+                        </div>
+                        <div class="para" label-module="para">生成程序是指将源码（<i>C++语句</i>）转换成一个可以运行的应用程序的过程。如果程序的编写是正确的，那么通常只需按一个功能键，即可搞定这个过程。该过程实际上分成两个步骤。</div>
+                        <div class="para" label-module="para">第一步是对程序进行编译，这需要用到编译器（<i>compiler</i>）。编译器将C++语句转换成机器码(也称为目标码)；如果这个步骤成功，下一步就是对程序进行链接，这需要用到链接器（<i>linker</i>）。链接器将编译获得机器码与C++库中的代码进行合并。C++库包含了执行某些常见任务的函数（<i>“函数”是子程序的另一种称呼</i>）。例如，一个C++库中包含标准的平方根函数sqrt，所以不必亲自计算平方根。C++库中还包含一些子程序，它们把数据发送到显示器，并知道如何读写硬盘上的数据文件。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="5" class="lemma-anchor para-title"></a>
+                            <a name="sub824_5" class="lemma-anchor "></a>
+                            <a name="学习指南" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">学习指南</h2>
+
+                        </div>
+                        <div class="anchor-list">
+                            <a name="5_1" class="lemma-anchor para-title"></a>
+                            <a name="sub824_5_1" class="lemma-anchor "></a>
+                            <a name="入门书籍" class="lemma-anchor "></a>
+                            <a name="5-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">入门书籍</h3>
+                        </div>
+                        <div class="para" label-module="para">《C++程序设计教程》，钱能</div>
+                        <div class="para" label-module="para">《易学C++》，潘嘉杰</div>
+                        <div class="para" label-module="para">《大话设计模式》，程杰</div>
+                        <div class="para" label-module="para">《C++编程规范:101条规则、准则与最佳实践》，刘基诚</div>
+                        <div class="para" label-module="para">《C和C++程序员面试秘籍》，董山海</div>
+                        <div class="anchor-list">
+                            <a name="5_2" class="lemma-anchor para-title"></a>
+                            <a name="sub824_5_2" class="lemma-anchor "></a>
+                            <a name="进阶书籍" class="lemma-anchor "></a>
+                            <a name="5-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">进阶书籍</h3>
+                        </div>
+                        <div class="para" label-module="para">《C++程序设计语言》英文第四版，Bjarne Stroustrup</div>
+                        <div class="para" label-module="para">《C++ Primer 第5版（英文版）》，Stanley Lippman、Josee Laoie、Barbara Moo</div>
+                        <div class="para" label-module="para">《C++标准库：自学教程与参考手册（第2版）（英文版）》，Nicolai Josuttis</div>
+                        <div class="para" label-module="para">《C++ Concurrency in Action|C++ 并发实战》，Anthony Wiliams</div>
+                        <div class="para" label-module="para">《C和C++安全编码（第2版）（英文版）》，Robert Seacord
+                        </div>
+                        <div class="anchor-list">
+                            <a name="6" class="lemma-anchor para-title"></a>
+                            <a name="sub824_6" class="lemma-anchor "></a>
+                            <a name="语言基础" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">语言基础</h2>
+
+                        </div>
+                        <div class="anchor-list">
+                            <a name="6_1" class="lemma-anchor para-title"></a>
+                            <a name="sub824_6_1" class="lemma-anchor "></a>
+                            <a name="基本类型" class="lemma-anchor "></a>
+                            <a name="6-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">基本类型</h3>
+                        </div>
+                        <div class="para" label-module="para">数据类型指明变量或表达式的状态和行为，数据类型决定了数的取值范围和允许执行的运算符集。c++语言数据类型可以分为两大类：基本类型和引用类型。基本类型是指不能再分解的数据类型，其数据在函数的调用中是以传值方式工作的；引用类型有时也称复合类型，它是可以分解为基本类型的数据类型，其数据在函数调用中是以传址方式来工作的。
+                        </div>
+                        <div class="para" label-module="para"><b>整型</b></div>
+                        <div class="para" label-module="para"><i>整数常量</i></div>
+                        <div class="para" label-module="para">整数常量是不带小数的数值，用来表示正负数。例2—2中Ox55、0x55ff、1000000都是c++语言的整数常量。</div>
+                        <div class="para" label-module="para">c++语言的整数常量有三种形式：十进制、八进制、十六迸制。</div>
+                        <div class="para" label-module="para">（1）十进制整数是由不以0开头的0～9的数字组成的数据。</div>
+                        <div class="para" label-module="para">（2）八进制整数是由以0开头的0～7的数字组成的数据。</div>
+                        <div class="para" label-module="para">（3）十六进制整数是由以0x或0x开头的0～9的数字及A～F的字母(大小写字母均可)组成的数据。</div>
+                        <div class="para" label-module="para">例如：</div>
+                        <div class="para" label-module="para">0，63，83是十进制数。</div>
+                        <div class="para" label-module="para">00，077，0123是八进制数。</div>
+                        <div class="para" label-module="para">0x0，Ox0，0x53，0x53，0x3f，0x3f是十六进制数。</div>
+                        <div class="para" label-module="para">整数常量的取值范围是有限的，它的大小取决于此类整型数的类型，与所使用的进制形式无关。</div>
+                        <div class="para" label-module="para"><i>整型变量类型</i></div>
+                        <div class="para" label-module="para">整型变量类型有byte，short，int，long四种说明符，它们都是有符号整型变量类型。</div>
+                        <div class="para" label-module="para">（1）byte类型。</div>
+                        <div class="para" label-module="para">byte类型说明一个带符号的8位整型变量。由于不同的机器对多字节数据的存储方式不同，可能是从低字节向高字节存储，也可能是从高字节向低字节存储。这样，在分析网络协议或文件格式时，为了解决不同机器上的字节存储顺序问题，用byte类型来表示数据是合适的。</div>
+                        <div class="para" label-module="para">（2）short类型。</div>
+                        <div class="para" label-module="para">short类型说明一个带符号的16位整型变量。short类型限制了数据的存储应为先高字节，后低字节。</div>
+                        <div class="para" label-module="para">（3）int类型。</div>
+                        <div class="para" label-module="para">int类型说明一个带符号的32位整型变量。int类型是一种最丰富、最有效的类型。它最常用于计数、数组访问和整数运算。</div>
+                        <div class="para" label-module="para">（4）long类型。</div>
+                        <div class="para" label-module="para">long类型说明一个带符号的64位整型变量。对于大型计算，常常会遇到很大的整数，并超出int所表示的范围，这时要使用long类型。</div>
+                        <div class="para" label-module="para"><b>浮点型</b></div>
+                        <div class="para" label-module="para"><i>浮点数常量</i><b><br>　　</b></div>
+                        <div class="para" label-module="para">浮点数是带有小数的十进制数，可用一般表示法或科学记数法表示。0.23f、0.7e-3都是c++语言的浮点数常量。</div>
+                        <div class="para" label-module="para">（1）一般表示法：十进制整数+小数点+十进制小数。</div>
+                        <div class="para" label-module="para">（2）科学记数法：十进制整数+小数点+十进制小数+E（<i>或e</i>）+正负号+指数。</div>
+                        <div class="para" label-module="para">例如：3.14159，0.567，9777.12是一般表示法形式，1.234e5，4.90867e-2是科学记数法形式。</div>
+                        <div class="para" label-module="para">c++语言的浮点数常量在机器中有单精度和双精度之分。单精度以32位形式存放，用f/F做后缀标记(可以省略)；双精度则以64位形式存放。当一个浮点数常量没有特别指定精度时，则它为双精度浮点数常量。</div>
+                        <div class="para" label-module="para"><i>浮点变量类型</i></div>
+                        <div class="para" label-module="para">浮点变量也称实数变量，用于需要精确到小数的函数运算中，有float和double两种类型说明符。</div>
+                        <div class="para" label-module="para">（1）float类型。</div>
+                        <div class="para" label-module="para">float类型是一个位数为32位的单精度浮点数。它具有运行速度较快，占用空间较少的特点。</div>
+                        <div class="para" label-module="para">（2）double类型。</div>
+                        <div class="para" label-module="para">double类型是一个位数为64的双精度浮点数。双精度数在某些具有优化和高速运算能力的现代处理机上运算比单精度数快。双精度类型double比单精度类型float具有更高的精度和更大表示范围，常常使用。</div>
+                        <div class="para" label-module="para"><b>字符型</b></div>
+                        <div class="para" label-module="para"><i>字符型常量</i></div>
+                        <div class="para" label-module="para">字符型常量是指由单引号括起来的单个字符。</div>
+                        <div class="para" label-module="para">例如：’a’，’A’，’z’，‘$’，’?’。</div>
+                        <div class="para" label-module="para">注意：’a’和’A’是两个不同的字符常量。</div>
+                        <div class="para" label-module="para">除了以上形式的字符常量外，c++语言还允许使用一种以“\”开头的特殊形式的字符常量。这种字符常量称为转义字符，用来表示一些不可显示的或有特殊意义的字符。</div>
+                        <div class="para" label-module="para"><i>字符型变量</i></div>
+                        <div class="para" label-module="para">字符型变量的类型说明符为char，它在机器中占8位，其范围为0～255。</div>
+                        <div class="para" label-module="para">注意：字符型变量只能存放一个字符，不能存放多个字符，例如：</div>
+                        <div>
+                            <div id="highlighter_735045" class="syntaxhighlighter  cpp">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="cpp color1 bold">char</code>&nbsp;<code class="cpp plain">a=</code><code class="cpp string">'am'</code><code class="cpp plain">;</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">这样定义赋值是错误的。</div>
+                        <div class="para" label-module="para"><b>布尔型</b></div>
+                        <div class="para" label-module="para"><i>布尔常量</i></div>
+                        <div class="para" label-module="para">布尔常量只有两个值：“true”和“false”，表示“真”和“假”，均为关键词，在机器中位长为8位。</div>
+                        <div class="para" label-module="para"><i>布尔型变量</i></div>
+                        <div class="para" label-module="para">布尔型变量的类型说明符为booI，用来表示逻辑值。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="6_2" class="lemma-anchor para-title"></a>
+                            <a name="sub824_6_2" class="lemma-anchor "></a>
+                            <a name="运算符与表达式" class="lemma-anchor "></a>
+                            <a name="6-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">运算符与表达式</h3>
+                        </div>
+                        <div class="para" label-module="para">C++语言中定义了丰富的运算符，如算术运算符、关系运算符、逻辑运算符等等，有些运算符需要两个操作数，使用形式为</div>
+                        <div class="para" label-module="para">&lt;操作数1&gt;运算符&lt;操作数2&gt;</div>
+                        <div class="para" label-module="para">这样的运算符称为二元运算符（<i>或二目运算符</i>）。另一些运算符只需要一个操作数，称为一元运算符（<i>或单目运算符</i>）。</div>
+                        <div class="para" label-module="para">运算符具有优先级与结合性。当一个表达式包含多个运算符时，先进行优先级高的运算，再进行优先级低的运算。如果表达式中出现了多个相同优先级的运算，运算顺序就要看运算符的结合性了。所谓结合性，是指当一个操作数左右两边的运算符优先级相同时，按什么样的顺序进行运算，是自左向右，还是自右向左。例如，我们熟悉的算术表达式6+5-2中,“+”、 “-”是同级运算符，那么是先算5-2，还是先算6+5？这就取决于算术运算符的结合性。由于算术运算符的结合性为自左向右，所以应先算6+5，然后再算11-2。</div>
+                        <div class="para" label-module="para"><b>算术运算符与算术表达式</b></div>
+                        <div class="para" label-module="para">C++中的算术运算符包括基本的算术运算符和自增、自减运算符。由算术运算符、操作数和括号构成的表达式称为算术表达式。</div>
+                        <div class="para" label-module="para">基本算术运算符有：+（<i>加</i>）、-（减或负号）、*（乘）、/（除）、%（取余）。其中“-”作为负号时为一元运算符，其余都为二元运算符。这些基本算术运算符的意义与数学中相应符号的意义是一致的。它们之间的相对优先级关系与数学中的也是一致的，即先乘除、后加减，同级运算自左向右进行。使用算术运算符要注意以下几点：</div>
+                        <div class="para" label-module="para">①“%”是取余运算，只能用于整型操作数。表达式a%b的结果为a/b的余数。 “%”的优先级与“/”相同。</div>
+                        <div class="para" label-module="para">②当“/”用于两整型操作数相除时，其结果取商的整数部分，小数部分被自动舍弃。因此，表达式1/2的结果为0，这一点需要特别注意。</div>
+                        <div class="para" label-module="para">⑧C++中的“++” （<i>自增</i>）、 “--” （<i>自减</i>）运算符是使用方便且效率很高的两个运算符，它们都是一元运算符。这两个运算符都有前置和后置两种使用形式</div>
+                        <div class="para" label-module="para">无论写成前置或后置的形式，它们的作用都是将操作数的值增1（<i>减1</i>）后，重新写回该操作数在内存中的原有位置。所以，如果变量i原来的值是1，计算表达式i++后，表达式的结果为2，并且i的值也被改变为2。但是，当自增、自减运算的结果要被用于继续参与其它操作时，前置与后置时的情况就完全不同了。例如，如果i的值为l，则下列两条语句的执行结果是不一样的：</div>
+                        <div>
+                            <div id="highlighter_438460" class="syntaxhighlighter  cpp">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="cpp plain">cout&lt;&lt;i++；</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="cpp plain">cout&lt;&lt;++i；</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">第一条语句首先输出i当前的值1，然后i自增，其值变为2；第二条语句首先使i自增为2，然后输出i的值2。</div>
+                        <div class="para" label-module="para"><b>赋值运算符与赋值表达式</b></div>
+                        <div class="para" label-module="para">C++提供了几个赋值运算符，最简单的赋值运算符就是“=”。带有赋值运算符的表达式被称为赋值表达式。例如，m=m+6就是一个赋值表达式。赋值表达式的作用就是将等号右边表达式的值赋给等号左边的对象。赋值表达式的类型为等号左边对象的类型，表达式的结果为等号左边对象被赋值后的值，运算的结合性为自右向左。请看下列赋值表达式的例子。</div>
+                        <div>
+                            <div id="highlighter_683418" class="syntaxhighlighter  cpp">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">n=1</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">表达式值为1。</div>
+                        <div>
+                            <div id="highlighter_743594" class="syntaxhighlighter  cpp">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">a=b=c=2</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">这个表达式从右向左运算，在c被更新为2后，表达式c=2的值为2，接着b的值被更新为2，最后a被赋值为2。</div>
+                        <div>
+                            <div id="highlighter_460815" class="syntaxhighlighter  cpp">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="cpp plain">a=3+(c=4)</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">表达式值为7，a的值为7，c为4。</div>
+                        <div class="para" label-module="para">除了“=”以外，C++还提供了10种复合的赋值运算符：+=，-=，*=，/=，%=，&lt;&lt;=，&gt;&gt;=，&amp;=，“=，|=。其中，前五个运算符是赋值运算符与算术运算符复合而成的，后五个是赋值运算符与位运算符复合而成的。关于位运算，稍后再做介绍。这里10种运算符的优先级与“=”相同，结合性也是自右向左。现在举例说明复合赋值运算符的功能。</div>
+                        <div>
+                            <div id="highlighter_260981" class="syntaxhighlighter  cpp">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">b+=2;</code><code class="cpp comments">//等价于b=b+2</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">x*=y+3;</code><code class="cpp comments">//等价于x=x*(y+3)</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="highlighter_326185" class="syntaxhighlighter  cpp">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="cpp plain">如果在赋值表达式后面加上分号，便成为了赋值语句。例如：</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">b=b+2：便是一个赋值语句，它实现的功能与赋值表达式相同。赋值表达式与赋值语句的不同点在于：赋值表达式可以作为一个更复杂表达式的一部分，继续参与运算；而赋值语句不能。</div>
+                        <div class="para" label-module="para">逗号运算符与逗号表达式</div>
+                        <div class="para" label-module="para">在C++中，逗号也是一个运算符，它的使用形式为</div>
+                        <div class="para" label-module="para">&lt;表达式1&gt;，&lt;表达式2&gt;，…，&lt;表达式n&gt;求解顺序为，先求解表达式1，再求解表达式2，最后求解表达式n的值。逗号表达式的最终结果为表达式n的值。例如：</div>
+                        <div>
+                            <div id="highlighter_358658" class="syntaxhighlighter  cpp">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">x=2*5,x*4</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">表达式的结果为40。</div>
+                        <div class="para" label-module="para"><b>关系运算符和关系表达式</b></div>
+                        <div class="para" label-module="para">关系运算符即比较符。</div>
+                        <div class="para" label-module="para">用关系运算符将两个表达式连接起来就是关系表达式。关系表达式是一种最简单的逻辑表达式。例如：</div>
+                        <div>
+                            <div id="highlighter_357570" class="syntaxhighlighter  cpp">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">x&gt;5</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">x+y&lt;=20</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">c==a+b</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">注意“==”（<i>等于</i>）是连续的两个等号，不要误写为赋值运算符“=”。</div>
+                        <div class="para" label-module="para">关系表达式一般用于判断是否符合某一条件。关系表达式的结果类型为bool，值只能是true或false。条件满足为true，条件不满足为false。例如，当x=t时，x&gt;5的结果就为false。</div>
+                        <div class="para" label-module="para"><b>逻辑运算符与逻辑表达式</b></div>
+                        <div class="para" label-module="para">只有简单的关系比较是远不能满足编程需要的，还需要用逻辑运算符将简单的关系表达式连接起来构成较复杂的逻辑表达式。逻辑表达式的结果类型也为bool，值只能为true或false。</div>
+                        <div class="para" label-module="para">“!”是一元运算符，使用形式是： !操作数。非运算的作用是对操作数取反。如果操作数a的值为true，则表达式!a的值为false：如果操作数a的值为false，则表达式!a的值为true。</div>
+                        <div class="para" label-module="para">“&amp;&amp;”是二元运算符。“&amp;&amp;”运算的作用是求两个操作数的逻辑与。只有当两个操作数的值都为true时，与运算的结果才为true，其它情况下与运算的结果均为false。</div>
+                        <div class="para" label-module="para">“||”也是二元运算符。 “||”运算的作用是求两个操作数的逻辑或。只有当两个操作数的值都为false时，或运算的结果才为false，其它情况下或运算的结果均为true。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="6_3" class="lemma-anchor para-title"></a>
+                            <a name="sub824_6_3" class="lemma-anchor "></a>
+                            <a name="类和对象" class="lemma-anchor "></a>
+                            <a name="6-3" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">类和对象</h3>
+                        </div>
+                        <div class="para" label-module="para">类所表示的一组对象十分相似，可以作为模板来有效的创建对象，利用类可以产生很多的对象类所代表的事物或者概念都是抽象的。在存取Private类型数据或者函数的时候，只有类本身声明的函数才是被允许的。类在与外部连接时，利用的就是Public共有类型函数，任何外部函数的访问都是运行的。</div>
+                        <div class="para" label-module="para">对象主要是对客观事物的某个实体进行描述，它作为一个单位，共同组成了系统，它的组成是一组属性和一组服务，这组服务操作于这组属性。属性和服务是对象构成众多要素中的两种，属性的实质是一个数据项，主要是对对象静态特性进行描述，服务的实质是一个操作序列，主要是对对象动态特征进行描述。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="6_4" class="lemma-anchor para-title"></a>
+                            <a name="sub824_6_4" class="lemma-anchor "></a>
+                            <a name="关键字" class="lemma-anchor "></a>
+                            <a name="6-4" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">关键字</h3>
+                        </div>
+                        <div class="para" label-module="para">关键字（<i>keyword</i>）是整个语言范围内预先保留的标识符。每个C++关键字都有特殊的含义。经过预处理后，关键字从预处理记号（<i>preprocessing-token</i>）中区出来，剩下的标识符作为记号（<i>token</i>），用于声明对象、函数、类型、命名空间等。不能声明与关键字同名的标识符。</div>
+                        <div class="para" label-module="para">各个版本的ISO C++都规定以下划线接大写字母起始的标识符保留给实现。编译器可以用这些保留标识符作为扩展关键字，这不保证可移植性。以下讨论ISO C++所保留的关键字。</div>
+                        <div class="para" label-module="para">ISO C++ 98 关键字共63个，此处严格按标准原文排版：
+                        </div>
+                        <table log-set-param="table_view" class="table-view log-set-param">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">asm</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">do</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">if</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">return</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">typedef</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="para" label-module="para">auto</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">double</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">inline</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">short</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">typeid</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">bool</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">dynamic_cast</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">int</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">signed</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">typename</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="para" label-module="para">break</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">else</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">long</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">sizeof</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">union</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">case</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">enum</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">mutable</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">static</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">unsigned</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="para" label-module="para">catch</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">explicit</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">namespace</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">static_cast</div>
+                                    </td>
+                                    <td>
+                                        <div class="para" label-module="para">using</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">char</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">export</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">new</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">struct</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">virtual</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">class</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">extern</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">operator</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">switch</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">void</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">const</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">false</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">private</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">template</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">volatile</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">const_cast</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">float</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">protected</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">this</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">wchar_t</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">continue</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">for</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">public</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">throw</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">while</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">default</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">friend</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">register</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">true</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">　</td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">delete</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">goto</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">reinterpret_cast</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">
+                                        <div class="para" label-module="para">try</div>
+                                    </td>
+                                    <td valign="top" align="left" width="111">　</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="anchor-list">
+                            <a name="7" class="lemma-anchor para-title"></a>
+                            <a name="sub824_7" class="lemma-anchor "></a>
+                            <a name="语言标准" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">语言标准</h2>
+
+                        </div>
+                        <div class="anchor-list">
+                            <a name="7_1" class="lemma-anchor para-title"></a>
+                            <a name="sub824_7_1" class="lemma-anchor "></a>
+                            <a name="C++ 98 标准" class="lemma-anchor "></a>
+                            <a name="7-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">C++ 98 标准</h3>
+                        </div>
+                        <div class="para" label-module="para">C++标准第一版，1998年发布。正式名称为ISO/IEC 14882:1998 。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="7_2" class="lemma-anchor para-title"></a>
+                            <a name="sub824_7_2" class="lemma-anchor "></a>
+                            <a name="C++ 03 标准" class="lemma-anchor "></a>
+                            <a name="7-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">C++ 03 标准</h3>
+                        </div>
+                        <div class="para" label-module="para">C++标准第二版，2003年发布。正式名称为ISO/IEC 14882:2003 。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="7_3" class="lemma-anchor para-title"></a>
+                            <a name="sub824_7_3" class="lemma-anchor "></a>
+                            <a name="C++ 11 标准" class="lemma-anchor "></a>
+                            <a name="7-3" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">C++ 11 标准</h3>
+                        </div>
+                        <div class="para" label-module="para">C++标准第三版，2011年8月12日发布。正式名称为ISO/IEC 14882:2011 。
+                        </div>
+                        <div class="para" label-module="para">C++11对容器类的方法做了三项主要修改。</div>
+                        <div class="para" label-module="para">首先，新增的右值引用使得能够给容器提供移动语义。其次，由于新增了模板类initilizer_list，因此新增了将initilizer_list作为参数的构造函数和赋值运算符。第三，新增的可变参数模板（<i>variadic template</i>）和函数参数包（<i>parameter pack</i>）使得可以提供就地创建（<i>emplacement</i>）方法。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="7_4" class="lemma-anchor para-title"></a>
+                            <a name="sub824_7_4" class="lemma-anchor "></a>
+                            <a name="C++ 14 标准" class="lemma-anchor "></a>
+                            <a name="7-4" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">C++ 14 标准</h3>
+                        </div>
+                        <div class="para" label-module="para">C++标准第四版，2014年8月18日发布。正式名称为ISO/IEC 14882:2014<b>
+                                </b>。</div>
+                        <div class="para" label-module="para">C++14是C++11的增量更新，主要是支持普通函数的返回类型推演，泛型 lambda，扩展的 lambda 捕获，对 constexpr 函数限制的修订，constexpr变量模板化等 。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="8" class="lemma-anchor para-title"></a>
+                            <a name="sub824_8" class="lemma-anchor "></a>
+                            <a name="技术应用" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">技术应用</h2>
+
+                        </div>
+                        <div class="para" label-module="para"><b>科学计算</b></div>
+                        <div class="para" label-module="para">在科学计算领域，FORTRAN是使用最多的语言之一。但是C++凭借先进的数值计算库、泛型编程等优势在这一领域也应用颇多。</div>
+                        <div class="para" label-module="para"><b>网络软件</b></div>
+                        <div class="para" label-module="para">C++拥有很多成熟的用于网络通信的库，其中最具有代表性的是跨平台的、重量级的ACE库，该库可以说是C++语言最重要的成果之一，在许多重要的企业、部门甚至是军方都有应用。</div>
+                        <div class="para" label-module="para"><b>操作系统</b></div>
+                        <div class="para" label-module="para">在该领域，C语言是主要使用的编程语言。但是C++凭借其对C的兼容性，面向对象性质也开始在该领域有一席之地。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="9" class="lemma-anchor para-title"></a>
+                            <a name="sub824_9" class="lemma-anchor "></a>
+                            <a name="语言评价" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">语言评价</h2>
+
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="lemma-picture text-pic layout-right" style="width:93px; margin: 0px auto; clear: both; float: right; display: block;">
+                                <img class="" src="../../src/wiki/cpp/cpp03.jpg" alt="" style="width:93px;height:250px;">
+
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">C++是在C语言的基础上开发的一种面向对象编程语言，应用非常广泛。常用于系统开发，引擎开发等应用领域，支持类、封装、继承、多态等特性。C++语言灵活，运算符的数据结构丰富、具有结构化控制语句、程序执行效率高，而且同时具有高级语言与汇编语言的优点。
+                        </div>
+                        <div class="para" label-module="para">C++语言是对C语言的扩充，从Simula中吸取了类，从ALGOL语言中吸取了运算符的一名多用、引用和在分程序中任何位置均可说明变量，综合了Ada语言的类属和Clu语言的模块特点，形成了抽象类，从Ada Clu和ML等语言吸取了异常处理，从BCPL语言中吸取了用//表示注释C++语言保持了C语言的紧凑灵活、高效以及易于移植性强等优点，它对数据抽象的支持主要在于类概念和机制，对面向对象风范的支持主要通过虚拟机制函数因C++语言既有数据抽象和面向对象能力，运行性能高，加上C语言的普及，而从C语言到C++语言的过渡较为平滑，以及C++语言与C语言的兼容程度可使数量巨大的C语言程序能方便地在C++语言环境中复用，使C++语言在短短几年内能流行。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="10" class="lemma-anchor para-title"></a>
+                            <a name="sub824_10" class="lemma-anchor "></a>
+                            <a name="常见问题" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">常见问题</h2>
+
+                        </div>
+                        <div class="para" label-module="para">问题1：学习C++大约需要多久？有些书籍上说几十天就能学会C++这是真的吗？</div>
+                        <div class="para" label-module="para">回答：在高校中安排的C++课程约为半年至一年左右，但事实上要精通C++，这点时间是远远不够的。C++并不只是一门简单的计算机语言，而是逐渐形成了一个学科体系。要熟练运用C++，做出界面美观、功能强大的程序，还必须对数据结构、STL、设计模式等各个专题进行深入学习。因此，学习C++所需时间取决于学习者本身的基础和期望达到的学习效果。如果一位零基础的初学者要掌握C++语言本身的所有特性，1~2年的时间是比较正常的。至于说几十天能够学会C++，对于已经精通其他计算机语言的学习者来说也是可能的。</div>
+                        <div class="para" label-module="para">问题2：学习C++需要什么样的数学和英语水平？学历较低可以学C++么？</div>
+                        <div class="para" label-module="para">回答：学习程序设计必然会用到数学和英语。至少输入的代码基本都是英文字母，我们要用的算法多少和数学、逻辑学有些关系。因此，彻底没有数学和英语基础就学习程序设计真的很困难。一般认为，有初中或以上的数学和英语基础就可以学习程序设计了。在现实中，很多中学生已经成为了编程高手。如果已经忘记以前所学的数学和英语知识，建议略花一些时间去回顾一下。数学和英语对学习程序设计还是有莫大的裨益。数学能够锻炼一个人的逻辑思维能力，使接受算法的速度更快；英语则有助于学习者看懂计算机的反馈信息、阅读更多原版的技术资料。</div>
+                        <div class="para" label-module="para">问题3：以前学习过程序设计，时间长都忘记了，现在不从事计算机行业。随着年龄增加，学习能力和记忆力都可能有所减弱，这样能学习C++么？</div>
+                        <div class="para" label-module="para">回答：学习能力和记忆力的确会随年龄受到影响。但是学习C++本来就是一个周期相对较长的过程，最重要的是保持学习的热情和耐心。C++语言的基础部分已经基本固定，不会经常发生重大变化，因此即使年龄稍大，经过努力后掌握C++是完全可能的。</div>
+                        <div class="para" label-module="para">问题4：很多网友说学习C++之前要学C语言，是这样吗？</div>
+                        <div class="para" label-module="para">回答：C语言的部分语法的确与C++相似甚至相同。如果有C语言的基础学习C++肯定会更快。但是，这并不意味着学习C++之前必须要学C语言，而且对于初学者来说在短时间内接触这两种语言反而会造成部分概念的混淆。因此，如果你的目标是C++而不是C语言，那么不必特意在学习C++之前先去学C语言。</div>
+                        <div class="para" label-module="para">问题5：现在学习C++主要有哪些集成开发环境？哪个最适合初学者？</div>
+                        <div class="para" label-module="para">回答：首先需要说明的是，集成开发环境和编译器又不是一回事情。通常集成开发环境可以搭配一种或多种编译器。编译器的功能是将C++源程序转变成可执行的程序，而集成开发环境则是一系列代码编辑、调试和管理工具。目前Windows操作系统下使用比较广泛的集成开发环境有微软的Visual Studio（包括6.0版、2010版和2012版等）、Dev-C++、Eclipse、Code::Blocks等。从集成开发环境的界面友好程度来看，微软的Visual Studio有着不小的优势。并且Visual
+                            Studio的市场占有率也是非常高的，很多院校、培训机构、企业都在使用。因此，建议有条件的初学者优先选用Visual Studio。如果实在无法安装Visual Studio，那么Dev-C++或Code::Blocks也可以作为替代。</div>
+                        <div class="para" label-module="para">问题6：如何保持学习C++的积极性和热情？</div>
+                        <div class="para" label-module="para">回答：对于大多数初学者来说，学习C++语言还是有一定难度的。因此，必须要掌握好学习的速度和节奏，不要对自己产生过大的压力。有些读者说只需要3周就能把小半本书看完，可是剩下的那部分却始终看不进去。事实上这说明了前面的小半本书还没有完全消化吸收——暴饮暴食自然就要没胃口了。建议初学者不要贪急贪快，那样很容易毁掉自己的学习热情。如果为自己订制了一个相对长期的、宽松的学习计划，反而更容易培养自己的积极性。</div>
+                        <div class="para" label-module="para">问题7：零基础的初学者应该学VB还是学C++？</div>
+                        <div class="para" label-module="para">回答：不得不承认，用Visual Basic制作一个Windows窗口界面的程序比C++方便得多。因此，初学者可能在学习Visual Basic的时候觉得更容易，更有成就感。Basic和C++属于计算机高级语言中的两支路线，各有所长。但是，从计算机高级语言的发展趋势来说，C++更具有代表性。如果只是想了解一下程序设计，学习Visual Basic也未尝不可。</div>
+                        <div class="anchor-list">
+                            <a name="a" class="lemma-anchor a"></a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="right-wrap hidden-xs">
+                </div>
+                <div class="right-bar col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                    <div class="right-bar-item user-box">
+                        <h4 class="right-item-title">个人信息</h4>
+                        <div class="bar-online">
+                            <img class="userPic" src="../../src/user.png" width="74px" />
+                            <h4 class="greeting">你好，<span class="online-user"></span></h4>
+                            <hr>
+                            <div class="inner-box">
+                                <h5 class="tap"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../user/">查看个人信息</a></h5>
+                                <h5 class="tap manager"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../admin/">管理社团</a></h5>
+                                <h5 class="tap logout">退出登录</h5>
+                            </div>
+                        </div>
+                        <div class="bar-offline">
+                            <img class="defaultUserPic" src="../../src/user.png" width="74px" />
+                            <h5 class="greeting">你好，游客</h5>
+                            <hr>
+                            <h5 class="tap" style="text-align: center;text-decoration: none;">请<a style="color: #1296db;" class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../login/">登录</a></h5>
+                        </div>
+                    </div>
+                    <div class="right-bar-item weather-box">
+                        <h4 class="right-item-title">天气</h4>
+                        <iframe allowtransparency="true" frameborder="0" width="100%" height="260px" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=1&v=1&d=3&bd=0&k=000000&f=000000&ltf=009944&htf=cc0000&q=1&e=0&a=1&c=71526&w=140&h=278&align=center"></iframe>
+                    </div>
+                    <div class="nav-scroll">
+                        <div class="wiki-bar">
+                        </div>
+                        <span class="top-point"></span>
+                        <span class="bottom-point"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <h5 class="copyright-text">&copy;&nbsp;2018吉林大学IBM俱乐部&nbsp; All rights reserved.</h5>
+            </div>
+            <div class="wrap-bar"></div>
+            <div class="bottom-bar">
+                <div class="bottom-contact"><a href="">联系我们</a></div>
+            </div>
+        </div>
+    </div>
+    <img id="back_to_top" src="../../src/icon/back_to_top.png" />
+    <script>
+        function DirectoryNav($h, config) {
+            this.opts = $.extend(true, {
+                scrollThreshold: 0.1, //滚动检测阀值 0.5在浏览器窗口中间部位
+                scrollSpeed: 0, //滚动到指定位置的动画时间
+                scrollTopBorder: 500, //滚动条距离顶部多少的时候显示导航，如果为0，则一直显示
+                easing: 'swing', //不解释
+                delayDetection: 0, //延时检测，避免滚动的时候检测过于频繁
+                scrollChange: function() {}
+            }, config);
+            this.$win = $(window);
+            this.$h = $h;
+            this.$pageNavList = "";
+            this.$pageNavListLis = "";
+            this.$curTag = "";
+            this.$pageNavListLiH = "";
+            this.offArr = [];
+            this.curIndex = 0;
+            this.scrollIng = false;
+            this.init();
+        }
+
+        DirectoryNav.prototype = {
+            init: function() {
+                this.make();
+                this.setArr();
+                this.bindEvent();
+            },
+            make: function() {
+                //生成导航目录结构,这是根据需求自己生成的。如果你直接在页面中输出一个结构那也挺好不用 搞js
+                $(".wiki-bar").append('<div class="directory-nav" id="directoryNav"><ul></ul><span class="cur-tag"></span><span class="c-top"></span><span class="c-bottom"></span><span class="line"></span></div>');
+                var $hs = this.$h,
+                    $directoryNav = $("#directoryNav"),
+                    temp = [],
+                    index1 = 0,
+                    index2 = 0;
+                $hs.each(function(index) {
+                    var $this = $(this),
+                        text = $this.text();
+                    if (this.tagName.toLowerCase() == 'h2') {
+                        index1++;
+                        if (index1 % 2 == 0) index2 = 0;
+                        temp.push('<li class="l1"><span class="c-dot"></span>' + index1 + '. <a class="l1-text">' + text + '</a></li>');
+                    } else {
+                        index2++;
+                        temp.push('<li class="l2">' + index1 + '.' + index2 + ' <a class="l2-text">' + text + '</a></li>');
+
+                    }
+                });
+                $directoryNav.find("ul").html(temp.join(""));
+
+                //设置变量
+                this.$pageNavList = $directoryNav;
+                this.$pageNavListLis = this.$pageNavList.find("li");
+                this.$curTag = this.$pageNavList.find(".cur-tag");
+                this.$pageNavListLiH = this.$pageNavListLis.eq(0).height();
+
+                if (!this.opts.scrollTopBorder) {
+                    this.$pageNavList.show();
+                }
+            },
+            setArr: function() {
+                var This = this;
+                this.$h.each(function() {
+                    var $this = $(this),
+                        offT = Math.round($this.offset().top);
+                    This.offArr.push(offT);
+                });
+            },
+            posTag: function(top) {
+                //调整蓝色箭头的位置
+                this.$curTag.css({
+                    top: top + 'px'
+                });
+                //导航条移动
+                var navHeight = $("#directoryNav").height();
+                $("#directoryNav").css("top", navHeight - top - 300 + "px");
+            },
+            ifPos: function(st) {
+                var offArr = this.offArr;
+                var windowHeight = Math.round(this.$win.height() * this.opts.scrollThreshold);
+                for (var i = 0; i < offArr.length; i++) {
+                    if ((offArr[i] - windowHeight) < st) {
+                        var $curLi = this.$pageNavListLis.eq(i),
+                            tagTop = $curLi.position().top;
+                        $curLi.addClass("cur").siblings("li").removeClass("cur");
+                        this.curIndex = i;
+                        this.posTag(tagTop + this.$pageNavListLiH * 0.5);
+                        this.opts.scrollChange.call(this);
+                    }
+                }
+            },
+            bindEvent: function() {
+                var This = this,
+                    show = false,
+                    timer = 0;
+                this.$win.on("scroll", function() {
+                    var $this = $(this);
+                    clearTimeout(timer);
+                    timer = setTimeout(function() {
+                        This.scrollIng = true;
+                        if ($this.scrollTop() > This.opts.scrollTopBorder) {
+                            if (!This.$pageNavListLiH) This.$pageNavListLiH = This.$pageNavListLis.eq(0).height();
+                            if (!show) {
+                                This.$pageNavList.fadeIn();
+                                show = true;
+                            }
+                            This.ifPos($(this).scrollTop());
+                        } else {
+                            if (show) {
+                                This.$pageNavList.fadeOut();
+                                show = false;
+                            }
+                        }
+                    }, This.opts.delayDetection);
+                });
+
+                this.$pageNavList.on("click", "li", function() {
+                    var $this = $(this),
+                        index = $this.index();
+                    This.scrollTo(This.offArr[index]);
+                })
+            },
+            scrollTo: function(offset, callback) {
+                var This = this;
+                $('html,body').animate({
+                    scrollTop: offset
+                }, this.opts.scrollSpeed, this.opts.easing, function() {
+                    This.scrollIng = false;
+                    //修正弹两次回调 蛋疼
+                    callback && this.tagName.toLowerCase() == 'body' && callback();
+                });
+            }
+        };
+
+        //实例化
+        var directoryNav = new DirectoryNav($(".title-text,.title-text"), {
+            scrollTopBorder: 500 //滚动条距离顶部多少的时候显示导航，如果为0，则一直显示
+        });
+
+        var shelterHeight = parseInt($(window).height()) - 455;
+        $(".up-shelter").css("height", shelterHeight + "px");
+        $(window).resize(function() {
+            var shelterHeight = parseInt($(window).height()) - 455;
+            $(".up-shelter").css("height", shelterHeight + "px");
+        });
+    </script>
+
+    <script>
+    </script>
+    <!-- animsition js -->
+    <script src="../../animsition/dist/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".animsition").animsition({
+
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 1500,
+                outDuration: 800,
+                linkElement: '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                unSupportCss: ['animation-duration',
+                    '-webkit-animation-duration',
+                    '-o-animation-duration'
+                ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay: false,
+                overlayClass: 'animsition-overlay-slide',
+                overlayParentElement: 'body'
+            });
+        });
+    </script>
+    <!-- 遮盖层，判断是否点击屏幕 -->
+    <div class="shelter"></div>
+</body>
+
+</html>

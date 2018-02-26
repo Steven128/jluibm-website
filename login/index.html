@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>登录-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css" />
+    <link id="page-css" type="text/css" rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../animsition/dist/css/animsition.min.css">
+
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/md5.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+    <script type="text/javascript" src="../js/xcConfirm.js"></script>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="main-content">
+            <div class="wrap-bar" style="clear: both;"></div>
+            <div class="login-form">
+                <img class="logo" src="../src/logo-transparent.png" />
+                <form id="login" method="post" action="">
+                    <h2 class="welcome-text">登录</h2>
+                    <div class="subform">
+                        <div id="number-box" class="section">
+                            <h4 class="section__title">学号</h4>
+                            <div class="form-group">
+                                <input id="number" type="text" class="input-text" name="number" placeholder="请输入学号" maxlength="15" />
+                            </div>
+                        </div>
+                        <div id="password-box" class="section">
+                            <h4 class="section__title">密码</h4>
+                            <div class="form-group">
+                                <input id="password" type="password" class="input-text" name="password" placeholder="请输入密码" />
+                            </div>
+                        </div>
+                        <div id="online-box" class="section">
+                            <!-- <label>
+                                <input type="checkbox" name="keep-online" value="1" />&nbsp;7天内免登陆
+                            </label> -->
+                        </div>
+
+
+                        <div class="btn-area">
+                            <button id="submit" type="submit" class="submit">登录</button>
+                            <div class="joinus-text">还不是社员？<a href="../joinus/">加入我们</a></div>
+                            <div class="wrap-bar" style="clear: both;"></div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <div class="copyright-text">&copy;&nbsp;2018&nbsp;JLUIBMclub&nbsp;&nbsp;<a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../">返回主页</a><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../">联系我们</a></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+    <!-- animsition js -->
+    <script src="../animsition/dist/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".animsition").animsition({
+
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 1500,
+                outDuration: 800,
+                linkElement: '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                unSupportCss: ['animation-duration',
+                    '-webkit-animation-duration',
+                    '-o-animation-duration'
+                ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay: false,
+                overlayClass: 'animsition-overlay-slide',
+                overlayParentElement: 'body'
+            });
+        });
+    </script>
+</body>
+
+</html>

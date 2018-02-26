@@ -1,0 +1,544 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>蓝桥杯-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../css/Normalize.css" />
+    <link type="text/css" rel="stylesheet" href="../css/page.css" />
+    <link type="text/css" rel="stylesheet" href="../css/lanqiaobei.css" />
+    <link rel="stylesheet" href="../animsition/dist/css/animsition.min.css">
+
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/page.js"></script>
+    <script type="text/javascript" src="../js/lanqiaobei.js"></script>
+    <script type="text/javascript" src="../js/check-login.js"></script>
+    <script type="text/javascript" src="../js/xcConfirm.js"></script>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../" class="site-title" rel="home">吉林大学IBM俱乐部</a>
+                    <div class="menu-button">
+                        <img src="../src/icon/menu.png" width="30px" height="30px" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- menu on larger devices -->
+            <nav id="nav" class="main-navigation hidden-xs hidden-sm" role="navigation">
+                <ul id="primary-menu" class="menu">
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../">首页</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../activities/">活动介绍</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../score/">成绩查询</a></li>
+                    <li id="wiki-item" class="menu-item">
+                        <div style="display: inline">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></div>
+                    </li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../joinus/">加入我们</a></li>
+                    <ul class="sub-menu">
+                        <li id="sub-menu-wrap" class="sub-menu-item"></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/算法/">算法</a></li>
+                        <li id="web-item" class="sub-menu-item">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></span></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Java/">Java</a></li>
+                    </ul>
+                    <ul class="sub-menu-web">
+                        <li id="web-1" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Web前端/">Web前端</a></li>
+                        <li id="web-2" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Python/">Python</a></li>
+                        <li id="web-3" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/PHP/">PHP</a></li>
+                    </ul>
+                </ul>
+            </nav>
+
+            <!-- menu on mobile devices -->
+            <nav id="nav" class="main-navigation-mobile col-xs-12" role="navigation">
+                <ul id="primary-menu" class="menu col-xs-12">
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../">首页</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../activities/">活动介绍</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../score/">成绩查询</a></li>
+                    <li id="wiki-item-mobile" class="menu-item col-xs-12">
+                        <div class="col-xs-12" style="display: inline;padding: 0;">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></div>
+                    </li>
+                    <ul class="sub-menu sub-menu-mobile col-xs-12">
+                        <li id="sub-menu-wrap col-xs-12"></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/算法/">算法</a></li>
+                        <li id="web-item-mobile" class="sub-menu-item col-xs-12">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></span></li>
+                        <ul class="sub-menu-web sub-menu-web-mobile col-xs-12">
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Web前端/">Web前端</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Python/">Python</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/PHP/">PHP</a></li>
+                        </ul>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Java/">Java</a></li>
+                    </ul>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../joinus/">加入我们</a></li>
+
+                </ul>
+            </nav>
+            <!-- #site-navigation -->
+
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <span class="location">位置</span>
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href=""><img class="index-icon" src="../src/icon/index-icon.png" /></a>&gt;
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="">蓝桥杯</a>
+                <div class="login">
+                    <div class="online">
+                        <h5 class="greeting">你好，<span class="online-user"></span></h5>
+                        <img class="userPic" src="../src/user.png" width="40px" />
+                        <div class="user-info">
+                            <img class="userPic" src="../src/user.png" width="50px" />
+                            <h4 class="online-user"></h4>
+                            <h5><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../user/">查看个人信息</a></h5>
+                            <h5 class="logout">退出登录</h5>
+                        </div>
+                    </div>
+                    <div class="offline">
+                        <h5 class="greeting"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../login/">登录</a></h5>
+                        <img class="userPic" src="../src/user.png" width="50px" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="bar-box row">
+                <div class="left-bar col-lg-2 hidden-md  hidden-xs hidden-sm">
+
+                </div>
+                <div class="left-wrap hidden-lg hidden-md  hidden-xs col-sm-1">
+                </div>
+                <div class="main-bar col-lg-8 col-md-9 col-sm-10 visible-xs-inline-block">
+                    <div class="banner">
+                        <img src="../src/lanqiaobei/lanqiaobei.png" width="100%" />
+                    </div>
+                    <div class="main-box">
+                        <div class="intro box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">大赛简介</h3>
+                            <p class="text">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为促进软件和信息领域专业技术人才培养，提升高校毕业生的就业竞争力，由教育部就业指导中心支持，工业和信息化部人才交流中心举办蓝桥杯大赛。八年来，包括北大、清华在内的超过 1200 余所院校，累计20万余名学子报名参赛，IBM、百度等知名企业全程参与，成为国内始终领跑的人才培养选拔模式和行业认可度最高的 IT 类科技竞赛。
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="bg box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">大赛背景</h3>
+                            <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;软件和信息技术产业作为我国的核心产业，是经济社会发展的先导性、战略性产业，软件和信息技术产业在推进信息化和工业化融合，转变发展方式，维护国家安全等方面发挥着重要作用。为推动软件和信息技术产业的发展，促进软件和信息技术专业技术人才培养，向软件和信息技术行业输送具有创新能力和实践能力的高端人才，提升高校毕业生的就业竞争力，全面推动行业发展及人才培养进程，工业和信息化部人才交流中心已成功举办八届蓝桥杯大赛。大赛的举办得到了教育部、工业和信息化部有关领导的高度重视，相关司局的大力支持，也得到了各省教育厅和各有关院校的积极响应，更得到了参赛师生的广泛好评，参赛学校超过1200余所，参赛规模已达二十万人次，取得了良好的社会效果。</p>
+                        </div>
+                        <hr>
+                        <div class="char box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">大赛特色</h3>
+                            <p class="text">立足行业，结合实际，实战演练，促进就业</p>
+                            <p class="text">政府、企业、协会联手构筑的人才培养、选拔平台</p>
+                            <p class="text">以赛促学，竞赛内容基于所学专业知识</p>
+                            <p class="text">以个人为单位，现场比拼，公正公平</p>
+                        </div>
+                        <hr>
+                        <div class="box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">主办单位</h3>
+                            <p class="text">主办单位：工业和信息化部人才交流中心</p>
+                            <p class="text">支持单位：教育部全国高等学校学生信息咨询与就业指导中心</p>
+                        </div>
+                        <hr>
+                        <div class="box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">赛事日程</h3>
+                            <ul>
+                                <li>
+                                    <p class="text">个人赛报名时间：</p>
+                                    <p class="text">2017年9月到2017年12月15日截止</p>
+                                </li>
+                                <li>
+                                    <p class="text">省赛时间：2018年3月</p>
+                                    <p class="text">省赛地点：各分赛区指定赛点学校</p>
+                                </li>
+                                <li>
+                                    <p class="text">国赛时间：2018年5月</p>
+                                    <p class="text">国赛地点：北京</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="compitition box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">大赛项目</h3>
+                            <div class="row">
+                                <div class="row-box software col-xs-12 col-sm-6">
+                                    <div class="dasai-inner-box col-xs-12">
+                                        <h4>个人赛-软件类</h4>
+                                        <div class="lpic col-xs-6">
+                                            <img src="../src/lanqiaobei/introduction/java.png" width="100%" />
+                                        </div>
+                                        <div class="rpic col-xs-6">
+                                            <img src="../src/lanqiaobei/introduction/cpp.png" width="100%" />
+                                        </div>
+                                        <p class="col-xs-12">软件类：学生以个人为单位参赛，比赛科目包括 C/C++ 程序设计、Java 软件开发，答题形式为闭卷答题。比赛时选手不能携带资料，比赛时长四个小时，能够选拔出优秀的软件及信息技术人才。</p>
+                                    </div>
+                                </div>
+                                <div class="row-box electronic col-xs-12 col-sm-6">
+                                    <div class="dasai-inner-box col-xs-12">
+                                        <h4>个人赛-电子类</h4>
+                                        <div class="lpic col-xs-6">
+                                            <img src="../src/lanqiaobei/introduction/dpj.png" width="100%" />
+                                        </div>
+                                        <div class="rpic col-xs-6">
+                                            <img src="../src/lanqiaobei/introduction/qrs.png" width="100%" />
+                                        </div>
+                                        <p class="col-xs-12">电子类：学生以个人为单位参赛，比赛科目包括嵌入式设计与开发、单片机设计与开发，答题形式为闭卷答题。比赛时选手不能携带资料，比赛时长五个小时，能够选拔出优秀的软件及信息技术人才。</p>
+                                    </div>
+                                </div>
+                                <div class="row-box design col-xs-12 col-sm-6">
+                                    <div class="dasai-inner-box col-xs-12">
+                                        <h4>个人赛-用户体验设计赛</h4>
+                                        <div class="lpic  col-xs-6">
+                                            <img src="../src/lanqiaobei/introduction/design-a.png" width="100%" />
+                                        </div>
+                                        <div class="rpic  col-xs-6">
+                                            <img src="../src/lanqiaobei/introduction/design-b.png" width="100%" />
+                                        </div>
+                                        <p class="col-xs-12">用户体验设计赛分为智能手机应用设计、品牌设计两大类，每类下设三个比赛科目。大赛分为全国选拔赛和总决赛两个阶段，选拔赛根据各科目进行评奖。选拔赛一等奖选手进入总决赛，总决赛进行现场答辩，评选出获奖作品。</p>
+                                    </div>
+                                </div>
+                                <div class="row-box group col-xs-12 col-sm-6">
+                                    <div class="dasai-inner-box col-xs-12">
+                                        <h4>团队赛</h4>
+                                        <div class="pic  col-xs-12">
+                                            <img src="../src/lanqiaobei/introduction/group.png" width="100%" />
+                                        </div>
+                                        <p class="col-xs-12"><br>本届团队赛设置软件创业团队赛，参赛作品限定主题为“互联网+”领域，由每个参赛队独立设计一个移动互联领域具有创新性和实用性的应用系统或软件架构。参赛方案需提供完整解决方案或设计思路。<br></p>
+                                    </div>
+                                </div>
+                                <div class="row-box children col-xs-12 col-sm-6">
+                                    <div class="dasai-inner-box col-xs-12">
+                                        <h4>少儿创意编程组</h4>
+                                        <div class="pic col-xs-12">
+                                            <img src="../src/lanqiaobei/introduction/children.png" width="100%" />
+                                        </div>
+                                        <p class="col-xs-12">少儿创意编程组旨在促进中小学科技创新，提升中小学逻辑素养，发现和培养面向未来的科技精英人才。</p>
+                                    </div>
+                                </div>
+                                <div class="row-box internation col-xs-12 col-sm-6">
+                                    <div class="dasai-inner-box col-xs-12">
+                                        <h4>国际赛</h4>
+                                        <div class="pic col-xs-12">
+                                            <img src="../src/lanqiaobei/introduction/internation.png" width="100%" />
+                                        </div>
+                                        <p class="col-xs-12">蓝桥杯国际赛为国际交流性赛事，组委会拟邀请承办国及其周边国家计算机领域大学生与国内获奖选手同场竞技，承办国家拟每年更换一次。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">报名时间</h3>
+                            <p>
+                                报名时间：2017年10月-2017年12月15日
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">报名须知</h3>
+                            <div class="sub-box">
+                                <h5><strong>人数及方式：</strong></h5>
+                                <p>
+                                    以学校为单位报名。
+                                </p>
+                                <p>
+                                    各参赛学校需为每位参赛选手配备一名指导教师，每名选手的指导教师最多一名，报多名的以排序第一的为准，其余无效。同一名指导教师可指导多位选手。
+                                </p>
+                                <p>
+                                    报名方式：学校及选手登陆大赛官方网站在线报名。
+                                </p>
+                                <h5><strong>报名材料：</strong></h5>
+                                <p>
+                                    报名表、身份证复印件、学生证复印件、2寸相片，以上均需要电子扫描版，通过报名系统上传。
+                                </p>
+                                <h5><strong>报名及参赛费用：</strong></h5>
+                                <p>
+                                    C/C++程序设计、Java软件开发、嵌入式设计与开发、单片机设计与开发每个科目报名费为300元/人。
+                                </p>
+                                <p>
+                                    选手及指导老师（或家长）在省赛、决赛期间发生的住宿、用餐、交通等费用自理；
+                                </p>
+                                <p>
+                                    报名费由蓝桥杯大赛组委会收取。
+                                </p>
+                                <h5><strong>组织工作：</strong></h5>
+                                <p>
+                                    大赛的报名、交费、下载准考证等工作全部通过蓝桥杯官网在线报名系统完成。
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="box applyStep">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">报名流程</h3>
+                            <div class="stepMain row">
+                                <div class="step col-xs-4 col-sm-3 col-lg-2">
+                                    <div><img src="../src/lanqiaobei/applyStep/icon-a.png" width="50px" alt="实名认证"></div>
+                                    <p><br>学生个人<br>实名认证</p>
+                                </div>
+                                <div class="step col-xs-4 col-sm-3 col-lg-2">
+                                    <div><img src="../src/lanqiaobei/applyStep/icon-b.png" width="50px" alt="报名"></div>
+                                    <p><br>选择院校/<br>个人报名</p>
+                                </div>
+                                <div class="step col-xs-4 col-sm-3 col-lg-2">
+                                    <div><img src="../src/lanqiaobei/applyStep/icon-c.png" width="50px" alt="院校筛选"></div>
+                                    <p><br>院校筛选/<br>添加指导老师</p>
+                                </div>
+                                <div class="step col-xs-4 col-sm-3 col-lg-2">
+                                    <div><img src="../src/lanqiaobei/applyStep/icon-d.png" width="50px" alt="缴费"></div>
+                                    <p><br>缴费并填写<br>发票信息</p>
+                                </div>
+                                <div class="step col-xs-4 col-sm-3 col-lg-2">
+                                    <div><img src="../src/lanqiaobei/applyStep/icon-e.png" width="50px" alt="下载准考证"></div>
+                                    <p><br>等待下载<br>准考证</p>
+                                </div>
+                                <div class="step col-xs-4 col-sm-3 col-lg-2">
+                                    <div><img src="../src/lanqiaobei/applyStep/icon-f.png" width="50px" alt="考试"></div>
+                                    <p><br>参加考试<br> <br></p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">大赛形式</h3>
+                            <p class="text"><strong>软件类：</strong>全程机考。选手机器通过局域网连接到各个分赛区的竞赛服务器。选手答题过程中无法访问互联网，也不允许使用本机以外的资源（如USB连接）。以[服务器-浏览器]方式发放试卷、回收选手作答。</p>
+                            <p class="text"><strong>电子类：</strong>动手操作。</p>
+                        </div>
+                        <hr>
+                        <div class="box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">软件赛题</h3>
+                            <p class="text">
+                                <strong>结果填空题：</strong>题目描述一个具有确定解的问题。要求选手对问题的解填空。不要求解题过程，不限制解题手段，只要求填写确定的结果。
+                            </p>
+                            <p class="text">
+                                <strong>代码填空题：</strong>题目描述一个具有确定解的问题。题目同时给出该问题的某一解法的代码，但其中有缺失部分。要求选手读懂代码逻辑，对其中的空缺部分补充代码，使整段代码完整。
+                            </p>
+                            <p class="text">
+                                <strong>编程题：</strong>要求选手通过编程，对给定的标准输入求解，并通过标准输出，按题目要求的格式输出解。题目一般会给出示例数据。一般题目的难度主要集中于对算法的设计和逻辑的组织上。理论上，选手不可能通过猜测或其它非编程的手段获得问题的解。为了测试选手给出解法的性能，评分时用的测试用例可能包含大数据量的压力测试用例，选手选择算法时要充分考虑可行性的问题。
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">涉及知识</h3>
+                            <div class="sub-box">
+                                <h5><strong>高职高专组（大学C组）</strong></h5>
+                                <p>
+                                    基本语法、面向对象、网络编程、接口、集合、IO、多线程、内部类、异常。（数据结构、swing等图形界面不涉及，不涉及html、JSP、Tomcat、开源框架等web开发方面，不涉及JDBC、SQL等数据库编程方面）<br><span style="text-decoration: underline">允许使用JDK1.5支持的全部特性</span>
+                                </p>
+                                <h5><strong>Java大学B组</strong></h5>
+                                <p>
+                                    高职高专组全部知识+数据结构（高校《数据结构》教材中出现的经典结构，及其通过组合、变形、改良等方法创造出的变种）
+                                </p>
+                                <h5><strong>Java大学A组</strong></h5>
+                                <p>
+                                    大学B组全部知识+设计模式，反射，XML，多核与并发，测试理论，Swing界面。
+                                </p>
+                            </div>
+                            <div class="sub-box">
+                                <h5><strong>C/C++高职高专组（大学C组）</strong></h5>
+                                <p>
+                                    结构、数组、指针、标准输入输出、文件操作、递归（在代码填空中不会出现C++知识，不会出现ANSI C之外的Windows API调用）
+                                </p>
+                                <p><span style="text-decoration: underline">选手可以使用C风格或C++风格或混合风格解答编程大题。允许使用ANSI C++特性。允许使用STL类库。（不允许使用MFC类库，ATL类库）</span>
+                                </p>
+                                <h5><strong>C/C++大学B组</strong></h5>
+                                <p>
+                                    高职高专组全部知识+数据结构、函数指针、位运算
+                                </p>
+                                <h5><strong>C/C++高职高专组（大学C组）</strong></h5>
+                                <p>
+                                    大学B组全部知识+函数模板、复杂宏、汇编知识
+                                </p>
+                            </div>
+                            <div class="sub-box">
+                                <h5><strong>单片机设计与开发</strong></h5>
+                                <p>
+                                    模拟、数字电路，传感器及MCS51系列单片机的相关知识，常用仪器使用方面的知识，程序编译调试和下载软件使用方面的知识。
+                                </p>
+                                <h5><strong>嵌入式设计与开发</strong></h5>
+                                <p>
+                                    模拟电路，数字电路，传感及STM32F103 MCU的相关知识，常用仪器使用方面的知识，Keil MDK4.10软件方面的知识。
+                                </p>
+                            </div>
+                            <div class="sub-box">
+                                <h5><strong>智能手机应用设计</strong></h5>
+                                <p>
+                                    包括手机壁纸设计、手机图标设计、表情包设计三个比赛科目。
+                                </p>
+                                <h5><strong>品牌设计</strong></h5>
+                                <p>
+                                    包括蓝桥LOGO设计、蓝桥吉祥物设计、蓝桥设计之美H5设计三个比赛科目。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">赛事流程</h3>
+                            <div class="progressBg row">
+                                <div class="proBox col-xs-4 col-sm-3 col-lg-2">
+                                    <div class="pic">
+                                        <p class="img"><img src="../src/lanqiaobei/probox/icon-b1.png" alt="报名启动" width="50px" /></p>
+                                        <p>报名启动</p>
+                                    </div>
+                                    <p class="date">2017年9月</p>
+                                </div>
+                                <div class="proBox col-xs-4 col-sm-3 col-lg-2">
+                                    <div class="pic">
+                                        <p class="img"><img src="../src/lanqiaobei/probox/icon-b2.png" alt="报名信息审核" width="50px" /></p>
+                                        <p>报名信息审核</p>
+                                    </div>
+                                    <p class="date">2017年10月</p>
+                                </div>
+                                <div class="proBox col-xs-4 col-sm-3 col-lg-2">
+                                    <div class="pic">
+                                        <p class="img"><img src="../src/lanqiaobei/probox/icon-b3.png" alt="校内选拔活动" width="50px" /></p>
+                                        <p>校内选拔活动</p>
+                                    </div>
+                                    <p class="date">2017年11月</p>
+                                </div>
+                                <div class="proBox col-xs-4 col-sm-3 col-lg-2">
+                                    <div class="pic">
+                                        <p class="img"><img src="../src/lanqiaobei/probox/icon-b4.png" alt="省赛考试" width="50px" /></p>
+                                        <p>省赛考试</p>
+                                    </div>
+                                    <p class="date">2018年3月</p>
+                                </div>
+                                <div class="proBox col-xs-4 col-sm-3 col-lg-2">
+                                    <div class="pic">
+                                        <p class="img"><img src="../src/lanqiaobei/probox/icon-b5.png" alt="总决赛" width="50px" /></p>
+                                        <p>总决赛</p>
+                                    </div>
+                                    <p class="date">2018年5月</p>
+                                </div>
+                                <div class="proBox col-xs-4 col-sm-3 col-lg-2">
+                                    <div class="pic">
+                                        <p class="img"><img src="../src/lanqiaobei/probox/icon-b6.png" alt="颁奖典礼" width="50px" /></p>
+                                        <p>颁奖典礼</p>
+                                    </div>
+                                    <p class="date">2018年5月</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img class="title-logo" src="../src/lanqiaobei/logo.png" width="40px" />
+                            <h3 class="title">奖项设置</h3>
+                            <h4 class="sub-title">省赛</h4>
+                            <p>
+                                <strong>参赛选手奖：</strong>省赛每个组别设置一、二、三等奖，比例分别为10%、20%、30%，总比例为实际参赛人数的60%，零分卷不得奖。省赛一等奖选手获得直接进入全国总决赛资格。
+                            </p>
+                            <p>
+                                <strong>指导老师奖：</strong>省赛中获奖的参赛选手的指导教师将获得“蓝桥杯全国软件和信息技术专业人才大赛（××赛区）优秀指导教师”称号。
+                            </p>
+                            <h4 class="sub-title">国赛（总决赛）</h4>
+                            <p>
+                                <strong>参赛选手奖：</strong>个人赛根据相应组别分别设立特、一、二、三等奖及优秀奖。在决赛奖项设置中，每个组别设置特等奖1名，一等奖不高于5%，二等奖占20%，三等奖不低于25%，优秀奖不超过50%， 零分卷不得奖。
+                            </p>
+                            <p>
+                                大学组总决赛三等奖及以上选手，如果获得本校免试推研资格，将获得北京大学软件与微电子学院等院校的面试资格，并优先录取为该院普通硕士研究生。
+                            </p>
+                            <p>
+                                大学组总决赛三等奖及以上选手，可免除笔试，直接获得百度、IBM等企业在员工招聘及实习生招聘中的面试机会。
+                            </p>
+                            <p>
+                                <strong>指导老师奖：</strong>所有获奖选手的指导教师，均可获得“蓝桥杯全国软件和信息技术专业人才大赛优秀指导教师”证书。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-wrap hidden-lg hidden-md  hidden-xs col-sm-1">
+                </div>
+                <div class="right-bar col-lg-2 col-md-3 hidden-xs hidden-sm">
+                    <div class="right-bar-item user-box">
+                        <h4 class="right-item-title">个人信息</h4>
+                        <div class="bar-online">
+                            <img class="userPic" src="../src/user.png" width="74px" />
+                            <h4 class="greeting">你好，<span class="online-user"></span></h4>
+                            <hr>
+                            <div class="inner-box">
+                                <h5 class="tap"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../user/">查看个人信息</a></h5>
+                                <h5 class="tap manager"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../admin/">管理社团</a></h5>
+                                <h5 class="tap logout">退出登录</h5>
+                            </div>
+
+                        </div>
+                        <div class="bar-offline">
+                            <img class="defaultUserPic" src="../src/user.png" width="74px" />
+                            <h5 class="greeting">你好，游客</h5>
+                            <hr>
+                            <h5 class="tap" style="text-align: center;text-decoration: none;">请<a style="color: #1296db;" class="animsition-link" data-animsition-out="fade-out-left-sm" href="../login/">登录</a></h5>
+                        </div>
+                    </div>
+                    <div class="right-bar-item weather-box">
+                        <h4 class="right-item-title">天气</h4>
+                        <iframe allowtransparency="true" frameborder="0" width="100%" height="260px" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=1&v=1&d=3&bd=0&k=000000&f=000000&ltf=009944&htf=cc0000&q=1&e=0&a=1&c=71526&w=140&h=278&align=center"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <h5 class="copyright-text">&copy;&nbsp;2018吉林大学IBM俱乐部&nbsp; All rights reserved.</h5>
+            </div>
+
+            <div class="wrap-bar"></div>
+            <div class="bottom-bar">
+                <div class="bottom-contact"><a href="">联系我们</a></div>
+            </div>
+        </div>
+    </div>
+    <img id="back_to_top" src="../src/icon/back_to_top.png" />
+    <!-- animsition js -->
+    <script src="../animsition/dist/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".animsition").animsition({
+
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 1500,
+                outDuration: 800,
+                linkElement: '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                unSupportCss: ['animation-duration',
+                    '-webkit-animation-duration',
+                    '-o-animation-duration'
+                ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay: false,
+                overlayClass: 'animsition-overlay-slide',
+                overlayParentElement: 'body'
+            });
+        });
+    </script>
+    <!-- 遮盖层，判断是否点击屏幕 -->
+    <div class="shelter"></div>
+</body>
+
+</html>

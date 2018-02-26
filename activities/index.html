@@ -1,0 +1,323 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>活动介绍-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../css/Normalize.css" />
+    <link type="text/css" rel="stylesheet" href="../css/page.css" />
+    <link type="text/css" rel="stylesheet" href="../css/activities.css" />
+    <link rel="stylesheet" href="../animsition/dist/css/animsition.min.css" />
+
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/page.js"></script>
+    <script type="text/javascript" src="../js/check-login.js"></script>
+    <script type="text/javascript" src="../js/xcConfirm.js"></script>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../" class="site-title" rel="home">吉林大学IBM俱乐部</a>
+                    <div class="menu-button">
+                        <img src="../src/icon/menu.png" width="30px" height="30px" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- menu on larger devices -->
+            <nav id="nav" class="main-navigation hidden-xs hidden-sm" role="navigation">
+                <ul id="primary-menu" class="menu">
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../">首页</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../activities/">活动介绍</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../score/">成绩查询</a></li>
+                    <li id="wiki-item" class="menu-item">
+                        <div style="display: inline">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></div>
+                    </li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../joinus/">加入我们</a></li>
+                    <ul class="sub-menu">
+                        <li id="sub-menu-wrap" class="sub-menu-item"></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/算法/">算法</a></li>
+                        <li id="web-item" class="sub-menu-item">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></span></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Java/">Java</a></li>
+                    </ul>
+                    <ul class="sub-menu-web">
+                        <li id="web-1" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Web前端/">Web前端</a></li>
+                        <li id="web-2" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Python/">Python</a></li>
+                        <li id="web-3" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/PHP/">PHP</a></li>
+                    </ul>
+                </ul>
+            </nav>
+
+            <!-- menu on mobile devices -->
+            <nav id="nav" class="main-navigation-mobile col-xs-12" role="navigation">
+                <ul id="primary-menu" class="menu col-xs-12">
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../">首页</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../activities/">活动介绍</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../score/">成绩查询</a></li>
+                    <li id="wiki-item-mobile" class="menu-item col-xs-12">
+                        <div class="col-xs-12" style="display: inline;padding: 0;">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></div>
+                    </li>
+                    <ul class="sub-menu sub-menu-mobile col-xs-12">
+                        <li id="sub-menu-wrap col-xs-12"></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/算法/">算法</a></li>
+                        <li id="web-item-mobile" class="sub-menu-item col-xs-12">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></span></li>
+                        <ul class="sub-menu-web sub-menu-web-mobile col-xs-12">
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Web前端/">Web前端</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Python/">Python</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/PHP/">PHP</a></li>
+                        </ul>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Java/">Java</a></li>
+                    </ul>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../joinus/">加入我们</a></li>
+
+                </ul>
+            </nav>
+            <!-- #site-navigation -->
+
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <span class="location">位置</span>
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href=""><img class="index-icon" src="../src/icon/index-icon.png" /></a>&gt;
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="">活动介绍</a>
+                <div class="login">
+                    <div class="online">
+                        <h5 class="greeting">你好，<span class="online-user"></span></h5>
+                        <img class="userPic" src="../src/user.png" width="40px" />
+                        <div class="user-info">
+                            <img class="userPic" src="../src/user.png" width="50px" />
+                            <h4 class="online-user"></h4>
+                            <h5><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../user/">查看个人信息</a></h5>
+                            <h5 class="logout">退出登录</h5>
+                        </div>
+                    </div>
+                    <div class="offline">
+                        <h5 class="greeting"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../login/">登录</a></h5>
+                        <img class="userPic" src="../src/user.png" width="50px" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="bar-box row">
+                <div class="left-bar col-lg-2 hidden-md  hidden-xs hidden-sm">
+
+                </div>
+                <div class="left-wrap hidden-lg hidden-md  hidden-xs col-sm-1">
+                </div>
+                <div class="main-bar col-lg-8 col-md-9 col-sm-10 visible-xs-inline-block">
+                    <h3 class="title">异彩纷呈的往期活动</h3>
+                    <div class="main-box">
+                        <div class="intro box">
+                            <h3 class="box-title">活动简介</h3>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;社团承办历届的蓝桥杯大赛，俱乐部还会负责一些小型的校内比赛，目前已成功举办过网页设计大赛、running coder。俱乐部也接手一些知名公司技术人员的讲座的活动安排，例如大数据、Python、Android开发等讲座。</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;技术部下分C/C++组、算法组、web组、Linux组和Java组，社团会依时段由组长进行相应的技术知识培训</p>
+                        </div>
+                        <hr>
+                        <div class="box">
+                            <h3 class="box-title">往期活动</h3>
+                            <div class="text-box">
+                                <h4 class="text-title">C语言培训</h4>
+                                <h5 class="sub-title"><i>——2017年12月10日</i></h5>
+                                <div class="img-wrap">
+                                    <img class="text-img" src="../src/activities/c-20171210.jpg" width="250px" height="100%" />
+                                </div>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;猎猎寒风，正值严冬，小小的教室里，因为到来的百余人，而温暖良多。时12月10日、15日，IBM俱乐部联合学生会信息部在经信楼面向大一学生成功举办两场C语言基础教学活动。随着同学们的问题被一一解决，随着一次又一次掌声的起起伏伏，在沉思中，在欢笑声中，本次活动，渐渐落下帷幕。
+                                </p>
+                                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;耐心的解答，一遍又一遍修改的讲课题纲，熬夜制作的PPT是学长们对你们的关怀和毫无保留；放下的手机，思索的神情和紧凑的掌声是你们的尊重和认可。这一刻，三尺讲台变得别有意义。但课程的讲解还不尽流畅，一些问题还是没能让同学们都完全理解，我们会找寻纰漏，尽可能完善今后的活动。
+
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;感谢大家在这步履维艰的冬天不畏严寒前来，最后真诚的祝福大家期末顺利。
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="text-box">
+                                <h4 class="text-title">蓝桥杯决赛</h4>
+                                <h5 class="sub-title"><i>——2017年5月28日</i></h5>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2017年5月28日，第七届蓝桥杯全国软件和信息技术专业人才大赛全国总决赛在北京大学拉开帷幕。经过省赛选拔的我院7名优秀队员参加了本次决赛，本次比赛由吕帅老师带队。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;蓝桥杯是工业和信息化部人才交流中心举办的“全国软件专业人才设计与创业大赛”，蓝桥杯大赛的目的是为推动软件开发技术的发展，促进软件专业技术人才培养，向软件行业输送具有创新能力和实践能力的高端人才，提升高校毕业生的就业竞争力，全面推动行业发展及人才培养进程。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本届竞赛参赛由IBM俱乐部组织，从蓝桥杯宣讲到组织报名，再到每周的经验交流，都是IBM俱乐部全权负责。本届蓝桥杯有118人参加了省赛，其中80人获得省赛三等奖及三等奖以上，王冕、蒋李铭、周超凡、尚宇明、黎菁菁、董洪斌等7人荣获省赛一等奖，获得决赛参赛资格。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在决赛中，尚明宇、董洪斌获C/C++程序设计大学 A 组总决赛二等奖，周超凡荻获C/C++程序设计大学 A 组总决赛三等奖。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本次成绩的取得离不开学院领导的大力支持，吕帅等老师的耐心指导、IBM俱乐部的辛勤付出以及同学们刻苦的训练。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;希望同学们再接再厉，在以后的蓝桥杯竞赛中再创佳绩！
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="text-box">
+                                <h4 class="text-title">Photoshop培训</h4>
+                                <h5 class="sub-title"><i>——2017年4月20日</i></h5>
+                                <div class="img-wrap">
+                                    <img class="text-img" src="../src/activities/ps-20170420.png" width="250px" height="100%" />
+                                </div>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了让同学们掌握Photoshop，4月20日下午3点，IBM俱乐部在李四光534举办Photoshop技能培训会。此次培训会为提高俱乐部成员的软件使用技能，由专业美工老师担任主讲，俱乐部成员积极参与了这次培训。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;老师凭借自己熟练使用Photoshop的经验和身为美工老师的理论知识，向俱乐部成员们讲解了Photoshop的工具的使用方法和一些操作技巧。并通过一些实例来巩固工具的学习使用。学习过程中，老师详细的讲解了ps每个工具不同状态下的使用方法，细心地解答同学们的疑问，俱乐部主席也参加了本次培训活动。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过此次PS培训，同学们切实学到了东西，基本掌握了PS的简单运用技巧，并对PS的庞大功能有了一定的了解。同时，本次培训也受到了俱乐部成员的一致好评。
+                                </p>
+                            </div>
+                            <hr>
+
+                            <div class="text-box">
+                                <h4 class="text-title">网页制作培训和设计大赛</h4>
+                                <h5 class="sub-title"><i>——2016年6月10日</i></h5>
+                                <div class="img-wrap" style="margin-top: 0px;">
+                                    <img class="text-img" src="../src/activities/web-20160610-01.jpg" width="250px" height="100%" />
+                                    <img class="text-img" src="../src/activities/web-20160610-02.jpg" width="250px" height="100%" />
+                                </div>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016年6月10日，为发掘优秀网页设计人才，提高同学们的网页制作水平，使学生将学习和实际工作联系起来，IBM俱乐部在李四光楼534举办历时四周的网页制作培训和设计大赛。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本次活动邀请学长给俱乐部成员培训HTML、JavaScript，一共四次课时，每次课两个半小时（培训时间会根据实际情况可适当调整）。通过四次课同学们需要独立完成一个简单网页。在课程结束后同学们提交作品，进行演示，最后评比（由所有参赛同学投票评选）。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大赛还是跟真正意义上的软件设计有一定差距，但学生的表现可圈可点。网页与软件相关知识，在现在社会是两个极具技术的专业，学好他们，对于自己的发展，有着不可估量的帮助，更为让我们激扬的青春梦想提供了一个书写创意的舞台。
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="text-box">
+                                <h4 class="text-title">Java&amp;Android组小组活动</h4>
+                                <h5 class="sub-title"><i>——2016年11月1日</i></h5>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016年11月1日星期日 IBM俱乐部Java&amp;Android组第一次活动在莘子园举办，第一次活动的主要目的是让彼此之间互相了解，加深感情，并学会如何编写第一个java程序。技术部副部及Java&amp;Android组负责人组织大家自我介绍，相互认识。
+                                </p>
+                                <div class="img-wrap">
+                                    <img class="text-img" src="../src/activities/java-20161101-01.jpg" width="250px" height="100%" />
+                                    <img class="text-img" src="../src/activities/java-20161101-02.jpg" width="250px" height="100%" />
+                                </div>
+
+
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本次活动主要内容是介绍JDK环境变量配置，以及第一个Java程序-hello world。
+                                </p>
+                                <p>
+                                    通过这次活动，组员们了解了java的历史，Java 的特点以及java的开发工具，懂得了println与print的用法与区别，了解了java程序的构成，学会了打印hello world，除此之外这次活动还加深了组员与组员之间的联系，组员与组长之间的联系。短短一个小时就这样过去，活动也接近尾声，虽然时间短暂但我们依然得到了很多。我们共同期待下一次活动的举办。
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="text-box">
+                                <h4 class="text-title">Android培训小课堂</h4>
+                                <h5 class="sub-title"><i>——2016年10月18日</i></h5>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016年10月18日，俱乐部邀请到了前俱乐部主席，拿到腾讯offer的王伟学长于晚上六点半进行小课堂培训
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先，王伟学长讲了如何又好又快的学习Android，了解官方文档，以及官方文档的查阅方法。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接着，王伟学长讲了一些个人的学习经验，“像创造者一样去思考不要沦为一个只会写代码的码农”，不要重复造轮子，多看看别人家的代码，能够看懂，和写出来不是同一回事，Github是最好的教材。尽可能写Blog将自己的经验分享。多看看别人是怎么做，听人劝，吃饱饭。遇到问题，要先问问自己。总之多写点东西，就有了吹水的资本。能实习就去吧，你一定不会后悔。别光看着，否则别人吃肉，你连汤都喝不到，要把它当做自己喜欢的事来做。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后，王伟学长给大家布置了一个作业，要求编写一个登录界面。
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="right-wrap hidden-lg hidden-md  hidden-xs col-sm-1">
+                </div>
+                <div class="right-bar col-lg-2 col-md-3 hidden-xs hidden-sm">
+                    <div class="right-bar-item user-box">
+                        <h4 class="right-item-title">个人信息</h4>
+                        <div class="bar-online">
+                            <img class="userPic" src="../src/user.png" width="74px" />
+                            <h4 class="greeting">你好，<span class="online-user"></span></h4>
+                            <hr>
+                            <div class="inner-box">
+                                <h5 class="tap"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../user/">查看个人信息</a></h5>
+                                <h5 class="tap manager"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../admin/">管理社团</a></h5>
+                                <h5 class="tap logout">退出登录</h5>
+                            </div>
+
+                        </div>
+                        <div class="bar-offline">
+                            <img class="defaultUserPic" src="../src/user.png" width="74px" />
+                            <h5 class="greeting">你好，游客</h5>
+                            <hr>
+                            <h5 class="tap" style="text-align: center;text-decoration: none;">请<a style="color: #1296db;" class="animsition-link" data-animsition-out="fade-out-left-sm" href="../login/">登录</a></h5>
+                        </div>
+                    </div>
+                    <div class="right-bar-item weather-box">
+                        <h4 class="right-item-title">天气</h4>
+                        <iframe allowtransparency="true" frameborder="0" width="100%" height="260px" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=1&v=1&d=3&bd=0&k=000000&f=000000&ltf=009944&htf=cc0000&q=1&e=0&a=1&c=71526&w=140&h=278&align=center"></iframe>
+                    </div>
+                </div>
+
+            </div>
+            <div class="foot-content">
+                <div class="copyright">
+                    <h5 class="copyright-text">&copy;&nbsp;2018吉林大学IBM俱乐部&nbsp; All rights reserved.</h5>
+                </div>
+
+                <div class="wrap-bar"></div>
+                <div class="bottom-bar">
+                    <div class="bottom-contact"><a href="">联系我们</a></div>
+                </div>
+
+            </div>
+            <img id="back_to_top" src="../src/icon/back_to_top.png" />
+            <!-- animsition js -->
+            <script src="../animsition/dist/js/jquery.animsition.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+
+                    $(".animsition").animsition({
+
+                        inClass: 'fade-in',
+                        outClass: 'fade-out',
+                        inDuration: 1500,
+                        outDuration: 800,
+                        linkElement: '.animsition-link',
+                        // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                        loading: true,
+                        loadingParentElement: 'body', //animsition wrapper element
+                        loadingClass: 'animsition-loading',
+                        unSupportCss: ['animation-duration',
+                            '-webkit-animation-duration',
+                            '-o-animation-duration'
+                        ],
+                        //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                        //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                        overlay: false,
+                        overlayClass: 'animsition-overlay-slide',
+                        overlayParentElement: 'body'
+                    });
+                });
+            </script>
+            <!-- 遮盖层，判断是否点击屏幕 -->
+            <div class="shelter"></div>
+</body>
+
+</html>

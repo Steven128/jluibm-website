@@ -1,0 +1,2303 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>科普之窗-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/Normalize.css" />
+
+    <link rel="stylesheet" type="text/css" href="../css/wiki-lemma_2e0b0ff.css">
+    <link rel="stylesheet" type="text/css" href="../css/wiki-common-base_641773b.css">
+    <link rel="stylesheet" type="text/css" href="../css/wiki-lemma-module_d12cf7b.css">
+    <link rel="stylesheet" type="text/css" href="../css/shCoreDefault_3f91dc3.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainContent_98e3702.css">
+
+    <link type="text/css" rel="stylesheet" href="../../css/page.css" />
+    <link type="text/css" rel="stylesheet" href="../css/navigation.css" />
+    <link rel="stylesheet" href="../../animsition/dist/css/animsition.min.css" />
+
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/page.js"></script>
+    <!-- <script type="text/javascript" src="../js/navigation.js"></script> -->
+    <script type="text/javascript" src="../js/check-login.js"></script>
+    <style>
+        .main-text {
+            font-family: arial, SimSun, 宋体, sans-serif;
+            padding: 29px 29px 0 29px;
+            float: left;
+            font-size: 13px;
+            line-height: 1.8;
+            background-color: #fff;
+            width: 100%;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Microsoft YaHei';
+        }
+        
+        .lemmaWgt-lemmaTitle-title h1 {
+            margin-bottom: 20px;
+        }
+        
+        .main-content table th,
+        .main-content table td {
+            padding: 2px 8px;
+            min-width: 31px;
+        }
+        
+        @media (max-width: 992px) {
+            .basicInfo-block {
+                width: 270px !important;
+            }
+            .basic-info {
+                font-size: 12px;
+            }
+            .basicInfo-item {
+                padding-left: 0 !important;
+            }
+            .basicInfo-item.name {
+                width: 70px !important;
+            }
+            .basicInfo-item.value {
+                width: 200px !important;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog ol {
+                width: 170px !important;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level1 .text {
+                width: auto;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level2 .text {
+                width: auto;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level2 .index {
+                padding-left: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../" class="site-title" rel="home">吉林大学IBM俱乐部</a>
+                    <div class="menu-button">
+                        <img src="../../src/icon/menu.png" width="30px" height="30px" />
+                    </div>
+                </div>
+            </div>
+
+<!-- menu on larger devices -->
+            <nav id="nav" class="main-navigation hidden-xs hidden-sm" role="navigation">
+                <ul id="primary-menu" class="menu">
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../">首页</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../activities/">活动介绍</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../score/">成绩查询</a></li>
+                    <li id="wiki-item" class="menu-item">
+                        <div style="display: inline">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></div>
+                    </li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../joinus/">加入我们</a></li>
+                    <ul class="sub-menu">
+                        <li id="sub-menu-wrap" class="sub-menu-item"></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/算法/">算法</a></li>
+                        <li id="web-item" class="sub-menu-item">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></span></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Java/">Java</a></li>
+                    </ul>
+                    <ul class="sub-menu-web">
+                        <li id="web-1" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Web前端/">Web前端</a></li>
+                        <li id="web-2" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Python/">Python</a></li>
+                        <li id="web-3" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/PHP/">PHP</a></li>
+                    </ul>
+                </ul>
+            </nav>
+
+            <!-- menu on mobile devices -->
+            <nav id="nav" class="main-navigation-mobile col-xs-12" role="navigation">
+                <ul id="primary-menu" class="menu col-xs-12">
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../">首页</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../activities/">活动介绍</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../score/">成绩查询</a></li>
+                    <li id="wiki-item-mobile" class="menu-item col-xs-12">
+                        <div class="col-xs-12" style="display: inline;padding: 0;">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></div>
+                    </li>
+                    <ul class="sub-menu sub-menu-mobile col-xs-12">
+                        <li id="sub-menu-wrap col-xs-12"></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/算法/">算法</a></li>
+                        <li id="web-item-mobile" class="sub-menu-item col-xs-12">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></span></li>
+                        <ul class="sub-menu-web sub-menu-web-mobile col-xs-12">
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Web前端/">Web前端</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Python/">Python</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/PHP/">PHP</a></li>
+                        </ul>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Java/">Java</a></li>
+                    </ul>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../joinus/">加入我们</a></li>
+
+                </ul>
+            </nav>
+            <!-- #site-navigation -->
+
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+				<span class="location">位置</span>
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../"><img class="index-icon" src="../../src/icon/index-icon.png" /></a> &gt; 科普之窗 &gt; <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="">PHP</a>
+                <div class="login">
+                    <div class="online">
+                        <h5 class="greeting">你好，<span class="online-user"></span></h5>
+                        <img class="userPic" src="../../src/user.png" width="40px" />
+                        <div class="user-info">
+                            <img class="userPic" src="../../src/user.png" width="50px" />
+                            <h4 class="online-user"></h4>
+                            <h5><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../user/">查看个人信息</a></h5>
+                            <h5 class="logout">退出登录</h5>
+                        </div>
+                    </div>
+                    <div class="offline">
+                        <h5 class="greeting"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../login/">登录</a></h5>
+                        <img class="userPic" src="../../src/user.png" width="50px" />
+                    </div>
+                </div>
+            </div>
+            <div class="bar-box row">
+                <div class="left-bar col-lg-2 hidden-md  hidden-xs hidden-sm">
+                    <nav id="wiki-nav" class="wiki-nav col-lg-12 hidden-md  hidden-xs hidden-sm">
+                        <div class="title"></div>
+                        <ul>
+                            <li><a href="../C语言/">C语言</a></li>
+                            <li><a href="../C++/">C++</a></li>
+                            <li><a href="../算法/">算法</a></li>
+                            <li><a href="../Web前端/">Web前端</a></li>
+                            <li><a href="../Python/">Python</a></li>
+                            <li><a href="../PHP/">PHP</a></li>
+                            <li><a href="../Linux/">Linux</a></li>
+                            <li><a href="../Java/">Java</a></li>
+                        </ul>
+                    </nav>
+                    <script type="text/javascript">
+                        window.onload =
+                            function() {
+                                var oDiv = document.getElementById("wiki-nav"),
+                                    H = 0,
+                                    Y = oDiv
+                                while (Y) {
+                                    H += Y.offsetTop;
+                                    Y = Y.offsetParent
+                                }
+                                window.onscroll = function() {
+                                    var s = document.body.scrollTop || document.documentElement.scrollTop
+                                    if (s > H) {
+                                        oDiv.style = "position:fixed;top:0;"
+                                        $("#wiki-nav").removeClass("col-lg-12");
+                                        $("#wiki-nav").addClass("col-lg-2");
+                                    } else {
+                                        oDiv.style = "position:static;"
+                                        $("#wiki-nav").removeClass("col-lg-2");
+                                        $("#wiki-nav").addClass("col-lg-12");
+                                    }
+                                }
+                            }
+                    </script>
+                </div>
+                <div class="left-wrap hidden-xs">
+                </div>
+                <div class="main-bar col-lg-8 col-md-9 col-sm-9 col-xs-12">
+                    <div class="main-text">
+                        <dl class="lemmaWgt-lemmaTitle lemmaWgt-lemmaTitle-">
+                            <dd class="lemmaWgt-lemmaTitle-title">
+                                <h1>PHP</h1>
+                            </dd>
+                        </dl>
+                        <div class="lemma-summary" label-module="lemmaSummary">
+                            <div class="para" label-module="para">PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML（标准通用标记语言下的一个应用）文档中去执行，执行效率比完全生成HTML标记的CGI要高许多；PHP还可以执行编译后代码，编译可以达到加密和优化代码运行，使代码运行更快。</div>
+                        </div>
+                        <div class="basic-info cmn-clearfix">
+                            <dl class="basicInfo-block basicInfo-left">
+                                <dt class="basicInfo-item name">中文名</dt>
+                                <dd class="basicInfo-item value">
+                                    超文本预处理器
+                                </dd>
+                                <dt class="basicInfo-item name">外文名</dt>
+                                <dd class="basicInfo-item value">
+                                    PHP: Hypertext Preprocessor
+                                </dd>
+                                <dt class="basicInfo-item name">编程范型</dt>
+                                <dd class="basicInfo-item value">
+                                    面向对象、命令式编程
+                                </dd>
+                                <dt class="basicInfo-item name">设计者</dt>
+                                <dd class="basicInfo-item value">
+                                    Rasmus Lerdorf
+                                </dd>
+                            </dl>
+                            <dl class="basicInfo-block basicInfo-right">
+                                <dt class="basicInfo-item name">维&nbsp;&nbsp;&nbsp;&nbsp;护</dt>
+                                <dd class="basicInfo-item value">
+                                    The PHP Group
+                                </dd>
+                                <dt class="basicInfo-item name">操作系统</dt>
+                                <dd class="basicInfo-item value">
+                                    windows/linux/Mac跨平台
+                                </dd>
+                                <dt class="basicInfo-item name">外语缩写</dt>
+                                <dd class="basicInfo-item value">
+                                    PHP
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="lemmaWgt-lemmaCatalog">
+                            <div class="lemma-catalog">
+                                <h2 class="block-title">目录</h2>
+                                <div class="catalog-list column-3">
+                                    <ol>
+                                        <li class="level1">
+                                            <span class="index">1</span>
+                                            <span class="text"><a href="#1">发展</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">2</span>
+                                            <span class="text"><a href="#2">开发工具</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">3</span>
+                                            <span class="text"><a href="#3">特性</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">4</span>
+                                            <span class="text"><a href="#4">优势</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#4_1">开放源代码</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#4_2">免费性</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#4_3">快捷性</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#4_4">跨平台性强</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#4_5">效率高</a></span>
+                                        </li>
+                                    </ol>
+                                    <ol>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#4_6">图像处理</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#4_7">面向对象</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#4_8">专业专注</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">5</span>
+                                            <span class="text"><a href="#5">技术应用</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">6</span>
+                                            <span class="text"><a href="#6">参考手册</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">7</span>
+                                            <span class="text"><a href="#7">版本区别</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#7_1">选择版本</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#7_2">VC6与VC9</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#7_3">TS和NTS</a></span>
+                                        </li>
+                                    </ol>
+                                    <ol>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#7_4">查看版本</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#9_1">简介</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#9_2">优越性</a></span>
+                                        </li>
+
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#10_1">新对象模式</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#10_2">异常处理</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#10_3">命名空间</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">8</span>
+                                            <span class="text"><a href="#12">环境配置</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#12_1">Windows下</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#12_2">安装过程</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#12_3">UNIX下</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">9</span>
+                                            <span class="text"><a href="#13">其他方面</a></span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="1" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_1" class="lemma-anchor "></a>
+                            <a name="发展" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">发展</h2>
+                        </div>
+                        <div class="para" label-module="para">PHP原始为Personal Home Page的缩写，已经正式更名为 "PHP: Hypertext Preprocessor"。注意不是“Hypertext Preprocessor”的缩写，这种将名称放到定义中的写法被称作递归缩写。PHP于1994年由Rasmus Lerdorf创建，刚刚开始是Rasmus Lerdorf为了要维护个人网页而制作的一个简单的用Perl语言编写的程序。这些工具程序用来显示 Rasmus Lerdorf 的个人履历，以及统计网页流量。后来又用C语言重新编写，包括可以访问数据库。他将这些程序和一些表单直译器整合起来，称为
+                            PHP/FI。PHP/FI 可以和数据库连接，产生简单的动态网页程序。</div>
+                        <div class="para" label-module="para">在1995年以Personal Home Page Tools (PHP Tools) 开始对外发表第一个版本，Lerdorf写了一些介绍此程序的文档。并且发布了PHP1.0！在这的版本中，提供了访客留言本、访客计数器等简单的功能。以后越来越多的网站使用了PHP，并且强烈要求增加一些特性。比如循环语句和数组变量等等；在新的成员加入开发行列之后，Rasmus Lerdorf 在1995年6月8日将 PHP/FI 公开发布，希望可以透过社群来加速程序开发与寻找错误。这个发布的版本命名为
+                            PHP 2，已经有 PHP 的一些雏型，像是类似 Perl的变量命名方式、表单处理功能、以及嵌入到 HTML 中执行的能力。程序语法上也类似 Perl，有较多的限制，不过更简单、更有弹性。PHP/FI加入了对MySQL的支持，从此建立了PHP在动态网页开发上的地位。到了1996年底，有15000个网站使用 PHP/FI。</div>
+                        <div class="para" label-module="para">在1997年，任职于 Technion IIT公司的两个以色列程序设计师：Zeev Suraski 和 Andi Gutmans，重写了 PHP 的剖析器，成为 PHP 3 的基础。而 PHP 也在这个时候改称为PHP：Hypertext Preprocessor。经过几个月测试，开发团队在1997年11月发布了 PHP/FI 2。随后就开始 PHP 3 的开放测试，最后在1998年6月正式发布 PHP 3。Zeev Suraski 和 Andi Gutmans
+                            在 PHP 3 发布后开始改写PHP 的核心，这个在1999年发布的剖析器称为 Zend Engine，他们也在以色列的 Ramat Gan 成立了 Zend Technologies 来管理 PHP 的开发。</div>
+                        <div class="para" label-module="para">在2000年5月22日，以Zend Engine 1.0为基础的PHP 4正式发布，2004年7月13日则发布了PHP 5，PHP 5则使用了第二代的Zend Engine。PHP包含了许多新特色，像是强化的面向对象功能、引入PDO（PHP Data Objects，一个存取数据库的延伸函数库）、以及许多效能上的增强。PHP 4已经不会继续更新，以鼓励用户转移到PHP 5。</div>
+                        <div class="para" label-module="para">2008年PHP 5成为了PHP唯一的有在开发的PHP版本。将来的PHP 5.3将会加入Late static binding和一些其他的功能强化。PHP 6 的开发也正在进行中，主要的改进有移除register_globals、magic quotes 和 Safe mode的功能。</div>
+                        <div class="para" label-module="para">2013年6月20日，PHP开发团队自豪地宣布推出PHP 5.5.0。此版本包含了大量的新功能和bug修复。需要开发者特别注意的一点是不再支持 Windows XP 和 2003 系统。</div>
+                        <div class="para" label-module="para">2014年10月16日，PHP开发团队宣布PHP 5.6.2可用。四安全相关的错误是固定在这个版本，包括修复cve-2014-3668，cve-2014-3669和cve-2014-3670。所有的PHP 5.6鼓励用户升级到这个版本。</div>
+                        <div class="anchor-list">
+                            <a name="2" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_2" class="lemma-anchor "></a>
+                            <a name="开发工具" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">开发工具</h2>
+                        </div>
+                        <div class="para" label-module="para">集成开发环境是一种集成了软件开发过程中所需主要工具的集成开发环境，其功能包括但不仅限于代码高亮、代码补全、调试、构建、版本控制等。一些常见的PHP IDEs如下：</div>
+                        <ul class="custom_dot para-list list-paddingleft-1">
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Zend Studio：商业版，Zend官方出品，基于eclipse</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Eclipse with PDT：免费</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Coda：商业版，针对Mac用户</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">NetBeans：免费，功能强大</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">PHP Storm：商业版</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Aptana Studio：免费</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">PhpEd：商业版</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Komodo IDE/Edit：IDE为商业版，Edit可免费使用</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Adobe Dreamweaver：商业版</div>
+                            </li>
+                        </ul>
+                        <div class="para" label-module="para">除去集成开发环境，具备代码高亮功能的常见文本编辑器因其轻巧灵活也常被选作开发工具，例如：Notepad++、Editplus、SublimeText、Everedit（国人开发）等等。</div>
+                        <div class="anchor-list">
+                            <a name="3" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_3" class="lemma-anchor "></a>
+                            <a name="特性" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">特性</h2>
+                        </div>
+                        <div class="para" label-module="para">PHP的特性包括：</div>
+                        <div class="para" label-module="para">1. PHP 独特的语法混合了 C、Java、Perl 以及 PHP 自创新的语法。</div>
+                        <div class="para" label-module="para">2. PHP可以比CGI或者Perl更快速的执行动态网页——动态页面方面，与其他的编程语言相比，</div>
+                        <div class="para" label-module="para">PHP是将程序嵌入到HTML文档中去执行，执行效率比完全生成htmL标记的CGI要高许多；</div>
+                        <div class="para" label-module="para">PHP具有非常强大的功能，所有的CGI的功能PHP都能实现。</div>
+                        <div class="para" label-module="para">3. PHP支持几乎所有流行的数据库以及操作系统。</div>
+                        <div class="para" label-module="para">4. 最重要的是PHP可以用C、C++进行程序的扩展！</div>
+                        <div class="anchor-list">
+                            <a name="4" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_4" class="lemma-anchor "></a>
+                            <a name="优势" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">优势</h2>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="4_1" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_4_1" class="lemma-anchor "></a>
+                            <a name="开放源代码" class="lemma-anchor "></a>
+                            <a name="4-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">开放源代码</h3>
+                        </div>
+                        <div class="para" label-module="para">所有的PHP源代码事实上都可以得到。</div>
+                        <div class="anchor-list">
+                            <a name="4_2" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_4_2" class="lemma-anchor "></a>
+                            <a name="免费性" class="lemma-anchor "></a>
+                            <a name="4-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">免费性</h3>
+                        </div>
+                        <div class="para" label-module="para">和其它技术相比，PHP本身免费且是开源代码。</div>
+                        <div class="anchor-list">
+                            <a name="4_3" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_4_3" class="lemma-anchor "></a>
+                            <a name="快捷性" class="lemma-anchor "></a>
+                            <a name="4-3" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">快捷性</h3>
+                        </div>
+                        <div class="para" label-module="para">程序开发快，运行快，技术本身学习快。嵌入于HTML：因为PHP可以被嵌入于HTML语言，它相对于其他语言。编辑简单，实用性强，更适合初学者。</div>
+                        <div class="anchor-list">
+                            <a name="4_4" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_4_4" class="lemma-anchor "></a>
+                            <a name="跨平台性强" class="lemma-anchor "></a>
+                            <a name="4-4" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">跨平台性强</h3>
+                        </div>
+                        <div class="para" label-module="para">由于PHP是运行在服务器端的脚本，可以运行在UNIX、LINUX、WINDOWS、Mac OS、Android等平台</div>
+                        <div class="anchor-list">
+                            <a name="4_5" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_4_5" class="lemma-anchor "></a>
+                            <a name="效率高" class="lemma-anchor "></a>
+                            <a name="4-5" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">效率高</h3>
+                        </div>
+                        <div class="para" label-module="para">PHP消耗相当少的系统资源。</div>
+                        <div class="anchor-list">
+                            <a name="4_6" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_4_6" class="lemma-anchor "></a>
+                            <a name="图像处理" class="lemma-anchor "></a>
+                            <a name="4-6" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">图像处理</h3>
+                        </div>
+                        <div class="para" label-module="para">用PHP动态创建图像,PHP图像处理默认使用GD2。且也可以配置为使用image magick进行图像处理。</div>
+                        <div class="anchor-list">
+                            <a name="4_7" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_4_7" class="lemma-anchor "></a>
+                            <a name="面向对象" class="lemma-anchor "></a>
+                            <a name="4-7" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">面向对象</h3>
+                        </div>
+                        <div class="para" label-module="para">在php4,php5 中，面向对象方面都有了很大的改进，php完全可以用来开发大型商业程序。</div>
+                        <div class="anchor-list">
+                            <a name="4_8" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_4_8" class="lemma-anchor "></a>
+                            <a name="专业专注" class="lemma-anchor "></a>
+                            <a name="4-8" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">专业专注</h3>
+                        </div>
+                        <div class="para" label-module="para">PHP支持脚本语言为主，同为类C语言。</div>
+                        <div class="anchor-list">
+                            <a name="5" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_5" class="lemma-anchor "></a>
+                            <a name="技术应用" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">技术应用</h2>
+                        </div>
+                        <ol class="custom_cn  para-list list-paddingleft-1">
+                            <li class="list-cn-1-1 list-cn-paddingleft-1">
+                                <div class="para" label-module="para">伪静态</div>
+                            </li>
+                            <li class="list-cn-1-2 list-cn-paddingleft-1">
+                                <div class="para" label-module="para">静态页面生成</div>
+                            </li>
+                            <li class="list-cn-1-3 list-cn-paddingleft-1">
+                                <div class="para" label-module="para">数据库缓存</div>
+                            </li>
+                            <li class="list-cn-1-4 list-cn-paddingleft-1">
+                                <div class="para" label-module="para">过程缓存</div>
+                            </li>
+                            <li class="list-cn-1-5 list-cn-paddingleft-1">
+                                <div class="para" label-module="para">div+css w3c标准</div>
+                            </li>
+                            <li class="list-cn-1-6 list-cn-paddingleft-1">
+                                <div class="para" label-module="para">大负荷</div>
+                            </li>
+                            <li class="list-cn-1-7 list-cn-paddingleft-1">
+                                <div class="para" label-module="para">分布式</div>
+                            </li>
+                            <li class="list-cn-1-8 list-cn-paddingleft-1">
+                                <div class="para" label-module="para">flex</div>
+                            </li>
+                            <li class="list-cn-1-9 list-cn-paddingleft-1">
+                                <div class="para" label-module="para">桌面程序应用（不擅长）</div>
+                            </li>
+                            <li class="list-cn-1-10 list-cn-paddingleft-1">
+                                <div class="para" label-module="para">支持MVC模型</div>
+                            </li>
+                            <li class="list-cn-1-11 list-cn-paddingleft-2">
+                                <div class="para" label-module="para">Smarty模版引擎</div>
+                            </li>
+                        </ol>
+                        <div class="para" label-module="para"></div>
+                        <div class="anchor-list">
+                            <a name="6" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_6" class="lemma-anchor "></a>
+                            <a name="参考手册" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">参考手册</h2>
+                        </div>
+                        <div class="para" label-module="para">函数完整参考手册：
+                        </div>
+                        <table log-set-param="table_view" class="table-view log-set-param">
+                            <tbody>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>分类</th>
+                                    <th>描述</th>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="30">1</td>
+                                    <td valign="top" align="left" width="115">Array 函数</td>
+                                    <td valign="top" align="left" width="487">　</td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="30">2</td>
+                                    <td valign="top" align="left" width="115">Calendar 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">日历扩展包含了简化不同日历格式间的转换的函数。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="30">3</td>
+                                    <td valign="top" align="left" width="115">Date/Time 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">Date/Time 函数用于从 PHP 脚本运行的服务器上获取日期和时间并进行格式化。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="30">4</td>
+                                    <td valign="top" align="left" width="115">Directory 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">Directory 函数用于获得关于目录及其内容的信息。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="30">5</td>
+                                    <td valign="top" align="left" width="115">Error/Logging 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">Error/Logging 函数用于对错误进行处理和记录。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="30">6</td>
+                                    <td valign="top" align="left" width="115">Filesystem 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">Filesystem 函数用于访问和操作文件系统。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="30">7</td>
+                                    <td valign="top" align="left" width="115">Filter 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">PHP 过滤器用于对来自非安全来源的数据（比如用户输入）进行验证和过滤。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="30">8</td>
+                                    <td valign="top" align="left" width="115">FTP 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">FTP 函数通过文件传输协议 (FTP) 提供对文件服务器的客户端访问。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="30">9</td>
+                                    <td valign="top" align="left" width="115">HTTP 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">HTTP 函数用于对由 Web 服务器发送到浏览器的信息进行操作。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left" width="30">10</td>
+                                    <td valign="top" align="left" width="115">Libxml 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">Libxml 函数和常量与 SimpleXML、XSLT 以及 DOM 函数一起使用。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td valign="top" align="left" width="115">Mail 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">mail() 函数用于从脚本中直接发送电子邮件。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td valign="top" align="left" width="115">Math 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">Math 函数能处理 integer 和 float 范围内的值。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td valign="top" align="left" width="115">杂项函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">我们把不属于其他类别的函数归纳到杂项函数类别。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td valign="top" align="left" width="115">MySQLi 函数</td>
+                                    <td valign="top" align="left" width="487">
+                                        <div class="para" label-module="para">MySQLi 函数用于访问 MySQL 数据库服务器。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td valign="top" align="left" width="115">SimpleXML 函数</td>
+                                    <td valign="top" align="left" width="487">SimpleXML 扩展提供了一种获取 XML 元素的名称和文本的简单方式。</td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td valign="top" align="left" width="115">String 函数</td>
+                                    <td valign="top" align="left" width="487">　</td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td valign="top" align="left" width="115">XML Parser 函数</td>
+                                    <td valign="top" align="left" width="487">XML Parser 函数允许您创建 XML 解析器，并为 XML 事件定义句柄。</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td valign="top" align="left" width="115">Zip File 函数</td>
+                                    <td valign="top" align="left" width="487">Zip File 函数允许您读取压缩文件。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="anchor-list">
+                            <a name="7" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_7" class="lemma-anchor "></a>
+                            <a name="版本区别" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">版本区别</h2>
+                        </div>
+                        <div class="para" label-module="para">
+                            PHP版本VC6与VC9、Thread Safe与None-Thread Safe等的区别</div>
+                        <div class="para" label-module="para">PHP的大版本主要分三支：PHP4/PHP5/PHP6</div>
+                        <div class="para" label-module="para">其中，PHP4由于太古老、对QQ支持不力已基本被淘汰，请无视PHP4。</div>
+                        <div class="para" label-module="para">PHP6由于基本没有生产线上的应用，还基本只是一款概念产品，很多功能已在PHP5.3.3上实现，所以也不详述，请无视PHP6。</div>
+                        <div class="para" label-module="para">PHP5的版本主要分四支：PHP5.2之前的版本、PHP5.2.X、PHP5.3和日前发布的PHP5.4。</div>
+                        <div class="anchor-list">
+                            <a name="7_1" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_7_1" class="lemma-anchor "></a>
+                            <a name="选择版本" class="lemma-anchor "></a>
+                            <a name="7-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">选择版本</h3>
+                        </div>
+                        <div class="para" label-module="para">PHP5.2之前的版本不值得考虑，因为某些功能缺陷或者BUG。PHP5.4还处于Beta试用的版本号，非稳定版本，请无视PHP5.4。</div>
+                        <div class="para" label-module="para">主流PHP程序对PHP5.2.X的兼容性最好，而每次版本号的升级带来的都是安全性和稳定性的改善，所以宜挑选最新的版本。目前PHP5.2系列最新的是PHP5.2.17。</div>
+                        <div class="para" label-module="para">而如果产品是自己开发自己使用，PHP5.3在某些方面更具优势，在稳定性上更胜一筹，增加了很多PHP5.2所不具有的功能，比如内置php-fpm、更完善的垃圾回收算法、命名空间的引入、sqlite3的支持等等，是部署项目值得考虑的版本，强烈推荐PHP5.3.3。</div>
+                        <div class="para" label-module="para">除了版本号的不同，同一版本号的PHP版本也有区别，并且在选择PHP扩展的时候需要注意。</div>
+                        <ul class="custom_dot para-list list-paddingleft-1">
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">install版：可执行的MSI格式安装包。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">ZIP版：解压即可用。和install版无区别。建议选择ZIP版。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">DEBUG版：最终用户无需关心。</div>
+                            </li>
+                        </ul>
+                        <div class="anchor-list">
+                            <a name="7_2" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_7_2" class="lemma-anchor "></a>
+                            <a name="VC6与VC9" class="lemma-anchor "></a>
+                            <a name="7-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">VC6与VC9</h3>
+                        </div>
+                        <div class="para" label-module="para">如果你在apache1或者apache2下使用PHP，你应该选择VC6的版本</div>
+                        <div class="para" label-module="para">如果你在IIS下使用PHP应该选择VC9的版本，VC6的版本使用visual studio6编译，VC9使用Visual Studio 2008编译，并且改进了性能和稳定性。VC9版本的PHP需要你安装Microsoft 2008 C++ Runtime。不要在apache下使用VC9的版本。</div>
+                        <div class="anchor-list">
+                            <a name="7_3" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_7_3" class="lemma-anchor "></a>
+                            <a name="TS和NTS" class="lemma-anchor "></a>
+                            <a name="7-3" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">TS和NTS</h3>
+                        </div>
+                        <div class="para" label-module="para">TS指Thread Safety，即线程安全，一般在IIS以ISAPI方式加载的时候选择这个版本。</div>
+                        <div class="para" label-module="para">NTS即None-Thread Safe，一般以fast cgi方式运行的时候选择这个版本，具有更好的性能。</div>
+                        <div class="para" label-module="para">从2000年10月20日发布的第一个Windows版的PHP3.0.17开始的都是线程安全的版本，这是由于与Linux/Unix系统是采用多进程的工作方式不同的是Windows系统是采用多线程的工作方式。如果在IIS下以CGI方式运行PHP会非常慢，这是由于CGI模式是建立在多进程的基础之上的，而非多线程。一般我们会把PHP配置成以ISAPI的方式来运行，ISAPI是多线程的方式，这样就快多了。但存在一个问题，很多常用的PHP扩展是以Linux/Unix的多进程思想来开发的，这些扩展在ISAPI的方式运行时就会出错搞垮IIS。因此在IIS下CGI模式才是
+                            PHP运行的最安全方式，但CGI模式对于每个HTTP请求都需要重新加载和卸载整个PHP环境，其消耗是巨大的。
+                        </div>
+                        <div class="para" label-module="para">为了兼顾IIS下PHP的效率和安全，微软给出了FastCGI的解决方案。FastCGI可以让PHP的进程重复利用而不是每一个新的请求就重开一个进程。同时FastCGI也可以允许几个进程同时执行。这样既解决了CGI进程模式消耗太大的问题，又利用上了CGI进程模式不存在线程安全问题的优势。</div>
+                        <div class="para" label-module="para">因此，如果是使用ISAPI的方式来运行PHP就必须用Thread Safe(线程安全)的版本；而用FastCGI模式运行PHP的话就没有必要用线程安全检查了，用None Thread Safe(NTS，非线程安全)的版本能够更好的提高效率。</div>
+                        <div class="anchor-list">
+                            <a name="7_4" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_7_4" class="lemma-anchor "></a>
+                            <a name="查看版本" class="lemma-anchor "></a>
+                            <a name="7-4" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">查看版本</h3>
+                        </div>
+                        <div class="para" label-module="para">一个很简单的办法就是phpinfo();</div>
+                        <div class="para" label-module="para">Thread Safety disabled是NTS，enabled是TS</div>
+                        <div class="para" label-module="para">Configure Command看到VC98字样的是VC6，Compiler标明 MSVC9 (Visual C++ 2008) 的是VC9</div>
+                        <div class="para" label-module="para">在WIN7下：IIS7+NTS+FastCGI+vc9 是最佳搭档或者apache+fastcgi+nts+vc6。</div>
+                        <div class="para" label-module="para">在WINXP下：Apache+TS+Apache module +vc6最合适的搭档。</div>
+                        <div class="anchor-list">
+                            <a name="12" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_12" class="lemma-anchor "></a>
+                            <a name="环境配置" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">环境配置</h2>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="12_1" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_12_1" class="lemma-anchor "></a>
+                            <a name="Windows下" class="lemma-anchor "></a>
+                            <a name="12-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">Windows下</h3>
+                        </div>
+                        <div class="para" label-module="para"><b>软件需求（最新版）</b></div>
+                        <div class="para" label-module="para">Windows Vista 或更高版本；</div>
+                        <div class="para" label-module="para">Apache 2+ 或 IIS 6+ 或 Nginx</div>
+                        <div class="anchor-list">
+                            <a name="12_2" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_12_2" class="lemma-anchor "></a>
+                            <a name="安装过程" class="lemma-anchor "></a>
+                            <a name="12-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">安装过程</h3>
+                        </div>
+                        <ol class="custom_num para-list list-paddingleft-1">
+                            <li class="list-num-1-1 list-num-paddingleft-1">
+                                <div class="para" label-module="para">将 Apache 1.3.19 安装到 C:\Web\apache\ 目录下。</div>
+                            </li>
+                            <li class="list-num-1-2 list-num-paddingleft-1">
+                                <div class="para" label-module="para">将 PHP 4.0.5 解压到 C:\Web\php\ 目录下。</div>
+                            </li>
+                            <li class="list-num-1-3 list-num-paddingleft-1">
+                                <div class="para" label-module="para">将 MySQL 3.23.38 安装到 C:\Web\mysql\ 目录下。</div>
+                            </li>
+                            <li class="list-num-1-4 list-num-paddingleft-1">
+                                <div class="para" label-module="para">将 C:\web\php\php4ts.dll 文件拷贝到 C:\WINNT\system32\ 目录下。</div>
+                            </li>
+                            <li class="list-num-1-5 list-num-paddingleft-1">
+                                <div class="para" label-module="para">将 C:\web\php\php.exel 文件拷贝到 C:\WINNT\ 目录下。</div>
+                            </li>
+                            <li class="list-num-1-6 list-num-paddingleft-1">
+                                <div class="para" label-module="para">将 C:\web\php\php.ini-dist 文件拷贝到 C:\WINNT\ 目录下，并将php.ini-dist 更名为 php.ini。</div>
+                            </li>
+                            <li class="list-num-1-7 list-num-paddingleft-1">
+                                <div class="para" label-module="para">运行 C:\Web\apache\Apache\Apache.exe-i –n</div>
+                            </li>
+                            <li class="list-num-1-8 list-num-paddingleft-1">
+                                <div class="para" label-module="para">运行 C:\Web\mysql\bin\mysqld-nt.exe--install</div>
+                            </li>
+                            <li class="list-num-1-9 list-num-paddingleft-1">
+                                <div class="para" label-module="para">编辑 C:\WINNT\php.ini</div>
+                            </li>
+                        </ol>
+                        <div class="para" label-module="para">找到 “extension_dir = ./ ” 字段，将其改为 extension_dir = "C:\myphp\php\extensions"。</div>
+                        <div class="para" label-module="para">编辑 C:\Web\apache\Apache\conf\httpd.conf</div>
+                        <div class="para" label-module="para">找到“ #BindAddress*” 字段</div>
+                        <div class="para" label-module="para">将其改为 BindAddress127.0.0.1。（如果主机有固定IP地址，此处改为主机IP地址。如 BindAddress 211.101.152.106），找到 “ServerName” 字段，将其改为 ServerName localhost。（如主机有固定主机名，此处改为主机的主机名。如ServerName bn001）。</div>
+                        <div class="para" label-module="para">找到“ ScriptAlias /cgi-bin/ "C:/Web/apache/Apache/cgi-bin/" ” 字段，在其下面加入 ScriptAlias /php/ "C:/Web/php/"。找到 “# And for PHP 4.x,use: ” 字段，在其后面加入：</div>
+                        <div>
+                            <div id="highlighter_166848" class="syntaxhighlighter  plain">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="plain plain">AddTypeapplication/x-httpd-php</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="plain plain">ActionApplication/x-httpd-php"c:/Web/php/php.exe"</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">找到“ #LoadModule usertrack_module modules/mod_usertrack so” 字段，LoadModule php4_module c:/web/php/sapi/php4apache.dll</div>
+                        <div class="anchor-list">
+                            <a name="12_3" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_12_3" class="lemma-anchor "></a>
+                            <a name="UNIX下" class="lemma-anchor "></a>
+                            <a name="12-3" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">UNIX下</h3>
+                        </div>
+                        <div class="para" label-module="para"><b>所需软件</b></div>
+                        <div class="para" label-module="para">php-3.0.14-win32.zip；php-3.0.14-win32.zip；mysql-shareware-3.22.32-win.zip</div>
+                        <div class="para" label-module="para">所有软件均安装在/export/home/guoj/下，也可在其他目录。</div>
+                        <div class="para" label-module="para">安装mysql</div>
+                        <div>
+                            <div id="highlighter_310136" class="syntaxhighlighter  plain">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                                <div class="line number7 index6 alt2">7</div>
+                                                <div class="line number8 index7 alt1">8</div>
+                                                <div class="line number9 index8 alt2">9</div>
+                                                <div class="line number10 index9 alt1">10</div>
+                                                <div class="line number11 index10 alt2">11</div>
+                                                <div class="line number12 index11 alt1">12</div>
+                                                <div class="line number13 index12 alt2">13</div>
+                                                <div class="line number14 index13 alt1">14</div>
+                                                <div class="line number15 index14 alt2">15</div>
+                                                <div class="line number16 index15 alt1">16</div>
+                                                <div class="line number17 index16 alt2">17</div>
+                                                <div class="line number18 index17 alt1">18</div>
+                                                <div class="line number19 index18 alt2">19</div>
+                                                <div class="line number20 index19 alt1">20</div>
+                                                <div class="line number21 index20 alt2">21</div>
+                                                <div class="line number22 index21 alt1">22</div>
+                                                <div class="line number23 index22 alt2">23</div>
+                                                <div class="line number24 index23 alt1">24</div>
+                                                <div class="line number25 index24 alt2">25</div>
+                                                <div class="line number26 index25 alt1">26</div>
+                                                <div class="line number27 index26 alt2">27</div>
+                                                <div class="line number28 index27 alt1">28</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="plain plain">gzip-dcmysql-3.22.30.tar.gz|tarxvf-</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="plain plain">cdmysql-3.22.30</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="plain plain">./configure-prefix=/export/home/guoj/mysql</code></div>
+                                                    <div class="line number4 index3 alt1"><code class="plain plain">make</code></div>
+                                                    <div class="line number5 index4 alt2"><code class="plain plain">makeinstall</code></div>
+                                                    <div class="line number6 index5 alt1"><code class="plain plain">scripts/mysql_install_db</code></div>
+                                                    <div class="line number7 index6 alt2"><code class="plain plain">cd../mysql/bin</code></div>
+                                                    <div class="line number8 index7 alt1"><code class="plain plain">bin/safe_mysqld&amp;安装phpapache</code></div>
+                                                    <div class="line number9 index8 alt2"><code class="plain plain">gzip-dcapache_1.3.11.tar.gz|tarxvf-</code></div>
+                                                    <div class="line number10 index9 alt1"><code class="plain plain">gzip-dcphp-3.0.11.tar.gz|tarxvf-</code></div>
+                                                    <div class="line number11 index10 alt2"><code class="plain plain">cdapache_1.3.11</code></div>
+                                                    <div class="line number12 index11 alt1"><code class="plain plain">./configure-prefix=/export/home/guoj/www</code></div>
+                                                    <div class="line number13 index12 alt2"><code class="plain plain">cd../php-3.0.11</code></div>
+                                                    <div class="line number14 index13 alt1"><code class="plain plain">./configure-with-apache=/export/home/guoj/apache_1.3.11</code></div>
+                                                    <div class="line number15 index14 alt2"><code class="plain plain">-with-mysql=/export/home/guoj/mysql-enable-track-vars</code></div>
+                                                    <div class="line number16 index15 alt1"><code class="plain plain">make</code></div>
+                                                    <div class="line number17 index16 alt2"><code class="plain plain">makeinstall</code></div>
+                                                    <div class="line number18 index17 alt1"><code class="plain plain">cd../apache_1.3.11</code></div>
+                                                    <div class="line number19 index18 alt2"><code class="plain plain">./configure--prefix=/export/home/guoj/www</code></div>
+                                                    <div class="line number20 index19 alt1"><code class="plain plain">--activate-module=src/modules/php3/libphp3.aP</code></div>
+                                                    <div class="line number21 index20 alt2"><code class="plain plain">make</code></div>
+                                                    <div class="line number22 index21 alt1"><code class="plain plain">makeinstall</code></div>
+                                                    <div class="line number23 index22 alt2"><code class="plain plain">cd../php-3.0.11</code></div>
+                                                    <div class="line number24 index23 alt1"><code class="plain plain">cd../php3.ini-distphp3.ini</code></div>
+                                                    <div class="line number25 index24 alt2"><code class="plain plain">viphp3.ini修改php3.ini</code></div>
+                                                    <div class="line number26 index25 alt1"><code class="plain plain">doc_root=/export/home/guoj/www/htdocs/</code></div>
+                                                    <div class="line number27 index26 alt2"><code class="plain plain">extension_dir=/export/home/guoj/php-3.0.11/</code></div>
+                                                    <div class="line number28 index27 alt1"><code class="plain plain">extension=php3_mysql.dllcpphp3.ini/usr/local/lib/php3.inivi../www/conf/httpd.conf</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">加上以下几句：</div>
+                        <div>
+                            <div id="highlighter_920604" class="syntaxhighlighter  plain">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="plain plain">&lt;Directory"/export/home/guoj/php-3.0.11/"&gt;</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="plain plain">OptionsFollowSymLinks</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="plain plain">AllowOverrideNone</code></div>
+                                                    <div class="line number4 index3 alt1"><code class="plain plain">&lt;/Directory&gt;../www/bin/apachectlstart</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="13" class="lemma-anchor para-title"></a>
+                            <a name="sub5828265_13" class="lemma-anchor "></a>
+                            <a name="其他方面" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">其他方面</h2>
+                        </div>
+                        <div class="para" label-module="para">PHP 在数据库方面的丰富支持，也是它迅速走红的原因之一，它支持下列的数据库或是数据文件：</div>
+                        <div class="para" label-module="para">Adabas 、D、 DBA、dBase 、dbm 、filePro 、Informix 、InterBase、mSQL 、Microsoft SQL Server、·MySQL、Solid、Sybase、 Oracle 、PostgreSQL</div>
+                        <div class="para" label-module="para">而在 Internet 上它也支持了相当多的通讯协议 (protocol），包括了与电子邮件相关的 IMAP,POP3；网管系统 SNMP；网络新闻NNTP；帐号共用 NIS；全球信息网 HTTP 及 Apache 服务器；目录协议 LDAP 以及其它网络的相关函数。</div>
+                        <div class="para" label-module="para">除此之外，用 PHP 写出来的 Web 后端 CGI 程序，可以很轻易的移植到不同的操作系统上。例如，先以 Linux 架的网站，在系统负荷过高时，可以快速地将整个系统移到 SUN 工作站上，不用重新编译 CGI 程序。面对快速发展的 Internet，这是长期规划的最好选择。</div>
+                        <div class="para" label-module="para"><b>相关语法及概念</b></div>
+                        <div class="para" label-module="para">php 支持八种原始类型。</div>
+                        <div class="para" label-module="para">四种标量类型：boolean（布尔型） integer（整型） float（浮点型，也作“double”） string（字符串）</div>
+                        <div class="para" label-module="para">两种复合类型：array（数组）object（对象）</div>
+                        <div class="para" label-module="para">最后是两种特殊类型：resource（资源）NULL</div>
+                        <div class="para" label-module="para">为了确保代码的易读性，本手册还介绍了一些伪类型：mixed、number、callback</div>
+                        <div class="para" label-module="para">语法（例子中均忽略了PHP代码边界符 &lt;?php ?&gt;）：</div>
+                        <div class="para" label-module="para">注释的<a target="_blank" href="/item/%E8%AF%AD%E6%B3%95">语法</a>有三种：</div>
+                        <div>
+                            <div id="highlighter_93015" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php comments">//comment这个是单行注释</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php comments">/*comment*/</code><code class="php plain">这个是多行注释</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="php plain">#comment这个是脚本类型注释，很少用</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">基本的结构控制语句:</div>
+                        <div>
+                            <div id="highlighter_691425" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                                <div class="line number7 index6 alt2">7</div>
+                                                <div class="line number8 index7 alt1">8</div>
+                                                <div class="line number9 index8 alt2">9</div>
+                                                <div class="line number10 index9 alt1">10</div>
+                                                <div class="line number11 index10 alt2">11</div>
+                                                <div class="line number12 index11 alt1">12</div>
+                                                <div class="line number13 index12 alt2">13</div>
+                                                <div class="line number14 index13 alt1">14</div>
+                                                <div class="line number15 index14 alt2">15</div>
+                                                <div class="line number16 index15 alt1">16</div>
+                                                <div class="line number17 index16 alt2">17</div>
+                                                <div class="line number18 index17 alt1">18</div>
+                                                <div class="line number19 index18 alt2">19</div>
+                                                <div class="line number20 index19 alt1">20</div>
+                                                <div class="line number21 index20 alt2">21</div>
+                                                <div class="line number22 index21 alt1">22</div>
+                                                <div class="line number23 index22 alt2">23</div>
+                                                <div class="line number24 index23 alt1">24</div>
+                                                <div class="line number25 index24 alt2">25</div>
+                                                <div class="line number26 index25 alt1">26</div>
+                                                <div class="line number27 index26 alt2">27</div>
+                                                <div class="line number28 index27 alt1">28</div>
+                                                <div class="line number29 index28 alt2">29</div>
+                                                <div class="line number30 index29 alt1">30</div>
+                                                <div class="line number31 index30 alt2">31</div>
+                                                <div class="line number32 index31 alt1">32</div>
+                                                <div class="line number33 index32 alt2">33</div>
+                                                <div class="line number34 index33 alt1">34</div>
+                                                <div class="line number35 index34 alt2">35</div>
+                                                <div class="line number36 index35 alt1">36</div>
+                                                <div class="line number37 index36 alt2">37</div>
+                                                <div class="line number38 index37 alt1">38</div>
+                                                <div class="line number39 index38 alt2">39</div>
+                                                <div class="line number40 index39 alt1">40</div>
+                                                <div class="line number41 index40 alt2">41</div>
+                                                <div class="line number42 index41 alt1">42</div>
+                                                <div class="line number43 index42 alt2">43</div>
+                                                <div class="line number44 index43 alt1">44</div>
+                                                <div class="line number45 index44 alt2">45</div>
+                                                <div class="line number46 index45 alt1">46</div>
+                                                <div class="line number47 index46 alt2">47</div>
+                                                <div class="line number48 index47 alt1">48</div>
+                                                <div class="line number49 index48 alt2">49</div>
+                                                <div class="line number50 index49 alt1">50</div>
+                                                <div class="line number51 index50 alt2">51</div>
+                                                <div class="line number52 index51 alt1">52</div>
+                                                <div class="line number53 index52 alt2">53</div>
+                                                <div class="line number54 index53 alt1">54</div>
+                                                <div class="line number55 index54 alt2">55</div>
+                                                <div class="line number56 index55 alt1">56</div>
+                                                <div class="line number57 index56 alt2">57</div>
+                                                <div class="line number58 index57 alt1">58</div>
+                                                <div class="line number59 index58 alt2">59</div>
+                                                <div class="line number60 index59 alt1">60</div>
+                                                <div class="line number61 index60 alt2">61</div>
+                                                <div class="line number62 index61 alt1">62</div>
+                                                <div class="line number63 index62 alt2">63</div>
+                                                <div class="line number64 index63 alt1">64</div>
+                                                <div class="line number65 index64 alt2">65</div>
+                                                <div class="line number66 index65 alt1">66</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php comments">//分支结构（选择结构）</code></div>
+                                                    <div class="line number2 index1 alt1">&nbsp;</div>
+                                                    <div class="line number3 index2 alt2"><code class="php keyword">if</code><code class="php plain">(condition){</code></div>
+                                                    <div class="line number4 index3 alt1">&nbsp;</div>
+                                                    <div class="line number5 index4 alt2"><code class="php comments">//Statement</code></div>
+                                                    <div class="line number6 index5 alt1">&nbsp;</div>
+                                                    <div class="line number7 index6 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number8 index7 alt1">&nbsp;</div>
+                                                    <div class="line number9 index8 alt2"><code class="php keyword">if</code><code class="php plain">(condition){</code></div>
+                                                    <div class="line number10 index9 alt1">&nbsp;</div>
+                                                    <div class="line number11 index10 alt2"><code class="php comments">//Statement</code></div>
+                                                    <div class="line number12 index11 alt1">&nbsp;</div>
+                                                    <div class="line number13 index12 alt2"><code class="php plain">}</code><code class="php keyword">else</code><code class="php plain">{</code></div>
+                                                    <div class="line number14 index13 alt1">&nbsp;</div>
+                                                    <div class="line number15 index14 alt2"><code class="php comments">//Statement</code></div>
+                                                    <div class="line number16 index15 alt1">&nbsp;</div>
+                                                    <div class="line number17 index16 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number18 index17 alt1">&nbsp;</div>
+                                                    <div class="line number19 index18 alt2"><code class="php keyword">if</code><code class="php plain">(condition){</code></div>
+                                                    <div class="line number20 index19 alt1">&nbsp;</div>
+                                                    <div class="line number21 index20 alt2"><code class="php comments">//Statement</code></div>
+                                                    <div class="line number22 index21 alt1">&nbsp;</div>
+                                                    <div class="line number23 index22 alt2"><code class="php plain">}</code><code class="php keyword">elseif</code><code class="php plain">(condition){</code></div>
+                                                    <div class="line number24 index23 alt1">&nbsp;</div>
+                                                    <div class="line number25 index24 alt2"><code class="php comments">//Statement</code></div>
+                                                    <div class="line number26 index25 alt1">&nbsp;</div>
+                                                    <div class="line number27 index26 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number28 index27 alt1"><code class="php comments">//多分支结构</code></div>
+                                                    <div class="line number29 index28 alt2"><code class="php keyword">switch</code><code class="php plain">($变量){</code></div>
+                                                    <div class="line number30 index29 alt1"><code class="php keyword">case</code><code class="php string">'值'</code><code class="php plain">:</code></div>
+                                                    <div class="line number31 index30 alt2"><code class="php comments">//Statement</code></div>
+                                                    <div class="line number32 index31 alt1"><code class="php keyword">break</code><code class="php plain">;</code></div>
+                                                    <div class="line number33 index32 alt2"><code class="php keyword">case</code><code class="php string">'值2'</code><code class="php plain">:</code></div>
+                                                    <div class="line number34 index33 alt1"><code class="php comments">//Statement</code></div>
+                                                    <div class="line number35 index34 alt2"><code class="php keyword">break</code><code class="php plain">;</code></div>
+                                                    <div class="line number36 index35 alt1"><code class="php keyword">default</code><code class="php plain">:</code></div>
+                                                    <div class="line number37 index36 alt2"><code class="php comments">//Statement</code></div>
+                                                    <div class="line number38 index37 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number39 index38 alt2">&nbsp;</div>
+                                                    <div class="line number40 index39 alt1"><code class="php comments">//循环结构</code></div>
+                                                    <div class="line number41 index40 alt2">&nbsp;</div>
+                                                    <div class="line number42 index41 alt1"><code class="php keyword">while</code><code class="php plain">(condition){</code></div>
+                                                    <div class="line number43 index42 alt2"><code class="php comments">//Statement</code></div>
+                                                    <div class="line number44 index43 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number45 index44 alt2">&nbsp;</div>
+                                                    <div class="line number46 index45 alt1">&nbsp;</div>
+                                                    <div class="line number47 index46 alt2"><code class="php keyword">do</code><code class="php plain">{</code></div>
+                                                    <div class="line number48 index47 alt1"><code class="php comments">//Statement</code></div>
+                                                    <div class="line number49 index48 alt2"><code class="php plain">}</code><code class="php keyword">while</code><code class="php plain">(condition);</code></div>
+                                                    <div class="line number50 index49 alt1">&nbsp;</div>
+                                                    <div class="line number51 index50 alt2">&nbsp;</div>
+                                                    <div class="line number52 index51 alt1"><code class="php keyword">for</code><code class="php plain">(初始化;判断;变化){</code></div>
+                                                    <div class="line number53 index52 alt2"><code class="php comments">//Statement</code></div>
+                                                    <div class="line number54 index53 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number55 index54 alt2">&nbsp;</div>
+                                                    <div class="line number56 index55 alt1">&nbsp;</div>
+                                                    <div class="line number57 index56 alt2"><code class="php comments">//数组遍历专用循环语句</code></div>
+                                                    <div class="line number58 index57 alt1">&nbsp;</div>
+                                                    <div class="line number59 index58 alt2"><code class="php keyword">foreach</code><code class="php plain">(</code><code class="php variable">$Arrayas</code><code class="php variable">$value</code><code class="php plain">){</code></div>
+                                                    <div class="line number60 index59 alt1"><code class="php functions">echo</code><code class="php variable">$value</code><code class="php plain">;</code></div>
+                                                    <div class="line number61 index60 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number62 index61 alt1">&nbsp;</div>
+                                                    <div class="line number63 index62 alt2"><code class="php keyword">foreach</code><code class="php plain">(</code><code class="php variable">$Arrayas</code><code class="php variable">$key</code><code class="php plain">=&gt;</code><code class="php variable">$value</code><code class="php plain">){</code></div>
+                                                    <div class="line number64 index63 alt1"><code class="php functions">echo</code><code class="php variable">$key</code><code class="php plain">;</code></div>
+                                                    <div class="line number65 index64 alt2"><code class="php functions">echo</code><code class="php variable">$value</code><code class="php plain">;</code></div>
+                                                    <div class="line number66 index65 alt1"><code class="php plain">}</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">一个PHP实例：</div>
+                        <div>
+                            <div id="highlighter_869215" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                                <div class="line number7 index6 alt2">7</div>
+                                                <div class="line number8 index7 alt1">8</div>
+                                                <div class="line number9 index8 alt2">9</div>
+                                                <div class="line number10 index9 alt1">10</div>
+                                                <div class="line number11 index10 alt2">11</div>
+                                                <div class="line number12 index11 alt1">12</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php plain">&lt;html&gt;</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php plain">&lt;head&gt;</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="php plain">&lt;title&gt;Firstprogram&lt;/title&gt;</code></div>
+                                                    <div class="line number4 index3 alt1"><code class="php plain">&lt;/head&gt;</code></div>
+                                                    <div class="line number5 index4 alt2"><code class="php plain">&lt;body&gt;</code></div>
+                                                    <div class="line number6 index5 alt1"><code class="php comments">//php中string类型的拼接符和其它大多数采用"+"号运算符不一样，而是采用"."号运算</code></div>
+                                                    <div class="line number7 index6 alt2"><code class="php comments">//在一般语言中用于对象属性和方法调用的"."运算符，则和C语言的结构体一样用"=&gt;"</code></div>
+                                                    <div class="line number8 index7 alt1"><code class="php plain">&lt;?php</code></div>
+                                                    <div class="line number9 index8 alt2"><code class="php functions">echo</code><code class="php string">"helloworld"</code><code class="php plain">.</code><code class="php string">"!"</code><code class="php plain">;</code></div>
+                                                    <div class="line number10 index9 alt1"><code class="php plain">?&gt;</code></div>
+                                                    <div class="line number11 index10 alt2"><code class="php plain">&lt;/body&gt;</code></div>
+                                                    <div class="line number12 index11 alt1"><code class="php plain">&lt;/html&gt;</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">PHP对面向对象的支持</div>
+                        <div class="para" label-module="para">面向对象编程的概念：</div>
+                        <div class="para" label-module="para">不同的作者之间说法可能不一样，但是一个OOP语言必须有以下几方面：</div>
+                        <div class="para" label-module="para">1.抽象数据类型和信息封装</div>
+                        <div class="para" label-module="para">2.继承</div>
+                        <div class="para" label-module="para">3.多态</div>
+                        <div class="para" label-module="para">在PHP中是通过类来完成封装的：</div>
+                        <div>
+                            <div id="highlighter_437890" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                                <div class="line number7 index6 alt2">7</div>
+                                                <div class="line number8 index7 alt1">8</div>
+                                                <div class="line number9 index8 alt2">9</div>
+                                                <div class="line number10 index9 alt1">10</div>
+                                                <div class="line number11 index10 alt2">11</div>
+                                                <div class="line number12 index11 alt1">12</div>
+                                                <div class="line number13 index12 alt2">13</div>
+                                                <div class="line number14 index13 alt1">14</div>
+                                                <div class="line number15 index14 alt2">15</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php comments">//在OOP类中，通常采用大双驼峰命名法，每个单词的首字母都大写</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php plain">classSomething{</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="php comments">//作用域修饰符：public公共的；private私有的；protected受保护的；</code></div>
+                                                    <div class="line number4 index3 alt1"><code class="php comments">//属性的名称一般用全小写</code></div>
+                                                    <div class="line number5 index4 alt2"><code class="php keyword">private</code><code class="php variable">$x</code><code class="php plain">=null;</code><code class="php comments">//在编程建议中，内部使用的属性应该给私有修饰符，然后通过方法取值赋值</code></div>
+                                                    <div class="line number6 index5 alt1">&nbsp;</div>
+                                                    <div class="line number7 index6 alt2"><code class="php comments">//方法的名称一般用小驼峰命名法，第一个单词全小写，剩下的单词首字母大写</code></div>
+                                                    <div class="line number8 index7 alt1"><code class="php comments">//因为PHP不会自动为变量使用$this所以必须主动加上$this伪变量来指向操作的对象</code></div>
+                                                    <div class="line number9 index8 alt2"><code class="php plain">publicfunctionsetX(</code><code class="php variable">$v</code><code class="php plain">){</code></div>
+                                                    <div class="line number10 index9 alt1"><code class="php variable">$this</code><code class="php plain">-&gt;x=</code><code class="php variable">$v</code><code class="php plain">;</code></div>
+                                                    <div class="line number11 index10 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number12 index11 alt1"><code class="php plain">publicfunctiongetX(){</code></div>
+                                                    <div class="line number13 index12 alt2"><code class="php keyword">return</code><code class="php variable">$this</code><code class="php plain">-&gt;x;</code></div>
+                                                    <div class="line number14 index13 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number15 index14 alt2"><code class="php plain">}</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">当然你可以按自己的喜好进行定义，但最好保持一种标准，这样会更有效。数据成员在类中使用"var"声明来定义，在给数据成员赋值之前，它们是没有类型的。一个数据成员可以是一个整数，一个数组，一个相关数组（associative array）或者是一个对象。方法在类中被定义成函数形式，在方法中访问类成员变量时，你应该使用$this-&gt;name，否则对一个方法来说，它只能是局部变量。</div>
+                        <div class="para" label-module="para">使用new操作符来创建一个对象：</div>
+                        <div>
+                            <div id="highlighter_103524" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php variable">$obj</code><code class="php plain">=newSomething;</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">然后你可以使用成员函数通过：</div>
+                        <div>
+                            <div id="highlighter_442438" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php variable">$obj</code><code class="php plain">-&gt;setX(5)；</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php variable">$see</code><code class="php plain">=</code><code class="php variable">$obj</code><code class="php plain">-&gt;getX();</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="php functions">echo</code><code class="php variable">$see</code><code class="php plain">;</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">在这个例子中，setX成员函数将5赋值给对象的成员变量x（不是类的），然后getX返回它的值5。可以象：$obj-&gt;x=6那样通过类引用方式来存取数据成员，这不是一个很好的OOP习惯。我强烈建议通过方法来存取成员变量。如果你把成员变量看成是不可处理的，并且只通过对象句柄来使用方法，你将是一个好的OOP程序员。不幸的是，PHP不支持声明私有成员变量，所以不良代码在PHP中也是允许的。继承在PHP中很容易实现，只要使用extends关键字。</div>
+                        <div>
+                            <div id="highlighter_80380" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                                <div class="line number7 index6 alt2">7</div>
+                                                <div class="line number8 index7 alt1">8</div>
+                                                <div class="line number9 index8 alt2">9</div>
+                                                <div class="line number10 index9 alt1">10</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php plain">classAnotherextendsSomething{</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php keyword">private</code><code class="php variable">$y</code><code class="php plain">;</code></div>
+                                                    <div class="line number3 index2 alt2">&nbsp;</div>
+                                                    <div class="line number4 index3 alt1"><code class="php plain">publicfunctionsetY(</code><code class="php variable">$v</code><code class="php plain">){</code></div>
+                                                    <div class="line number5 index4 alt2"><code class="php variable">$this</code><code class="php plain">-&gt;y=</code><code class="php variable">$v</code><code class="php plain">;</code></div>
+                                                    <div class="line number6 index5 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number7 index6 alt2"><code class="php plain">functiongetY(){</code></div>
+                                                    <div class="line number8 index7 alt1"><code class="php keyword">return</code><code class="php variable">$this</code><code class="php plain">-&gt;y;</code></div>
+                                                    <div class="line number9 index8 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number10 index9 alt1"><code class="php plain">}</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">"Another"类的对象拥有了父类（Something）的全部的数据成员及方法，而且还加上了自己的数据成员和方法。</div>
+                        <div class="para" label-module="para">你可以使用</div>
+                        <div>
+                            <div id="highlighter_181480" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php variable">$obj2</code><code class="php plain">=newAnother;</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php variable">$obj2</code><code class="php plain">-&gt;setY(5);</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="php functions">echo</code><code class="php variable">$obj2</code><code class="php plain">-&gt;getY();</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">PHP只支持单继承，所以你不能从两个或两个以上类派生出新的类来。你可以在派生类中重定义一个方法，如果我们在"Another"类中重定义了getX方法（方法重写），我们就不能使 用"Something"中的getX方法了。如果你在派生类中声明了一个与基派同名的数据成员，那么当你处理它时， 它将“隐藏”基类的数据成员。</div>
+                        <div class="para" label-module="para">你可以在你的类中定义构造函数。构造函数是一个与类名同名的方法，当你创建一个类的对象时会被调用，例如：</div>
+                        <div>
+                            <div id="highlighter_726613" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                                <div class="line number7 index6 alt2">7</div>
+                                                <div class="line number8 index7 alt1">8</div>
+                                                <div class="line number9 index8 alt2">9</div>
+                                                <div class="line number10 index9 alt1">10</div>
+                                                <div class="line number11 index10 alt2">11</div>
+                                                <div class="line number12 index11 alt1">12</div>
+                                                <div class="line number13 index12 alt2">13</div>
+                                                <div class="line number14 index13 alt1">14</div>
+                                                <div class="line number15 index14 alt2">15</div>
+                                                <div class="line number16 index15 alt1">16</div>
+                                                <div class="line number17 index16 alt2">17</div>
+                                                <div class="line number18 index17 alt1">18</div>
+                                                <div class="line number19 index18 alt2">19</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php plain">classSomething{</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php keyword">private</code><code class="php variable">$x</code><code class="php plain">=null;</code></div>
+                                                    <div class="line number3 index2 alt2">&nbsp;</div>
+                                                    <div class="line number4 index3 alt1"><code class="php comments">//新版本的构造函数放弃使用类名，而统一使用__construct()</code></div>
+                                                    <div class="line number5 index4 alt2"><code class="php plain">publicfunction__construct(</code><code class="php variable">$x</code><code class="php plain">){</code></div>
+                                                    <div class="line number6 index5 alt1"><code class="php variable">$this</code><code class="php plain">-&gt;x=</code><code class="php variable">$x</code><code class="php plain">;</code></div>
+                                                    <div class="line number7 index6 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number8 index7 alt1"><code class="php plain">publicfunctionsetX(</code><code class="php variable">$v</code><code class="php plain">){</code></div>
+                                                    <div class="line number9 index8 alt2"><code class="php variable">$this</code><code class="php plain">-&gt;x=</code><code class="php variable">$v</code><code class="php plain">;</code></div>
+                                                    <div class="line number10 index9 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number11 index10 alt2"><code class="php plain">publicfunctiongetX(){</code></div>
+                                                    <div class="line number12 index11 alt1"><code class="php keyword">return</code><code class="php variable">$this</code><code class="php plain">-&gt;x;</code></div>
+                                                    <div class="line number13 index12 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number14 index13 alt1">&nbsp;</div>
+                                                    <div class="line number15 index14 alt2"><code class="php comments">//析构函数</code></div>
+                                                    <div class="line number16 index15 alt1"><code class="php plain">publicfunction__destruct(){</code></div>
+                                                    <div class="line number17 index16 alt2">&nbsp;</div>
+                                                    <div class="line number18 index17 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number19 index18 alt2"><code class="php plain">}</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">所以你可以创建一个对象，通过：</div>
+                        <div>
+                            <div id="highlighter_709974" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php variable">$obj</code><code class="php plain">=newSomething(6)；</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">构造函数会自动地把6赋值给数据变量x。构造函数和方法都是普通的PHP函数(”__“两个下划线，魔术方法)，所以你可以使用缺省参数。</div>
+                        <div>
+                            <div id="highlighter_311057" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php plain">publicfunction__construct(</code><code class="php variable">$x</code><code class="php plain">=</code><code class="php string">"3"</code><code class="php plain">,</code><code class="php variable">$y</code><code class="php plain">=</code><code class="php string">"5"</code><code class="php plain">){</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php plain">}</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">接着：</div>
+                        <div>
+                            <div id="highlighter_210224" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php variable">$obj</code><code class="php plain">=newSomething();</code><code class="php comments">//x=3andy=5</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php variable">$obj</code><code class="php plain">=newSomething(8);</code><code class="php comments">//x=8andy=5</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="php variable">$obj</code><code class="php plain">=newSomething(8,9);</code><code class="php comments">//x=8andy=9</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">缺省参数使用C++的方式，所以你不能忽略Y的值，而给X一个缺省参数，参数是从左到右赋值的，如果传入的参数少于要求的参数时，其作的将使用缺省参数。</div>
+                        <div class="para" label-module="para">当一个派生类的对象被创建时，只有它的构造函数被调用，父类的构造函数没被调用，如果你想调用基类的构造函数，你必须要在派生类的构造函数中用parent::__construct()调用。可以这样做是在派生类中所有父类的方法都是可用的。</div>
+                        <div>
+                            <div id="highlighter_661486" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php plain">classAnotherextendsSomething{</code></div>
+                                                    <div class="line number2 index1 alt1">&nbsp;</div>
+                                                    <div class="line number3 index2 alt2"><code class="php plain">publicfunction__construct(){</code></div>
+                                                    <div class="line number4 index3 alt1"><code class="php plain">parent::__construct(5,6);</code><code class="php comments">//显示调用基类构造函数</code></div>
+                                                    <div class="line number5 index4 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number6 index5 alt1"><code class="php plain">}</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">OOP的一个很好的机制是使用抽象类。抽象类是不能实例化，只能提供给派生类一个接口。设计者通常使用抽象类来强迫程序员从基类派生，这样可以确保新的类包含一些期待的功能。在PHP中没有标准的方法，但是：如果你需要这个特性，可以通过定义基类，并在它的构造函数后加上"die" 的调用，这样就可以保证基类是不可实例化的，在每一个方法（接口）后面加上"die" 语句，所以，如果一个程序员在派生类中没有覆盖方法，将引发一个错误。而且因为PHP 是无类型的，你可能需要确认一个对象是来自于你的基类的派生类，那么在基类中增加一个方法来实义类的身份（返回某种标识id），并且在你接收到一个对象参数时校验这个值。当然，如果一个不好的邪恶程序员在派生类中覆盖了这个方法，这种方法就不起作用了，不过一般问题多在懒惰的程序员身上，而不是邪恶的程序员。</div>
+                        <div class="para" label-module="para">当然，能够让基类对程序员无法看到是很好的，只要将接口打印出来做他们的工作就可以了。PHP 5 引入了析构函数的概念，这类似于其它面向对象的语言，如 C++。析构函数会在到某个对象的所有引用都被删除或者当对象被显式销毁时执行。
+                        </div>
+                        <div class="para" label-module="para">重载（与覆盖不同）在PHP中<b>不支持，因为PHP是弱类型语言</b>。在OOP中，你可以重载一个方法来实现两个或重多的方法具有相同的名字，但是有不同数量或类型的参数（这要看语言）。PHP 是一种松散类型的语言，所以通过类型重载不起作用，然而通过参数的个数不同来重载也不起作用。</div>
+                        <div class="para" label-module="para">有时在OOP中重载构造函数非常好，这样你可以通过不同的方法创建对象（变量函数）。在PHP中实现它的技巧是：</div>
+                        <div>
+                            <div id="highlighter_835642" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                                <div class="line number7 index6 alt2">7</div>
+                                                <div class="line number8 index7 alt1">8</div>
+                                                <div class="line number9 index8 alt2">9</div>
+                                                <div class="line number10 index9 alt1">10</div>
+                                                <div class="line number11 index10 alt2">11</div>
+                                                <div class="line number12 index11 alt1">12</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php plain">classMyclass{</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php plain">publicfunctionMyclass(){</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="php variable">$name</code><code class="php plain">=</code><code class="php string">"Myclass"</code><code class="php plain">.func_num_args();</code><code class="php comments">//这个函数返回的是传过来参数的个数</code></div>
+                                                    <div class="line number4 index3 alt1"><code class="php variable">$this</code><code class="php plain">-&gt;</code><code class="php variable">$name</code><code class="php plain">();</code><code class="php comments">//这里使用的是一个变量函数，以这个变量的值作为函数的名称调用</code></div>
+                                                    <div class="line number5 index4 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number6 index5 alt1"><code class="php plain">publicfunctionMyclass1(</code><code class="php variable">$x</code><code class="php plain">){</code></div>
+                                                    <div class="line number7 index6 alt2"><code class="php comments">//code</code></div>
+                                                    <div class="line number8 index7 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number9 index8 alt2"><code class="php plain">publicfunctionMyclass2(</code><code class="php variable">$x</code><code class="php plain">,</code><code class="php variable">$y</code><code class="php plain">){</code></div>
+                                                    <div class="line number10 index9 alt1"><code class="php comments">//code</code></div>
+                                                    <div class="line number11 index10 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number12 index11 alt1"><code class="php plain">}</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">通过在类中的额外的处理，使用这个类对用户是透明的：</div>
+                        <div>
+                            <div id="highlighter_971318" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php variable">$obj1</code><code class="php plain">=newMyclass(</code><code class="php string">'1'</code><code class="php plain">);</code><code class="php comments">//将调用Myclass1</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php variable">$obj2</code><code class="php plain">=newMyclass(</code><code class="php string">'1'</code><code class="php plain">,</code><code class="php string">'2'</code><code class="php plain">);</code><code class="php comments">//将调用Myclass2</code>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">有时这个非常好用。</div>
+                        <div class="para" label-module="para">多态</div>
+                        <div class="para" label-module="para">多态是对象的一种能力，它可以在运行时刻根据传递的对象参数，决定调用哪一个对象的方法。例如，如果你有一个figure的类，它定义了一个draw的方法。并且派生了circle和rectangle 类，在派生类中你覆盖了draw方法，你可能还有一个函数，它希望使用一个参数x，并且可以调用$x-&gt;draw（）。如果你有多态性，调用哪个draw方法就依赖于你传递给这个函数的对象类型。</div>
+                        <div class="para" label-module="para">多态性在象PHP这样的解释语言（想象一下一个C++编译器生成这样的代码，你应该调用哪一个方法？你也不知道你拥有的对象是什么类型的，好，这不是重点）是非常容易和自然的。所以PHP当然支持多态性。</div>
+                        <div>
+                            <div id="highlighter_596291" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                                <div class="line number7 index6 alt2">7</div>
+                                                <div class="line number8 index7 alt1">8</div>
+                                                <div class="line number9 index8 alt2">9</div>
+                                                <div class="line number10 index9 alt1">10</div>
+                                                <div class="line number11 index10 alt2">11</div>
+                                                <div class="line number12 index11 alt1">12</div>
+                                                <div class="line number13 index12 alt2">13</div>
+                                                <div class="line number14 index13 alt1">14</div>
+                                                <div class="line number15 index14 alt2">15</div>
+                                                <div class="line number16 index15 alt1">16</div>
+                                                <div class="line number17 index16 alt2">17</div>
+                                                <div class="line number18 index17 alt1">18</div>
+                                                <div class="line number19 index18 alt2">19</div>
+                                                <div class="line number20 index19 alt1">20</div>
+                                                <div class="line number21 index20 alt2">21</div>
+                                                <div class="line number22 index21 alt1">22</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php plain">classCalc{</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php plain">functionniceDrawing(</code><code class="php variable">$x</code><code class="php plain">){</code><code class="php comments">//假设这是Board类的一个方法</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="php variable">$x</code><code class="php plain">-&gt;draw();</code></div>
+                                                    <div class="line number4 index3 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number5 index4 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number6 index5 alt1">&nbsp;</div>
+                                                    <div class="line number7 index6 alt2"><code class="php plain">classCircle{</code></div>
+                                                    <div class="line number8 index7 alt1"><code class="php plain">publicfunctiondraw(){</code></div>
+                                                    <div class="line number9 index8 alt2"><code class="php functions">echo</code><code class="php string">"画了一个圆"</code><code class="php plain">;</code></div>
+                                                    <div class="line number10 index9 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number11 index10 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number12 index11 alt1">&nbsp;</div>
+                                                    <div class="line number13 index12 alt2"><code class="php plain">classRectangle{</code></div>
+                                                    <div class="line number14 index13 alt1"><code class="php plain">publicfunctiondraw(){</code></div>
+                                                    <div class="line number15 index14 alt2"><code class="php functions">echo</code><code class="php string">"画了一个矩形"</code><code class="php plain">;</code></div>
+                                                    <div class="line number16 index15 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number17 index16 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number18 index17 alt1"><code class="php variable">$board</code><code class="php plain">=newCalc;</code></div>
+                                                    <div class="line number19 index18 alt2"><code class="php variable">$obj</code><code class="php plain">=newCircle(3,187);</code></div>
+                                                    <div class="line number20 index19 alt1"><code class="php variable">$obj2</code><code class="php plain">=newRectangle(4,5);</code></div>
+                                                    <div class="line number21 index20 alt2"><code class="php variable">$board</code><code class="php plain">-&gt;niceDrawing(</code><code class="php variable">$obj</code><code class="php plain">);</code><code class="php comments">//将调用Circle的draw方法</code></div>
+                                                    <div class="line number22 index21 alt1"><code class="php variable">$board</code><code class="php plain">-&gt;niceDrawing(</code><code class="php variable">$obj2</code><code class="php plain">);</code><code class="php comments">//将调用Rectangle的draw方法</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">用PHP进行面向对象编程</div>
+                        <div class="para" label-module="para">一些"纯化论者（purists)"可能会说PHP不是一个真正的面向对象的语言，这是事实。PHP 是一个混合型语言，你可以使用OOP，也可以使用传统的过程化编程。然而，对于大型项目，你可能想/需要在PHP 中使用纯的OOP去声明类，而且在你的项目只用对象和类。</div>
+                        <div class="para" label-module="para">随着项目越来越大，使用OOP可能会有帮助，OOP代码很容易维护，容易理解和重用。这些就是软件工程的基础。在基于web的项目中应用这些概念就成为将来网站成功的关键。</div>
+                        <div class="para" label-module="para">高级OOP技术</div>
+                        <div class="para" label-module="para">在看过基本的OOP概念后，我就可以向你展示更高级的技术：</div>
+                        <div class="para" label-module="para">序列化（Serializing)</div>
+                        <div class="para" label-module="para">PHP不支持永久对象，在OOP中永久对象是可以在多个应用的引用中保持状态和功能的对象，这意味着拥有将对象保存到一个文件或数据库中的能力，而且可以在以后装入对象。这就是所谓的序列化机制。PHP 拥有序列化方法，它可以通过对象进行调用，序列化方法可以返回对象的字符串表示。然而，序列化只保存了对象的成员数据而不包括方法。</div>
+                        <div class="para" label-module="para">在PHP4中，如果你将对象序列化到字符串$s中，然后释放对象，接着反序列化对象到$obj，你可以继续使用对象的方法！我不建议这样去做，因为（a）文档中没有保证这种行为在以后的版本中仍然可以使用。（b) 这个可能导致一种误解，在你把一个序列化后的版本保存到磁盘并退出脚本时。当以后运行这个脚本时，你不能期待着在反序列化一个对象时，对象的方法也会在那里，因为字符串表示根本就不包括方法。</div>
+                        <div class="para" label-module="para">总而言之，PHP 进行序列化对于保存对象的成员变量非常有用。（你也可以将相关数组和数组序列化到一个文件中）。</div>
+                        <div class="para" label-module="para">例子 :</div>
+                        <div>
+                            <div id="highlighter_506472" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php variable">$obj</code><code class="php plain">=newClassfoo();</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php variable">$str</code><code class="php plain">=serialize(</code><code class="php variable">$obj</code><code class="php plain">);</code><code class="php comments">//保存$str到磁盘上</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="php variable">$obj2</code><code class="php plain">=unserialize(</code><code class="php variable">$str</code><code class="php plain">);</code><code class="php comments">//几个月以后//从磁盘中装入str</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">你恢复了成员数据，但是不包括方法（根据文档所说）。这导致了只能通过类似于使用$obj2-&gt;x来存取成员变量（你没有别的方法！）的唯一办法，所以不要在家里试它。</div>
+                        <div class="para" label-module="para">有一些办法可以解决这个问题，我把它留着，因为对这篇简洁的文章来说，他们太不好。我会很高兴地欢迎在PHP的后续版本中有全序列化的特性。</div>
+                        <div class="para" label-module="para">使用类进行数据存储PHP和OOP一件非常好的事情就是，你可以很容易地定义一个类来操作某件事情，并且无论何时你想用的时候都可以调用相应的类。假设你有一个HTML表单，用户可以通过选择产品ID号来选择一个产品。在数据库中有产品的信息，你想把产品显示出来，显示它的价格等等。你拥有不同类型的产品，并且同一个动作可能对不同的产品具有不同的意思。例如，显示一个声音可能意味着播放它，但是对于其它种类的产品可能意味着显示一个存在数据库中的图片。你可以使用OOP或PHP来减少编码并提高质量：</div>
+                        <div class="para" label-module="para">定义一个产品的类，定义它应该有的方法（例如：显示），然后定义对每一种类型的产品的类，从产品类派后出来（SoundItem类，ViewableItem类，等等），覆盖在产品类中的方法，使它们按你的想法动作。</div>
+                        <div class="para" label-module="para">根据数据库中每一种产品的类型（type）字段给类命名，一个典型的产品表可能有（id,type,price,description，等等字段）...然后在处理脚本中，你可以从数据库中取出type值，然后实例化一个名为type的对象：</div>
+                        <div>
+                            <div id="highlighter_72558" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php variable">$obj</code><code class="php plain">=</code><code class="php keyword">new</code><code class="php variable">$type</code><code class="php plain">();</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php variable">$obj</code><code class="php plain">-&gt;action();</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">这是PHP的一个非常好的特性，你可以不用考虑对象的类型，调用$obj的显示方法或其它的方法。使用这个技术，你不需要修改脚本去增加一个新类型的对象，只是增加一个处理它的类。</div>
+                        <div class="para" label-module="para">这个功能很强大，只要定义方法，而不去考虑所有对象的类型，在不同的类中按不同的方法实现它们，然后在主脚本中对任意对象使用它们，没有if...else，也不需要两个程序员，只有高兴。</div>
+                        <div class="para" label-module="para">你同意编程是容易的，维护是便宜的，可重用是真的吗？</div>
+                        <div class="para" label-module="para">如果你管理一组程序员，分配工作就是很简单的了，每个人可能负责一个类型的对象和处理它的类。</div>
+                        <div class="para" label-module="para">可以通过这个技术实现国际化，根据用户所选的语言字段应用相应的类就可以了，等等。</div>
+                        <div class="para" label-module="para">拷贝和克隆</div>
+                        <div class="para" label-module="para">当你创建一个$obj的对象时，你可以通过$obj2=$obj来拷贝对象，新的对象是$obj的一个拷贝（不是一个引用），所以它具有$obj在当时的状态。有时候，你不想这样，你只是想生成一个象obj类一样的一个新的对象，可以通过使用new语句来调用类的构造函数。在PHP中也可以通过序列化，和一个基类来实现，但所有的其它类都要从基类派生出来。</div>
+                        <div class="para" label-module="para">进入危险区域</div>
+                        <div class="para" label-module="para">当你序列化一个对象，你会得到某种格式的字符串，如果你感兴趣，你可以调究它，其中，字符串中有类的名字（太好了！），你可以把它取出来，象：</div>
+                        <div>
+                            <div id="highlighter_835562" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php variable">$herring</code><code class="php plain">=serialize(</code><code class="php variable">$obj</code><code class="php plain">);</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php variable">$vec</code><code class="php plain">=</code><code class="php functions">explode</code><code class="php plain">(</code><code class="php string">':'</code><code class="php plain">,</code><code class="php variable">$herring</code><code class="php plain">);</code><code class="php comments">//以:为标识符把字符串拆分成一个数组</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="php variable">$nam</code><code class="php plain">=</code><code class="php functions">str_replace</code><code class="php plain">("\",</code><code class="php string">''</code><code class="php plain">,</code><code class="php variable">$vec</code><code class="php plain">[2]);</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">所以假设你创建了一个"Universe"的类，并且强制所有的类都必须从universe扩展，你可以在universe 中定义一个clone的方法，如下：</div>
+                        <div>
+                            <div id="highlighter_862154" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                                <div class="line number7 index6 alt2">7</div>
+                                                <div class="line number8 index7 alt1">8</div>
+                                                <div class="line number9 index8 alt2">9</div>
+                                                <div class="line number10 index9 alt1">10</div>
+                                                <div class="line number11 index10 alt2">11</div>
+                                                <div class="line number12 index11 alt1">12</div>
+                                                <div class="line number13 index12 alt2">13</div>
+                                                <div class="line number14 index13 alt1">14</div>
+                                                <div class="line number15 index14 alt2">15</div>
+                                                <div class="line number16 index15 alt1">16</div>
+                                                <div class="line number17 index16 alt2">17</div>
+                                                <div class="line number18 index17 alt1">18</div>
+                                                <div class="line number19 index18 alt2">19</div>
+                                                <div class="line number20 index19 alt1">20</div>
+                                                <div class="line number21 index20 alt2">21</div>
+                                                <div class="line number22 index21 alt1">22</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php plain">classUniverse{</code></div>
+                                                    <div class="line number2 index1 alt1">&nbsp;</div>
+                                                    <div class="line number3 index2 alt2"><code class="php comments">//在新的PHP版本中克隆（__clone()）是一个魔术方法，不要和这个方法搞混了</code></div>
+                                                    <div class="line number4 index3 alt1">&nbsp;</div>
+                                                    <div class="line number5 index4 alt2"><code class="php plain">functionclone(){</code></div>
+                                                    <div class="line number6 index5 alt1">&nbsp;</div>
+                                                    <div class="line number7 index6 alt2"><code class="php variable">$herring</code><code class="php plain">=serialize(</code><code class="php variable">$this</code><code class="php plain">);</code></div>
+                                                    <div class="line number8 index7 alt1">&nbsp;</div>
+                                                    <div class="line number9 index8 alt2"><code class="php variable">$vec</code><code class="php plain">=</code><code class="php functions">explode</code><code class="php plain">(</code><code class="php string">':'</code><code class="php plain">,</code><code class="php variable">$herring</code><code class="php plain">);</code></div>
+                                                    <div class="line number10 index9 alt1">&nbsp;</div>
+                                                    <div class="line number11 index10 alt2"><code class="php variable">$nam</code><code class="php plain">=</code><code class="php functions">str_replace</code><code class="php plain">(</code><code class="php string">"\""</code><code class="php plain">,</code><code class="php string">''</code><code class="php plain">,</code><code class="php variable">$vec</code><code class="php plain">[2]);</code></div>
+                                                    <div class="line number12 index11 alt1">&nbsp;</div>
+                                                    <div class="line number13 index12 alt2"><code class="php variable">$ret</code><code class="php plain">=</code><code class="php keyword">new</code><code class="php variable">$nam</code><code class="php plain">;</code></div>
+                                                    <div class="line number14 index13 alt1"><code class="php keyword">return</code><code class="php variable">$ret</code><code class="php plain">;</code></div>
+                                                    <div class="line number15 index14 alt2">&nbsp;</div>
+                                                    <div class="line number16 index15 alt1"><code class="php plain">}</code></div>
+                                                    <div class="line number17 index16 alt2">&nbsp;</div>
+                                                    <div class="line number18 index17 alt1"><code class="php plain">}</code><code class="php comments">//然后</code></div>
+                                                    <div class="line number19 index18 alt2">&nbsp;</div>
+                                                    <div class="line number20 index19 alt1"><code class="php variable">$obj</code><code class="php plain">=newSomething();</code><code class="php comments">//从Universe扩展</code></div>
+                                                    <div class="line number21 index20 alt2">&nbsp;</div>
+                                                    <div class="line number22 index21 alt1"><code class="php variable">$other</code><code class="php plain">=</code><code class="php variable">$obj</code><code class="php plain">-&gt;</code><code class="php keyword">clone</code><code class="php plain">();</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">你所得到的是一个新的Something类的对象，它同使用new方法，调用构造函数创建出的对象一样。我不知道这个对你是否有用，但是Universe类可以知道派生类的名字是一个好的经验。想象是唯一的限制。</div>
+                        <div class="para" label-module="para"><b>模板引擎</b></div>
+                        <ul class="custom_dot para-list list-paddingleft-1">
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Smarty：Smarty的特点是将模板编译成PHP脚本，然后执行这些脚本。很快，非常方便。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Heyes Template Class：一个非常容易使用，但功能强大并且快速的模板引擎，它帮助你把页面布局和设计从代码中分离。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">FastTemplate：一个简单的变量插值模板类，它分析你的模板，把变量的值从HTML代码中分离处理。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">ShellPage：一个简单易用的类，可以让你的整个网站布局基于模板文件，修改模板就能改变整个站点。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">STP Simple Template Parser：一个简单、轻量级并且易于使用的模板分析类。它可以从多个模板中组装一个页面，把结果页面输出到浏览器或者文件系统。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">OO Template Class：一个你可以用在自己程序中的面向对象的模板类。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">SimpleTemplate：一个可以创建和结构化网站的模板引擎。它可以解析和编译模板。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">bTemplate：短小但是快速的模板类，允许你把PHP逻辑代码从HTML修饰代码中分离。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Savant：一个强大且轻量级的PEAR兼容模板系统。它是非编译型的，使用PHP语言本身做为它的模板语言。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">ETS - easy template system：可以使用完全相同数据重组模板的模板系统。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">EasyTemplatePHP：适用于你的站点的一个简单但是强大的模板系统。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">vlibTemplate：一个快速、全能的模板系统，它包含一个缓存和调试类。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">AvanTemplate：多字节安全的模板引擎，占用很少系统资源。它支持变量替换，内容块可以设置显示或隐藏</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Grafx Software’s Fast Template：一个修改版本的Fast Template系统，它包括缓存功能，调试控制台以及沉默去除为赋值块。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">TemplatePower：一个快速、简单、功能强大的模板类。主要功能有嵌套的动态块支持，块/文件包含支持以及显示/隐藏未赋值的变量。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">TagTemplate：这个库的功能被设计来使用模板文件，同时允许你从HTML文件检索信息。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">htmltmpl: templating engine：一个适用于Python和PHP的模板引擎。它面向希望在项目中分离代码和设计的web应用开发人员。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">PHP Class for Parsing Dreamweaver templates：一个分析Dreamweaver模板的简单类，被用于Gallery 2 和WordPress的自定义模块中。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">MiniTemplator (Template Engine)：针对HTML文件的一个紧凑型模板引擎。对于模板变量和块定义它具有简单的语法。其中块可以嵌套。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Layout Solution：简化网站开发和维护。它拥有常用的变量和页面元素使你不需要重复做页面布局工作。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Cached Fast Template：它已经纳入 FastTemplate ，允许你缓存模板文件，甚至可以在分离的块内容上缓存不同的规格。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">TinyButStrong：一个支持MySQL,Odbc,Sql-Server和ADODB的模板引擎。它包含7个方法和两个属性。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Brian Lozier’s php based template engine：只有2K大小，非常快并且是面向对象设计。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">WACT：一个从设计中分离代码的模板引擎。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">PHPTAL：一个PHP下面的XML/XHTML模板库。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">Rong_View_Wudimei：Wudimei开发的国产框架Rong Framework的模板引擎，它类似于smarty，优点是速度快，缺点是模板标签较少，不过够用了。</div>
+                            </li>
+                        </ul>
+                        <div class="para" label-module="para"><b>框架介绍thinkphp</b></div>
+                        <div class="para" label-module="para">ThinkPHP是一个免费开源的，快速、简单的面向对象的 轻量级PHP开发框架 ，创立于2006年初，遵循Apache2开源协议发布，是为了敏捷WEB应用开发和简化企业应用开发而诞生的。ThinkPHP从诞生以来一直秉承简洁实用的设计原则，在保持出色的性能和至简的代码的同时，也注重易用性。并且拥有众多的原创功能和特性，在社区团队的积极参与下，在易用性、扩展性和性能方面不断优化和改进，已经成长为国内最领先和最具影响力的WEB应用开发框架，众多的典型案例确保可以稳定用于商业以及门户级的开发。</div>
+                        <div class="para" label-module="para">PHP认证级别</div>
+                        <div class="para" label-module="para">PHP课程由初级（IFE）、中级（IPE）和高级（IAE）三个部分。</div>
+                        <ul class="custom_dot para-list list-paddingleft-1">
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">IFE即Index Front-end Engineer的缩写，指数前端工程师的意思。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">IPE即 Index PHP Engineer 的缩写，意思是指数PHP工程师。</div>
+                            </li>
+                            <li class="list-dot list-dot-paddingleft">
+                                <div class="para" label-module="para">IAE即 Index architecture/advanced engineer 的缩写，意思是：指数高级/架构工程师。</div>
+                            </li>
+                        </ul>
+                        <div class="para" label-module="para">PHP安全</div>
+                        <div class="para" label-module="para">PHP其实不过是Web服务器的一个模块功能，所以首先要保证Web服务器的安全。当然Web服务器要安全又必须是先保证系统安全，这样就扯远了，无穷无尽。常见的web安全漏洞有：注入攻击，跨站攻击，服务器自身漏洞等，对应的详细解释，详见：扩展阅读中的《WEB安全性-2010_OWASP_TOP10》，这里有很详尽的解释。</div>
+                        <div class="para" label-module="para">PHP的优点学习过程和方法</div>
+                        <div class="para" label-module="para">PHP的语法类似于C，Perl，ASP或者JSP。对于那些对上述之一的语言较熟悉的人来说，PHP太简单了。相反的，如果你对PHP了解较多，那么你对于其他几种语言的学习都很简单了。你只需要很短的时间内将PHP的核心语言特点全部掌握，你可能已经非常了解HTML，甚至你已经知道怎样用编辑设计软件或者手工来制作好看的WEB站点。由于PHP代码能够无障碍的添加进你的站点，在你设计和维护站点的同时，你可以很轻松的加入PHP使得你的站点更加具有动态特性。</div>
+                        <div class="para" label-module="para">数据库连接</div>
+                        <div class="para" label-module="para">PHP可以编译成具有与许多数据库相连接的函数。PHP与MySQL是绝佳的组合，如果再加上Apache服务器，就是相当完美的了。你还可以自己编写外围的函数取间接存取数据库。通过这样的途径当你更换使用的数据库时，可以轻松的更改编码以适应这样的变化。PHPLIB就是最常用的可以提供一般事务需要的一系列基库。</div>
+                        <div class="para" label-module="para">可扩展性</div>
+                        <div class="para" label-module="para">就像前面说的那样，PHP已经进入了一个高速发展的时期。对于一个非程序员来说为PHP扩展附加功能可能会比较难，但是对于一个PHP程序员来说并不困难。</div>
+                        <div class="para" label-module="para">PHP可伸缩性</div>
+                        <div class="para" label-module="para">传统上网页的交互作用是通过CGI来实现的。CGI程序的伸缩性不很理想，因为它为每一个正在运行的CGI程序开一个独立进程。解决方法就是将经常用来编写CGI程序的语言的解释器编译进你的web服务器（比如mod_perl,JSP）。PHP就可以以这种方式安装，虽然很少有人愿意这样以CGI方式安装它。内嵌的PHP可以具有更高的可伸缩性。</div>
+                        <div class="para" label-module="para">PHP免费安装</div>
+                        <div class="para" label-module="para">PHP源代码包安装版：这个版本适合已经有自己独立的网站域名、网站空间的专业网站建设用户。使用方法依然其为简单，只需三步：</div>
+                        <div class="para" label-module="para">第一、到官方网站：下载 PHP源代码包安装版最新版本，解压下载文件，将其中的全部内容上传到你的支持PHP的网站空间</div>
+                        <div class="para" label-module="para">第二、改更文件属性，请将根目录下以PHP为后缀名的文件和”/include/domain.php”和 “/attachments” 和 “/data”文件夹以及文件夹下所有的文件属性改成“可读”、“可写”、“可执行”，通常是“755”。</div>
+                        <div class="para" label-module="para">第三、打开你的网站根目录，系统会自动运行setup安装程序，按提示点下一步操作即可。</div>
+                        <div class="para" label-module="para">友情提示：当你下载我们的软件并看到这份说明时，则说明你一定是对企业网站建设有一定的需求或者你是一个网站建设技术学习者。</div>
+                        <div class="para" label-module="para">文件格式</div>
+                        <ol class="custom_num para-list list-paddingleft-1">
+                            <li class="list-num-1-1 list-num-paddingleft-1">
+                                <div class="para" label-module="para">对于只含有 php 代码的文件，我们将在文件结尾处忽略掉 "?&gt;"。这是为了防止多余的空格或者其它字符影响到代码。</div>
+                            </li>
+                        </ol>
+                        <div class="para" label-module="para">例如：</div>
+                        <div class="para" label-module="para">$foo = 'foo';</div>
+                        <ol class="custom_num para-list list-paddingleft-1">
+                            <li class="list-num-1-1 list-num-paddingleft-1">
+                                <div class="para" label-module="para">缩进应该能够反映出代码的逻辑结果，尽量使用四个空格，禁止使用制表符TAB，因为这样能够保证有跨客户端编程器软件的灵活性。</div>
+                            </li>
+                        </ol>
+                        <div class="para" label-module="para">例如：</div>
+                        <div>
+                            <div id="highlighter_642760" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php keyword">if</code><code class="php plain">(1==</code><code class="php variable">$x</code><code class="php plain">){</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php variable">$indented_code</code><code class="php plain">=1;</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="php keyword">if</code><code class="php plain">(1==</code><code class="php variable">$new_line</code><code class="php plain">){</code></div>
+                                                    <div class="line number4 index3 alt1"><code class="php variable">$more_indented_code</code><code class="php plain">=1;</code></div>
+                                                    <div class="line number5 index4 alt2"><code class="php plain">}</code></div>
+                                                    <div class="line number6 index5 alt1"><code class="php plain">}</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <ol class="custom_num para-list list-paddingleft-1">
+                            <li class="list-num-1-1 list-num-paddingleft-1">
+                                <div class="para" label-module="para">变量赋值建议保持相等间距和排列。</div>
+                            </li>
+                        </ol>
+                        <div class="para" label-module="para">例如：</div>
+                        <div>
+                            <div id="highlighter_124749" class="syntaxhighlighter  php">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="php variable">$variable</code><code class="php plain">=</code><code class="php string">'demo'</code><code class="php plain">;</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="php variable">$var</code><code class="php plain">=</code><code class="php string">'demo2'</code><code class="php plain">;</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <ol class="custom_num para-list list-paddingleft-1">
+                            <li class="list-num-1-1 list-num-paddingleft-1">
+                                <div class="para" label-module="para">每行代码长度应控制在80个字符以内，最长不超过120个字符。因为 linux 读入文件一般以80列为单位，就是说如果一行代码超过80个字符，那么系统将为此付出额外操作指令。这个虽然看起来是小问题，但是对于追求完美的程序员来说也是值得注意并遵守的规范。</div>
+                            </li>
+                            <li class="list-num-1-2 list-num-paddingleft-1">
+                                <div class="para" label-module="para">每行结尾不允许有多余的空格。</div>
+                            </li>
+                        </ol>
+                        <div class="para" label-module="para">PHP文件记事本编辑乱码问题</div>
+                        <div class="para" label-module="para">一般情况下，记事本编辑器在对文件进行完编辑并保存之时，其默认编码为ANSI，中文。然则更多的时候，php在语言环境设置时语言多数为utf-8，直接保存并用于apache等http-server解析后就会出现乱码。</div>
+                        <div class="para" label-module="para">为此，应该注意在用记事本编辑完后可将文件用“另存为”的方式对文件进行保存，并将“文件类型”选择“所有文件”，编码与文件指定语言编码一致即可。
+                        </div>
+                        <div class="para" label-module="para">算数运算符</div>
+                        <div class="para" label-module="para">PHP 的运算符包括算术运算符、赋值运算符、比较运算符和逻辑运算符。
+                        </div>
+                        <div class="para" label-module="para">算数运算符：</div>
+                        <div class="para" label-module="para">加，减，乘，除，取模(取余)<br>　　+、-、*、/、%</div>
+                        <div class="para" label-module="para">赋值运算符：（以下解释在许多书中有所不同）</div>
+                        <div class="para" label-module="para">赋值，加赋值，减赋值、乘赋值、除赋值，连字赋值</div>
+                        <div class="para" label-module="para">=、+=、-=、*=、/=、.=</div>
+                        <div class="para" label-module="para">位运算符：</div>
+                        <div class="para" label-module="para">位与、位或、位亦或、位非、左移、右移</div>
+                        <div class="para" label-module="para">&amp;、|、^、~、&lt;&lt;、&gt;&gt;</div>
+                        <div class="para" label-module="para">比较运算符：</div>
+                        <div class="para" label-module="para">等于、全等于、不等于、不全等于、大于、小于、大于等于、小于等于</div>
+                        <div class="para" label-module="para">==、===、!=（&lt;&gt;）、!==、&gt;、&lt;、&gt;=、&lt;=</div>
+                        <div class="para" label-module="para">逻辑运算符：</div>
+                        <div class="para" label-module="para">逻辑与、逻辑或、逻辑非、逻辑亦或</div>
+                        <div class="para" label-module="para">&amp;&amp;、||、!、xor</div>
+                        <div class="para" label-module="para">字符串运算符：</div>
+                        <div class="para" label-module="para">. 连接两个字符串</div>
+
+
+
+
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="right-wrap hidden-xs">
+                </div>
+                <div class="right-bar col-lg-2 col-md-3 col-sm-3 hidden-xs">
+				<div class="right-bar-item user-box">
+                        <h4 class="right-item-title">个人信息</h4>
+                        <div class="bar-online">
+                            <img class="userPic" src="../../src/user.png" width="74px" />
+                            <h4 class="greeting">你好，<span class="online-user"></span></h4>
+                            <hr>
+                            <div class="inner-box">
+                                <h5 class="tap"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../user/">查看个人信息</a></h5>
+                                <h5 class="tap manager"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../admin/">管理社团</a></h5>
+								<h5 class="tap logout">退出登录</h5>
+                            </div>
+                        </div>
+                        <div class="bar-offline">
+                            <img class="defaultUserPic" src="../../src/user.png" width="74px" />
+                            <h5 class="greeting">你好，游客</h5>
+                            <hr>
+                            <h5 class="tap" style="text-align: center;text-decoration: none;">请<a style="color: #1296db;" class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../login/">登录</a></h5>
+                        </div>
+                    </div>
+                    <div class="right-bar-item weather-box">
+                        <h4 class="right-item-title">天气</h4>
+                        <iframe allowtransparency="true" frameborder="0" width="100%" height="260px" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=1&v=1&d=3&bd=0&k=000000&f=000000&ltf=009944&htf=cc0000&q=1&e=0&a=1&c=71526&w=140&h=278&align=center"></iframe>
+                    </div>
+                    <div class="nav-scroll">
+                        <div class="wiki-bar">
+
+                        </div>
+                        <span class="top-point"></span>
+                        <span class="bottom-point"></span>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <h5 class="copyright-text">&copy;&nbsp;2018吉林大学IBM俱乐部&nbsp; All rights reserved.</h5>
+            </div>
+            <div class="wrap-bar"></div>
+            <div class="bottom-bar">
+                <div class="bottom-contact"><a href="../../contact/">联系我们</a></div>
+            </div>
+        </div>
+    </div>
+    <img id="back_to_top" src="../../src/icon/back_to_top.png" />
+    <script>
+        function DirectoryNav($h, config) {
+            this.opts = $.extend(true, {
+                scrollThreshold: 0.1, //滚动检测阀值 0.5在浏览器窗口中间部位
+                scrollSpeed: 0, //滚动到指定位置的动画时间
+                scrollTopBorder: 500, //滚动条距离顶部多少的时候显示导航，如果为0，则一直显示
+                easing: 'swing', //不解释
+                delayDetection: 0, //延时检测，避免滚动的时候检测过于频繁
+                scrollChange: function() {}
+            }, config);
+            this.$win = $(window);
+            this.$h = $h;
+            this.$pageNavList = "";
+            this.$pageNavListLis = "";
+            this.$curTag = "";
+            this.$pageNavListLiH = "";
+            this.offArr = [];
+            this.curIndex = 0;
+            this.scrollIng = false;
+            this.init();
+        }
+
+        DirectoryNav.prototype = {
+            init: function() {
+                this.make();
+                this.setArr();
+                this.bindEvent();
+            },
+            make: function() {
+                //生成导航目录结构,这是根据需求自己生成的。如果你直接在页面中输出一个结构那也挺好不用 搞js
+                $(".wiki-bar").append('<div class="directory-nav" id="directoryNav"><ul></ul><span class="cur-tag"></span><span class="c-top"></span><span class="c-bottom"></span><span class="line"></span></div>');
+                var $hs = this.$h,
+                    $directoryNav = $("#directoryNav"),
+                    temp = [],
+                    index1 = 0,
+                    index2 = 0;
+                $hs.each(function(index) {
+                    var $this = $(this),
+                        text = $this.text();
+                    if (this.tagName.toLowerCase() == 'h2') {
+                        index1++;
+                        if (index1 % 2 == 0) index2 = 0;
+                        temp.push('<li class="l1"><span class="c-dot"></span>' + index1 + '. <a class="l1-text">' + text + '</a></li>');
+                    } else {
+                        index2++;
+                        temp.push('<li class="l2">' + index1 + '.' + index2 + ' <a class="l2-text">' + text + '</a></li>');
+
+                    }
+                });
+                $directoryNav.find("ul").html(temp.join(""));
+
+                //设置变量
+                this.$pageNavList = $directoryNav;
+                this.$pageNavListLis = this.$pageNavList.find("li");
+                this.$curTag = this.$pageNavList.find(".cur-tag");
+                this.$pageNavListLiH = this.$pageNavListLis.eq(0).height();
+
+                if (!this.opts.scrollTopBorder) {
+                    this.$pageNavList.show();
+                }
+            },
+            setArr: function() {
+                var This = this;
+                this.$h.each(function() {
+                    var $this = $(this),
+                        offT = Math.round($this.offset().top);
+                    This.offArr.push(offT);
+                });
+            },
+            posTag: function(top) {
+                //调整蓝色箭头的位置
+                this.$curTag.css({
+                    top: top + 'px'
+                });
+                //导航条移动
+                var navHeight = $("#directoryNav").height();
+                $("#directoryNav").css("top", navHeight - top - 300 + "px");
+            },
+            ifPos: function(st) {
+                var offArr = this.offArr;
+                //console.log(st);
+                var windowHeight = Math.round(this.$win.height() * this.opts.scrollThreshold);
+                for (var i = 0; i < offArr.length; i++) {
+                    if ((offArr[i] - windowHeight) < st) {
+                        var $curLi = this.$pageNavListLis.eq(i),
+                            tagTop = $curLi.position().top;
+                        $curLi.addClass("cur").siblings("li").removeClass("cur");
+                        this.curIndex = i;
+                        this.posTag(tagTop + this.$pageNavListLiH * 0.5);
+                        this.opts.scrollChange.call(this);
+                    }
+                }
+            },
+            bindEvent: function() {
+                var This = this,
+                    show = false,
+                    timer = 0;
+                this.$win.on("scroll", function() {
+                    var $this = $(this);
+                    clearTimeout(timer);
+                    timer = setTimeout(function() {
+                        This.scrollIng = true;
+                        if ($this.scrollTop() > This.opts.scrollTopBorder) {
+                            if (!This.$pageNavListLiH) This.$pageNavListLiH = This.$pageNavListLis.eq(0).height();
+                            if (!show) {
+                                This.$pageNavList.fadeIn();
+                                show = true;
+                            }
+                            This.ifPos($(this).scrollTop());
+                        } else {
+                            if (show) {
+                                This.$pageNavList.fadeOut();
+                                show = false;
+                            }
+                        }
+                    }, This.opts.delayDetection);
+                });
+
+                this.$pageNavList.on("click", "li", function() {
+                    var $this = $(this),
+                        index = $this.index();
+                    This.scrollTo(This.offArr[index]);
+                })
+            },
+            scrollTo: function(offset, callback) {
+                var This = this;
+                $('html,body').animate({
+                    scrollTop: offset
+                }, this.opts.scrollSpeed, this.opts.easing, function() {
+                    This.scrollIng = false;
+                    //修正弹两次回调 蛋疼
+                    callback && this.tagName.toLowerCase() == 'body' && callback();
+                });
+            }
+        };
+
+        //实例化
+        var directoryNav = new DirectoryNav($("h2,h3"), {
+            scrollTopBorder: 500 //滚动条距离顶部多少的时候显示导航，如果为0，则一直显示
+        });
+
+        var shelterHeight = parseInt($(window).height()) - 455;
+        $(".up-shelter").css("height", shelterHeight + "px");
+        $(window).resize(function() {
+            var shelterHeight = parseInt($(window).height()) - 455;
+            $(".up-shelter").css("height", shelterHeight + "px");
+        });
+    </script>
+
+    <script>
+    </script>
+    <!-- animsition js -->
+    <script src="../../animsition/dist/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".animsition").animsition({
+
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 1500,
+                outDuration: 800,
+                linkElement: '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                unSupportCss: ['animation-duration',
+                    '-webkit-animation-duration',
+                    '-o-animation-duration'
+                ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay: false,
+                overlayClass: 'animsition-overlay-slide',
+                overlayParentElement: 'body'
+            });
+        });
+    </script>
+    <!-- 遮盖层，判断是否点击屏幕 -->
+    <div class="shelter"></div>
+</body>
+
+</html>

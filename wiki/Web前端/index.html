@@ -1,0 +1,562 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>科普之窗-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/Normalize.css" />
+
+    <link rel="stylesheet" type="text/css" href="../css/wiki-lemma_2e0b0ff.css">
+    <link rel="stylesheet" type="text/css" href="../css/wiki-common-base_641773b.css">
+    <link rel="stylesheet" type="text/css" href="../css/wiki-lemma-module_d12cf7b.css">
+    <link rel="stylesheet" type="text/css" href="../css/shCoreDefault_3f91dc3.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainContent_98e3702.css">
+
+    <link type="text/css" rel="stylesheet" href="../../css/page.css" />
+    <link type="text/css" rel="stylesheet" href="../css/navigation.css" />
+    <link rel="stylesheet" href="../../animsition/dist/css/animsition.min.css" />
+
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/page.js"></script>
+    <!-- <script type="text/javascript" src="../js/navigation.js"></script> -->
+    <script type="text/javascript" src="../js/check-login.js"></script>
+    <style>
+        .main-text {
+            font-family: arial, SimSun, 宋体, sans-serif;
+            padding: 29px 29px 0 29px;
+            float: left;
+            font-size: 13px;
+            line-height: 1.8;
+            background-color: #fff;
+            width: 100%;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Microsoft YaHei';
+        }
+        
+        .lemmaWgt-lemmaTitle-title h1 {
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 992px) {
+            .basicInfo-block {
+                width: 270px !important;
+            }
+            .basic-info {
+                font-size: 12px;
+            }
+            .basicInfo-item {
+                padding-left: 0 !important;
+            }
+            .basicInfo-item.name {
+                width: 70px !important;
+            }
+            .basicInfo-item.value {
+                width: 200px !important;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .column-3 ol {
+                width: 150px !important;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level1 .text {
+                width: auto;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level2 .text {
+                width: auto;
+            }
+        }
+        
+        .wiki-bar {
+            position: relative;
+            top: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../" class="site-title" rel="home">吉林大学IBM俱乐部</a>
+                    <div class="menu-button">
+                        <img src="../../src/icon/menu.png" width="30px" height="30px" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- menu on larger devices -->
+            <nav id="nav" class="main-navigation hidden-xs hidden-sm" role="navigation">
+                <ul id="primary-menu" class="menu">
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../">首页</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../activities/">活动介绍</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../score/">成绩查询</a></li>
+                    <li id="wiki-item" class="menu-item">
+                        <div style="display: inline">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></div>
+                    </li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../joinus/">加入我们</a></li>
+                    <ul class="sub-menu">
+                        <li id="sub-menu-wrap" class="sub-menu-item"></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/算法/">算法</a></li>
+                        <li id="web-item" class="sub-menu-item">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></span></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Java/">Java</a></li>
+                    </ul>
+                    <ul class="sub-menu-web">
+                        <li id="web-1" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Web前端/">Web前端</a></li>
+                        <li id="web-2" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Python/">Python</a></li>
+                        <li id="web-3" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/PHP/">PHP</a></li>
+                    </ul>
+                </ul>
+            </nav>
+
+            <!-- menu on mobile devices -->
+            <nav id="nav" class="main-navigation-mobile col-xs-12" role="navigation">
+                <ul id="primary-menu" class="menu col-xs-12">
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../">首页</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../activities/">活动介绍</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../score/">成绩查询</a></li>
+                    <li id="wiki-item-mobile" class="menu-item col-xs-12">
+                        <div class="col-xs-12" style="display: inline;padding: 0;">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></div>
+                    </li>
+                    <ul class="sub-menu sub-menu-mobile col-xs-12">
+                        <li id="sub-menu-wrap col-xs-12"></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/算法/">算法</a></li>
+                        <li id="web-item-mobile" class="sub-menu-item col-xs-12">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></span></li>
+                        <ul class="sub-menu-web sub-menu-web-mobile col-xs-12">
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Web前端/">Web前端</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Python/">Python</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/PHP/">PHP</a></li>
+                        </ul>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Java/">Java</a></li>
+                    </ul>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../joinus/">加入我们</a></li>
+
+                </ul>
+            </nav>
+            <!-- #site-navigation -->
+
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <span class="location">位置</span>
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../"><img class="index-icon" src="../../src/icon/index-icon.png" /></a> &gt; 科普之窗 &gt; <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="">Web前端</a>
+                <div class="login">
+                    <div class="online">
+                        <h5 class="greeting">你好，<span class="online-user"></span></h5>
+                        <img class="userPic" src="../../src/user.png" width="40px" />
+                        <div class="user-info">
+                            <img class="userPic" src="../../src/user.png" width="50px" />
+                            <h4 class="online-user"></h4>
+                            <h5><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../user/">查看个人信息</a></h5>
+                            <h5 class="logout">退出登录</h5>
+                        </div>
+                    </div>
+                    <div class="offline">
+                        <h5 class="greeting"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../login/">登录</a></h5>
+                        <img class="userPic" src="../../src/user.png" width="50px" />
+                    </div>
+                </div>
+            </div>
+            <div class="bar-box row">
+                <div class="left-bar col-lg-2 hidden-md  hidden-xs hidden-sm">
+                    <nav id="wiki-nav" class="wiki-nav col-lg-12 hidden-md  hidden-xs hidden-sm">
+                        <div class="title"></div>
+                        <ul>
+                            <li><a href="../C语言/">C语言</a></li>
+                            <li><a href="../C++/">C++</a></li>
+                            <li><a href="../算法/">算法</a></li>
+                            <li><a href="../Web前端/">Web前端</a></li>
+                            <li><a href="../Python/">Python</a></li>
+                            <li><a href="../PHP/">PHP</a></li>
+                            <li><a href="../Linux/">Linux</a></li>
+                            <li><a href="../Java/">Java</a></li>
+                        </ul>
+                    </nav>
+                    <script type="text/javascript">
+                        window.onload =
+                            function() {
+                                var oDiv = document.getElementById("wiki-nav"),
+                                    H = 0,
+                                    Y = oDiv
+                                while (Y) {
+                                    H += Y.offsetTop;
+                                    Y = Y.offsetParent
+                                }
+                                window.onscroll = function() {
+                                    var s = document.body.scrollTop || document.documentElement.scrollTop
+                                    if (s > H) {
+                                        oDiv.style = "position:fixed;top:0;"
+                                        $("#wiki-nav").removeClass("col-lg-12");
+                                        $("#wiki-nav").addClass("col-lg-2");
+                                    } else {
+                                        oDiv.style = "position:static;"
+                                        $("#wiki-nav").removeClass("col-lg-2");
+                                        $("#wiki-nav").addClass("col-lg-12");
+                                    }
+                                }
+                            }
+                    </script>
+                </div>
+                <div class="left-wrap hidden-xs">
+                </div>
+                <div class="main-bar col-lg-8 col-md-9 col-sm-9 col-xs-12">
+                    <div class="main-text">
+
+                        <dl class="lemmaWgt-lemmaTitle lemmaWgt-lemmaTitle-">
+                            <dd class="lemmaWgt-lemmaTitle-title">
+                                <h1>前端</h1>
+                            </dd>
+                        </dl>
+                        <div class="promotion-declaration">
+                        </div>
+                        <div class="basic-info cmn-clearfix">
+                            <dl class="basicInfo-block basicInfo-left">
+                                <dt class="basicInfo-item name">中文名</dt>
+                                <dd class="basicInfo-item value">
+                                    前端
+                                </dd>
+                                <dt class="basicInfo-item name">外文名</dt>
+                                <dd class="basicInfo-item value">
+                                    front-end
+                                </dd>
+                            </dl>
+                            <dl class="basicInfo-block basicInfo-right">
+                                <dt class="basicInfo-item name">指</dt>
+                                <dd class="basicInfo-item value">
+                                    网站的前台部分
+                                </dd>
+                                <dt class="basicInfo-item name">包&nbsp;&nbsp;&nbsp;&nbsp;括</dt>
+                                <dd class="basicInfo-item value">
+                                    网站的表现层和结构层
+                                </dd>
+                                <dt class="basicInfo-item name">高级版本</dt>
+                                <dd class="basicInfo-item value">
+                                    HTML5、CSS3
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="lemmaWgt-lemmaCatalog">
+                            <div class="lemma-catalog">
+                                <h2 class="block-title">目录</h2>
+                                <div class="catalog-list column-1">
+                                    <ol>
+                                        <li class="level1">
+                                            <span class="index">1</span>
+                                            <span class="text"><a href="#1">网站前端</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">2</span>
+                                            <span class="text"><a href="#2">技能分类</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">3</span>
+                                            <span class="text"><a href="#3">HTML</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">4</span>
+                                            <span class="text"><a href="#4">CSS</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">5</span>
+                                            <span class="text"><a href="#5">Javascript</a></span>
+                                        </li>
+                                    </ol>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="1" class="lemma-anchor para-title"></a>
+                            <a name="sub8059258_1" class="lemma-anchor "></a>
+                            <a name="网站前端" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">网站前端</h2>
+
+                        </div>
+                        <div class="para" label-module="para">前端对于网站来说，通常是指，网站的前台部分包括网站的表现层和结构层。因此前端技术一般分为前端设计和前端开发，前端设计一般可以理解为网站的视觉设计，前端开发则是网站的前台代码实现，包括基本的HTML和CSS以及JavaScript/ajax，现在最新的高级版本HTML5、CSS3，以及SVG等。</div>
+                        <div class="anchor-list">
+                            <a name="2" class="lemma-anchor para-title"></a>
+                            <a name="sub8059258_2" class="lemma-anchor "></a>
+                            <a name="技能分类" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">技能分类</h2>
+
+                        </div>
+                        <div class="para" label-module="para">HTML、CSS、JavaScript</div>
+                        <div class="para" label-module="para">这三个是前端开发中最基本也是最必须的三个技能。前端的开发中，在页面的布局时， HTML将元素进行定义，CSS对展示的元素进行定位，再通过JavaScript实现相应的效果和交互。虽然表面看起来很简单，但这里面需要掌握的东西绝对不会少。在进行开发前，需要对这些概念弄清楚、弄明白，这样在开发的过程中才会得心应手。</div>
+                        <div class="anchor-list">
+                            <a name="3" class="lemma-anchor para-title"></a>
+                            <a name="sub8059258_3" class="lemma-anchor "></a>
+                            <a name="HTML" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">HTML</h2>
+
+                        </div>
+                        <div class="para" label-module="para">指的是超文本标记语言 (Hyper Text Markup Language)，这个也是我们网页最常用普通的语言了，经历了多个版本的发展，已经发展到5.0版了，得力于W3C建立的标准和规范，已普遍升级到了XHTML，XHTML 指可扩展超文本标签语言（EXtensible HyperText Markup Language）， XHTML 于2000年的1月26日成为 W3C 标准，是更严格更纯净的 HTML 代码，XHTML 的目标是取代 HTML。XHTML
+                            与 HTML 4.01 几乎是相同的，XHTML 是作为一种 XML 应用被重新定义的 HTML，是一个 W3C 标准。W3C 将 XHTML 定义为最新的HTML版本。所有新的浏览器都支持 XHTML。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="4" class="lemma-anchor para-title"></a>
+                            <a name="sub8059258_4" class="lemma-anchor "></a>
+                            <a name="CSS" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">CSS</h2>
+
+                        </div>
+                        <div class="para" label-module="para">级联样式表（Cascading Style Sheet）简称“CSS”，通常又称为“风格样式表（Style Sheet）”，它是用来进行网页风格设计的。比如，如果想让链接字未点击时是蓝色的，当鼠标移上去后字变成红色的且有下划线，这就是一种风格。通过设立样式表，可以统一地控制HTML中各标志的显示属性。级联样式表可以使人更能有效地控制网页外观。使用级联样式表，可以扩充精确指定网页元素位置，外观以及创建特殊效果的能力。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="5" class="lemma-anchor para-title"></a>
+                            <a name="sub8059258_5" class="lemma-anchor "></a>
+                            <a name="Javascript" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">Javascript</h2>
+
+                        </div>
+                        <div class="para" label-module="para">是一种由Netscape的LiveScript发展而来的原型化继承的面向对象的动态类型的区分大小写的客户端脚本语言，主要目的是为了解决服务器端语言，比如Perl，遗留的速度问题，为客户提供更流畅的浏览效果。当时服务端需要对数据进行验证，由于网络速度相当缓慢，只有28.8kbps，验证步骤浪费的时间太多。于是Netscape的浏览器Navigator加入了Javascript，提供了数据验证的基本功能。
+                        </div>
+
+
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="right-wrap hidden-xs">
+                </div>
+                <div class="right-bar col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                    <div class="right-bar-item user-box">
+                        <h4 class="right-item-title">个人信息</h4>
+                        <div class="bar-online">
+                            <img class="userPic" src="../../src/user.png" width="74px" />
+                            <h4 class="greeting">你好，<span class="online-user"></span></h4>
+                            <hr>
+                            <div class="inner-box">
+                                <h5 class="tap"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../user/">查看个人信息</a></h5>
+                                <h5 class="tap manager"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../admin/">管理社团</a></h5>
+                                <h5 class="tap logout">退出登录</h5>
+                            </div>
+                        </div>
+                        <div class="bar-offline">
+                            <img class="defaultUserPic" src="../../src/user.png" width="74px" />
+                            <h5 class="greeting">你好，游客</h5>
+                            <hr>
+                            <h5 class="tap" style="text-align: center;text-decoration: none;">请<a style="color: #1296db;" class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../login/">登录</a></h5>
+                        </div>
+                    </div>
+                    <div class="right-bar-item weather-box">
+                        <h4 class="right-item-title">天气</h4>
+                        <iframe allowtransparency="true" frameborder="0" width="100%" height="260px" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=1&v=1&d=3&bd=0&k=000000&f=000000&ltf=009944&htf=cc0000&q=1&e=0&a=1&c=71526&w=140&h=278&align=center"></iframe>
+                    </div>
+                    <div class="nav-scroll">
+                        <div class="wiki-bar">
+                        </div>
+                        <span class="top-point"></span>
+                        <span class="bottom-point"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <h5 class="copyright-text">&copy;&nbsp;2018吉林大学IBM俱乐部&nbsp; All rights reserved.</h5>
+            </div>
+            <div class="wrap-bar"></div>
+            <div class="bottom-bar">
+                <div class="bottom-contact"><a href="">联系我们</a></div>
+            </div>
+        </div>
+    </div>
+    <img id="back_to_top" src="../../src/icon/back_to_top.png" />
+    <script>
+        function DirectoryNav($h, config) {
+            this.opts = $.extend(true, {
+                scrollThreshold: 0.1, //滚动检测阀值 0.5在浏览器窗口中间部位
+                scrollSpeed: 0, //滚动到指定位置的动画时间
+                scrollTopBorder: 500, //滚动条距离顶部多少的时候显示导航，如果为0，则一直显示
+                easing: 'swing', //不解释
+                delayDetection: 100, //延时检测，避免滚动的时候检测过于频繁
+                scrollChange: function() {}
+            }, config);
+            this.$win = $(window);
+            this.$h = $h;
+            this.$pageNavList = "";
+            this.$pageNavListLis = "";
+            this.$curTag = "";
+            this.$pageNavListLiH = "";
+            this.offArr = [];
+            this.curIndex = 0;
+            this.scrollIng = false;
+            this.init();
+        }
+
+        DirectoryNav.prototype = {
+            init: function() {
+                this.make();
+                this.setArr();
+                this.bindEvent();
+            },
+            make: function() {
+                //生成导航目录结构,这是根据需求自己生成的。如果你直接在页面中输出一个结构那也挺好不用 搞js
+                $(".wiki-bar").append('<div class="directory-nav" id="directoryNav"><ul></ul><span class="cur-tag"></span><span class="c-top"></span><span class="c-bottom"></span><span class="line"></span></div>');
+                var $hs = this.$h,
+                    $directoryNav = $("#directoryNav"),
+                    temp = [],
+                    index1 = 0,
+                    index2 = 0;
+                $hs.each(function(index) {
+                    var $this = $(this),
+                        text = $this.text();
+                    if (this.tagName.toLowerCase() == 'h2') {
+                        index1++;
+                        if (index1 % 2 == 0) index2 = 0;
+                        temp.push('<li class="l1"><span class="c-dot"></span>' + index1 + '. <a class="l1-text">' + text + '</a></li>');
+                    } else {
+                        index2++;
+                        temp.push('<li class="l2">' + index1 + '.' + index2 + ' <a class="l2-text">' + text + '</a></li>');
+
+                    }
+                });
+                $directoryNav.find("ul").html(temp.join(""));
+
+                //设置变量
+                this.$pageNavList = $directoryNav;
+                this.$pageNavListLis = this.$pageNavList.find("li");
+                this.$curTag = this.$pageNavList.find(".cur-tag");
+                this.$pageNavListLiH = this.$pageNavListLis.eq(0).height();
+
+                if (!this.opts.scrollTopBorder) {
+                    this.$pageNavList.show();
+                }
+            },
+            setArr: function() {
+                var This = this;
+                this.$h.each(function() {
+                    var $this = $(this),
+                        offT = Math.round($this.offset().top);
+                    This.offArr.push(offT);
+                });
+            },
+            posTag: function(top) {
+                this.$curTag.css({
+                    top: top + 'px'
+                });
+                var navHeight = $("#directoryNav").height();
+                $("#directoryNav").css("top", navHeight - top - 300 + "px");
+            },
+            ifPos: function(st) {
+                var offArr = this.offArr;
+                //console.log(st);
+                var windowHeight = Math.round(this.$win.height() * this.opts.scrollThreshold);
+                for (var i = 0; i < offArr.length; i++) {
+                    if ((offArr[i] - windowHeight) < st) {
+                        var $curLi = this.$pageNavListLis.eq(i),
+                            tagTop = $curLi.position().top;
+                        $curLi.addClass("cur").siblings("li").removeClass("cur");
+                        this.curIndex = i;
+                        this.posTag(tagTop + this.$pageNavListLiH * 0.5);
+                        this.opts.scrollChange.call(this);
+                    }
+                }
+            },
+            bindEvent: function() {
+                var This = this,
+                    show = false,
+                    timer = 0;
+                this.$win.on("scroll", function() {
+                    var $this = $(this);
+                    clearTimeout(timer);
+                    timer = setTimeout(function() {
+                        This.scrollIng = true;
+                        if ($this.scrollTop() > This.opts.scrollTopBorder) {
+                            if (!This.$pageNavListLiH) This.$pageNavListLiH = This.$pageNavListLis.eq(0).height();
+                            if (!show) {
+                                This.$pageNavList.fadeIn();
+                                show = true;
+                            }
+                            This.ifPos($(this).scrollTop());
+                        } else {
+                            if (show) {
+                                This.$pageNavList.fadeOut();
+                                show = false;
+                            }
+                        }
+                    }, This.opts.delayDetection);
+                });
+
+                this.$pageNavList.on("click", "li", function() {
+                    var $this = $(this),
+                        index = $this.index();
+                    This.scrollTo(This.offArr[index]);
+                })
+            },
+            scrollTo: function(offset, callback) {
+                var This = this;
+                $('html,body').animate({
+                    scrollTop: offset
+                }, this.opts.scrollSpeed, this.opts.easing, function() {
+                    This.scrollIng = false;
+                    //修正弹两次回调 蛋疼
+                    callback && this.tagName.toLowerCase() == 'body' && callback();
+                });
+            }
+        };
+
+        //实例化
+        var directoryNav = new DirectoryNav($(".title-text,.title-text"), {
+            scrollTopBorder: 500 //滚动条距离顶部多少的时候显示导航，如果为0，则一直显示
+        });
+    </script>
+    <!-- animsition js -->
+    <script src="../../animsition/dist/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".animsition").animsition({
+
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 1500,
+                outDuration: 800,
+                linkElement: '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                unSupportCss: ['animation-duration',
+                    '-webkit-animation-duration',
+                    '-o-animation-duration'
+                ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay: false,
+                overlayClass: 'animsition-overlay-slide',
+                overlayParentElement: 'body'
+            });
+        });
+    </script>
+    <!-- 遮盖层，判断是否点击屏幕 -->
+    <div class="shelter"></div>
+</body>
+
+</html>

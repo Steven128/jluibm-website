@@ -1,0 +1,163 @@
+.overview-box>.text-outer {
+    padding: 0;
+}
+
+.overview-text {
+    background-color: #efefef;
+}
+
+.overview-text .title {
+    text-align: left;
+}
+
+.ratio {
+    margin: 15px 0;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.ratio-title {
+    width: 300px;
+    margin: 10px auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* hightcharts
+================================================== */
+
+.highcharts-container {
+    background-color: #fff;
+    margin: 15px 0;
+    padding: 10px;
+}
+
+.highcharts-credits {
+    display: none;
+}
+
+.highcharts-legend-item {
+    display: none;
+}
+
+
+/* #Canvas Element Circular charts
+================================================== */
+
+canvas,
+video {
+    display: inline-block;
+}
+
+.stats-container {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.stats-container li {
+    display: inline-block;
+    margin: 0 15px 5px;
+    position: relative;
+}
+
+.circular-stat {
+    position: relative;
+}
+
+.circular-stat .digit-label {
+    color: rgba(0, 120, 200, 0.85);
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.circular-stat .text-label {
+    color: #333;
+    top: 50%;
+    left: 21.875%;
+    width: 56.25%;
+    padding-top: 6px;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+span.text-title {
+    color: #444;
+    text-align: center;
+    letter-spacing: -1px;
+    font-size: 1.3em;
+    font-weight: 300;
+    padding: 10px 10px 0 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.stats-gender {}
+
+.stats-gender li {
+    width: 200px;
+    height: 200px;
+}
+
+.stats-gender .digit-label {
+    font-size: 32px;
+    top: 70px;
+    right: 70px;
+}
+
+.stats-gender .text-title {
+    margin-top: 200px;
+}
+
+.stats-grade {}
+
+.stats-grade li {
+    width: 150px;
+    height: 150px;
+}
+
+.stats-grade .digit-label {
+    font-size: 24px;
+    top: 55px;
+    right: 50px;
+}
+
+.stats-grade .text-title {
+    margin-top: 150px;
+}
+
+.stats-group {}
+
+.stats-group li {
+    width: 120px;
+    height: 120px;
+}
+
+.stats-group .digit-label {
+    font-size: 20px;
+    top: 45px;
+    right: 38px;
+}
+
+.stats-group .text-title {
+    margin-top: 120px;
+}

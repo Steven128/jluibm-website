@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>加入我们-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../css/Normalize.css" />
+    <link type="text/css" rel="stylesheet" href="../css/page.css" />
+    <link type="text/css" rel="stylesheet" href="../css/joinus.css" />
+    <link rel="stylesheet" href="../animsition/dist/css/animsition.min.css">
+
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/page.js"></script>
+    <script type="text/javascript" src="../js/joinus.js"></script>
+    <script type="text/javascript" src="../js/check-login.js"></script>
+    <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../js/xcConfirm.js"></script>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../" class="site-title" rel="home">吉林大学IBM俱乐部</a>
+                    <div class="menu-button">
+                        <img src="../src/icon/menu.png" width="30px" height="30px" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- menu on larger devices -->
+            <nav id="nav" class="main-navigation hidden-xs hidden-sm" role="navigation">
+                <ul id="primary-menu" class="menu">
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../">首页</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../activities/">活动介绍</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../score/">成绩查询</a></li>
+                    <li id="wiki-item" class="menu-item">
+                        <div style="display: inline">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></div>
+                    </li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../joinus/">加入我们</a></li>
+                    <ul class="sub-menu">
+                        <li id="sub-menu-wrap" class="sub-menu-item"></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/算法/">算法</a></li>
+                        <li id="web-item" class="sub-menu-item">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></span></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Java/">Java</a></li>
+                    </ul>
+                    <ul class="sub-menu-web">
+                        <li id="web-1" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Web前端/">Web前端</a></li>
+                        <li id="web-2" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Python/">Python</a></li>
+                        <li id="web-3" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/PHP/">PHP</a></li>
+                    </ul>
+                </ul>
+            </nav>
+
+            <!-- menu on mobile devices -->
+            <nav id="nav" class="main-navigation-mobile col-xs-12" role="navigation">
+                <ul id="primary-menu" class="menu col-xs-12">
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../">首页</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../activities/">活动介绍</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../score/">成绩查询</a></li>
+                    <li id="wiki-item-mobile" class="menu-item col-xs-12">
+                        <div class="col-xs-12" style="display: inline;padding: 0;">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></div>
+                    </li>
+                    <ul class="sub-menu sub-menu-mobile col-xs-12">
+                        <li id="sub-menu-wrap col-xs-12"></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/算法/">算法</a></li>
+                        <li id="web-item-mobile" class="sub-menu-item col-xs-12">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../src/icon/down-white.png" /></span></li>
+                        <ul class="sub-menu-web sub-menu-web-mobile col-xs-12">
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Web前端/">Web前端</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Python/">Python</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/PHP/">PHP</a></li>
+                        </ul>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../wiki/Java/">Java</a></li>
+                    </ul>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../joinus/">加入我们</a></li>
+
+                </ul>
+            </nav>
+            <!-- #site-navigation -->
+
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <span class="location">位置</span>
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../"><img class="index-icon" src="../src/icon/index-icon.png" width="20px" /></a>&gt;
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="">加入我们</a>
+                <div class="login">
+                    <div class="online">
+                        <h5>你好，<span class="online-user"></span></h5>
+                        <img class="userPic" src="../src/user.png" width="50px" />
+                        <div class="user-info">
+                            <img class="userPic" src="../src/user.png" width="60px" />
+                            <h4 class="online-user"></h4>
+                            <h5><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../user/">查看个人信息</a></h5>
+                            <h5 class="logout">退出登录</h5>
+                        </div>
+                    </div>
+                    <div class="offline">
+                        <h5><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../login/">登录</a></h5>
+                        <img class="userPic" src="../src/user.png" width="30px" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="bar-box row">
+                <div class="left-bar col-lg-2 hidden-xs">
+                </div>
+                <div class="left-wrap hidden-lg hidden-md  hidden-xs col-sm-1">
+                </div>
+                <div class="main-bar col-lg-8 col-sm-10 col-xs-12">
+
+                    <form id="joinus" class="form-horizontal" method="post" action="">
+                        <div class="subform">
+                            <h3 class="form-title">加入我们</h3>
+                            <div class="form-group">
+                                <div class="section__title">姓名</div>
+                                <input id="name" type="text" class="input-text form-control" name="name" placeholder="请输入姓名" maxlength=15 />
+                            </div>
+                            <div class="form-group">
+                                <div class="section__title">学号</div>
+                                <input id="number" type="text" class="input-text form-control" name="number" placeholder="请输入学号" />
+                            </div>
+
+                            <div class="form-group">
+                                <div class="section__title">性别</div>
+                                <label class="gender">
+					                    <input type="radio" id="male" class=".radio-inline" name="gender" value="male" checked="checked" />男 
+				                    </label>
+                                <label class="gender">
+					                    <input type="radio" id="female" class=".radio-inline" name="gender" value="female" />女
+				                    </label>
+                            </div>
+                            <div class="form-group">
+                                <div class="section__title">年级</div>
+                                <select id="grade" class="select form-control" name="grade">
+                                    <option class="option" value="1">大一</option>
+					                <option class="option" value="2">大二</option>
+					                <option class="option" value="3">大三</option>
+					                <option class="option" value="4">大四</option>
+				                </select>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <div class="section__title">学院</div>
+                                <input id="college" type="text" class="input-text form-control" name="college" placeholder="请输入学院" onkeyup="value=value.replace(/[\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))" maxlength=15
+                                />
+                            </div>
+                            <div class="form-group">
+                                <div class="section__title">专业</div>
+                                <input id="major" type="text" class="input-text form-control" name="major" placeholder="请输入专业" onkeyup="value=value.replace(/[\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))" maxlength=15 />
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <div class="section__title">QQ&nbsp;</div>
+                                <input id="qq" type="text" class="input-text form-control" name="qq" placeholder="请留下QQ号码" />
+                            </div>
+                            <div class="form-group">
+                                <div class="section__title">手机号码</div>
+                                <input id="phone" type="text" class="input-text form-control" name="phone" placeholder="请留下手机号码" />
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <div class="section__title">你想加入哪个组呢？</div>
+                            <label class="lang">
+					                <input class="checkbox-inline" type="checkbox" name="lang" value="cpp" />C/C++组
+				                </label>
+                            <label class="lang">
+					                <input class="checkbox-inline" type="checkbox" name="lang" value="algorithm" />算法组
+				                </label>
+                            <label class="lang">
+					                <input class="checkbox-inline" type="checkbox" name="lang" value="web" />Web开发组
+				                </label>
+                            <label class="lang">
+					                <input class="checkbox-inline" type="checkbox" name="lang" value="linux" />Linux组
+				                </label>
+                            <label class="lang">
+					                <input class="checkbox-inline" type="checkbox" name="lang" value="java" />Java组
+                                </label>
+                            <div class="tips">
+                                <div class="tips-title">小贴士</div>
+                                <p>• 请选择自己感兴趣的学习方向，组长会定期安排相应的技术培训</p>
+                                <p>• 课余时间有限，不要选择太多哟~ 选择自己感兴趣的一两个即可</p>
+                                <p>• 对这些还不太了解？请戳菜单栏中<b>科普之窗</b>了解更多</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="section__title">你学习过那些软件方面的知识呢？</div>
+                            <textarea id="learned" class="learned form-control" name="learned" placeholder="请输入（例如某种程序语言）"></textarea>
+                        </div>
+                        <hr>
+                        <div class="btn-area">
+                            <button id="submit" type="submit" class="submit">点我报名</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="right-wrap hidden-lg hidden-md  hidden-xs col-sm-1">
+                </div>
+                <div class="right-bar col-lg-2 col-md-2 hidden-xs hidden-sm">
+                    <div class="right-bar-item user-box">
+                        <h4 class="right-item-title">个人信息</h4>
+                        <div class="bar-online">
+                            <img class="userPic" src="../src/user.png" width="74px" />
+                            <h4 class="greeting">你好，<span class="online-user"></span></h4>
+                            <hr>
+                            <div class="inner-box">
+                                <h5 class="tap"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../user/">查看个人信息</a></h5>
+                                <h5 class="tap manager"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../admin/">管理社团</a></h5>
+                                <h5 class="tap logout">退出登录</h5>
+                            </div>
+
+                        </div>
+                        <div class="bar-offline">
+                            <img class="defaultUserPic" src="../src/user.png" width="74px" />
+                            <h5 class="greeting">你好，游客</h5>
+                            <hr>
+                            <h5 class="tap" style="text-align: center;text-decoration: none;">请<a style="color: #1296db;" class="animsition-link" data-animsition-out="fade-out-left-sm" href="../login/">登录</a></h5>
+                        </div>
+                    </div>
+                    <div class="right-bar-item weather-box">
+                        <h4 class="right-item-title">天气</h4>
+                        <iframe allowtransparency="true" frameborder="0" width="100%" height="260px" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=1&v=1&d=3&bd=0&k=000000&f=000000&ltf=009944&htf=cc0000&q=1&e=0&a=1&c=71526&w=140&h=278&align=center"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <h5 class="copyright-text">&copy;&nbsp;2018吉林大学IBM俱乐部&nbsp; All rights reserved.</h5>
+            </div>
+            <div class="wrap-bar"></div>
+            <div class="bottom-bar">
+                <div class="bottom-contact"><a href="">联系我们</a></div>
+            </div>
+        </div>
+    </div>
+    <img id="back_to_top" src="../src/icon/back_to_top.png" />
+    <!-- animsition js -->
+    <script src="../animsition/dist/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".animsition").animsition({
+
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 1500,
+                outDuration: 800,
+                linkElement: '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                unSupportCss: ['animation-duration',
+                    '-webkit-animation-duration',
+                    '-o-animation-duration'
+                ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay: false,
+                overlayClass: 'animsition-overlay-slide',
+                overlayParentElement: 'body'
+            });
+        });
+    </script>
+</body>
+<!-- 遮盖层，判断是否点击屏幕 -->
+<div class="shelter"></div>
+
+</html>

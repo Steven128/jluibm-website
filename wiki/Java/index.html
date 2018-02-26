@@ -1,0 +1,1549 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>科普之窗-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/Normalize.css" />
+
+    <link rel="stylesheet" type="text/css" href="../css/wiki-lemma_2e0b0ff.css">
+    <link rel="stylesheet" type="text/css" href="../css/wiki-common-base_641773b.css">
+    <link rel="stylesheet" type="text/css" href="../css/wiki-lemma-module_d12cf7b.css">
+    <link rel="stylesheet" type="text/css" href="../css/shCoreDefault_3f91dc3.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainContent_98e3702.css">
+
+    <link type="text/css" rel="stylesheet" href="../../css/page.css" />
+    <link type="text/css" rel="stylesheet" href="../css/navigation.css" />
+    <link rel="stylesheet" href="../../animsition/dist/css/animsition.min.css" />
+
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/page.js"></script>
+    <!-- <script type="text/javascript" src="../js/navigation.js"></script> -->
+    <script type="text/javascript" src="../js/check-login.js"></script>
+    <style>
+        .main-text {
+            font-family: arial, SimSun, 宋体, sans-serif;
+            padding: 29px 29px 0 29px;
+            float: left;
+            font-size: 13px;
+            line-height: 1.8;
+            background-color: #fff;
+            width: 100%;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Microsoft YaHei';
+        }
+        
+        .lemmaWgt-lemmaTitle-title h1 {
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 992px) {
+            .basicInfo-block {
+                width: 270px !important;
+            }
+            .basic-info {
+                font-size: 12px;
+            }
+            .basicInfo-item {
+                padding-left: 0 !important;
+            }
+            .basicInfo-item.name {
+                width: 70px !important;
+            }
+            .basicInfo-item.value {
+                width: 200px !important;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog ol {
+                width: 170px !important;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level1 .text {
+                width: auto;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level2 .text {
+                width: auto;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level2 .index {
+                padding-left: 25px;
+            }
+        }
+        
+        .wiki-bar {
+            position: relative;
+            top: -80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../" class="site-title" rel="home">吉林大学IBM俱乐部</a>
+                    <div class="menu-button">
+                        <img src="../../src/icon/menu.png" width="30px" height="30px" />
+                    </div>
+                </div>
+            </div>
+            <!-- menu on larger devices -->
+            <nav id="nav" class="main-navigation hidden-xs hidden-sm" role="navigation">
+                <ul id="primary-menu" class="menu">
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../">首页</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../activities/">活动介绍</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../score/">成绩查询</a></li>
+                    <li id="wiki-item" class="menu-item">
+                        <div style="display: inline">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></div>
+                    </li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../joinus/">加入我们</a></li>
+                    <ul class="sub-menu">
+                        <li id="sub-menu-wrap" class="sub-menu-item"></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/算法/">算法</a></li>
+                        <li id="web-item" class="sub-menu-item">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></span></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Java/">Java</a></li>
+                    </ul>
+                    <ul class="sub-menu-web">
+                        <li id="web-1" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Web前端/">Web前端</a></li>
+                        <li id="web-2" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Python/">Python</a></li>
+                        <li id="web-3" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/PHP/">PHP</a></li>
+                    </ul>
+                </ul>
+            </nav>
+
+            <!-- menu on mobile devices -->
+            <nav id="nav" class="main-navigation-mobile col-xs-12" role="navigation">
+                <ul id="primary-menu" class="menu col-xs-12">
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../">首页</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../activities/">活动介绍</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../score/">成绩查询</a></li>
+                    <li id="wiki-item-mobile" class="menu-item col-xs-12">
+                        <div class="col-xs-12" style="display: inline;padding: 0;">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></div>
+                    </li>
+                    <ul class="sub-menu sub-menu-mobile col-xs-12">
+                        <li id="sub-menu-wrap col-xs-12"></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/算法/">算法</a></li>
+                        <li id="web-item-mobile" class="sub-menu-item col-xs-12">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></span></li>
+                        <ul class="sub-menu-web sub-menu-web-mobile col-xs-12">
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Web前端/">Web前端</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Python/">Python</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/PHP/">PHP</a></li>
+                        </ul>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Java/">Java</a></li>
+                    </ul>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../joinus/">加入我们</a></li>
+
+                </ul>
+            </nav>
+            <!-- #site-navigation -->
+
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <span class="location">位置</span>
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../"><img class="index-icon" src="../../src/icon/index-icon.png" /></a> &gt; 科普之窗 &gt; <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="">Java</a>
+                <div class="login">
+                    <div class="online">
+                        <h5 class="greeting">你好，<span class="online-user"></span></h5>
+                        <img class="userPic" src="../../src/user.png" width="40px" />
+                        <div class="user-info">
+                            <img class="userPic" src="../../src/user.png" width="50px" />
+                            <h4 class="online-user"></h4>
+                            <h5><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../user/">查看个人信息</a></h5>
+                            <h5 class="logout">退出登录</h5>
+                        </div>
+                    </div>
+                    <div class="offline">
+                        <h5 class="greeting"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../login/">登录</a></h5>
+                        <img class="userPic" src="../../src/user.png" width="50px" />
+                    </div>
+                </div>
+            </div>
+            <div class="bar-box row">
+                <div class="left-bar col-lg-2 hidden-md  hidden-xs hidden-sm">
+                    <nav id="wiki-nav" class="wiki-nav col-lg-12 hidden-md  hidden-xs hidden-sm">
+                        <div class="title"></div>
+                        <ul>
+                            <li><a href="../C语言/">C语言</a></li>
+                            <li><a href="../C++/">C++</a></li>
+                            <li><a href="../算法/">算法</a></li>
+                            <li><a href="../Web前端/">Web前端</a></li>
+                            <li><a href="../Python/">Python</a></li>
+                            <li><a href="../PHP/">PHP</a></li>
+                            <li><a href="../Linux/">Linux</a></li>
+                            <li><a href="../Java/">Java</a></li>
+                        </ul>
+                    </nav>
+                    <script type="text/javascript">
+                        window.onload =
+                            function() {
+                                var oDiv = document.getElementById("wiki-nav"),
+                                    H = 0,
+                                    Y = oDiv
+                                while (Y) {
+                                    H += Y.offsetTop;
+                                    Y = Y.offsetParent
+                                }
+                                window.onscroll = function() {
+                                    var s = document.body.scrollTop || document.documentElement.scrollTop
+                                    if (s > H) {
+                                        oDiv.style = "position:fixed;top:0;"
+                                        $("#wiki-nav").removeClass("col-lg-12");
+                                        $("#wiki-nav").addClass("col-lg-2");
+                                    } else {
+                                        oDiv.style = "position:static;"
+                                        $("#wiki-nav").removeClass("col-lg-2");
+                                        $("#wiki-nav").addClass("col-lg-12");
+                                    }
+                                }
+                            }
+                    </script>
+                </div>
+                <div class="left-wrap hidden-xs">
+                </div>
+                <div class="main-bar col-lg-8 col-md-9 col-sm-9 col-xs-12">
+                    <div class="main-text">
+                        <dl class="lemmaWgt-lemmaTitle lemmaWgt-lemmaTitle-">
+                            <dd class="lemmaWgt-lemmaTitle-title">
+                                <h1>Java</h1>
+                            </dd>
+                        </dl>
+                        <div class="lemma-summary" label-module="lemmaSummary">
+                            <div class="para" label-module="para">Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程 。
+                            </div>
+                            <div class="para" label-module="para">Java具有简单性、面向对象、分布式、健壮性、安全性、平台独立与可移植性、多线程、动态性等特点 。Java可以编写桌面应用程序、Web应用程序、分布式系统和嵌入式系统应用程序等 。
+                            </div>
+                        </div>
+                        <div class="basic-info cmn-clearfix">
+                            <dl class="basicInfo-block basicInfo-left">
+                                <dt class="basicInfo-item name">外文名</dt>
+                                <dd class="basicInfo-item value">
+                                    Java
+                                </dd>
+                            </dl>
+                            <dl class="basicInfo-block basicInfo-right">
+                                <dt class="basicInfo-item name">现公司</dt>
+                                <dd class="basicInfo-item value">
+                                    Oracle
+                                </dd>
+                                <dt class="basicInfo-item name">推出时间</dt>
+                                <dd class="basicInfo-item value">
+                                    1995年5月
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="lemmaWgt-lemmaCatalog">
+                            <div class="lemma-catalog">
+                                <h2 class="block-title">目录</h2>
+                                <div class="catalog-list column-2">
+                                    <ol>
+                                        <li class="level1">
+                                            <span class="index">1</span>
+                                            <span class="text"><a href="#1">发展历程</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">2</span>
+                                            <span class="text"><a href="#2">编程开发</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#2_1">编程环境</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#2_2">编程工具</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">3</span>
+                                            <span class="text"><a href="#3">语言特点</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">4</span>
+                                            <span class="text"><a href="#4">工作原理</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">5</span>
+                                            <span class="text"><a href="#5">语言基础</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#5_1">基本数据结构</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#5_2">关键字</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#5_3">运算符</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#5_4">程序举例</a></span>
+                                        </li>
+                                    </ol>
+                                    <ol>
+                                        <li class="level1">
+                                            <span class="index">6</span>
+                                            <span class="text"><a href="#6">语言标准</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">7</span>
+                                            <span class="text"><a href="#7">语言规范</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">8</span>
+                                            <span class="text"><a href="#8">技术应用</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">9</span>
+                                            <span class="text"><a href="#9">学习指南</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#9_1">考试</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#9_2">教材</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">10</span>
+                                            <span class="text"><a href="#10">语言评价</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#10_1">发展前景</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#10_2">贡献及影响力</a></span>
+                                        </li>
+                                    </ol>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="1" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_1" class="lemma-anchor "></a>
+                            <a name="发展历程" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">发展历程</h2>
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="lemma-picture text-pic layout-right" style="width:133px; float: right;">
+                                <img class="" src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=3dbf1eedd51b0ef468e89f5cedc551a1/cefc1e178a82b901d3ed95f0748da9773812efb5.jpg" alt="JAVA" style="width:133px;height:220px;">
+                                <span class="description">
+                                JAVA
+                                </span>
+                            </div>20世纪90年代，硬件领域出现了单片式计算机系统，这种价格低廉的系统一出现就立即引起了自动控制领域人员的注意，因为使用它可以大幅度提升消费类电子产品<i>（如电视机顶盒、面包烤箱、移动电话等）</i>的智能化程度。Sun公司为了抢占市场先机，在1991年成立了一个称为Green的项目小组，帕特里克、詹姆斯·高斯林、麦克·舍林丹和其他几个工程师一起组成的工作小组在加利福尼亚州门洛帕克市沙丘路的一个小工作室里面研究开发新技术，专攻计算机在家电产品上的嵌入式应用。</div>
+                        <div class="para" label-module="para">由于C++所具有的优势，该项目组的研究人员首先考虑采用C++来编写程序。但对于硬件资源极其匮乏的单片式系统来说，C++程序过于复杂和庞大。另外由于消费电子产品所采用的嵌入式处理器芯片的种类繁杂，如何让编写的程序跨平台运行也是个难题。为了解决困难，他们首先着眼于语言的开发，假设了一种结构简单、符合嵌入式应用需要的硬件平台体系结构并为其制定了相应的规范，其中就定义了这种硬件平台的二进制机器码指令系统<i>（即后来成为“</i><i>字节码</i><i>”的指令系统）</i>，以待语言开发成功后，能有半导体芯片生产商开发和生产这种硬件平台。对于新语言的设计，Sun公司研发人员并没有开发一种全新的语言，而是根据嵌入式软件的要求，对C++进行了改造，去除了留在C++的一些不太实用及影响安全的成分，并结合嵌入式系统的实时性要求，开发了一种称为Oak的面向对象语言。</div>
+                        <div class="para" label-module="para">由于在开发Oak语言时，尚且不存在运行字节码的硬件平台，所以为了在开发时可以对这种语言进行实验研究，他们就在已有的硬件和软件平台基础上，按照自己所指定的规范，用软件建设了一个运行平台，整个系统除了比C++更加简单之外，没有什么大的区别。1992年的夏天，当Oak语言开发成功后，研究者们向硬件生产商进行演示了Green操作系统、Oak的程序设计语言、类库和其硬件，以说服他们使用Oak语言生产硬件芯片，但是，硬件生产商并未对此产生极大的热情。因为他们认为，在所有人对Oak语言还一无所知的情况下，就生产硬件产品的风险实在太大了，所以Oak语言也就因为缺乏硬件的支持而无法进入市场，从而被搁置了下来。</div>
+                        <div class="para" label-module="para">正在向同样的高度互动的远景演变，而这一远景正是他们在有线电视网中看到的。作为原型，帕特里克·诺顿写了一个小型万维网浏览器WebRunner。
+                        </div>
+                        <div class="para" label-module="para">1995年，互联网的蓬勃发展给了Oak机会。业界为了使死板、单调的静态网页能够“灵活”起来，急需一种软件技术来开发一种程序，这种程序可以通过网络传播并且能够跨平台运行。于是，世界各大IT企业为此纷纷投入了大量的人力、物力和财力。这个时候，Sun公司想起了那个被搁置起来很久的Oak，并且重新审视了那个用软件编写的试验平台，由于它是按照嵌入式系统硬件平台体系结构进行编写的，所以非常小，特别适用于网络上的传输系统，而Oak也是一种精简的语言，程序非常小，适合在网络上传输。Sun公司首先推出了可以嵌入网页并且可以随同网页在网络上传输的Applet<i>（Applet是一种将小程序嵌入到网页中进行执行的技术）</i>，并将Oak更名为Java<i>（在申请注册商标时，发现Oak已经被人使用了，再想了一系列名字之后，最终，使用了提议者在喝一杯Java咖啡时无意提到的Java词语）</i>。5月23日，Sun公司在Sun
+                            world会议上正式发布Java和HotJava浏览器。IBM、Apple、DEC、Adobe、HP、Oracle、Netscap
+                            <b>e</b>和微软等各大公司都纷纷停止了自己的相关开发项目，竞相购买了Java使用许可证，并为自己的产品开发了相应的Java平台。
+                        </div>
+                        <div class="para" label-module="para">1996年1月，Sun公司发布了Java的第一个开发工具包<i>（JDK 1.0）</i>，这是Java发展历程中的重要里程碑，标志着Java成为一种独立的开发工具。9月，约8.3万个网页应用了Java技术来制作。10月，Sun公司发布了Java平台的第一个即时<i>（JIT）</i>编译器。</div>
+                        <div class="para" label-module="para">1997年2月，JDK 1.1面世，在随后的3周时间里，达到了22万次的下载量。4月2日，Java One会议召开，参会者逾一万人，创当时全球同类会议规模之纪录。9月，Java Developer Connection社区成员超过10万。</div>
+                        <div class="para" label-module="para">1998年12月8日，第二代Java平台的企业版J2EE发布。1999年6月，Sun公司发布了第二代Java平台（简称为Java2）的3个版本：J2ME（Java2 Micro Edition，Java2平台的微型版），应用于移动、无线及有限资源的环境；J2SE（Java 2 Standard Edition，Java 2平台的标准版），应用于桌面环境；J2EE（Java 2Enterprise Edition，Java 2平台的企业版），应用于基于Java的应用服务器。Java
+                            2平台的发布，是Java发展过程中最重要的一个里程碑，标志着Java的应用开始普及。
+                        </div>
+                        <div class="para" label-module="para">1999年4月27日，HotSpot虚拟机发布。HotSpot虚拟机发布时是作为JDK 1.2的附加程序提供的，后来它成为了JDK 1.3及之后所有版本的Sun JDK的默认虚拟机 。
+                        </div>
+                        <div class="para" label-module="para">2000年5月，JDK1.3、JDK1.4和J2SE1.3相继发布，几周后其获得了Apple公司Mac OS X的工业标准的支持。2001年9月24日，J2EE1.3发布。2002年2月26日，J2SE1.4发布。自此Java的计算能力有了大幅提升，与J2SE1.3相比，其多了近62%的类和接口。在这些新特性当中，还提供了广泛的XML支持、安全套接字<i>（Socket）</i>支持<i>（通过SSL与TLS协议）</i>、全新的I/OAPI、正则表达式、日志与断言。2004年9月30日，J2SE1.5发布，成为Java语言发展史上的又一里程碑。为了表示该版本的重要性，J2SE
+                            1.5更名为Java SE 5.0<i>（内部版本号1.5.0）</i>，代号为“Tiger”，Tiger包含了从1996年发布1.0版本以来的最重大的更新，其中包括泛型支持、基本类型的自动装箱、改进的循环、枚举类型、格式化I/O及可变参数。</div>
+                        <div class="para" label-module="para">2005年6月，在Java One大会上，Sun公司发布了Java SE 6。此时，Java的各种版本已经更名，已取消其中的数字2，如J2EE更名为JavaEE，J2SE更名为JavaSE，J2ME更名为JavaME。
+                        </div>
+                        <div class="para" label-module="para">2006年11月13日，Java技术的发明者Sun公司宣布，将Java技术作为免费软件对外发布。Sun公司正式发布的有关Java平台标准版的第一批源代码，以及Java迷你版的可执行源代码。从2007年3月起，全世界所有的开发人员均可对Java源代码进行修改 。
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="lemma-picture text-pic layout-right" style="width:220px; float: right;">
+                                <img class="" src="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=b4dfd4eaecc4b7453094b014fffd1e78/a8ec8a13632762d04989f67ca7ec08fa503dc6ba.jpg" alt="Java创始人之一：詹姆斯·高斯林" style="width:220px;height:208px;">
+                                <span class="description">
+                                Java创始人之一：詹姆斯·高斯林
+                                </span>
+                            </div>2009年，甲骨文公司宣布收购Sun 。2010年，Java编程语言的共同创始人之一詹姆斯·高斯林从Oracle公司辞职。2011年，甲骨文公司举行了全球性的活动，以庆祝Java7的推出，随后Java7正式发布。2014年，甲骨文公司发布了Java8正式版 。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="2" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_2" class="lemma-anchor "></a>
+                            <a name="编程开发" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">编程开发</h2>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="2_1" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_2_1" class="lemma-anchor "></a>
+                            <a name="编程环境" class="lemma-anchor "></a>
+                            <a name="2-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">编程环境</h3>
+                        </div>
+                        <div class="para" label-module="para"></div>
+                        <div class="para" label-module="para">
+                            <div class="lemma-picture text-pic layout-right" style="width:220px; cursor: move; text-indent: 28px; white-space: normal; display: block; margin: 0px auto; clear: both; float: right;">
+                                <img class="" src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=6fd793e4be12c8fcb0f3f1cfcc0292b4/024f78f0f736afc3646ddea1b419ebc4b6451294.jpg" alt="Java概念图" style="width:220px;height:147px;">
+                                <span class="description">
+                                Java概念图
+                                </span>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">JDK<i>（Java Development Kit）</i>称为Java开发包或Java开发工具，是一个编写Java的Applet小程序和应用程序的程序开发环境。JDK是整个Java的核心，包括了Java运行环境<i>（Java Runtime Envirnment）</i>，一些Java工具和Java的核心类库<i>（Java API）</i>。不论什么Java应用服务器实质都是内置了某个版本的JDK。主流的JDK是Sun公司发布的JDK，除了Sun之外，还有很多公司和组织都开发了自己的JDK，例如，IBM公司开发的JDK，BEA公司的Jrocket，还有GNU组织开发的JDK。
+                        </div>
+                        <div class="para" label-module="para">另外，可以把Java API类库中的Java SE API子集和Java虚拟机这两部分统称为JRE<i>（JAVA Runtime Environment）</i>，JRE是支持Java程序运行的标准环境 。
+                        </div>
+                        <div class="para" label-module="para">JRE是个运行环境，JDK是个开发环境。因此写Java程序的时候需要JDK，而运行Java程序的时候就需要JRE。而JDK里面已经包含了JRE，因此只要安装了JDK，就可以编辑Java程序，也可以正常运行Java程序。但由于JDK包含了许多与运行无关的内容，占用的空间较大，因此运行普通的Java程序无须安装JDK，而只需要安装JRE即可 。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="2_2" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_2_2" class="lemma-anchor "></a>
+                            <a name="编程工具" class="lemma-anchor "></a>
+                            <a name="2-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">编程工具</h3>
+                        </div>
+                        <div class="para" label-module="para">Eclipse：一个开放源代码的、基于Java的可扩展开发平台 。
+                        </div>
+                        <div class="para" label-module="para">NetBeans：开放源码的Java集成开发环境，适用于各种客户机和Web应用。</div>
+                        <div class="para" label-module="para">IntelliJ IDEA：在代码自动提示、代码分析等方面的具有很好的功能。
+                        </div>
+                        <div class="para" label-module="para">MyEclipse：由Genuitec公司开发的一款商业化软件，是应用比较广泛的Java应用程序集成开发环境 。
+                        </div>
+                        <div class="para" label-module="para">EditPlus：如果正确配置Java的编译器“Javac”以及解释器“Java”后，可直接使用EditPlus编译执行Java程序 。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="3" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_3" class="lemma-anchor "></a>
+                            <a name="语言特点" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">语言特点</h2>
+                        </div>
+                        <div class="para" label-module="para"><b>1.简单性</b></div>
+                        <div class="para" label-module="para">Java看起来设计得很像C++，但是为了使语言小和容易熟悉，设计者们把C++语言中许多可用的特征去掉了，这些特征是一般程序员很少使用的。例如，Java不支持go to语句，代之以提供break和continue语句以及异常处理。Java还剔除了C++的操作符过载<i>（</i><i>overload</i><i>）</i>和多继承特征，并且不使用主文件，免去了预处理程序。因为Java没有结构，数组和串都是对象，所以不需要指针。Java能够自动处理对象的引用和间接引用，实现自动的无用单元收集，使用户不必为存储管理问题烦恼，能更多的时间和精力花在研发上。</div>
+                        <div class="para" label-module="para"><b>2.面向对象</b></div>
+                        <div class="para" label-module="para">Java是一个面向对象的语言。对程序员来说，这意味着要注意应中的数据和操纵数据的方法<i>（method）</i>，而不是严格地用过程来思考。在一个面向对象的系统中，类<i>（class）</i>是数据和操作数据的方法的集合。数据和方法一起描述对象<i>（object）</i>的状态和行为。每一对象是其状态和行为的封装。类是按一定体系和层次安排的，使得子类可以从超类继承行为。在这个类层次体系中有一个根类，它是具有一般行为的类。Java程序是用类来组织的。</div>
+                        <div class="para" label-module="para">Java还包括一个类的扩展集合，分别组成各种程序包<i>（Package）</i>，用户可以在自己的程序中使用。例如，Java提供产生图形用户接口部件的类<i>（java.awt包）</i>，这里awt是抽象窗口工具集<i>（abstract windowing toolkit）</i>的缩写，处理输入输出的类<i>（java.io包）</i>和支持网络功能的类<i>（java.net包）</i>。</div>
+                        <div class="para" label-module="para"><b>3.分布性</b></div>
+                        <div class="para" label-module="para">Java设计成支持在网络上应用，它是分布式语言。Java既支持各种层次的网络连接，又以Socket类支持可靠的流<i>（stream）</i>网络连接，所以用户可以产生分布式的客户机和服务器。</div>
+                        <div class="para" label-module="para">网络变成软件应用的分布运载工具。Java程序只要编写一次，就可到处运行。</div>
+                        <div class="para" label-module="para"><b>4.编译和解释性</b></div>
+                        <div class="para" label-module="para">Java编译程序生成字节码<i>（byte-code）</i>，而不是通常的机器码。Java字节码提供对体系结构中性的目标文件格式，代码设计成可有效地传送程序到多个平台。Java程序可以在任何实现了Java解释程序和运行系统<i>（run-time system）</i>的系统上运行。</div>
+                        <div class="para" label-module="para">在一个解释性的环境中，程序开发的标准“链接”阶段大大消失了。如果说Java还有一个链接阶段，它只是把新类装进环境的过程，它是增量式的、轻量级的过程。因此，Java支持快速原型和容易试验，它将导致快速程序开发。这是一个与传统的、耗时的“编译、链接和测试”形成鲜明对比的精巧的开发过程。</div>
+                        <div class="para" label-module="para"><b>5.稳健性</b></div>
+                        <div class="para" label-module="para">
+                            <div class="lemma-picture text-pic layout-right" style="width:220px; float: right;">
+                                <img class="" src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=8e592202ce177f3e1434fb0f40ce3bb9/43a7d933c895d143f2da549774f082025baf07d1.jpg" alt="Java" style="width:220px;height:220px;">
+                                <span class="description">
+                                Java
+                                </span>
+                            </div>Java原来是用作编写消费类家用电子产品软件的语言，所以它是被设计成写高可靠和稳健软件的。Java消除了某些编程错误，使得用它写可靠软件相当容易。</div>
+                        <div class="para" label-module="para">Java是一个强类型语言，它允许扩展编译时检查潜在类型不匹配问题的功能。Java要求显式的方法声明，它不支持C风格的隐式声明。这些严格的要求保证编译程序能捕捉调用错误，这就导致更可靠的程序。</div>
+                        <div class="para" label-module="para">可靠性方面最重要的增强之一是Java的存储模型。Java不支持指针，它消除重写存储和讹误数据的可能性。类似地，Java自动的“无用单元收集”预防存储漏泄和其它有关动态存储分配和解除分配的有害错误。Java解释程序也执行许多运行时的检查，诸如验证所有数组和串访问是否在界限之内。</div>
+                        <div class="para" label-module="para">异常处理是Java中使得程序更稳健的另一个特征。异常是某种类似于错误的异常条件出现的信号。使用try/catch/finally语句，程序员可以找到出错的处理代码，这就简化了出错处理和恢复的任务。</div>
+                        <div class="para" label-module="para"><b>6.安全性</b></div>
+                        <div class="para" label-module="para">Java的存储分配模型是它防御恶意代码的主要方法之一。Java没有指针，所以程序员不能得到隐蔽起来的内幕和伪造指针去指向存储器。更重要的是，Java编译程序不处理存储安排决策，所以程序员不能通过查看声明去猜测类的实际存储安排。编译的Java代码中的存储引用在运行时由Java解释程序决定实际存储地址。</div>
+                        <div class="para" label-module="para">Java运行系统使用字节码验证过程来保证装载到网络上的代码不违背任何Java语言限制。这个安全机制部分包括类如何从网上装载。例如，装载的类是放在分开的名字空间而不是局部类，预防恶意的小应用程序用它自己的版本来代替标准Java类。</div>
+                        <div class="para" label-module="para"><b>7.可移植性</b></div>
+                        <div class="para" label-module="para">Java使得语言声明不依赖于实现的方面。例如，Java显式说明每个基本数据类型的大小和它的运算行为<i>（这</i><i>些数据类型由Java语法描述）</i>。</div>
+                        <div class="para" label-module="para">Java环境本身对新的硬件平台和操作系统是可移植的。Java编译程序也用Java编写，而Java运行系统用ANSIC语言编写。</div>
+                        <div class="para" label-module="para"><b>8.高性能</b></div>
+                        <div class="para" label-module="para">Java是一种先编译后解释的语言，所以它不如全编译性语言快。但是有些情况下性能是很要紧的，为了支持这些情况，Java设计者制作了“及时”编译程序，它能在运行时把Java字节码翻译成特定CPU<i>（中央处理器）</i>的机器代码，也就是实现全编译了。</div>
+                        <div class="para" label-module="para">Java字节码格式设计时考虑到这些“及时”编译程序的需要，所以生成机器代码的过程相当简单，它能产生相当好的代码。</div>
+                        <div class="para" label-module="para"><b>9.多线索性</b></div>
+                        <div class="para" label-module="para">Java是多线索语言，它提供支持多线索的执行<i>（也称为轻便过程）</i>，能处理不同任务，使具有线索的程序设计很容易。Java的lang包提供一个Thread类，它支持开始线索、运行线索、停止线索和检查线索状态的方法。</div>
+                        <div class="para" label-module="para">Java的线索支持也包括一组同步原语。这些原语是基于监督程序和条件变量风范，由C.A.R.Haore开发的广泛使用的同步化方案。用关键词synchronized，程序员可以说明某些方法在一个类中不能并发地运行。这些方法在监督程序控制之下，确保变量维持在一个一致的状态。</div>
+                        <div class="para" label-module="para"><b>10.动态性</b></div>
+                        <div class="para" label-module="para">Java语言设计成适应于变化的环境，它是一个动态的语言。例如，Java中的类是根据需要载入的，甚至有些是通过网络获取的。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="4" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_4" class="lemma-anchor "></a>
+                            <a name="工作原理" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">工作原理</h2>
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="lemma-picture text-pic layout-right" style="width:250px; cursor: move; text-indent: 28px; white-space: normal; float: right;">
+                                <img class="" src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D250/sign=4c2e45fe374e251fe6f7e3fd9787c9c2/e7cd7b899e510fb3023e9053de33c895d0430cca.jpg" alt="工作原理" style="width:250px;height:121px;">
+                                <span class="description">
+                                工作原理
+                                </span>
+                            </div>由四方面组成：</div>
+                        <div class="para" label-module="para">（1）Java编程语言</div>
+                        <div class="para" label-module="para">（2）Java类文件格式</div>
+                        <div class="para" label-module="para">（3）Java虚拟机</div>
+                        <div class="para" label-module="para">（4）Java应用程序接口
+                        </div>
+                        <div class="para" label-module="para">当编辑并运行一个Java程序时，需要同时涉及到这四种方面。使用文字编辑软件<i>（例如</i><i>记事本</i><i>、</i><i>写字板</i><i>、</i><i>UltraEdit</i><i>等）</i>或集成开发环境<i>（</i>&lt;<i>Eclipse</i><i>、MyEclipse等）</i>在Java源文件中定义不同的类 ，通过调用类
+                            <i>（这些类实现了Java API）</i>中的方法来访问资源系统，把源文件编译生成一种二进制中间码，存储在class文件中，然后再通过运行与操作系统平台环境相对应的Java虚拟机来运行class文件，执行编译产生的字节码，调用class文件中实现的方法来满足程序的Java API调用 。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="5" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_5" class="lemma-anchor "></a>
+                            <a name="语言基础" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">语言基础</h2>
+
+                        </div>
+                        <div class="para" label-module="para"><i></i></div>
+                        <div class="anchor-list">
+                            <a name="5_1" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_5_1" class="lemma-anchor "></a>
+                            <a name="基本数据结构" class="lemma-anchor "></a>
+                            <a name="5-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">基本数据结构</h3>
+                        </div>
+                        <div class="para" label-module="para">在Java中有8种数据类型来存储数值、字符和布尔值。</div>
+                        <div class="para" label-module="para"><b>整数类型</b></div>
+                        <div class="para" label-module="para">整数型用来存储整数数值，即没有小数部分的数值。可以是正数，也可以是负数。整数数据在Java程序中有3种表示形式，分别为十进制、八进制和十六进制。</div>
+                        <div class="para" label-module="para">整型数据根据它所占内容大小的不同可分为4种类型。</div>
+                        <table log-set-param="table_view" data-sort="sortDisabled">
+                            <tbody>
+                                <tr>
+                                    <th>数据类型</th>
+                                    <th>内存</th>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">byte</td>
+                                    <td width="328" valign="middle">8位</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">short</td>
+                                    <td width="328" valign="middle">16位</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">int</td>
+                                    <td width="328" valign="middle">32位</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">long</td>
+                                    <td width="328" valign="middle">64位</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="para" label-module="para"><b>浮点类型</b></div>
+                        <table log-set-param="table_view" class="table-view log-set-param">
+                            <tbody>
+                                <tr>
+                                    <th>数据类型</th>
+                                    <th>内存</th>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="top">float</td>
+                                    <td width="327" valign="top">32位</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="top">double</td>
+                                    <td width="327" valign="top">64位</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="para" label-module="para"><b>字符类型</b></div>
+                        <div class="para" label-module="para">字符类型用于存储单个字符，占用16位（两个字节）的内存空间。在定义字符型变量时，要以单引号表示。使用char关键字可定义字符变量。</div>
+                        <table log-set-param="table_view" data-sort="sortDisabled">
+                            <tbody>
+                                <tr>
+                                    <th>数据类型</th>
+                                    <th>内存</th>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">char</td>
+                                    <td width="328" valign="middle">16位</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="para" label-module="para"><b>布尔类型</b></div>
+                        <div class="para" label-module="para">布尔类型又称逻辑类型，通过关键字boolean来定义布尔类型变量，只有只有true和false两个取值，分别代表布尔逻辑中的“真”和“假”。布尔类型通常被用在流程控制中作为判断条件。</div>
+                        <div class="anchor-list">
+                            <a name="5_2" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_5_2" class="lemma-anchor "></a>
+                            <a name="关键字" class="lemma-anchor "></a>
+                            <a name="5-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">关键字</h3>
+                        </div>
+                        <table log-set-param="table_view" class="reference" data-sort="sortDisabled">
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <div class="para" label-module="para">关键字</div>
+                                    </th>
+                                    <th>
+                                        <div class="para" label-module="para">含义</div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td width="200" align="left" valign="top">abstract</td>
+                                    <td width="282" align="left" valign="top">
+                                        <div class="para" label-module="para">抽象类或方法</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">assert</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">用来查找内部程序错误</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">break</td>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">跳出一个switch或循环</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">byte</td>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">8位整数类型</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">case</td>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">switch的一个分支</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">
+                                        <div class="para" label-module="para">catch</div>
+                                    </td>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">
+                                        <div class="para" label-module="para">捕获异常的try块子句</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">class</td>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">定义一个类类型</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">continue</td>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">在循环末尾继续</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">default</td>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">switch的缺省语句</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">do</td>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">do/while循环最前面的语句</td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">double</td>
+                                    <td align="left" valign="top" colspan="1" rowspan="1">双精度浮点数类型</td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">else</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">if语句的else子句</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">enum</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">枚举类型</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">extends</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">定义一个类的父类</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">final</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">一个常量，或不能覆盖的一个类或方法</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">finally</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">try块中总会执行的部分</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">float</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">单精度浮点数类型</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">for</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">一个循环类型</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">if</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">一个条件语句</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">implements</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">定义一个类实现的接口</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">import</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">导入一个包</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">instanceof</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">测试一个对象是否是某个类的实例</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">int</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">32位整型数</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">interface</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">接口，一种抽象类型，仅有方法和常量的定义</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">long</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">64位长整数型</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">native</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">由宿主系统实现的一个方法</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">new</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">分配新的类实例</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">null</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">一个空引用</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">package</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">包含类的一个包</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">private</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">表示私有字段，或者方法等，只能从类内部访问</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">protected</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">表示保护类型字段</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">public</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">表示共有属性或者方法</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">return</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">从一个方法中返回</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">short</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">16位整数类型</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">static</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">这个特性是这个类特有的，而不属于这个类的对象</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">strictfp</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">对浮点数计算使用严格的规则</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">super</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">超类对象或构造函数</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">switch</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">选择语句</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">synchronized</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">对线程而言是原子的方法或代码块</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">this</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">当前类的一个方法或构造函数的隐含参数</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">throw</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">抛出一个异常</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">throws</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">一个方法可能抛出的异常</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">transient</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">标志非永久性的数据</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">try</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">捕获异常的代码块</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">void</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">标记方法不返回任何值</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">volatile</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">
+                                        <div class="para" label-module="para">标记字段可能会被多个线程同时访问，而不做同步</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="202" align="left" valign="top">
+                                        <div class="para" label-module="para">while</div>
+                                    </td>
+                                    <td width="500" align="left" valign="top">一种循环</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="para" label-module="para"><i></i></div>
+                        <div class="anchor-list">
+                            <a name="5_3" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_5_3" class="lemma-anchor "></a>
+                            <a name="运算符" class="lemma-anchor "></a>
+                            <a name="5-3" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">运算符</h3>
+                        </div>
+                        <div class="para" label-module="para">运算符是一些特殊的符号，主要用于数学函数、一些类型的赋值语句和逻辑比较方面。</div>
+                        <div class="para" label-module="para"><b>赋值运算符</b></div>
+                        <div class="para" label-module="para">赋值运算符以符号“=”表示，它是一个二元运算符（对两个操作数作处理），其功能是将右方操作数所含的值赋给左方的操作数。</div>
+                        <div class="para" label-module="para">例如：</div>
+                        <div>
+                            <div id="highlighter_966610" class="syntaxhighlighter  java">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="java keyword">int</code>&nbsp;<code class="java plain">a&nbsp;=&nbsp;</code><code class="java value">100</code><code class="java plain">;</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para"><b>算术运算符</b></div>
+                        <table log-set-param="table_view" data-sort="sortDisabled">
+                            <tbody>
+                                <tr>
+                                    <th>运算符</th>
+                                    <th>说明</th>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">+</td>
+                                    <td width="328" valign="middle">加</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">-</td>
+                                    <td width="328" valign="middle">减</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">*</td>
+                                    <td width="328" valign="middle">乘</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">/</td>
+                                    <td width="328" valign="middle">除</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">%</td>
+                                    <td width="328" valign="middle">取余数</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="para" label-module="para"><b>自增和自减运算符</b></div>
+                        <div class="para" label-module="para">自增和自减是单目运算符，可以放在操作元之前，也可以放在操作元之后。操作元必须是一个整型或浮点型变量。自增、自减运算符的作用是使变量的值增1或减1。放在操作元前面的自增、自减运算符，会先将变量的值加1或减1，然后再使该变量参与表达式的运算。放在操作元后面的自增、自减运算符，会先使变量参与表达式的运算，然后再将该变量的值加1或减1。</div>
+                        <div class="para" label-module="para">例如：</div>
+                        <div class="para" label-module="para">假设a=5</div>
+                        <div>
+                            <div id="highlighter_496714" class="syntaxhighlighter  java">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="java plain">b=++a;</code><code class="java comments">//先将a的值加1，然后赋值给b，此时a的值为6，b的值为6</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="java plain">b=a++;</code><code class="java comments">//先将a的值赋值给b，再将a的值变为6，此时a的值为6，b的值为5</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para"><b>比较运算符</b></div>
+                        <div class="para" label-module="para">比较运算符属于二元运算符，用于程序中的变量之间，变量和自变量之间以及其他类型的信息之间的比较。比较运算符的运算结果是boolean型。当运算符对应的关系成立时，运算的结果为true，否则为false。比较运算符共有6个，通常作为判断的依据用于条件语句中。<b><br>　　</b></div>
+                        <table log-set-param="table_view" data-sort="sortDisabled">
+                            <tbody>
+                                <tr>
+                                    <th>运算符</th>
+                                    <th>说明</th>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">&gt;</td>
+                                    <td width="328" valign="middle">比较左方是否大于右方</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">&lt;</td>
+                                    <td width="328" valign="middle">比较左方是否小于右方</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">==</td>
+                                    <td width="328" valign="middle">比较左方是否等于右方</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">&gt; =</td>
+                                    <td width="328" valign="middle">比较左方是否大于等于右方</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">&lt;=</td>
+                                    <td width="328" valign="middle">比较左方是否小于等于右方</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="middle">！=</td>
+                                    <td width="328" valign="middle">比较左方是否不等于右方</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="para" label-module="para"><b>逻辑运算符</b></div>
+                        <table log-set-param="table_view" class="table-view log-set-param">
+                            <tbody>
+                                <tr>
+                                    <th>运算符</th>
+                                    <th>作用</th>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="top">&amp;&amp;</td>
+                                    <td width="327" valign="top">逻辑与</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="top">||</td>
+                                    <td width="327" valign="top">逻辑或</td>
+                                </tr>
+                                <tr>
+                                    <td width="327" valign="top">！</td>
+                                    <td width="327" valign="top">逻辑非　</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="anchor-list">
+                            <a name="5_4" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_5_4" class="lemma-anchor "></a>
+                            <a name="程序举例" class="lemma-anchor "></a>
+                            <a name="5-4" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">程序举例</h3>
+                        </div>
+                        <div>
+                            <div id="highlighter_331003" class="syntaxhighlighter  java">
+                                <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="gutter">
+                                                <div class="line number1 index0 alt2">1</div>
+                                                <div class="line number2 index1 alt1">2</div>
+                                                <div class="line number3 index2 alt2">3</div>
+                                                <div class="line number4 index3 alt1">4</div>
+                                                <div class="line number5 index4 alt2">5</div>
+                                                <div class="line number6 index5 alt1">6</div>
+                                                <div class="line number7 index6 alt2">7</div>
+                                                <div class="line number8 index7 alt1">8</div>
+                                                <div class="line number9 index8 alt2">9</div>
+                                            </td>
+                                            <td class="code">
+                                                <div class="container">
+                                                    <div class="line number1 index0 alt2"><code class="java comments">/*一个简单的Java应用程序，显示内容：Hello&nbsp;World!</code></div>
+                                                    <div class="line number2 index1 alt1"><code class="java comments">文件名为Hello．java*/</code></div>
+                                                    <div class="line number3 index2 alt2"><code class="java keyword">class</code>&nbsp;<code class="java plain">Hello{</code></div>
+                                                    <div class="line number4 index3 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java comments">//程序开始于main()</code></div>
+                                                    <div class="line number5 index4 alt2"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">public</code>&nbsp;<code class="java keyword">static</code>&nbsp;<code class="java keyword">void</code>&nbsp;<code class="java plain">main(String&nbsp;args[]){</code></div>
+                                                    <div class="line number6 index5 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(</code><code class="java string">"Hello&nbsp;World!"</code><code class="java plain">)；</code></div>
+                                                    <div class="line number7 index6 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div>
+                                                    <div class="line number8 index7 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div>
+                                                    <div class="line number9 index8 alt2"><code class="java spaces">&nbsp;</code><code class="java plain">}</code></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="para" label-module="para">main方法，正如注释所说，这是程序开始执行的第一行。对于一个Java应用程序来说，main方法是必需的，Java解释器在没有生成任何对象的情况下，以main作为入口来执行程序。每个类中可以定义多个方法，但main方法只能有一个。关键字public表示访问权限，指明所有的类都可以使用这一方法。本例中，main必须被定义为public类型，因为当程序开始执行时它需要被它的类之外的代码调用。关键字static指明该方法是一个类方法。关键字void指明main()方法不返回任何值。main方法圆括号中定义的String
+                            args[]是传送给main方法的参数，参数名为args，它是类String的一个对象。方法的参数用“类名参数名”来指定，多个参数间用逗号分隔。该行的最后一个字符是“{”，它表示了main程序体的开始，一个方法中包含的所有代码都将包括在这对花括号中间。另外，main仅是解释器开始工作的地方，一个复杂的程序可能包含几十个类，但这些类仅需要一个main方法。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="6" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_6" class="lemma-anchor "></a>
+                            <a name="语言标准" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">语言标准</h2>
+
+                        </div>
+                        <div class="para" label-module="para">1997年11月17日，国际标准化组织<i>（ISO）</i>同意采纳Sun公司的专利技术——Java作为ISO标准。JAVA作为一个技术标准供公众无偿使用。根据ISO的批准，Sun公司将可提交JAVA的标准化平台规范。
+                        </div>
+                        <table log-set-param="table_view" data-sort="sortDisabled">
+                            <tbody>
+                                <tr>
+                                    <th>发布时间</th>
+                                    <th>名称</th>
+                                </tr>
+                                <tr>
+                                    <td width="298" align="left" valign="top" colspan="1" rowspan="1">2000年11月15</td>
+                                    <td width="357" align="left" valign="top" colspan="1" rowspan="1">ISO/TS 10303-27:2000</td>
+                                </tr>
+                                <tr>
+                                    <td width="298" valign="top" colspan="1" rowspan="1">2006年5月15</td>
+                                    <td width="357" valign="top">ISO/IEC 19777-2:2006</td>
+                                </tr>
+                                <tr>
+                                    <td width="298" valign="top" colspan="1" rowspan="1">2014年7月15</td>
+                                    <td width="357" valign="top">ISO/IEC TR 13066-6:2014</td>
+                                </tr>
+                                <tr>
+                                    <td width="298" valign="top" colspan="1" rowspan="1">
+                                        <div class="para" label-module="para">2015年8月15</div>
+                                    </td>
+                                    <td width="357" valign="top">
+                                        <div class="para" label-module="para">ISO 20210:2015</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="298" valign="top" colspan="1" rowspan="1">
+                                        <div class="para" label-module="para">2016年3月15</div>
+                                    </td>
+                                    <td width="357" valign="top">
+                                        <div class="para" label-module="para">ISO/IEC 30106-2:2016</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="anchor-list">
+                            <a name="7" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_7" class="lemma-anchor "></a>
+                            <a name="语言规范" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">语言规范</h2>
+
+                        </div>
+                        <div class="para" label-module="para">JCP<i>（Java Community Process）</i>是一个开放的国际组织，主要由Java开发者以及被授权者组成，职能是发展和更新Java技术规范、参考实现<i>（RI）</i>、技术兼容包<i>（TCK）</i>。</div>
+                        <div class="para" label-module="para">JCP维护的规范包括Java ME、Java SE、Java EE、XML、OSS、JAIN等。组织成员可以提交JSR<i>（Java </i><i>Specification Requests）</i>，通过特定程序以后，进入到下一版本的规范里面。</div>
+                        <div class="para" label-module="para">JSR是早期提议和最终发布的Java平台规范的具体描述。通常，一个新的JSR的提出是为了增加或者规范Java平台的功能。某个具体的JSR由专家组共同来制定，工作由组长协调。例如，CLDC1.0<i>（Connected Limited Device Configuration，JSR30）</i>由Sun公司的Antero Taivalsaari担任组长，同时专家组的成员还包括Siemens、Motorola、Nokia、Symbian等。Java
+                            ME平台规范是在JSR68中定义的，规范组长是Sun公司的Jon Courtney。
+                        </div>
+                        <div class="para" label-module="para">JSR完成后，相关的规范及JavaAPI会在JCP的官方网站发布。设备制造商可以在自己的产品中实现某个JSR，如MIDP2.0<i>（JSRll8）</i>。但是这些都必须要通过TCK<i>（Technology Compatibility Kit）</i>测试以确保技术兼容性。
+                        </div>
+                        <div class="para" label-module="para">按照技术类别可以分成以下几类：</div>
+                        <div class="para" label-module="para">1、J2EE平台规范
+                        </div>
+                        <div class="para" label-module="para">2、J2SE平台规范
+                        </div>
+                        <div class="para" label-module="para">3、J2ME平台规范
+                        </div>
+                        <div class="para" label-module="para">4、运营支持系统规范<i>（OSS）
+                                </i></div>
+                        <div class="para" label-module="para">5、综合网络的Java 应用<i>（JAIN）</i>
+                        </div>
+                        <div class="para" label-module="para">6、XML 操作规范
+                        </div>
+                        <div class="anchor-list">
+                            <a name="8" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_8" class="lemma-anchor "></a>
+                            <a name="技术应用" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">技术应用</h2>
+
+                        </div>
+                        <div class="para" label-module="para">1、Android应用</div>
+                        <div class="para" label-module="para">许多的 Android应用都是Java程序员开发者开发。虽然 Android运用了不同的JVM以及不同的封装方式，但是代码还是用Java语言所编写。相当一部分的手机中都支持JAVA游戏，这就使很多非编程人员都认识了JAVA。</div>
+                        <div class="para" label-module="para">2、在金融业应用的服务器程序</div>
+                        <div class="para" label-module="para">Java在金融服务业的应用非常广泛，很多第三方交易系统、银行、金融机构都选择用Java开发，因为相对而言，Java较安全 。大型跨国投资银行用Java来编写前台和后台的电子交易系统，结算和确认系统，数据处理项目以及其他项目。大多数情况下，Java被用在服务器端开发，但多数没有任何前端，它们通常是从一个服务器
+                            <i>（上一级）</i>接收数据，处理后发向另一个处理系统<i>（下一级处理）</i>。</div>
+                        <div class="para" label-module="para">3、网站</div>
+                        <div class="para" label-module="para">Java 在电子商务领域以及网站开发领域占据了一定的席位。开发人员可以运用许多不同的框架来创建web项目，SpringMVC，Struts2.0以及frameworks。即使是简单的 servlet，jsp和以struts为基础的网站在政府项目中也经常被用到。例如医疗救护、保险、教育、国防以及其他的不同部门网站都是以Java为基础来开发的。</div>
+                        <div class="para" label-module="para">4、嵌入式领域</div>
+                        <div class="para" label-module="para">Java在嵌入式领域发展空间很大。在这个平台上，只需130KB就能够使用Java技术<i>（在智能卡或者传感器上）</i>。</div>
+                        <div class="para" label-module="para">5、大数据技术</div>
+                        <div class="para" label-module="para">Hadoop以及其他大数据处理技术很多都是用Java，例如Apache的基于Java的HBase和Accumulo以及 ElasticSearchas。</div>
+                        <div class="para" label-module="para">6、高频交易的空间</div>
+                        <div class="para" label-module="para">Java平台提高了这个平台的特性和即使编译，他同时也能够像 C++ 一样传递数据。正是由于这个原因，Java成为的程序员编写交易平台的语言，因为虽然性能不比C++，但开发人员可以避开安全性，可移植性和可维护性等问题。</div>
+                        <div class="para" label-module="para">7、科学应用</div>
+                        <div class="para" label-module="para">Java在科学应用中是很好选择，包括自然语言处理。最主要的原因是因为Java比C++或者其他语言相对其安全性、便携性、可维护性以及其他高级语言的并发性更好。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="9" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_9" class="lemma-anchor "></a>
+                            <a name="学习指南" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">学习指南</h2>
+
+                        </div>
+                        <div class="anchor-list">
+                            <a name="9_1" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_9_1" class="lemma-anchor "></a>
+                            <a name="考试" class="lemma-anchor "></a>
+                            <a name="9-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">考试</h3>
+                        </div>
+                        <div class="para" label-module="para">Sun公司的Java认证共有以下四种：Java程序员<i>（SCJP）</i>、Java开发员<i>（SCJP）</i>、Java Web组件的开发（SCWD）和Java2企业级设计师企业级技术（SCJA）。中国开展较为普遍的Java认证考试为前两种，其中，Java程序员的认证考试以Sun公司指定的JavaSL-275为教材，考试号为310-025。Java开发员的认证考试以Sun指定的JavaSL-285为教材，机考部分的考试号为310-027。
+                            <a name="ref_41"></a>
+                        </div>
+                        <div class="para" label-module="para">Sun Certified Java Programmer<i>（SCJP）</i></div>
+                        <div class="para" label-module="para">Java 程序员认证，测试Java 程序设计的要领和能力，内容侧重于Java 的语法及JDK<i>（Java Development Kit）</i>。</div>
+                        <div class="para" label-module="para">Sun Certified Java Developer<i>（SCJD）</i></div>
+                        <div class="para" label-module="para">Java 开发员认证，进一步测试用Java 开发应用程序的能力。必须先完成一个程序设计的项目后，再回答与此项目相关的几个问题。</div>
+                        <div class="para" label-module="para">Sun Certified Web Component Developer for Java 2Platform Enterprise Edition<i>（SCWD）</i></div>
+                        <div class="para" label-module="para">Web 组件开发员认证，测试技术人员对Java Servlets 和JSP（Java Server Page）的程序开发技巧。</div>
+                        <div class="para" label-module="para">Sun Certified Enterprise Architect for J2EE Technology<i>（SCAJ）</i></div>
+                        <div class="para" label-module="para">Java2 企业级设计师认证是Java 最高级的认证，测试对J2EE 架构及其他系统整合的相关技术经验及能力。
+                        </div>
+                        <div class="para" label-module="para">Sun公司定制的Java程序员课程的标准课件的培训期为5天<i>（30个学时）</i>。培训期间，讲师使用Sun公司指定教材，全面系统地讲述课程的内容，并根据各知识点所需要掌握的深度，有层次、有重点、有目的地指导学员的学习。同时，对各种题型的分析和讲解更能帮助学员直观、准确地了解java认证考试。
+                            <a name="ref_41"></a>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="9_2" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_9_2" class="lemma-anchor "></a>
+                            <a name="教材" class="lemma-anchor "></a>
+                            <a name="9-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="10" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_10" class="lemma-anchor "></a>
+                            <a name="语言评价" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">语言评价</h2>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="10_1" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_10_1" class="lemma-anchor "></a>
+                            <a name="发展前景" class="lemma-anchor "></a>
+                            <a name="10-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">发展前景</h3>
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="lemma-picture text-pic layout-right" style="width:157px; float: right;">
+                                <img class="" src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=4a3e38bab63533faf1b6942c98d2fdca/b7fd5266d0160924f8fe13afd30735fae7cd34ae.jpg" alt="Java" style="width:157px;height:220px;">
+                                <span class="description">
+                                Java
+                                </span>
+                            </div>计算机的诞生及广泛应用推动了IT领域的发展，但21世纪的计算机早已不是访问INTERNET的唯一的途径。各类更具信息化的电子产品逐渐进入IT领域，推动了PC时代的大发展。由于各种消费信息的急剧增加，传统的客户机的各方面条件均不如PC，PC的发展对服务器的应用管理体统也提出了更高标准。Java语言完全满足了PC的条件，在减少内存，直接在各类电子产品中运行，在网络中可被任何设备所识别，充分利用网络资源等方面有所突破创新，为PC时代的发展创造了有力条件。</div>
+                        <div class="para" label-module="para">随着IT产业的发展，许多企业中的计算机应用程序也在随之转型，企业中所应用的计算机模式逐渐向客户端较小、服务器随之增大、数据库的容量也在相应增加的方向转变。此外，加上Java语言独有的特点，根据其在各项服务器中应用程序的开发所占有的优势，企业版的J2SE为企业环境中计算机模式的应用提供了良好的平台。</div>
+                        <div class="para" label-module="para">Java语言为与数据库联系紧密设计了Java servlet和SQL-J技术，以及JSP技术。随着JSP技术的发展，使JAVA语言的网络应用更为实际化、更高效快捷，成为IT产业常用的技术。JSP以Java语言作为其服务器端的使用语言，结合了JAVA SCRIPT等多种其他客户端语言，使网络浏览器更为方便的展现。
+                        </div>
+                        <div class="para" label-module="para">在远程网络教学方面，由于JAVA改变了传统的基于Microsoft Front Page或HTML语言制作的Web页面形态，使网络远程教学更加朝着动态、便捷化、安全化的方向发展，丰富了网络远程教学的手段和覆盖面。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="10_2" class="lemma-anchor para-title"></a>
+                            <a name="sub12654100_10_2" class="lemma-anchor "></a>
+                            <a name="贡献及影响力" class="lemma-anchor "></a>
+                            <a name="10-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">贡献及影响力</h3>
+                        </div>
+                        <div class="para" label-module="para">Java 语言是一门随时代快速发展的计算机语言程序，其深刻展示了程序编写的精髓，加上其简明严谨的结构及简洁的语法编写为其将来的发展及维护提供了保障。由于提供了网络应用的支持和多媒体的存取，会推动Internet和企业网络的Web的应用 。另外，为了保持Java的增长和推进Java社区的参与，Sun公司在Java One开发者大会上宣布开放Java核心源代码，以鼓励更多的人参与到Java社团活动中。来自Java社团和IBM等全球技术合作伙伴两方面的支持，Java技术在创新和社会进步上继续发挥强有力的重要作用
+                            ，并且随着其程序编写难度的降低使得更多专业人员将精力放置于Java语言的编写与框架结构的设计中 。
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="right-wrap hidden-xs">
+                </div>
+                <div class="right-bar col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                    <div class="right-bar-item user-box">
+                        <h4 class="right-item-title">个人信息</h4>
+                        <div class="bar-online">
+                            <img class="userPic" src="../../src/user.png" width="74px" />
+                            <h4 class="greeting">你好，<span class="online-user"></span></h4>
+                            <hr>
+                            <div class="inner-box">
+                                <h5 class="tap"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../user/">查看个人信息</a></h5>
+                                <h5 class="tap manager"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../admin/">管理社团</a></h5>
+                                <h5 class="tap logout">退出登录</h5>
+                            </div>
+                        </div>
+                        <div class="bar-offline">
+                            <img class="defaultUserPic" src="../../src/user.png" width="74px" />
+                            <h5 class="greeting">你好，游客</h5>
+                            <hr>
+                            <h5 class="tap" style="text-align: center;text-decoration: none;">请<a style="color: #1296db;" class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../login/">登录</a></h5>
+                        </div>
+                    </div>
+                    <div class="right-bar-item weather-box">
+                        <h4 class="right-item-title">天气</h4>
+                        <iframe allowtransparency="true" frameborder="0" width="100%" height="260px" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=1&v=1&d=3&bd=0&k=000000&f=000000&ltf=009944&htf=cc0000&q=1&e=0&a=1&c=71526&w=140&h=278&align=center"></iframe>
+                    </div>
+                    <div class="nav-scroll">
+                        <div class="wiki-bar">
+                        </div>
+                        <span class="top-point"></span>
+                        <span class="bottom-point"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <h5 class="copyright-text">&copy;&nbsp;2018吉林大学IBM俱乐部&nbsp; All rights reserved.</h5>
+            </div>
+            <div class="wrap-bar"></div>
+            <div class="bottom-bar">
+                <div class="bottom-contact"><a href="">联系我们</a></div>
+            </div>
+        </div>
+    </div>
+    <img id="back_to_top" src="../../src/icon/back_to_top.png" />
+    <script>
+        function DirectoryNav($h, config) {
+            this.opts = $.extend(true, {
+                scrollThreshold: 0.1, //滚动检测阀值 0.5在浏览器窗口中间部位
+                scrollSpeed: 0, //滚动到指定位置的动画时间
+                scrollTopBorder: 500, //滚动条距离顶部多少的时候显示导航，如果为0，则一直显示
+                easing: 'swing', //不解释
+                delayDetection: 0, //延时检测，避免滚动的时候检测过于频繁
+                scrollChange: function() {}
+            }, config);
+            this.$win = $(window);
+            this.$h = $h;
+            this.$pageNavList = "";
+            this.$pageNavListLis = "";
+            this.$curTag = "";
+            this.$pageNavListLiH = "";
+            this.offArr = [];
+            this.curIndex = 0;
+            this.scrollIng = false;
+            this.init();
+        }
+
+        DirectoryNav.prototype = {
+            init: function() {
+                this.make();
+                this.setArr();
+                this.bindEvent();
+            },
+            make: function() {
+                //生成导航目录结构,这是根据需求自己生成的。如果你直接在页面中输出一个结构那也挺好不用 搞js
+                $(".wiki-bar").append('<div class="directory-nav" id="directoryNav"><ul></ul><span class="cur-tag"></span><span class="c-top"></span><span class="c-bottom"></span><span class="line"></span></div>');
+                var $hs = this.$h,
+                    $directoryNav = $("#directoryNav"),
+                    temp = [],
+                    index1 = 0,
+                    index2 = 0;
+                $hs.each(function(index) {
+                    var $this = $(this),
+                        text = $this.text();
+                    if (this.tagName.toLowerCase() == 'h2') {
+                        index1++;
+                        if (index1 % 2 == 0) index2 = 0;
+                        temp.push('<li class="l1"><span class="c-dot"></span>' + index1 + '. <a class="l1-text">' + text + '</a></li>');
+                    } else {
+                        index2++;
+                        temp.push('<li class="l2">' + index1 + '.' + index2 + ' <a class="l2-text">' + text + '</a></li>');
+
+                    }
+                });
+                $directoryNav.find("ul").html(temp.join(""));
+
+                //设置变量
+                this.$pageNavList = $directoryNav;
+                this.$pageNavListLis = this.$pageNavList.find("li");
+                this.$curTag = this.$pageNavList.find(".cur-tag");
+                this.$pageNavListLiH = this.$pageNavListLis.eq(0).height();
+
+                if (!this.opts.scrollTopBorder) {
+                    this.$pageNavList.show();
+                }
+            },
+            setArr: function() {
+                var This = this;
+                this.$h.each(function() {
+                    var $this = $(this),
+                        offT = Math.round($this.offset().top);
+                    This.offArr.push(offT);
+                });
+            },
+            posTag: function(top) {
+                //调整蓝色箭头的位置
+                this.$curTag.css({
+                    top: top + 'px'
+                });
+                //导航条移动
+                var navHeight = $("#directoryNav").height();
+                $("#directoryNav").css("top", navHeight - top - 300 + "px");
+            },
+            ifPos: function(st) {
+                var offArr = this.offArr;
+         
+                var windowHeight = Math.round(this.$win.height() * this.opts.scrollThreshold);
+                for (var i = 0; i < offArr.length; i++) {
+                    if ((offArr[i] - windowHeight) < st) {
+                        var $curLi = this.$pageNavListLis.eq(i),
+                            tagTop = $curLi.position().top;
+                        $curLi.addClass("cur").siblings("li").removeClass("cur");
+                        this.curIndex = i;
+                        this.posTag(tagTop + this.$pageNavListLiH * 0.5);
+                        this.opts.scrollChange.call(this);
+                    }
+                }
+            },
+            bindEvent: function() {
+                var This = this,
+                    show = false,
+                    timer = 0;
+                this.$win.on("scroll", function() {
+                    var $this = $(this);
+                    clearTimeout(timer);
+                    timer = setTimeout(function() {
+                        This.scrollIng = true;
+                        if ($this.scrollTop() > This.opts.scrollTopBorder) {
+                            if (!This.$pageNavListLiH) This.$pageNavListLiH = This.$pageNavListLis.eq(0).height();
+                            if (!show) {
+                                This.$pageNavList.fadeIn();
+                                show = true;
+                            }
+                            This.ifPos($(this).scrollTop());
+                        } else {
+                            if (show) {
+                                This.$pageNavList.fadeOut();
+                                show = false;
+                            }
+                        }
+                    }, This.opts.delayDetection);
+                });
+
+                this.$pageNavList.on("click", "li", function() {
+                    var $this = $(this),
+                        index = $this.index();
+                    This.scrollTo(This.offArr[index]);
+                })
+            },
+            scrollTo: function(offset, callback) {
+                var This = this;
+                $('html,body').animate({
+                    scrollTop: offset
+                }, this.opts.scrollSpeed, this.opts.easing, function() {
+                    This.scrollIng = false;
+                    //修正弹两次回调 蛋疼
+                    callback && this.tagName.toLowerCase() == 'body' && callback();
+                });
+            }
+        };
+
+        //实例化
+        var directoryNav = new DirectoryNav($(".title-text,.title-text"), {
+            scrollTopBorder: 500 //滚动条距离顶部多少的时候显示导航，如果为0，则一直显示
+        });
+
+        var shelterHeight = parseInt($(window).height()) - 455;
+        $(".up-shelter").css("height", shelterHeight + "px");
+        $(window).resize(function() {
+            var shelterHeight = parseInt($(window).height()) - 455;
+            $(".up-shelter").css("height", shelterHeight + "px");
+        });
+    </script>
+
+    <script>
+    </script>
+    <!-- animsition js -->
+    <script src="../../animsition/dist/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".animsition").animsition({
+
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 1500,
+                outDuration: 800,
+                linkElement: '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                unSupportCss: ['animation-duration',
+                    '-webkit-animation-duration',
+                    '-o-animation-duration'
+                ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay: false,
+                overlayClass: 'animsition-overlay-slide',
+                overlayParentElement: 'body'
+            });
+        });
+    </script>
+    <!-- 遮盖层，判断是否点击屏幕 -->
+    <div class="shelter"></div>
+</body>
+
+</html>

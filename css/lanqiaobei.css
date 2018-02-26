@@ -1,0 +1,171 @@
+.main-box {
+    padding: 0px 20px;
+}
+
+.title {
+    display: inline-block;
+}
+
+.title-logo {
+    display: inline-block;
+    margin-top: -10px;
+}
+
+.row-box {
+    padding: 15px;
+    height: auto;
+}
+
+.dasai-inner-box {
+    padding: 0;
+    border: 1px solid #ccc;
+}
+
+.electronic p {
+    margin-bottom: 11px;
+}
+
+.group p {
+    margin-bottom: 12px;
+}
+
+.children p {
+    margin-bottom: 30px;
+}
+
+.dasai-inner-box h4 {
+    margin: 30px 0 20px 0;
+    text-align: center;
+}
+
+.dasai-inner-box .pic {
+    padding: 15px;
+}
+
+.dasai-inner-box .lpic {
+    padding: 10px 7.5px 10px 15px;
+    position: relative;
+}
+
+.dasai-inner-box .rpic {
+    padding: 10px 15px 10px 7.5px;
+    position: relative;
+}
+
+.stepMain {
+    margin-right: 5px;
+    padding-top: 30px;
+}
+
+.step {
+    text-align: center;
+    height: 210px;
+    min-width: 84px !important;
+}
+
+.step img {
+    width: 40px;
+    padding: 10px 0 10px 0;
+}
+
+.step::after {
+    position: absolute;
+    right: -12px;
+    top: 20px;
+    background-image: url(../src/lanqiaobei/applyStep/icon-next.png);
+    width: 20px;
+    height: 30px;
+    display: inline-block;
+    content: "";
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+.step div {
+    margin: auto;
+    border: 6px solid #eaeaea;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.proBox {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.proBox p {
+    color: #419ce6;
+}
+
+.proBox .img {
+    width: 50px;
+    height: 56px;
+    margin: auto;
+}
+
+.proBox .date {
+    color: #000000;
+}
+
+.enter {
+    text-align: center;
+    margin: 0
+}
+
+.button {
+    width: 144px;
+}
+
+.button:visited,
+.buttonlg:visited {
+    color: #fff;
+}
+
+.button,
+.buttonlg {
+    box-sizing: border-box;
+    background-color: rgba(0, 32, 81, 0.7);
+    color: #efefef;
+    text-align: center;
+    border-radius: 1px;
+    border: 0.5px solid #cccccc;
+    border-bottom: 0.5px solid #b2b2b2;
+}
+
+.button:hover,
+.buttonlg:hover {
+    color: #efefef;
+    border: 0.5px solid #a4a4a4;
+    border-top: 1px solid #b2b2b2;
+}
+
+@media (min-width: 480px) {
+    .step {
+        text-align: center;
+        height: 210px;
+        min-width: 84px !important;
+    }
+    .step img {
+        padding: 15px 0 10px 0;
+    }
+    .step::after {
+        position: relative;
+        right: -60px;
+        top: -130px;
+        width: 20px;
+        height: 30px;
+        display: inline-block;
+        content: "";
+    }
+    .step div {
+        margin: auto;
+        border: 6px solid #eaeaea;
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+    }
+}

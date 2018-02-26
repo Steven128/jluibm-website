@@ -1,0 +1,886 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>科普之窗-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/Normalize.css" />
+
+    <link rel="stylesheet" type="text/css" href="../css/wiki-lemma_2e0b0ff.css">
+    <link rel="stylesheet" type="text/css" href="../css/wiki-common-base_641773b.css">
+    <link rel="stylesheet" type="text/css" href="../css/wiki-lemma-module_d12cf7b.css">
+    <link rel="stylesheet" type="text/css" href="../css/shCoreDefault_3f91dc3.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainContent_98e3702.css">
+
+    <link type="text/css" rel="stylesheet" href="../../css/page.css" />
+    <link type="text/css" rel="stylesheet" href="../css/navigation.css" />
+    <link rel="stylesheet" href="../../animsition/dist/css/animsition.min.css" />
+
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/page.js"></script>
+    <!-- <script type="text/javascript" src="../js/navigation.js"></script> -->
+    <script type="text/javascript" src="../js/check-login.js"></script>
+    <style>
+        .main-text {
+            font-family: arial, SimSun, 宋体, sans-serif;
+            padding: 29px 29px 0 29px;
+            float: left;
+            font-size: 13px;
+            line-height: 1.8;
+            background-color: #fff;
+            width: 100%;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Microsoft YaHei';
+        }
+        
+        .lemmaWgt-lemmaTitle-title h1 {
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 992px) {
+            .basicInfo-block {
+                width: 270px !important;
+            }
+            .basic-info {
+                font-size: 12px;
+            }
+            .basicInfo-item {
+                padding-left: 0 !important;
+            }
+            .basicInfo-item.name {
+                width: 70px !important;
+            }
+            .basicInfo-item.value {
+                width: 200px !important;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog ol {
+                width: 170px !important;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level1 .text {
+                width: auto;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level2 .text {
+                width: auto;
+            }
+            .lemmaWgt-lemmaCatalog .lemma-catalog .catalog-list ol li.level2 .index {
+                padding-left: 25px;
+            }
+        }
+        
+        .wiki-bar {
+            position: relative;
+            top: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../" class="site-title" rel="home">吉林大学IBM俱乐部</a>
+                    <div class="menu-button">
+                        <img src="../../src/icon/menu.png" width="30px" height="30px" />
+                    </div>
+                </div>
+            </div>
+            <!-- menu on larger devices -->
+            <nav id="nav" class="main-navigation hidden-xs hidden-sm" role="navigation">
+                <ul id="primary-menu" class="menu">
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../">首页</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../activities/">活动介绍</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../score/">成绩查询</a></li>
+                    <li id="wiki-item" class="menu-item">
+                        <div style="display: inline">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></div>
+                    </li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../joinus/">加入我们</a></li>
+                    <ul class="sub-menu">
+                        <li id="sub-menu-wrap" class="sub-menu-item"></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/算法/">算法</a></li>
+                        <li id="web-item" class="sub-menu-item">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></span></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Java/">Java</a></li>
+                    </ul>
+                    <ul class="sub-menu-web">
+                        <li id="web-1" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Web前端/">Web前端</a></li>
+                        <li id="web-2" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Python/">Python</a></li>
+                        <li id="web-3" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/PHP/">PHP</a></li>
+                    </ul>
+                </ul>
+            </nav>
+
+            <!-- menu on mobile devices -->
+            <nav id="nav" class="main-navigation-mobile col-xs-12" role="navigation">
+                <ul id="primary-menu" class="menu col-xs-12">
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../">首页</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../activities/">活动介绍</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../score/">成绩查询</a></li>
+                    <li id="wiki-item-mobile" class="menu-item col-xs-12">
+                        <div class="col-xs-12" style="display: inline;padding: 0;">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></div>
+                    </li>
+                    <ul class="sub-menu sub-menu-mobile col-xs-12">
+                        <li id="sub-menu-wrap col-xs-12"></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C语言/">C语言</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/C++/">C++</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/算法/">算法</a></li>
+                        <li id="web-item-mobile" class="sub-menu-item col-xs-12">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="../../src/icon/down-white.png" /></span></li>
+                        <ul class="sub-menu-web sub-menu-web-mobile col-xs-12">
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Web前端/">Web前端</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Python/">Python</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/PHP/">PHP</a></li>
+                        </ul>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Linux/">Linux</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="../../wiki/Java/">Java</a></li>
+                    </ul>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="../../joinus/">加入我们</a></li>
+
+                </ul>
+            </nav>
+            <!-- #site-navigation -->
+
+
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <span class="location">位置</span>
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../"><img class="index-icon" src="../../src/icon/index-icon.png" /></a> &gt; 科普之窗 &gt; <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="">Linux</a>
+                <div class="login">
+                    <div class="online">
+                        <h5 class="greeting">你好，<span class="online-user"></span></h5>
+                        <img class="userPic" src="../../src/user.png" width="40px" />
+                        <div class="user-info">
+                            <img class="userPic" src="../../src/user.png" width="50px" />
+                            <h4 class="online-user"></h4>
+                            <h5><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../user/">查看个人信息</a></h5>
+                            <h5 class="logout">退出登录</h5>
+                        </div>
+                    </div>
+                    <div class="offline">
+                        <h5 class="greeting"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../login/">登录</a></h5>
+                        <img class="userPic" src="../../src/user.png" width="50px" />
+                    </div>
+                </div>
+            </div>
+            <div class="bar-box row">
+                <div class="left-bar col-lg-2 hidden-md  hidden-xs hidden-sm">
+                    <nav id="wiki-nav" class="wiki-nav col-lg-12 hidden-md  hidden-xs hidden-sm">
+                        <div class="title"></div>
+                        <ul>
+                            <li><a href="../C语言/">C语言</a></li>
+                            <li><a href="../C++/">C++</a></li>
+                            <li><a href="../算法/">算法</a></li>
+                            <li><a href="../Web前端/">Web前端</a></li>
+                            <li><a href="../Python/">Python</a></li>
+                            <li><a href="../PHP/">PHP</a></li>
+                            <li><a href="../Linux/">Linux</a></li>
+                            <li><a href="../Java/">Java</a></li>
+                        </ul>
+                    </nav>
+                    <script type="text/javascript">
+                        window.onload =
+                            function() {
+                                var oDiv = document.getElementById("wiki-nav"),
+                                    H = 0,
+                                    Y = oDiv
+                                while (Y) {
+                                    H += Y.offsetTop;
+                                    Y = Y.offsetParent
+                                }
+                                window.onscroll = function() {
+                                    var s = document.body.scrollTop || document.documentElement.scrollTop
+                                    if (s > H) {
+                                        oDiv.style = "position:fixed;top:0;"
+                                        $("#wiki-nav").removeClass("col-lg-12");
+                                        $("#wiki-nav").addClass("col-lg-2");
+                                    } else {
+                                        oDiv.style = "position:static;"
+                                        $("#wiki-nav").removeClass("col-lg-2");
+                                        $("#wiki-nav").addClass("col-lg-12");
+                                    }
+                                }
+                            }
+                    </script>
+                </div>
+                <div class="left-wrap hidden-xs">
+                </div>
+                <div class="main-bar col-lg-8 col-md-9 col-sm-9 col-xs-12">
+                    <div class="main-text">
+                        <dl class="lemmaWgt-lemmaTitle lemmaWgt-lemmaTitle-">
+                            <dd class="lemmaWgt-lemmaTitle-title">
+                                <h1>Linux</h1>
+                            </dd>
+                        </dl>
+                        <div class="lemma-summary" label-module="lemmaSummary">
+                            <div class="para" label-module="para">Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</div>
+                            <div class="para" label-module="para">Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公布时间）。Linux存在着许多不同的Linux版本，但它们都使用了Linux内核。Linux可安装在各种计算机硬件设备中，比如手机、平板电脑、路由器、视频游戏控制台、台式计算机、大型机和超级计算机。</div>
+                            <div class="para" label-module="para">严格来讲，Linux这个词本身只表示Linux内核，但实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU 工程各种工具和数据库的操作系统。</div>
+                        </div>
+                        <div class="configModuleBanner">
+                        </div>
+                        <div class="basic-info cmn-clearfix">
+                            <dl class="basicInfo-block basicInfo-left">
+                                <dt class="basicInfo-item name">外文名</dt>
+                                <dd class="basicInfo-item value">
+                                    Linux
+                                </dd>
+                                <dt class="basicInfo-item name">类&nbsp;&nbsp;&nbsp;&nbsp;别</dt>
+                                <dd class="basicInfo-item value">
+                                    操作系统
+                                </dd>
+                                <dt class="basicInfo-item name">发布时间</dt>
+                                <dd class="basicInfo-item value">
+                                    1991年的10月5日
+                                </dd>
+                            </dl>
+                            <dl class="basicInfo-block basicInfo-right">
+                                <dt class="basicInfo-item name">创始人</dt>
+                                <dd class="basicInfo-item value">
+                                    林纳斯·托瓦兹
+                                </dd>
+                                <dt class="basicInfo-item name">发行版本</dt>
+                                <dd class="basicInfo-item value">
+                                    Debian、RedHat、Slackware等
+                                </dd>
+                                <dt class="basicInfo-item name">特&nbsp;&nbsp;&nbsp;&nbsp;点</dt>
+                                <dd class="basicInfo-item value">
+                                    免费、可靠、安全、稳定、多平台
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="lemmaWgt-lemmaCatalog">
+                            <div class="lemma-catalog">
+                                <h2 class="block-title">目录</h2>
+                                <div class="catalog-list column-2">
+                                    <ol>
+                                        <li class="level1">
+                                            <span class="index">1</span>
+                                            <span class="text"><a href="#1">Linux简史</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">2</span>
+                                            <span class="text"><a href="#2">主要特性</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">3</span>
+                                            <span class="text"><a href="#3">桌面环境</a></span>
+                                        </li>
+                                    </ol>
+                                    <ol>
+                                        <li class="level1">
+                                            <span class="index">4</span>
+                                            <span class="text"><a href="#4">文件系统</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#4_1">文件类型</a></span>
+                                        </li>
+                                        <li class="level2">
+                                            <span class="index">▪</span>
+                                            <span class="text"><a href="#4_2">文件结构</a></span>
+                                        </li>
+                                        <li class="level1">
+                                            <span class="index">5</span>
+                                            <span class="text"><a href="#5">常用命令及技巧</a></span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="1" class="lemma-anchor para-title"></a>
+                            <a name="sub7331705_1" class="lemma-anchor "></a>
+                            <a name="Linux简史" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">Linux简史</h2>
+                        </div>
+                        <div class="para" label-module="para">Linux 操作系统的诞生
+                            <div class="lemma-picture text-pic layout-right" style="width:220px; float: right;">
+                                <a class="image-link" nslog-type="9317" href="/pic/linux/27050/0/96dda144ad345982b3b0bcdb0df431adcbef8444?fr=lemma&amp;ct=single" target="_blank" title="创始人林纳斯·托瓦兹" style="width:220px;height:175px;">
+                                    <img class="" src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=08f0fc2b9922720e7fcee5f84bcb0a3a/96dda144ad345982b3b0bcdb0df431adcbef8444.jpg" alt="创始人林纳斯·托瓦兹" style="width:220px;height:175px;">
+                                </a>
+                                <span class="description">
+                                创始人林纳斯·托瓦兹
+                                </span>
+                            </div>、发展和成长过程始终依赖着五个重要支柱：UNIX 操作系统、MINIX 操作系统、GNU计划、POSIX 标准和Internet 网络。</div>
+                        <div class="para" label-module="para">1981 年IBM公司推出微型计算机IBM PC。</div>
+                        <div class="para" label-module="para">1991年，GNU计划已经开发出了许多工具软件，最受期盼的GNU C编译器已经出现，GNU的操作系统核心HURD一直处于实验阶段，没有任何可用性，实质上也没能开发出完整的GNU操作系统，但是GNU奠定了Linux用户基础和开发环境。</div>
+                        <div class="para" label-module="para">1991年初，林纳斯·托瓦兹开始在一台386sx兼容微机上学习minix操作系统。1991年4月，林纳斯·托瓦兹开始酝酿并着手编制自己的操作系统。</div>
+                        <div class="para" label-module="para">1991 年4 月13 日在comp.os.minix 上发布说自己已经成功地将bash 移植到了minix 上，而且已经爱不释手、不能离开这个shell软件了。</div>
+                        <div class="para" label-module="para">1991年7月3日，第一个与Linux有关的消息是在comp.os.minix上发布的（当然此时还不存在Linux这个名称，当时林纳斯·托瓦兹的脑子里想的可能是FREAX，FREAX的英文含义是怪诞的、怪物、异想天开等）。</div>
+                        <div class="para" label-module="para">1991年的10月5日，林纳斯·托瓦兹在comp.os.minix新闻组上发布消息，正式向外宣布Linux内核的诞生（<b>Freeminix-like</b> kernel sources for 386-AT）。</div>
+                        <div class="para" label-module="para">1993年，大约有100余名程序员参与了Linux内核代码编写/修改工作，其中核心组由5人组成，此时Linux 0.99的代码大约有十万行，用户大约有10万左右。</div>
+                        <div class="para" label-module="para">1994年3月，Linux1.0发布，代码量17万行，当时是按照完全自由免费的协议发布，随后正式采用GPL协议。</div>
+                        <div class="para" label-module="para">1995年1月，Bob Young创办了RedHat（小红帽），以GNU/Linux为核心，集成了400多个源代码开放的程序模块，搞出了一种冠以品牌的Linux，即RedHat Linux,称为Linux"发行版"，在市场上出售。这在经营模式上是一种创举。</div>
+                        <div class="para" label-module="para">1996年6月，Linux 2.0内核发布，此内核有大约40万行代码，并可以支持多个处理器。此时的Linux 已经进入了实用阶段，全球大约有350万人使用。</div>
+                        <div class="para" label-module="para">1998年2月，以Eric Raymond为首的一批年轻的"老牛羚骨干分子"终于认识到GNU/Linux体系的产业化道路的本质，并非是什么自由哲学，而是市场竞争的驱动，创办了"Open Source Intiative"（开放源代码促进会）"复兴"的大旗，在互联网世界里展开了一场历史性的Linux产业化运动。</div>
+                        <div class="para" label-module="para">2001年1月，Linux 2.4发布，它进一步地提升了SMP系统的扩展性，同时它也集成了很多用于支持桌面系统的特性：USB，PC卡（PCMCIA）的支持，内置的即插即用，等等功能。</div>
+                        <div class="para" label-module="para">2003年12月，Linux 2.6版内核发布，相对于2.4版内核2.6在对系统的支持都有很大的变化。</div>
+                        <div class="para" label-module="para">2004年的第1月，SuSE嫁到了Novell，SCO继续顶着骂名四处强行“化缘”， Asianux， MandrakeSoft也在五年中首次宣布季度赢利。3月，SGI宣布成功实现了Linux操作系统支持256个Itanium 2处理器。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="2" class="lemma-anchor para-title"></a>
+                            <a name="sub7331705_2" class="lemma-anchor "></a>
+                            <a name="主要特性" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">主要特性</h2>
+                        </div>
+                        <div class="para" label-module="para"><b>基本思想</b></div>
+                        <div class="para" label-module="para">Linux的基本思想有两点：第一，一切都是文件；第二，每个软件都有确定的用途。其中第一条详细来讲就是系统中的所有都归结为一个文件，包括命令、硬件和软件设备、操作系统、进程等等对于操作系统内核而言，都被视为拥有各自特性或类型的文件。至于说Linux是基于Unix的，很大程度上也是因为这两者的基本思想十分相近。
+                        </div>
+                        <div class="para" label-module="para"><b>完全免费</b></div>
+                        <div class="para" label-module="para">Linux是一款免费的操作系统，用户可以通过网络或其他途径免费获得，并可以任意修改其源代码。这是其他的操作系统所做不到的。正是由于这一点，来自全世界的无数程序员参与了Linux的修改、编写工作，程序员可以根据自己的兴趣和灵感对其进行改变，这让Linux吸收了无数程序员的精华，不断壮大。
+                        </div>
+                        <div class="para" label-module="para"><b><b>完全兼容POSIX1.0标准</b></b>
+                        </div>
+                        <div class="para" label-module="para">这使得可以在Linux下通过相应的模拟器运行常见的DOS、Windows的程序。这为用户从Windows转到Linux奠定了基础。许多用户在考虑使用Linux时，就想到以前在Windows下常见的程序是否能正常运行，这一点就消除了他们的疑虑。
+                        </div>
+                        <div class="para" label-module="para"><b>多用户、多任务</b></div>
+                        <div class="para" label-module="para">Linux支持多用户，各个用户对于自己的文件设备有自己特殊的权利，保证了各用户之间互不影响。多任务则是现在电脑最主要的一个特点，Linux可以使多个程序同时并独立地运行。
+                        </div>
+                        <div class="para" label-module="para"><b>良好的界面</b></div>
+                        <div class="para" label-module="para">Linux同时具有字符界面和图形界面。在字符界面用户可以通过键盘输入相应的指令来进行操作。它同时也提供了类似Windows图形界面的X-Window系统，用户可以使用鼠标对其进行操作。在X-Window环境中就和在Windows中相似，可以说是一个Linux版的Windows。
+                        </div>
+                        <div class="para" label-module="para"><b><b>支持多种平台</b></b>
+                        </div>
+                        <div class="para" label-module="para">Linux可以运行在多种硬件平台上，如具有x86、680x0、SPARC、Alpha等处理器的平台。此外Linux还是一种嵌入式操作系统，可以运行在掌上电脑、机顶盒或游戏机上。2001年1月份发布的Linux 2.4版内核已经能够完全支持Intel 64位芯片架构。同时Linux也支持多处理器技术。多个处理器同时工作，使系统性能大大提高。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="3" class="lemma-anchor para-title"></a>
+                            <a name="sub7331705_3" class="lemma-anchor "></a>
+                            <a name="桌面环境" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">桌面环境</h2>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">介绍</h3>
+                        </div>
+                        <div class="para" label-module="para">在图形计算中，一个桌面环境（Desktop environment，有时称为桌面管理器）为计算机提供一个图形用户界面（GUI）。但严格来说窗口管理器和桌面环境是有区别的。桌面环境就是桌面图形环境，它的主要目标是为Linux/Unix操作系统提供一个更加完备 的界面以及大量各类整合工具和使用 程序，其基本 易用性吸引着大量的新用户。桌面环境名称来自桌面比拟，对应于早期的文字命令行界面（CLI）。一个典型的桌面环境提供图标，视窗，工具栏，文件夹，壁纸以及像拖放这样的能力。整体而言，桌面环境在设计和功能上的特性，赋予了它与众不同的外观和感觉。</div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">种类</h3>
+                        </div>
+                        <div class="para" label-module="para">现今主流的桌面环境有KDE，gnome，Xfce，LXDE等，除此之外还有Ambient，EDE，IRIX Interactive Desktop，Mezzo，Sugar，CDE等。</div>
+                        <div class="para" label-module="para"><b>gnome</b></div>
+                        <div class="para" label-module="para"><b></b>即GNU网络对象模型环境 (The GNU Network Object Model Environment)，GNU计划的一部分，开放源码运动的一个重要组成部分。是一种让使用者容易操作和设定电脑环境的工具。</div>
+                        <div class="para" label-module="para">目标是基于自由软件，为Unix或者类Unix操作系统构造一个功能完善、操作简单以及界面友好的桌面环境，他是GNU计划的正式桌面。</div>
+                        <div class="para" label-module="para"><b>Xfce</b></div>
+                        <div class="para" label-module="para">即XForms Common Environment，创建于2007年7月，类似于商业图形环境CDE，是一个运行在各类Unix下的轻量级桌面环境。原作者Olivier Fourdan最先设计XFce是基于XForms三维图形库。Xfce设计目的是用来提高系统的效率，在节省系统资源的同时，能够快速加载和执行应用程序。</div>
+                        <div class="para" label-module="para"><b>Fluxbox</b></div>
+                        <div class="para" label-module="para">是一个基于GNU/Linux的轻量级图形操作界面，它虽然没有GNOME和KDE那样精致 ，但由于它的运行对系统资源和配置要求极低，所以它被安装到很多较旧的或是对性能要求较高的机器上，其菜单和有关 配置被保存于用户根目录下的.fluxbox目录里，这样使得它的配置极为便利。</div>
+                        <div class="para" label-module="para"><b>Enlightenment</b></div>
+                        <div class="para" label-module="para">是一个功能强大的窗口管理器，它的目标是运用 户轻而易举地配置所见即所得的桌面图形界面。现在Enlightenment的界面已经相当豪华,它拥有像AfterStep一样的可视化时钟以及其它浮华的界面效果，用户不仅可以任意选择边框和动感的声音效果，最有吸引力的是由于它开放的设计思想，每一个用户可以根据自己的爱好，任意地配置窗口的边框、菜单以及屏幕上其它各个部分，而不须要 接触源代码，也不须要 编译任何程序。</div>
+                        <div class="anchor-list">
+                            <a name="4" class="lemma-anchor para-title"></a>
+                            <a name="sub7331705_4" class="lemma-anchor "></a>
+                            <a name="文件系统" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">文件系统</h2>
+                        </div>
+                        <div class="anchor-list">
+                            <a name="4_1" class="lemma-anchor para-title"></a>
+                            <a name="sub7331705_4_1" class="lemma-anchor "></a>
+                            <a name="文件类型" class="lemma-anchor "></a>
+                            <a name="4-1" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">文件类型</h3>
+                        </div>
+                        <div class="para" label-module="para"><b>普通文件</b>（regular file）：就是一般存取的文件，由ls -al显示出来的属性中，第一个属性为 [-]，例如 [-rwxrwxrwx]。另外，依照文件的内容，又大致可以分为：</div>
+                        <div class="para" label-module="para">1、纯文本文件（ASCII）：这是Unix系统中最多的一种文件类型，之所以称为纯文本文件，是因为内容可以直接读到的数据，例如数字、字母等等。设 置文件几乎都属于这种文件类型。举例来说，使用命令“cat ~/.bashrc”就可以看到该文件的内容（cat是将文件内容读出来）。</div>
+                        <div class="para" label-module="para">2、二进制文件（binary）：系统其实仅认识且可以执行二进制文件（binary file）。Linux中的可执行文件（脚本，文本方式的批处理文件不算）就是这种格式的。举例来说，命令cat就是一个二进制文件。</div>
+                        <div class="para" label-module="para">3、数据格式的文件（data）：有些程序在运行过程中，会读取某些特定格式的文件，那些特定格式的文件可以称为数据文件（data file）。举例来说，Linux在用户登入时，都会将登录数据记录在 /var/log/wtmp文件内，该文件是一个数据文件，它能通过last命令读出来。但使用cat时，会读出乱码。因为它是属于一种特殊格式的文件。</div>
+                        <div class="para" label-module="para"><b>目录文件</b>（directory）：就是目录，第一个属性为 [d]，例如 [drwxrwxrwx]。</div>
+                        <div class="para" label-module="para"><b>连接文件</b>（link）：类似Windows下面的快捷方式。第一个属性为 [l]，例如 [lrwxrwxrwx]。</div>
+                        <div class="para" label-module="para"><b>设备与设备文件</b>（device）：与系统外设及存储等相关的一些文件，通常都集中在 /dev目录。通常又分为两种：</div>
+                        <div class="para" label-module="para"><b>块设备文件</b>：就是存储数据以供系统存取的接口设备，简单而言就是硬盘。例如一号硬盘的代码是 /dev/hda1等文件。第一个属性为 [b]。</div>
+                        <div class="para" label-module="para"><b>字符设备文件</b>：即串行端口的接口设备，例如键盘、鼠标等等。第一个属性为 [c]。</div>
+                        <div class="para" label-module="para"><b>套接字</b>（sockets）：这类文件通常用在网络数据连接。可以启动一个程序来监听客户端的要求，客户端就可以通过套接字来进行数据通信。第一个属性为 [s]，最常在 /var/run目录中看到这种文件类型。</div>
+                        <div class="para" label-module="para"><b>管道</b>（FIFO,pipe）：FIFO也是一种特殊的文件类型，它主要的目的是，解决多个程序同时存取一个文件所造成的错误。FIFO是first-in-first-out（先进先出）的缩写。第一个属性为 [p]。
+                        </div>
+                        <div class="anchor-list">
+                            <a name="4_2" class="lemma-anchor para-title"></a>
+                            <a name="sub7331705_4_2" class="lemma-anchor "></a>
+                            <a name="文件结构" class="lemma-anchor "></a>
+                            <a name="4-2" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">文件结构</h3>
+                        </div>
+                        <div class="para" label-module="para"><b>/：</b>根目录，所有的目录、文件、设备都在/之下，/就是Linux文件系统的组织者，也是最上级的领导者。</div>
+                        <div class="para" label-module="para"><b>/bin：</b>bin 就是二进制（binary）英文缩写。在一般的系统当中，都可以在这个目录下找到linux常用的命令。系统所需要的那些命令位于此目录。</div>
+                        <div class="para" label-module="para"><b>/boot：</b>Linux的内核及引导系统程序所需要的文件目录，比如 vmlinuz initrd.img 文件都位于这个目录中。在一般情况下，GRUB或LILO系统引导管理器也位于这个目录。</div>
+                        <div class="para" label-module="para"><b>/cdrom：</b>这个目录在刚刚安装系统的时候是空的。可以将光驱文件系统挂在这个目录下。例如：mount /dev/cdrom /cdrom</div>
+                        <div class="para" label-module="para"><b>/dev：</b>dev 是设备（device)的英文缩写。这个目录对所有的用户都十分重要。因为在这个目录中包含了所有linux系统中使用的外部设备。但是这里并不是放的外部设备的驱动程序。这一点和常用的windows,dos操作系统不一样。它实际上是一个访问这些外部设备的端口。可以非常方便地去访问这些外部设备，和访问一个文件，一个目录没有任何区别。</div>
+                        <div class="para" label-module="para"><b>/etc：</b>etc这个目录是linux系统中最重要的目录之一。在这个目录下存放了系统管理时要用到的各种配置文件和子目录。要用到的网络配置文件，文件系统，x系统配置文件，设备配置信息，设置用户信息等都在这个目录下。</div>
+                        <div class="para" label-module="para"><b>/home：</b>如果建立一个用户，用户名是"xx",那么在/home目录下就有一个对应的/home/xx路径，用来存放用户的主目录。</div>
+                        <div class="para" label-module="para"><b>/lib：</b>lib是库（library）英文缩写。这个目录是用来存放系统动态连接共享库的。几乎所有的应用程序都会用到这个目录下的共享库。因此，千万不要轻易对这个目录进行什么操作，一旦发生问题，系统就不能工作了。</div>
+                        <div class="para" label-module="para"><b>/lost+found：</b>在ext2或ext3文件系统中，当系统意外崩溃或机器意外关机，而产生一些文件碎片放在这里。当系统启动的过程中fsck工具会检查这里，并修复已经损坏的文件系统。有时系统发生问题，有很多的文件被移到这个目录中，可能会用手工的方式来修复，或移到文件到原来的位置上。</div>
+                        <div class="para" label-module="para"><b>/mnt：</b>这个目录一般是用于存放挂载储存设备的挂载目录的，比如有cdrom等目录。可以参看/etc/fstab的定义。</div>
+                        <div class="para" label-module="para"><b>/media：</b>有些linux的发行版使用这个目录来挂载那些usb接口的移动硬盘（包括U盘）、CD/DVD驱动器等等。</div>
+                        <div class="para" label-module="para"><b>/opt：</b>这里主要存放那些可选的程序。</div>
+                        <div class="para" label-module="para"><b>/proc：</b>可以在这个目录下获取系统信息。这些信息是在内存中，由系统自己产生的。</div>
+                        <div class="para" label-module="para"><b>/root：</b>Linux超级权限用户root的家目录。</div>
+                        <div class="para" label-module="para"><b>/sbin：</b>这个目录是用来存放系统管理员的系统管理程序。大多是涉及系统管理的命令的存放，是超级权限用户root的可执行命令存放地，普通用户无权限执行这个目录下的命令，这个目录和/usr/sbin; /usr/X11R6/sbin或/usr/local/sbin目录是相似的，凡是目录sbin中包含的都是root权限才能执行的。</div>
+                        <div class="para" label-module="para"><b>/selinux </b>：对SElinux的一些配置文件目录，SElinux可以让linux更加安全。</div>
+                        <div class="para" label-module="para"><b>/srv </b>服务启动后，所需访问的数据目录，举个例子来说，www服务启动读取的网页数据就可以放在/srv/www中</div>
+                        <div class="para" label-module="para"><b>/tmp：</b>临时文件目录，用来存放不同程序执行时产生的临时文件。有时用户运行程序的时候，会产生临时文件。/tmp就用来存放临时文件的。/var/tmp目录和这个目录相似。</div>
+                        <div class="para" label-module="para"><b>/usr</b></div>
+                        <div class="para" label-module="para">这是linux系统中占用硬盘空间最大的目录。用户的很多应用程序和文件都存放在这个目录下。在这个目录下，可以找到那些不适合放在/bin或/etc目录下的额外的工具</div>
+                        <div class="para" label-module="para"><b>/usr/local：</b>这里主要存放那些手动安装的软件，即不是通过“新立得”或apt-get安装的软件。它和/usr目录具有相类似的目录结构。让软件包管理器来管理/usr目录，而把自定义的脚本（scripts)放到/usr/local目录下面、。</div>
+                        <div class="para" label-module="para"><b>/usr/share ：</b>系统共用的东西存放地，比如 /usr/share/fonts 是字体目录，/usr/share/doc和/usr/share/man帮助文件。</div>
+                        <div class="para" label-module="para"><b>/var：</b>这个目录的内容是经常变动的，看名字就知道，可以理解为vary的缩写，/var下有/var/log 这是用来存放系统日志的目录。/var/ www目录是定义Apache服务器站点存放目录；/var/lib 用来存放一些库文件，比如MySQL的，以及MySQL数据库的的存放地。</div>
+                        <div class="anchor-list">
+                            <a name="5" class="lemma-anchor para-title"></a>
+                            <a name="sub7331705_5" class="lemma-anchor "></a>
+                            <a name="常用命令及技巧" class="lemma-anchor "></a>
+                        </div>
+                        <div class="para-title level-2" label-module="para-title">
+                            <h2 class="title-text">常用命令及技巧</h2>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">通用命令</h3>
+                        </div>
+                        <div class="para" label-module="para">
+                            <p>1. date ：print or set the system date and time</p>
+                            <p>2. stty -a: 可以查看或者打印控制字符(Ctrl-C, Ctrl-D, Ctrl-Z等)</p>
+                            <p>3. passwd: print or set the system date and time (用passwd -h查看)</p>
+                            <p>4. logout, login: 登录shell的登录和注销命令</p>
+                            <p>5. pwd: 显示当前目录</p>
+                            <p>6. more, less, head tail: 显示或部分显示文件内容</p>
+                            <p>7. lp/lpstat/cancel, lpr/lpq/lprm: 打印文件</p>
+                            <p>8. 更改文件权限： chmod u+x...</p>
+                            <p>9. 删除非空目录：rm -fr dir</p>
+                            <p>10.拷贝目录： cp -R dir</p>
+                            <p>11. fg jobid :可以将一个后台进程放到前台Ctrl;-z可以将前台进程挂起(suspend), 然后可以用bg jobid 让其到后台运行。job &amp; 可以直接让job直接在后台运行。</p>
+                            <p>12. kill 的作用: send a signal to a process. eg: kill -9 发送的是SIG_KILL信号。。。 具体发送什么信号 可以通过 man kill 查看。</p>
+                            <p>13. ps 的用法， ps -e 或 ps -o pid,ppid,session,tpgid,comm (其中session显示的sessionid, tpgid显示前台进程组id, comm显示命令名称。)</p>
+                        </div>
+                        <div class="para-title level-3" label-module="para-title">
+                            <h3 class="title-text">Ubuntu常用命令</h3>
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="para-title level-4" label-module="para-title">
+                                <h4 class="title-text">1. dpkg: package manager for Debian</h4>
+                            </div>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 安装： dpkg -i package</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 卸载： dpkg -r package</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 卸载并删除配置文件: dpkg -P |--purge package</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 如果安装一个包时。说依赖某些库，可以先 apt-get install somelib...</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看软件包安装内容 :dpkg -L package</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看文件由哪个软件包提供: dpkg -S filename</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 另外 dpkg还有 dselect和aptitude 两个frontend.</p>
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="para-title level-4" label-module="para-title">
+                                <h4 class="title-text">2. apt</h4>
+                            </div>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 安装: apt-get install packs</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; apt-get update : 更新源</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; apt-get upgrade: 升级系统</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; apt-get dist-upgrade: 智能升级。安装新软件包,删除废弃的软件包</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; apt-get -f install: -f == --fix broken 修复依赖</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; apt-get autoremove: 自动删除无用的软件</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; apt-get remove packages :删除软件</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; apt-get remove package --purge 删除包并清除配置文件</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 清除所以删除包的残余配置文件: dpkg -l |grep ^rc|awk '{print $2}' |tr ["/n"] [" "]|sudo xargs dpkg -P</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 安装软件时候包的临时存放目录 : /var/cache/apt/archives</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 清除该目录: apt-get clean</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 清除该目录的旧版本的软件缓存: apt-get autoclean</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查询软件some的依赖包： apt-cache depends some</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查询软件some被哪些包依赖: apt-get rdepends some</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 搜索软件: apt-cache search name|regexp</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看软件包的作用：apt-cache show package</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看一个软件的编译依赖库: apt-cache showsrc packagename|grep Build-Depends</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 下载软件的源代码 : apt-get source packagename (注: sources.list 中应该有 deb-src 源)</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 安装软件包源码的同时, 安装其编译环境 :apt-get build-dep packagename (有deb-src源)</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 如何将本地光盘加入安装源列表: apt-cdrom add</p>
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="para-title level-4" label-module="para-title">
+                                <h4 class="title-text">3. 系统命令</h4>
+                            </div>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看内核版本：uname -a</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看ubuntu 版本: cat /etc/issue</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看网卡状态: ethtool eth0</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看内存,cpu的信息：cat /proc/meminfo cat /proc/cpuinfo (/proc下面的有很多系统信息)</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 打印文件系统空间使用情况: df -h</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看硬盘分区情况: fdisk -l</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 产看文件大小: du -h filename</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看目录大小： du -hs dirname du -h dirname是查看目录下所有文件的大小</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看内存的使用： free -m|-g|-k</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看进程： ps -e 或ps -aux --&gt;显示用户</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 杀掉进程: kill pid</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 强制杀掉： killall -9 processname</p>
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="para-title level-4" label-module="para-title">
+                                <h4 class="title-text">4. 网络相关</h4>
+                            </div>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 配置 ADSL: sudo pppoeconf</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; ADSL手工拨号: sudo pon dsl-provider</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 激活 ADSL : sudo /etc/ppp/pppoe_on_boot</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 断开 ADSL: sudo poff</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 根据IP查网卡地址: arping IP地址</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 产看本地网络信息（包括ip等）: ifconfig | ifconfig eth0</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看路由信息: netstat -r</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 关闭网卡： sudo ifconfig eth0 down</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 启用网卡： sudo ifconfig eth0 up</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 添加一个服务: sudo update-rc.d 服务名 defaults 99</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 删除一个服务: sudo update-rc.d 服务名 remove</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 临时重启一个服务: /etc/init.d/服务名 restart</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 临时关闭一个服务: /etc/init.d/服务名 stop</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 临时启动一个服务: /etc/init.d/服务名 start</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 控制台下显示中文: sudo apt-get install zhcon</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查找某个文件: whereis filename 或 find 目录 -name 文件名</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 通过ssh传输文件
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scp -rp /path/filename username@remoteIP:/path #将本地文件拷贝到服务器上</p>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scp -rp username@remoteIP:/path/filename /path #将远程文件从服务器下载到本地</p>
+                            </p>
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="para-title level-4" label-module="para-title">
+                                <h4 class="title-text">5. 压缩</h4>
+                            </div>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 解压缩 a.tar.gz: tar zxvf a.tar.gz</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 解压缩 a.tar.bz2: tar jxvf a.tar.bz2</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 压缩aaa bbb目录为xxx.tar.gz: tar zcvf xxx.tar.gz aaa bbb</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; </p压缩aaa bbb目录为xxx.tar.bz2: tar jcvf xxx.tar.bz2 aaa bbb>
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="para-title level-4" label-module="para-title">
+                                <h4 class="title-text">6. Nautilus</h4>
+                            </div>
+                            <p>特殊 URI 地址</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; computer:/// - 全部挂载的设备和网络</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; network:/// - 浏览可用的网络</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; burn:/// - 一个刻录 CDs/DVDs 的数据虚拟目录</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; smb:/// - 可用的 windows/samba 网络资源</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; x-nautilus-desktop:/// - 桌面项目和图标</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; file:/// - 本地文件</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; trash:/// - 本地回收站目录</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; ftp:// - FTP 文件夹</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; ssh:// - SSH 文件夹</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; fonts:/// - 字体文件夹，可将字体文件拖到此处以完成安装</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; themes:/// - 系统主题文件夹</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 显示隐藏文件: Ctrl+h</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 显示地址栏: Ctrl+l</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看已安装字体: 在nautilus的地址栏里输入”fonts:///“，就可以查看本机所有的fonts</p>
+                        </div>
+                        <div class="para" label-module="para">
+                            <div class="para-title level-4" label-module="para-title">
+                                <h4 class="title-text">7.补充部分</h4>
+                            </div>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看本地所有的tpc,udp监听端口: netstat -tupln (t=tcp, u=udp, p=program, l=listen, n=numric)</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 通过man搜说相关命令: man -k keyword . eg: man -k user 或者用 apropos</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 统计文件所占用的实际磁盘空间： du (du - estimate file space usage)</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 统计文件中的字符，字节数: wc -c/-l/-w (wc - print the number of newlines, words, and bytes in files)</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查看文件的内容： od -x/-c/.... (od - dump files in octal and other formats)</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我认为od最有用的就是文件的字节流了: od -t x1 filename</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看文件的 AscII 码形式: od -t c filename (其中统计信息最左边的是： 字节数)</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 查找命令所在文件的位置： which od 输出： /usr/bin/od</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看该文件由哪个包提供： dpkg -S /usr/bin/od 输出: coreutils: /usr/bin/od</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 再查看coreutils包的全部内容就知道了linux的核心命令: dpkg -L coreutils</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 然后 info coreutils</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 可以用man 命令产看某个命令的所有section 的解释: man -a tty</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 然后用q,和next 转换到下一个section的解释</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; bash 的好用的快捷键: </p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+a:光标移到行首</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+b:光标左移一个字母</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+c:杀死当前进程</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+d:退出当前 Shell</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+e:光标移到行尾。</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+h:删除光标前一个字符，同 backspace 键</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+k:清除光标后至行尾的内容</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+l:清屏，相当于clear</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+r:搜索之前打过的命令。会有一个提示，根据你输入的关键字进行搜索bash的history</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+u: 清除光标前至行首间的所有内容。</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+w: 移除光标前的一个单词</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+t: 交换光标位置前的两个字符</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+y: 粘贴或者恢复上次的删除</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+d: 删除光标所在字母;注意和backspace以及ctrl+h的区别，这2个是删除光标前的字符</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+f: 光标右移</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ctrl+z : 把当前进程转到后台运行，使用’ fg ‘命令恢复。比如top -d1 然后ctrl+z ，到后台，然后fg,重新恢复</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 快速粘贴：先在一个地方选中文字，在欲粘贴的地方按鼠标 中键 即可</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 等效中键：a 、按下滑轮等效于中键。b、同时按下鼠标 左右键，等效于中键</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 快速重启X服务： 同时按下 Alt + Ctrl + Backspace 三个键</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 打开"运行"窗口： 同时按下 Alt + F2 键</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 截屏</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a、全屏：直接按下 PrtScr 键</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b、当前窗口：同时按下 Alt + PrtScr 键</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 延时截屏：在 终端 或 "运行"窗口中输入命令： gnome-screenshot --delay 3 ，将延时3秒后戴屏</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp; 直接将 文件管理器 中的文件拖到 GNOME终端 中就可以在终端中得到完整的路径名</p>
+                        </div>
+                        <div class="para" label-module="para"></div>
+                        <div class="para-title level-4" label-module="para-title">
+                            <h4 class="title-text">8.ulimit</h4>
+                        </div>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; ulimit：显示（或设置）用户可以使用的资源的限制（limit），这限制分为软限制（当前限制）和硬限制（上限），其中硬限制是软限制的上限值，应用程序在运行过程中使用的系统资源不超过相应的软限制，任何的超越都导致进程的终止。</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; ulimited 不限制用户可以使用的资源，但本设置对可打开的最大文件数（max open files）</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; 和可同时运行的最大进程数（max user processes）无效</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -a 列出所有当前资源极限</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -c 设置core文件的最大值.单位:blocks</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -d 设置一个进程的数据段的最大值.单位:kbytes</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -f Shell 创建文件的文件大小的最大值，单位：blocks</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -h 指定设置某个给定资源的硬极限。如果用户拥有 root 用户权限，可以增大硬极限。任何用户均可减少硬极限</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -l 可以锁住的物理内存的最大值</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -m 可以使用的常驻内存的最大值,单位：kbytes</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -n 每个进程可以同时打开的最大文件数</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -p 设置管道的最大值，单位为block，1block=512bytes</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -s 指定堆栈的最大值：单位：kbytes</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -S 指定为给定的资源设置软极限。软极限可增大到硬极限的值。如果 -H 和 -S 标志均未指定，极限适用于以上二者</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -t 指定每个进程所使用的秒数,单位：seconds</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -u 可以运行的最大并发进程数</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; -v Shell可使用的最大的虚拟内存，单位：kbytes</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp; eg: ulimit -c 1000(可以先通过ulimit -c 查看原来的值)</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="right-wrap hidden-xs">
+                </div>
+                <div class="right-bar col-lg-2 col-md-3 col-sm-3 hidden-xs">
+                    <div class="right-bar-item user-box">
+                        <h4 class="right-item-title">个人信息</h4>
+                        <div class="bar-online">
+                            <img class="userPic" src="../../src/user.png" width="74px" />
+                            <h4 class="greeting">你好，<span class="online-user"></span></h4>
+                            <hr>
+                            <div class="inner-box">
+                                <h5 class="tap"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../user/">查看个人信息</a></h5>
+                                <h5 class="tap manager"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../admin/">管理社团</a></h5>
+                                <h5 class="tap logout">退出登录</h5>
+                            </div>
+                        </div>
+                        <div class="bar-offline">
+                            <img class="defaultUserPic" src="../../src/user.png" width="74px" />
+                            <h5 class="greeting">你好，游客</h5>
+                            <hr>
+                            <h5 class="tap" style="text-align: center;text-decoration: none;">请<a style="color: #1296db;" class="animsition-link" data-animsition-out="fade-out-left-sm" href="../../login/">登录</a></h5>
+                        </div>
+                    </div>
+                    <div class="right-bar-item weather-box">
+                        <h4 class="right-item-title">天气</h4>
+                        <iframe allowtransparency="true" frameborder="0" width="100%" height="260px" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=1&v=1&d=3&bd=0&k=000000&f=000000&ltf=009944&htf=cc0000&q=1&e=0&a=1&c=71526&w=140&h=278&align=center"></iframe>
+                    </div>
+                    <div class="nav-scroll">
+                        <div class="wiki-bar">
+                        </div>
+                        <span class="top-point"></span>
+                        <span class="bottom-point"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <h5 class="copyright-text">&copy;&nbsp;2018吉林大学IBM俱乐部&nbsp; All rights reserved.</h5>
+            </div>
+            <div class="wrap-bar"></div>
+            <div class="bottom-bar">
+                <div class="bottom-contact"><a href="">联系我们</a></div>
+            </div>
+        </div>
+    </div>
+    <img id="back_to_top" src="../../src/icon/back_to_top.png" />
+    <script>
+        function DirectoryNav($h, config) {
+            this.opts = $.extend(true, {
+                scrollThreshold: 0.1, //滚动检测阀值 0.5在浏览器窗口中间部位
+                scrollSpeed: 0, //滚动到指定位置的动画时间
+                scrollTopBorder: 500, //滚动条距离顶部多少的时候显示导航，如果为0，则一直显示
+                easing: 'swing', //不解释
+                delayDetection: 0, //延时检测，避免滚动的时候检测过于频繁
+                scrollChange: function() {}
+            }, config);
+            this.$win = $(window);
+            this.$h = $h;
+            this.$pageNavList = "";
+            this.$pageNavListLis = "";
+            this.$curTag = "";
+            this.$pageNavListLiH = "";
+            this.offArr = [];
+            this.curIndex = 0;
+            this.scrollIng = false;
+            this.init();
+        }
+
+        DirectoryNav.prototype = {
+            init: function() {
+                this.make();
+                this.setArr();
+                this.bindEvent();
+            },
+            make: function() {
+                //生成导航目录结构,这是根据需求自己生成的。如果你直接在页面中输出一个结构那也挺好不用 搞js
+                $(".wiki-bar").append('<div class="directory-nav" id="directoryNav"><ul></ul><span class="cur-tag"></span><span class="c-top"></span><span class="c-bottom"></span><span class="line"></span></div>');
+                var $hs = this.$h,
+                    $directoryNav = $("#directoryNav"),
+                    temp = [],
+                    index1 = 0,
+                    index2 = 0;
+                $hs.each(function(index) {
+                    var $this = $(this),
+                        text = $this.text();
+                    if (this.tagName.toLowerCase() == 'h2') {
+                        index1++;
+                        if (index1 % 2 == 0) index2 = 0;
+                        temp.push('<li class="l1"><span class="c-dot"></span>' + index1 + '. <a class="l1-text">' + text + '</a></li>');
+                    } else {
+                        index2++;
+                        temp.push('<li class="l2">' + index1 + '.' + index2 + ' <a class="l2-text">' + text + '</a></li>');
+
+                    }
+                });
+                $directoryNav.find("ul").html(temp.join(""));
+
+                //设置变量
+                this.$pageNavList = $directoryNav;
+                this.$pageNavListLis = this.$pageNavList.find("li");
+                this.$curTag = this.$pageNavList.find(".cur-tag");
+                this.$pageNavListLiH = this.$pageNavListLis.eq(0).height();
+
+                if (!this.opts.scrollTopBorder) {
+                    this.$pageNavList.show();
+                }
+            },
+            setArr: function() {
+                var This = this;
+                this.$h.each(function() {
+                    var $this = $(this),
+                        offT = Math.round($this.offset().top);
+                    This.offArr.push(offT);
+                });
+            },
+            posTag: function(top) {
+                //调整蓝色箭头的位置
+                this.$curTag.css({
+                    top: top + 'px'
+                });
+                //导航条移动
+                var navHeight = $("#directoryNav").height();
+                $("#directoryNav").css("top", navHeight - top - 300 + "px");
+            },
+            ifPos: function(st) {
+                var offArr = this.offArr;
+                //console.log(st);
+                var windowHeight = Math.round(this.$win.height() * this.opts.scrollThreshold);
+                for (var i = 0; i < offArr.length; i++) {
+                    if ((offArr[i] - windowHeight) < st) {
+                        var $curLi = this.$pageNavListLis.eq(i),
+                            tagTop = $curLi.position().top;
+                        $curLi.addClass("cur").siblings("li").removeClass("cur");
+                        this.curIndex = i;
+                        this.posTag(tagTop + this.$pageNavListLiH * 0.5);
+                        this.opts.scrollChange.call(this);
+                    }
+                }
+            },
+            bindEvent: function() {
+                var This = this,
+                    show = false,
+                    timer = 0;
+                this.$win.on("scroll", function() {
+                    var $this = $(this);
+                    clearTimeout(timer);
+                    timer = setTimeout(function() {
+                        This.scrollIng = true;
+                        if ($this.scrollTop() > This.opts.scrollTopBorder) {
+                            if (!This.$pageNavListLiH) This.$pageNavListLiH = This.$pageNavListLis.eq(0).height();
+                            if (!show) {
+                                This.$pageNavList.fadeIn();
+                                show = true;
+                            }
+                            This.ifPos($(this).scrollTop());
+                        } else {
+                            if (show) {
+                                This.$pageNavList.fadeOut();
+                                show = false;
+                            }
+                        }
+                    }, This.opts.delayDetection);
+                });
+
+                this.$pageNavList.on("click", "li", function() {
+                    var $this = $(this),
+                        index = $this.index();
+                    This.scrollTo(This.offArr[index]);
+                })
+            },
+            scrollTo: function(offset, callback) {
+                var This = this;
+                $('html,body').animate({
+                    scrollTop: offset
+                }, this.opts.scrollSpeed, this.opts.easing, function() {
+                    This.scrollIng = false;
+                    //修正弹两次回调 蛋疼
+                    callback && this.tagName.toLowerCase() == 'body' && callback();
+                });
+            }
+        };
+
+        //实例化
+        var directoryNav = new DirectoryNav($("h2,h3"), {
+            scrollTopBorder: 500 //滚动条距离顶部多少的时候显示导航，如果为0，则一直显示
+        });
+
+        var shelterHeight = parseInt($(window).height()) - 455;
+        $(".up-shelter").css("height", shelterHeight + "px");
+        $(window).resize(function() {
+            var shelterHeight = parseInt($(window).height()) - 455;
+            $(".up-shelter").css("height", shelterHeight + "px");
+        });
+    </script>
+
+    <script>
+    </script>
+    <!-- animsition js -->
+    <script src="../../animsition/dist/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".animsition").animsition({
+
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 1500,
+                outDuration: 800,
+                linkElement: '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                unSupportCss: ['animation-duration',
+                    '-webkit-animation-duration',
+                    '-o-animation-duration'
+                ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay: false,
+                overlayClass: 'animsition-overlay-slide',
+                overlayParentElement: 'body'
+            });
+        });
+    </script>
+    <!-- 遮盖层，判断是否点击屏幕 -->
+    <div class="shelter"></div>
+</body>
+
+</html>

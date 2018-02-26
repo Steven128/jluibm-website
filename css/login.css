@@ -1,0 +1,353 @@
+html,
+body {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.container {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.main-content {
+    background-image: url("../src/website-index.png");
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+}
+
+.site-title {
+    z-index: 0;
+}
+
+.welcome-text {
+    margin: 15px 0 20px 8px;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.login-form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -160px;
+    margin-top: -200px;
+    color: #ffffff;
+    z-index: 100;
+    width: 320px;
+    padding: 20px;
+    padding-top: 30px;
+    border: 1px solid rgba(109, 182, 255, 0.2);
+    background-color: rgba(109, 182, 255, 0.1);
+    border-radius: 1px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.subform {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section {
+    margin: 4px auto;
+    padding: 0;
+    text-align: center;
+}
+
+.section__title {
+    font-size: 14px;
+    width: 40px;
+    display: inline-block;
+}
+
+.form-group {
+    display: inline-block;
+    width: 210px;
+}
+
+.input-text {
+    margin-top: 5px;
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid rgba(109, 182, 255, 0.8);
+    background-color: rgba(109, 182, 255, 0.05);
+    border-radius: 2px;
+    height: 30px;
+    padding-left: 10px;
+    width: 200px;
+}
+
+#online-box {
+    margin: 0;
+    margin-left: 15px;
+    padding: 0;
+}
+
+#online-box label {
+    font-weight: 400px;
+    margin-left: 0px;
+}
+
+.btn-area {
+    width: 100%;
+    text-align: center;
+}
+
+.joinus-text {
+    margin: 20px 10px 0 0;
+    width: 150px;
+    float: right;
+}
+
+.submit {
+    border-radius: 1px;
+    border: 0.5px solid #cccccc;
+    border-bottom: 0.5px solid #b2b2b2;
+    background-color: #0067b8;
+    text-align: center;
+    margin-top: 10px;
+    height: 30px;
+    width: 240px;
+    color: #efefef;
+}
+
+.submit:hover {
+    color: #efefef;
+    border: 0.5px solid #a4a4a4;
+    border-top: 1px solid #b2b2b2;
+    background-color: #0067b8;
+}
+
+.foot-content {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -1;
+    background-color: #21252a;
+    color: #fff;
+    display: block;
+    height: 2em;
+    padding-bottom: -1px;
+    border-top: 1px solid rgba(109, 182, 255, 0.2);
+    z-index: 999;
+}
+
+.copyright {
+    color: #fff;
+    padding: 0.3em;
+    width: 100%;
+    display: block;
+    text-align: left;
+}
+
+.copyright-text {
+    margin: 0;
+    font-weight: 100;
+    font-size: 14px;
+    color: #efefef;
+    padding-left: 10px;
+}
+
+.copyright-text a {
+    margin: auto 5px;
+    font-weight: 100;
+    font-size: 12px;
+    color: #efefef;
+}
+
+
+/* validate */
+
+input.error {
+    border: 1px solid red;
+}
+
+label.error {
+    text-align: right;
+    color: #f03333;
+    font-weight: 100px;
+}
+
+.checked {
+    border: 1px solid green;
+}
+
+
+/* alert/comfirm */
+
+.verticalAlign {
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    margin-left: -1px;
+}
+
+.xcConfirm .xc_layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #21252a;
+    opacity: 0.85;
+    z-index: 2147000000;
+}
+
+.xcConfirm .popBox {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: #ffffff;
+    z-index: 2147000001;
+    width: 300px;
+    height: 200px;
+    margin-left: -150px;
+    margin-top: -120px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #535e66;
+}
+
+.xcConfirm .popBox .ttBox {
+    height: 50px;
+    line-height: 30px;
+    padding: 14px 30px;
+    border-bottom: solid 1px #eef0f1;
+}
+
+.xcConfirm .popBox .ttBox .tt {
+    font-size: 18px;
+    display: block;
+    float: left;
+    height: 30px;
+    position: relative;
+}
+
+.xcConfirm .popBox .ttBox .clsBtn {
+    display: block;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 22px;
+    right: 30px;
+    background: url(../src/alert/icons.png) -48px -96px no-repeat;
+}
+
+.xcConfirm .popBox .txtBox {
+    margin: 20px 30px;
+    height: 70px;
+    overflow: hidden;
+}
+
+.xcConfirm .popBox .txtBox .bigIcon {
+    float: left;
+    margin-right: 20px;
+    width: 48px;
+    height: 48px;
+    background-image: url(../src/alert/icons.png);
+    background-repeat: no-repeat;
+    background-position: 48px 0;
+}
+
+.xcConfirm .popBox .txtBox p {
+    height: 84px;
+    margin-top: 16px;
+    line-height: 26px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.xcConfirm .popBox .txtBox p input {
+    width: 364px;
+    height: 30px;
+    border: solid 1px #eef0f1;
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+.xcConfirm .popBox .btnArea {
+    border-top: solid 1px #eef0f1;
+}
+
+.xcConfirm .popBox .btnGroup {
+    float: right;
+}
+
+.xcConfirm .popBox .btnGroup .sgBtn {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.xcConfirm .popBox .sgBtn {
+    display: block;
+    cursor: pointer;
+    float: left;
+    width: 95px;
+    height: 30px;
+    line-height: 35px;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+.xcConfirm .popBox .sgBtn.ok {
+    background-color: #0095d9;
+    color: #FFFFFF;
+}
+
+.xcConfirm .popBox .sgBtn.cancel {
+    background-color: #546a79;
+    color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+    .login-form {
+        margin-left: -200px;
+        margin-top: -200px;
+        width: 400px;
+        padding: 25px;
+    }
+    .welcome-text {
+        margin: 25px 0 30px 35px;
+        font-size: 24px;
+    }
+    .logo {
+        margin: 15px 0 0 15px;
+        width: 200px;
+    }
+    .section {
+        margin: 10px auto;
+        padding: 0;
+        text-align: center;
+    }
+    .form-group {
+        width: 270px;
+    }
+    .input-text {
+        width: 260px;
+    }
+    #online-box label {
+        margin-left: 15px;
+    }
+    .joinus-text {
+        margin: 20px 40px 0 0;
+    }
+    .btn-area {
+        margin-top: 15px;
+    }
+    .submit {
+        margin-top: 5px;
+        width: 300px;
+    }
+    .copyright-text {
+        padding-left: 25px;
+    }
+    .copyright-text a {
+        margin: auto 10px;
+    }
+}

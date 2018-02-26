@@ -1,0 +1,29 @@
+.title {
+    text-align: center;
+    margin: 30px 10px;
+    padding-right: 30px;
+}
+
+.box a {
+    color: #1296db;
+    text-decoration: underline;
+}
+
+.qrcode {
+    text-align: center;
+}
+
+.btn-area {
+    text-align: center;
+}
+
+.btn-area a {
+    color: #1296db;
+    text-decoration: underline;
+}
+
+@media (min-width: 992px) {
+    .title {
+        margin: 30px 10px;
+    }
+}

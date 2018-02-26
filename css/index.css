@@ -1,0 +1,56 @@
+#mainSlider {
+    width: 100%;
+    margin: 0 auto;
+    z-index: 0;
+}
+
+.carousel-indicators {
+    width: 100%;
+    height: 3.75rem;
+    left: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    background-color: rgba(34, 35, 36, 0.7);
+    bottom: 0;
+}
+
+.carousel-point {
+    margin-top: 0.9em!important;
+}
+
+.carousel-img {
+    width: 100%;
+}
+
+.title {
+    margin: 0;
+    padding: 15px 10px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 1px 1px 10px #ccc;
+}
+
+.main-text,
+.aim {
+    padding: 0 15px;
+}
+
+.group-pic-box {
+    text-align: center;
+    padding: 5px;
+}
+
+.group-pic {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 580px;
+    box-shadow: 1px 5px 5px #aaa;
+}
+
+.group-text {
+    padding: 10px 5px;
+}
+
+
+/* tablet（width > 992px） */
+
+@media (min-width: 992px) {}

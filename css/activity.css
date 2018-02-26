@@ -1,0 +1,135 @@
+.box {
+    display: block;
+    overflow: hidden;
+    position: static;
+    background-color: #fff;
+    padding-bottom: 10px;
+}
+
+.select-time {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.select-date {
+    margin-bottom: 20px;
+}
+
+#selYear {
+    display: inline-block;
+    width: 30%;
+}
+
+#selMonth {
+    display: inline-block;
+    width: 20%;
+}
+
+#selDay {
+    display: inline-block;
+    width: 20%;
+}
+
+.select-time span {
+    margin: auto 5px;
+}
+
+#selTime {
+    display: block;
+}
+
+label {
+    font-weight: normal !important;
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+}
+
+.btn-area {
+    text-align: center;
+    padding: 20px;
+}
+
+.submit {
+    border-radius: 1px;
+    border: 0.5px solid #cccccc;
+    border-bottom: 0.5px solid #b2b2b2;
+    background-color: #0067b8;
+    text-align: center;
+    margin: auto;
+    height: 30px;
+    width: 260px;
+    color: #efefef;
+}
+
+.submit:hover {
+    color: #efefef;
+    border: 0.5px solid #a4a4a4;
+    border-top: 1px solid #b2b2b2;
+    background-color: #0067b8;
+}
+
+#activityCode {
+    display: none;
+}
+
+.activity-text h4 {
+    display: inline-block;
+}
+
+.activity-text p {
+    display: inline-block;
+}
+
+.form-group {
+    margin: 0 30px 0 20px !important;
+}
+
+select {
+    margin: 0 30px !important;
+    width: 93% !important;
+}
+
+textarea {
+    margin: 0 30px;
+    width: 93% !important;
+}
+
+@media (min-width: 540px) {
+    #selYear {
+        display: inline-block;
+        width: 40%;
+    }
+    #selMonth {
+        display: inline-block;
+        width: 20%;
+    }
+    #selDay {
+        display: inline-block;
+        width: 20%;
+    }
+    .select-time span {
+        margin: auto 5px;
+    }
+    #selTime {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .select-date {
+        display: inline-block;
+    }
+    #selYear {
+        display: inline-block;
+        width: 30%;
+    }
+    .select-time span {
+        margin: auto 5px;
+    }
+    #selTime {
+        display: inline-block;
+    }
+}

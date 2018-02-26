@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>成绩查询-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="js/jQuery/jquery-1.11.3.min.js"></script>
+    <script>
+        window.location.href = "score";
+    </script>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="css/Normalize.css" />
+    <link type="text/css" rel="stylesheet" href="css/page.css" />
+    <link rel="stylesheet" href="animsition/dist/css/animsition.min.css" />
+    <script type="text/javascript" src="../js/xcConfirm.js"></script>
+    <style>
+        .form-box {
+            padding: 20px;
+        }
+        
+        .welcome-text {
+            margin: 40px auto;
+        }
+        
+        .section {
+            margin: 30px auto;
+        }
+        
+        .form-group {
+            margin: 30px auto;
+        }
+        
+        th,
+        td {
+            border-collapse: collapse;
+            min-width: 50px;
+            border: 1px solid #000;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        .subject {
+            min-width: 150px;
+        }
+        
+        thead {
+            background-color: #f5f5f5;
+        }
+        
+        .btn-area {
+            text-align: center;
+        }
+        
+        label.error {
+            color: red;
+        }
+        
+        input.error {
+            border: 1px solid red;
+        }
+        
+        .submit {
+            border-radius: 1px;
+            border: 0.5px solid #cccccc;
+            border-bottom: 0.5px solid #b2b2b2;
+            background-color: #0067b8;
+            text-align: center;
+            margin: 30px auto;
+            height: 30px;
+            width: 260px;
+            color: #efefef;
+        }
+        
+        .submit:hover {
+            color: #efefef;
+            border: 0.5px solid #a4a4a4;
+            border-top: 1px solid #b2b2b2;
+            background-color: #0067b8;
+        }
+        
+        .display-text {
+            overflow: auto;
+            text-align: center;
+        }
+        
+        .info {
+            min-height: 42px;
+        }
+    </style>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/page.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="check.js"></script>
+    <script type="text/javascript" src="js/md5.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //判断用户是否登录
+            function GetRandomNum(Min, Max) {
+                var Range = Max - Min;
+                var Rand = Math.random();
+                return (Min + Math.round(Rand * Range));
+            }
+            var num = GetRandomNum(10000, 99999);
+            $.ajax({
+                type: "POST",
+                url: "php/check_login.php",
+                dataType: "JSON",
+                data: {
+                    "request": "getNumber"
+                },
+                success: function(e) {
+                    if (e.number != '' && e.number != null) {
+                        $(".online").css("display", "block");
+                        $(".offline").css("display", "none");
+                        $(".online-user").append(e.name);
+                        var userPic = e.userPicPath;
+                        if (userPic.indexOf("../../userPicUpload/") > -1) {
+                            $(".userPic").attr('src', userPic + "?" + num);
+                        } else {
+                            $(".userPic").attr('src', 'src/user.png');
+                        }
+                    } else {
+                        $(".online").css("display", "none");
+                        $(".offline").css("display", "block");
+                    }
+                },
+                error: function(err) {
+
+                }
+            });
+        });
+
+        $(document).on("click", ".logout", function() {
+            $.ajax({
+                type: "POST",
+                url: "php/check_login.php",
+                dataType: "JSON",
+                data: {
+                    "request": "logout"
+                },
+                success: function(e) {
+                    $(".userPic").attr('src', 'src/user.png');
+                    window.location.reload();
+                },
+                error: function(err) {
+                },
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="index.html" class="site-title" rel="home">吉林大学IBM俱乐部</a>
+                    <div class="menu-button">
+                        <img src="src/icon/menu.png" width="30px" height="30px" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- menu on larger devices -->
+            <nav id="nav" class="main-navigation hidden-xs hidden-sm" role="navigation">
+                <ul id="primary-menu" class="menu">
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="index.html">首页</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="activities/">活动介绍</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="oa/">校内通知</a></li>
+                    <li id="wiki-item" class="menu-item">
+                        <div style="display: inline">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="src/icon/down-white.png" /></div>
+                    </li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="joinus/">加入我们</a></li>
+                    <ul class="sub-menu">
+                        <li id="sub-menu-wrap" class="sub-menu-item"></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="">C语言</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="">C++</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="">算法</a></li>
+                        <li id="web-item" class="sub-menu-item">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="src/icon/down-white.png" /></span></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="">Linux</a></li>
+                        <li class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="">Java</a></li>
+                    </ul>
+                    <ul class="sub-menu-web">
+                        <li id="web-1" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="">Web前端</a></li>
+                        <li id="web-2" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="">Python</a></li>
+                        <li id="web-3" class="sub-menu-item"><a class="animsition-link" data-animsition-out="fade-out-left-sm" target="_blank" href="">PHP</a></li>
+                    </ul>
+                </ul>
+            </nav>
+
+            <!-- menu on mobile devices -->
+            <nav id="nav" class="main-navigation-mobile col-xs-12" role="navigation">
+                <ul id="primary-menu" class="menu col-xs-12">
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="index.html">首页</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="activities/">活动介绍</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="oa/">校内通知</a></li>
+                    <li id="wiki-item-mobile" class="menu-item col-xs-12">
+                        <div class="col-xs-12" style="display: inline;padding: 0;">科普之窗&nbsp;&nbsp;<img style="display: inline;width: 1em;height: 1em;" src="src/icon/down-white.png" /></div>
+                    </li>
+                    <ul class="sub-menu sub-menu-mobile col-xs-12">
+                        <li id="sub-menu-wrap col-xs-12"></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="">C语言</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="">C++</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="">算法</a></li>
+                        <li id="web-item-mobile" class="sub-menu-item col-xs-12">Web开发&nbsp;&nbsp;<span class="web_rightIcon"><img style="display: inline;width: 1em;height: 1em;" src="src/icon/right-white.png" /></span><span class="web_downIcon"><img style="display: inline;width: 1em;height: 1em;" src="src/icon/down-white.png" /></span></li>
+                        <ul class="sub-menu-web sub-menu-web-mobile col-xs-12">
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="">Web前端</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="">Python</a></li>
+                            <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="">PHP</a></li>
+                        </ul>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="">Linux</a></li>
+                        <li class="sub-menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" target="_blank" href="">Java</a></li>
+                    </ul>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="lanqiaobei/">蓝桥杯</a></li>
+                    <li class="menu-item col-xs-12"><a class="animsition-link col-xs-12" data-animsition-out="fade-out-left-sm" href="joinus/">加入我们</a></li>
+
+                </ul>
+            </nav>
+            <!-- #site-navigation -->
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="index.html"><img class="index-icon" src="src/icon/index-icon.png" /></a>&gt;
+                <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="">成绩查询</a>
+                <div class="login">
+                    <div class="online">
+                        <h5 class="greeting">你好，<span class="online-user"></span></h5>
+                        <img class="userPic" src="src/user.png" width="40px" />
+                        <div class="user-info">
+                            <img class="userPic" src="src/user.png" width="50px" />
+                            <h4 class="online-user"></h4>
+                            <h5><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="user/">查看个人信息</a></h5>
+                            <h5 class="logout">退出登录</h5>
+                        </div>
+                    </div>
+                    <div class="offline">
+                        <h5 class="greeting"><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../login/">登录</a></h5>
+                        <img class="userPic" src="src/user.png" width="50px" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="bar-box row">
+                <div class="left-bar col-lg-2 hidden-md  hidden-xs hidden-sm">
+
+                </div>
+                <div class="left-wrap hidden-lg hidden-md  hidden-xs col-sm-1">
+                </div>
+                <div class="main-bar col-lg-8 col-md-9 col-sm-10 visible-xs-inline-block">
+                    <div class="form-box">
+                        <form id="check" method="post" action="">
+                            <h3 class="welcome-text">查成绩小工具</h3>
+                            <div class="subform">
+                                <div id="number-box" class="section">
+                                    <h4 class="section__title">教学号</h4>
+                                    <div class="form-group">
+                                        <input id="number" type="text" class="form-control" name="number" placeholder="请输入教学号" maxlength="15" />
+                                    </div>
+                                </div>
+                                <div id="password-box" class="section">
+                                    <h4 class="section__title">密码</h4>
+                                    <div class="form-group">
+                                        <input id="password" type="password" class="form-control" name="password" placeholder="请输入密码" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="section__title">学期</div>
+                                    <select id="termId" class="select form-control" name="termId">
+                                                <option class="option" value="134">2017-2018第2学期</option>
+                                                <option class="option" value="133" selected="selected">2017-2018第1学期</option>
+                                                <option class="option" value="132">2016-2017第2学期</option>
+                                                <option class="option" value="131">2016-2017第1学期</option>
+                                                <option class="option" value="130">2015-2016第2学期</option>
+                                                <option class="option" value="129">2015-2016第1学期</option>
+                                                <option class="option" value="128">2014-2015第2学期</option>
+                                                <option class="option" value="127">2014-2015第1学期</option>
+                                        </select>
+                                </div>
+
+                                <div class="btn-area">
+                                    <button id="submit" type="submit" class="submit button">查询</button>
+                                </div>
+                            </div>
+
+                        </form>
+                        <div class="info"></div>
+                    </div>
+
+                </div>
+                <div class="right-wrap hidden-lg hidden-md  hidden-xs col-sm-1">
+                </div>
+                <div class="right-bar col-lg-2 col-md-3 hidden-xs hidden-sm">
+                </div>
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <h5 class="copyright-text">&copy;&nbsp;2018吉林大学IBM俱乐部&nbsp; All rights reserved.</h5>
+            </div>
+
+            <div class="wrap-bar"></div>
+            <div class="bottom-bar">
+                <div class="bottom-contact"><a href="">联系我们</a></div>
+            </div>
+        </div>
+
+        <img id="back_to_top" src="src/icon/back_to_top.png" />
+    </div>
+    <!-- animsition js -->
+    <script src="animsition/dist/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".animsition").animsition({
+
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 1500,
+                outDuration: 800,
+                linkElement: '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                unSupportCss: ['animation-duration',
+                    '-webkit-animation-duration',
+                    '-o-animation-duration'
+                ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay: false,
+                overlayClass: 'animsition-overlay-slide',
+                overlayParentElement: 'body'
+            });
+        });
+    </script>
+    <!-- 遮盖层，判断是否点击屏幕 -->
+    <div class="shelter"></div>
+</body>
+
+</html>
