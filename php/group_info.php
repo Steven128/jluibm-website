@@ -42,7 +42,7 @@
             }
         }    
         if($isGroupManager == 1){
-            $sql_select_group = "SELECT isLeader,number from $group"."_group;";
+            $sql_select_group = "SELECT isLeader,number from $group"."_group ORDER BY isLeader DESC;";
             $retval_group = mysqli_query($main_db,$sql_select_group);
             while($row_group = mysqli_fetch_array($retval_group,MYSQLI_ASSOC)){
                 $memberNumber = $row_group['number'];

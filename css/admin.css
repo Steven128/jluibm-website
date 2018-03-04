@@ -7,6 +7,7 @@
 }
 
 .box {
+    padding-top: 0;
     padding-bottom: 30px;
 }
 
@@ -153,6 +154,7 @@ th {
     overflow: auto;
     position: relative;
     background-color: #fff;
+    max-width: 1400px;
 }
 
 .display-text {
@@ -281,6 +283,10 @@ textarea {
 .update-text {
     margin-left: 15px;
     margin-right: 15px;
+}
+
+.activity-text {
+    padding: 0;
 }
 
 .activity-update {
