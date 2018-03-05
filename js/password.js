@@ -62,7 +62,8 @@ $(document).ready(function() {
                             success: function(info1) {
                                 if (info1 == "success") {
                                     //密码和邮箱提交成功，开始上传用户头像
-                                    if (userPicData == '') {
+                                    console.log(userPicData);
+                                    if (userPicData.indexOf("data:") < 0) {
                                         window.location.href = "submit-success.html";
                                     } else {
                                         $.ajax({
@@ -87,8 +88,7 @@ $(document).ready(function() {
                                             }
                                         });
                                     }
-
-
+                                    //密码和邮箱提交不成功
                                 } else {
                                     console.log(info1);
                                     window.wxc.xcConfirm("出错啦，再试一次吧！", window.wxc.xcConfirm.typeEnum.error);

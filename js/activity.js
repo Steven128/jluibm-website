@@ -39,8 +39,8 @@ $(document).ready(function() {
                             var subText_get = "";
                             var activity_count = 0;
                             while (e[activity_count]) {
-                                var activityCode = e[activity_count].activityCode;
-                                var activityName = e[activity_count].activityName;
+                                var activity_id = e[activity_count].activity_id;
+                                var activity_name = e[activity_count].activity_name;
                                 var setBy = e[activity_count].setBy;
                                 if (setBy == 'cpp') {
                                     setBy = 'C/C++组';
@@ -66,21 +66,21 @@ $(document).ready(function() {
                                     state = '已完成';
                                 }
                                 var activity_count_num = activity_count + 1;
-                                subText_get = "<tr><td class='count'>" + activity_count_num + "</td><td class='activityName'>" + activityName + "</td><td class='setBy'>" + setBy + "</td><td class='time'>" + time + "</td><td class='state'>" + state + "</td>";
+                                subText_get = "<tr><td class='count'>" + activity_count_num + "</td><td class='activity_name'>" + activity_name + "</td><td class='setBy'>" + setBy + "</td><td class='time'>" + time + "</td><td class='state'>" + state + "</td>";
                                 appendText_get += subText_get;
                                 //如果活动未完成。添加编辑图标
                                 if (state == "未开始") {
-                                    subText_get = "<td><button class='update-activity update-img' value='" + activityCode + "'><img src='../src/icon/edit.png' width='16px' /></button>";
+                                    subText_get = "<td><button class='update-activity update-img' value='" + activity_id + "'><img src='../src/icon/edit.png' width='16px' /></button>";
                                     appendText_get += subText_get;
                                 }
                                 //如果进行中或已完成，添加删除图标
                                 else {
-                                    subText_get = "<td><button class='delete-img' value='" + activityCode + "'><img src='../src/icon/drop.png' width='16px' /></button>";
+                                    subText_get = "<td><button class='delete-img' value='" + activity_id + "'><img src='../src/icon/drop.png' width='16px' /></button>";
                                     appendText_get += subText_get;
                                 }
 
                                 //添加查看图标
-                                subText_get = "<button class='display-activity display-img' value='" + activityCode + "'><img src='../src/icon/display.png' width='16px' /></button></td>";
+                                subText_get = "<button class='display-activity display-img' value='" + activity_id + "'><img src='../src/icon/display.png' width='16px' /></button></td>";
                                 appendText_get += subText_get;
                                 activity_count++;
                             }
@@ -137,7 +137,7 @@ $(document).ready(function() {
                 dataType: "JSON",
                 data: {
                     "request": "createActivity",
-                    "activityName": name,
+                    "activity_name": name,
                     "setBy": group,
                     "place": place,
                     "time": holdTime,
@@ -182,7 +182,7 @@ $(document).ready(function() {
         submitHandler: function(form) { //通过之后回调
             window.wxc.xcConfirm("确认修改？", window.wxc.xcConfirm.typeEnum.confirm, {
                 onOk: function() {
-                    var activityCode = $("#activityCode").val();
+                    var activity_id = $("#activity_id").val();
                     var name = $("#name").val();
                     var place = $("#place").val();
                     var year = $("#selYear").val();
@@ -204,7 +204,7 @@ $(document).ready(function() {
                         dataType: "JSON",
                         data: {
                             "request": "updateActivity",
-                            "activityName": name,
+                            "activity_name": name,
                             "setBy": group,
                             "place": place,
                             "time": holdTime,
@@ -248,7 +248,7 @@ $(document).on("click", "#createActivity", function() {
 
 //修改或删除活动
 $(document).on("click", ".update-activity", function() {
-    var activityCode = $(this).val();
+    var activity_id = $(this).val();
     //获取此活动的信息
     $.ajax({
         type: "POST",
@@ -256,7 +256,7 @@ $(document).on("click", ".update-activity", function() {
         dataType: "JSON",
         data: {
             "request": "getSingle",
-            "activityCode": activityCode,
+            "activity_id": activity_id,
         },
         success: function(e) {
 
@@ -264,11 +264,11 @@ $(document).on("click", ".update-activity", function() {
                 window.wxc.xcConfirm("只有还未举办的活动才可修改！", window.wxc.xcConfirm.typeEnum.warning);
             } else {
                 $(".activity-update").remove();
-                var activityCode = e.activityCode;
-                var activityName = e.activityName;
+                var activity_id = e.activity_id;
+                var activity_name = e.activity_name;
                 var place = e.place;
-                var appendText_get = "<div class='activity-update text'><h4 class='activity-title'>活动信息修改</h4><button class='close'><img src='../src/icon/close.png' width='32px' /></button><form id='activity-update-form' method='post'><input id='activityCode' type='text' class='activityCode' name='activityCode' value='" + activityCode + "' />";
-                appendText_get += "<div class='section'><div class='section__title'>活动名称</div><div class='form-group'><input id='name' type='text' class='input-text form-control' name='name' placeholder='请输入活动名称' value='" + activityName + "' /></div></div>";
+                var appendText_get = "<div class='activity-update text'><h4 class='activity-title'>活动信息修改</h4><button class='close'><img src='../src/icon/close.png' width='32px' /></button><form id='activity-update-form' method='post'><input id='activity_id' type='text' class='activity_id' name='activity_id' value='" + activity_id + "' />";
+                appendText_get += "<div class='section'><div class='section__title'>活动名称</div><div class='form-group'><input id='name' type='text' class='input-text form-control' name='name' placeholder='请输入活动名称' value='" + activity_name + "' /></div></div>";
                 appendText_get += "<div class='section'><div class='section__title'>活动地点</div><div class='form-group'><input id='place' type='text' class='input-text form-control' name='place' placeholder='请输入活动地点' value='" + place + "' /></div></div>";
 
                 var setBy = e.setBy;
@@ -307,7 +307,7 @@ $(document).on("click", ".update-activity", function() {
                 }
                 appendText_get += "<script type='text/javascript'>var selYear = window.document.getElementById('selYear');var selMonth = window.document.getElementById('selMonth');var selDay = window.document.getElementById('selDay');var dateNow = new Date();new DateSelector(selYear, selMonth, selDay);</script></div></div>";
                 var remarks = e.remarks;
-                appendText_get += "<div class='section'><label><div class='section__title'>备注</div><textarea id='remarks' class='form-control' name='remarks' rows='5' placeholder='在此填写备注'>" + remarks + "</textarea></label></div><div class='btn-area'><button type='submit' class='submit'>确认修改</button><button id='delete-img' type='button' value='" + activityCode + "'>删除活动</button></div></form></div>";
+                appendText_get += "<div class='section'><label><div class='section__title'>备注</div><textarea id='remarks' class='form-control' name='remarks' rows='5' placeholder='在此填写备注'>" + remarks + "</textarea></label></div><div class='btn-area'><button type='submit' class='submit'>确认修改</button><button id='delete-img' type='button' value='" + activity_id + "'>删除活动</button></div></form></div>";
                 $(".activity-info").append(appendText_get);
                 $("#selYear option[value='" + year + "']").attr("selected", "selected");
                 $('#selYear').attr("disabled", "disabled");
@@ -324,8 +324,8 @@ $(document).on("click", ".update-activity", function() {
 });
 
 $(document).on("click", ".display-activity", function() {
-    var activityCode = $(this).val();
-    window.open("sign.html?" + escape("activityCode=" + activityCode));
+    var activity_id = $(this).val();
+    window.open("sign.html?" + escape("activity_id=" + activity_id));
 });
 
 $(document).on("click", ".close", function() {
@@ -336,7 +336,7 @@ $(document).on("click", ".close", function() {
 
 //删除活动
 $(document).on("click", ".delete-img", function() {
-    var activityCode = $(this).val();
+    var activity_id = $(this).val();
     window.wxc.xcConfirm("确定要删除此活动吗？", window.wxc.xcConfirm.typeEnum.confirm, {
         onOk: function() {
             $.ajax({
@@ -345,7 +345,7 @@ $(document).on("click", ".delete-img", function() {
                 dataType: "JSON",
                 data: {
                     "request": "deleteActivity",
-                    "activityCode": activityCode,
+                    "activity_id": activity_id,
                 },
                 success: function(e) {
                     if (e == "success") {
@@ -388,7 +388,7 @@ $(document).on("click", ".delete-img", function() {
     });
 });
 $(document).on("click", "#delete-img", function() {
-    var activityCode = $(this).val();
+    var activity_id = $(this).val();
     window.wxc.xcConfirm("确定要删除此活动吗？", window.wxc.xcConfirm.typeEnum.confirm, {
         onOk: function() {
             $.ajax({
@@ -397,7 +397,7 @@ $(document).on("click", "#delete-img", function() {
                 dataType: "JSON",
                 data: {
                     "request": "deleteActivity",
-                    "activityCode": activityCode,
+                    "activity_id": activity_id,
                 },
                 success: function(e) {
                     if (e == "success") {

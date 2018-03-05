@@ -55,12 +55,12 @@ $(document).ready(function() {
             qq: {
                 required: "请输入你的QQ号码",
                 digits: "QQ号码应为数字",
-                rangelength: "输入的QQ号码不合法"
+                rangelength: "请输入正确的QQ号码"
             },
             phone: {
                 required: "请输入你的手机号码",
                 digits: "手机号码只能为数字",
-                rangelength: "你输入的不是正确的手机号码"
+                rangelength: "请输入正确的手机号码"
             },
             lang: {
                 required: "请至少选择一项"
@@ -93,5 +93,10 @@ $(document).ready(function() {
             return false;
         }
     });
+
+    jQuery.validator.addMethod("chinese", function(value, element) {
+        var chinese = /[\u4E00-\u9FA5\uF900-\uFA2D]/;
+        return this.optional(element) || (chinese.test(value));
+    }, "请正确填写您的邮政编码");
 
 });

@@ -24,17 +24,17 @@ body {
 
 .lang {
     display: block !important;
-    width: 100px;
     margin: 15px auto;
     margin-left: 15px;
     font-weight: 400;
+    width: 200px;
 }
 
 .tips {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 8px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .tips-title {
@@ -86,6 +86,13 @@ label.error {
     border: 1px solid green;
 }
 
+#lang-error {
+    float: right;
+    position: relative;
+    top: 170px;
+    right: 115px;
+}
+
 
 /* tablet（width > 992px） */
 
@@ -96,6 +103,9 @@ label.error {
     }
     .lang {
         margin-left: 60px;
+    }
+    #lang-error {
+        right: 160px;
     }
 }
 

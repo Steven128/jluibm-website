@@ -36,7 +36,7 @@ $(document).ready(function() {
                 var qq = e.qq;
                 var phone = e.phone;
 
-                var subText = '<div class="title col-xs-12 form-title"><h4 class="title-left">修改社员信息</h4></div><div class="update-text text col-xs-12">';
+                var subText = '<div class="title col-xs-12 form-title"><h4 class="title-left">修改社员信息</h4></div><div class="text-outer col-xs-12"><div class="update-text text">';
                 appendText += subText;
                 var subText = "<div id='update-body'><form id='update-member' method='post' action=''><div id='update-member-subform'><div class='form-group'><div class='section__title id='name-title'>姓名</div><input id='name' type='text' class='input-text form-control' name='name' value='" + name + "' disabled /></div>";
                 appendText += subText;
@@ -77,7 +77,7 @@ $(document).ready(function() {
                 }
                 appendText += subText;
 
-                var subText = "<div class='btn-area'><button id='update-member-button' type='button' class='submit'>修改</button></div></div></form></div></div>"
+                var subText = "<div class='btn-area'><button id='update-member-button' type='button' class='submit'>修改</button></div></div></form></div></div></div>"
                 appendText += subText;
                 $(".update-box").append(appendText);
 
@@ -125,8 +125,19 @@ $(document).ready(function() {
                 var major = e.major;
                 var qq = e.qq;
                 var phone = e.phone;
-
-                var subText = '<div class="title col-xs-12 form-title"><h4 class="title-left">修改组员信息（' + group + '组）</h4></div><div class="update-text text col-xs-12">';
+                var groupName = '';
+                if (group == 'cpp') {
+                    groupName = 'C/C++';
+                } else if (group == 'algorithm') {
+                    groupName = '算法';
+                } else if (group == 'web') {
+                    groupName = 'Web';
+                } else if (group == 'linux') {
+                    groupName = 'Linux';
+                } else if (group == 'java') {
+                    groupName = 'Java';
+                }
+                var subText = '<div class="title col-xs-12 form-title"><h4 class="title-left">修改组员信息（' + groupName + '组）</h4></div><div class="text-outer col-xs-12"><div class="update-text text">';
                 appendText += subText;
                 var subText = "<div id='update-body'><form id='update-groupMember' method='post' action=''><div id='update-member-subform'><div class='form-group group'><div class='section__title'></div><input id='group' type='text' class='input-text form-control' name='group' value='" + group + "' /></div>"
                 appendText += subText;
@@ -166,7 +177,7 @@ $(document).ready(function() {
                     var subText = '<div class="form-group"><div class="section__title">类别</div><select id="isLeader" class="select form-control" name="isLeader"><option class="option" value="1">组长</option><option class="option" value="0" selected="selected">组员</option></select></div>';
                 }
                 appendText += subText;
-                var subText = "<div class='btn-area'><button id='update-group-button' type='button' class='submit'>修改</button></div></div></form></div></div>"
+                var subText = "<div class='btn-area'><button id='update-group-button' type='button' class='submit'>修改</button></div></div></form></div></div></div>"
                 appendText += subText;
                 $(".update-box").append(appendText);
             },
@@ -433,8 +444,7 @@ $(document).on("click", "#add-group-member", function() {
                             window.wxc.xcConfirm("出错啦！", window.wxc.xcConfirm.typeEnum.error);
                         }
                     },
-                    error: function(err) {
-                    }
+                    error: function(err) {}
                 });
             }
         });

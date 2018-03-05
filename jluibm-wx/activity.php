@@ -28,7 +28,7 @@
     }
 
     else if( $request == 'sign' ) {
-        $activityCode = $_GET['activityCode'];
+        $activity_id = $_GET['activity_id'];
         $number = $_GET['number'];
         $submitTime = $_GET['submitTime'];
         $location = $_GET['location'];
@@ -38,14 +38,14 @@
         mysqli_select_db($main_db,"JLUIBMclub");
 
         //检查是否已经签到
-        $sql_check = "SELECT * FROM $activityCode WHERE number=$number;";
+        $sql_check = "SELECT * FROM $activity_id WHERE number=$number;";
         $check_retval = mysqli_query($main_db,$sql_check);
         if(mysqli_num_rows($check_retval) == 1) {
             echo json_encode("already_signed");
         }
         else if(mysqli_num_rows($check_retval) == 0) {
             //签到
-            $sql_insert = "INSERT INTO $activityCode"."(submitTime,number,submitLocation)"."VALUES('$submitTime','$number','$location');";
+            $sql_insert = "INSERT INTO $activity_id"."(submitTime,number,submitLocation)"."VALUES('$submitTime','$number','$location');";
             $retval = mysqli_query($main_db,$sql_insert);
             if($retval) {
                 echo json_encode("success");

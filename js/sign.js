@@ -1,20 +1,20 @@
 $(document).ready(function() {
-    var activityCode = window.location.search;
-    activityCode = unescape(activityCode);
-    activityCode = activityCode.match(/\?activityCode=(.*?)$/)[1];
+    var activity_id = window.location.search;
+    activity_id = unescape(activity_id);
+    activity_id = activity_id.match(/\?activity_id=(.*?)$/)[1];
     $.ajax({
         type: "POST",
         url: "../php/activity.php",
         dataType: "JSON",
         data: {
             "request": "getSingle",
-            "activityCode": activityCode,
+            "activity_id": activity_id,
         },
         success: function(e) {
-            var activityCode = e.activityCode;
-            var activityName = e.activityName;
+            var activity_id = e.activity_id;
+            var activity_name = e.activity_name;
             var place = e.place;
-            var appendText = '<div id="activityCode" class="box" value="' + activityCode + '"></div><div class="box"><h4>活动名称：</h4><p>' + activityName + '</p></div><div class="box"><h4>活动地点：</h4><p>' + place + '</p></div>';
+            var appendText = '<div id="activity_id" class="box" value="' + activity_id + '"></div><div class="box"><h4>活动名称：</h4><p>' + activity_name + '</p></div><div class="box"><h4>活动地点：</h4><p>' + place + '</p></div>';
             var setBy = e.setBy;
             if (setBy == 'cpp') {
                 appendText += '<div class="box"><h4>组别：</h4><p>C/C++组</p></div>';
@@ -51,11 +51,13 @@ $(document).ready(function() {
             if (state == 'inactive') {
                 appendText += '<div class="box"><h4>活动状态：</h4><p>未开始</p></div>';
                 //未开始的活动添加开始签到的按钮
-                appendText += '<div class="btn-area"><button id="sign-start" type="button" class="submit" value="' + activityCode + '">开始签到</button></div>';
+                appendText += '<div class="btn-area"><button id="sign-start" type="button" class="submit" value="' + activity_id + '">开始签到</button></div>';
             } else if (state == 'active') {
                 appendText += '<div class="box"><h4>活动状态：</h4><p>正在进行</p></div>';
             } else if (state == 'finished') {
                 appendText += '<div class="box"><h4>活动状态：</h4><p>已完成</p></div>';
+                //已完成签到的活动，获取签到列表
+                getSignedList(e.activity_id);
             }
             $(".activity-text").append(appendText);
         },
@@ -65,15 +67,36 @@ $(document).ready(function() {
     })
 });
 
+
+function getSignedList(activity_id) {
+    $.ajax({
+        type: "POST",
+        url: "../php/activity.php",
+        dataType: "JSON",
+        data: {
+            "request": "getSignedList",
+            "activity_id": activity_id,
+        },
+        success: function(e) {
+            console.log(e);
+        },
+        error: function(err) {
+
+        }
+    })
+}
+
+
+
 $(document).on("click", "#sign-start", function() {
-    var activityCode = $(this).val();
+    var activity_id = $(this).val();
     $(".btn-area").remove();
-    var appendText = '<hr><div><h4>请选择签到时间</h4><select id="duration" class="select form-control"><option value="1">1分钟</option><option value="3">3分钟</option><option value="5">5分钟</option><option value="10">10分钟</option><option value="30">30分钟</option><option value="60">60分钟</option></select><div class="btn-area"><button id="qrcode" value="' + activityCode + '" type="button" class="submit">点击生成二维码</button></div></div>';
+    var appendText = '<hr><div><h4>请选择签到时间</h4><select id="duration" class="select form-control"><option value="1">1分钟</option><option value="3">3分钟</option><option value="5">5分钟</option><option value="10">10分钟</option><option value="30">30分钟</option><option value="60">60分钟</option></select><div class="btn-area"><button id="qrcode" value="' + activity_id + '" type="button" class="submit">点击生成二维码</button></div></div>';
     $(".activity-text").append(appendText);
 })
 
 $(document).on("click", "#qrcode", function() {
-    var activityCode = $(this).val();
+    var activity_id = $(this).val();
     var duration = $("#duration").val();
-    window.location.href = "qrcode.html?" + escape("activityCode=" + activityCode + "&duration=" + duration);
+    window.location.href = "qrcode.html?" + escape("activity_id=" + activity_id + "&duration=" + duration);
 })

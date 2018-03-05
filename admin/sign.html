@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>社员管理-吉大IBM俱乐部</title>
+    <title>活动签到-吉大IBM俱乐部</title>
     <script type="text/javascript" src="../js/jQuery/jquery-1.11.3.min.js"></script>
     <link type="text/css" rel="stylesheet" href="../css/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="../css/Normalize.css" />
@@ -20,13 +20,13 @@
     <script type="text/javascript" src="../js/sign.js"></script>
     <script type="text/javascript" src="../js/xcConfirm.js"></script>
     <script type="text/javascript">
-        var activityCode = window.location.search;
-        activityCode = unescape(activityCode);
-        if (activityCode.match(/\?activityCode=(.*?)$/)) {
+        var activity_id = window.location.search;
+        activity_id = unescape(activity_id);
+        if (activity_id.match(/\?activity_id=(.*?)$/)) {
             if (!getReferer()) {
 
-                activityCode = activityCode.match(/\?activityCode=(.*?)$/)[1];
-                goTo('?x=3&r=' + Math.random() + '&activityCode=' + activityCode);
+                activity_id = activity_id.match(/\?activity_id=(.*?)$/)[1];
+                goTo('?x=3&r=' + Math.random() + '&activity_id=' + activity_id);
             } else {
                 var pre = "admin/";
                 if (getReferer().indexOf(pre) < 0) {

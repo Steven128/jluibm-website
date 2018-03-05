@@ -88,6 +88,7 @@ body {
     padding: 10px 15px;
     border: 0;
     text-align: left;
+    cursor: default;
 }
 
 #index-item .item-text {
@@ -332,11 +333,13 @@ body {
     width: 140px;
 }
 
-.info-box h5,
-.group-box h5,
-.activities-box h5 {
+.inner-text {
     border-bottom: 1px solid #ddd;
     padding: 0 10px 10px 10px;
+}
+
+.activities-box table {
+    width: 100% !important;
 }
 
 

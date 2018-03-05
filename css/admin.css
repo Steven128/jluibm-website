@@ -232,7 +232,7 @@ th {
     display: none;
 }
 
-.activityCode {
+.activity_id {
     display: none;
 }
 
@@ -283,12 +283,14 @@ textarea {
 }
 
 .update-text {
-    margin-left: 15px;
-    margin-right: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    overflow: hidden;
 }
 
 .activity-text {
     padding: 0;
+    border: 1px solid #ccc;
 }
 
 .activity-update {

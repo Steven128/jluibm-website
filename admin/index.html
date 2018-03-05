@@ -45,7 +45,7 @@
                         <h5>管理员</h5>
                     </div>
                     <h4 id='index-item' class='bar-item overview-item'><span class="item-text">总览</span></h4>
-                    <h4 class="bar-item display-item"><span><img class="icon" src="../src/icon/display.png" /></span><span class="item-text">查看社员信息</span></h4>
+                    <h4 class="bar-item display-item left-display"><span><img class="icon" src="../src/icon/display.png" /></span><span class="item-text">查看社员信息</span></h4>
                     <h4 class="bar-item update-item"><span><img class="icon" src="../src/icon/settings.png" /></span><span class="item-text">修改社员信息</span></h4>
                     <h4 class="bar-item activity-item"><span><img class="icon" src="../src/icon/update.png" /></span><span class="item-text">活动管理</span></h4>
                 </div>
@@ -58,7 +58,7 @@
                                         <div class="item-text">社团总览</div>
                                     </h4>
                                 </th>
-                                <th>
+                                <th class="top-display">
                                     <h4 class="bar-item bar-item-6 display-item"><span><img class="icon" src="../src/icon/display.png" /></span>
                                         <div class="item-text">查看社员信息</div>
                                     </h4>
@@ -80,7 +80,7 @@
                 <div class="main-bar row">
                     <div class="overview-box box col-xs-12">
                         <div class="text-outer col-xs-12">
-                            <div class="overview-text text col-xs-12">
+                            <div class="overview-text text">
                                 <div class="highcharts-container">
                                     <div class="title">近10天新增人数</div>
                                     <div class="highcharts"></div>
@@ -108,7 +108,7 @@
                             <h4 class="title-left">社团成员信息</h4>
                         </div>
                         <div class="text-outer col-xs-12">
-                            <div class="display-text text col-xs-12">
+                            <div class="display-text text">
                                 <table class='display-all table-sort table-sort-search'>
                                     <thead>
                                         <tr>
@@ -131,20 +131,20 @@
                         </div>
                         <div id="main-statistics" class="statistics col-xs-12"></div>
                     </div>
-                    <div class="update-box box col-xs-12">
+                    <div class="update-box box">
 
                     </div>
-                    <div class="activity-box box col-xs-12">
+                    <div class="activity-box box">
                         <div class="title col-xs-12">
                             <h4 class="title-left">活动管理</h4>
                         </div>
                         <div class="text-outer col-xs-12">
-                            <div class="activity-text text col-xs-12">
+                            <div class="activity-text text">
                                 <table class='display-all table-sort table-sort-search'>
                                     <thead>
                                         <tr>
                                             <th class="table-sort">序号</th>
-                                            <th class='activityCode'></th>
+                                            <th class='activity_id'></th>
                                             <th>活动名称</th>
                                             <th class="table-sort">组别</th>
                                             <th class="table-sort">举办时间</th>
@@ -157,7 +157,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="btn-area col-xs-12">
+                            <div class="btn-area">
                                 <button id="createActivity" type="button" class="submit">创建活动签到</button>
                             </div>
 

@@ -15,7 +15,7 @@ $(document).ready(function() {
             } else {
                 userNumber = e.number;
                 if (e.isManager == "0") {
-                    window.wxc.xcConfirm("你不是管理员，没有管理权限！", window.wxc.xcConfirm.typeEnum.error, {
+                    window.wxc.xcConfirm("你不是管理员！", window.wxc.xcConfirm.typeEnum.error, {
                         onOk: function() {
                             window.location.href = "../user/";
                             window.event.returnValue = false;
@@ -110,37 +110,40 @@ $(document).ready(function() {
                         },
                         success: function(e) {
                             i = 0;
+                            var leftbar_append = '';
+                            var topnav_append = '';
                             while (i < 5) {
                                 if (e[i] == "cpp") {
-                                    $(".left-bar").append("<h4  class='bar-item cpp-item'><span><img class='icon' src='../src/icon/cpp.png' /></span><span class='item-text'>C/C++组成员</span></h4>");
-                                    $(".top-nav-box tr").append("<th><h4 class='bar-item bar-item-6 cpp-item'><span><img class='icon' src='../src/icon/cpp.png' /></span><div class='item-text'>C/C++组成员</div></h4></th>");
+                                    leftbar_append += "<h4 class='bar-item cpp-item'><span><img class='icon' src='../src/icon/cpp.png' /></span><span class='item-text'>C/C++组成员</span></h4>";
+                                    topnav_append += "<th><h4 class='bar-item bar-item-6 cpp-item'><span><img class='icon' src='../src/icon/cpp.png' /></span><div class='item-text'>C/C++组成员</div></h4></th>";
                                     $(".main-bar").append("<div class='cpp-box box'><div class='title col-xs-12'><h4 class='title-left'>C/C++组成员</h4><button class='addBtn' value='cpp'><img src='../src/icon/add.png' /></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='cpp-display group-display table-sort table-sort-search'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>操作</th></tr></thead><tbody class='cpp-form'></tbody></table></div></div></div>");
                                 }
                                 if (e[i] == "algorithm") {
-                                    $(".left-bar").append("<h4 class='bar-item algorithm-item'><span><img class='icon' src='../src/icon/algorithm.png' /></span><span class='item-text'>算法组成员</span></h4>");
-                                    $(".top-nav-box tr").append("<th><h4 class='bar-item bar-item-6 algorithm-item'><span><img class='icon' src='../src/icon/algorithm.png' /></span><div class='item-text'>算法组成员</div></h4></th>");
+                                    leftbar_append += "<h4 class='bar-item algorithm-item'><span><img class='icon' src='../src/icon/algorithm.png' /></span><span class='item-text'>算法组成员</span></h4>";
+                                    topnav_append += "<th><h4 class='bar-item bar-item-6 algorithm-item'><span><img class='icon' src='../src/icon/algorithm.png' /></span><div class='item-text'>算法组成员</div></h4></th>";
                                     $(".main-bar").append("<div class='algorithm-box box'><div class='title col-xs-12'><h4 class='title-left'>算法组成员</h4><button class='addBtn' value='algorithm'><img src='../src/icon/add.png' /></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='algorithm-display group-display table-sort table-sort-search'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>操作</th></tr></thead><tbody class='algorithm-form'></tbody></table></div></div></div>");
                                 }
                                 if (e[i] == "web") {
-                                    $(".left-bar").append("<h4  class='bar-item web-item'><span><img class='icon' src='../src/icon/web.png' /></span><span class='item-text'>Web组成员</span></h4>");
-                                    $(".top-nav-box tr").append("<th><h4 class='bar-item bar-item-6 web-item'><span><img class='icon' src='../src/icon/web.png' /></span><div class='item-text'>Web组成员</div></h4></th>");
+                                    leftbar_append += "<h4  class='bar-item web-item'><span><img class='icon' src='../src/icon/web.png' /></span><span class='item-text'>Web组成员</span></h4>";
+                                    topnav_append += "<th><h4 class='bar-item bar-item-6 web-item'><span><img class='icon' src='../src/icon/web.png' /></span><div class='item-text'>Web组成员</div></h4></th>";
                                     $(".main-bar").append("<div class='web-box box'><div class='title col-xs-12'><h4 class='title-left'>Web组成员</h4><button class='addBtn' value='web'><img src='../src/icon/add.png' /></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='web-display group-display table-sort table-sort-search'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>操作</th></tr></thead><tbody class='web-form'></tbody></table></div></div></div>");
                                 }
                                 if (e[i] == "linux") {
-                                    $(".left-bar").append("<h4  class='bar-item linux-item'><span><img class='icon' src='../src/icon/linux.png' /></span><span class='item-text'>Linux组成员</span></h4>");
-                                    $(".top-nav-box tr").append("<th><h4 class='bar-item bar-item-6 linux-item'><span><img class='icon' src='../src/icon/linux.png' /></span><div class='item-text'>Linux组成员</div></h4></th>");
+                                    leftbar_append += "<h4  class='bar-item linux-item'><span><img class='icon' src='../src/icon/linux.png' /></span><span class='item-text'>Linux组成员</span></h4>";
+                                    topnav_append += "<th><h4 class='bar-item bar-item-6 linux-item'><span><img class='icon' src='../src/icon/linux.png' /></span><div class='item-text'>Linux组成员</div></h4></th>";
                                     $(".main-bar").append("<div class='linux-box box'><div class='title col-xs-12'><h4 class='title-left'>Linux组成员</h4><button class='addBtn' value='linux'><img src='../src/icon/add.png' /></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='linux-display group-display table-sort table-sort-search'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>操作</th></tr></thead><tbody class='linux-form'></tbody></table></div></div></div>");
                                 }
                                 if (e[i] == "java") {
-                                    $(".left-bar").append("<h4  class='bar-item java-item'><span><img class='icon' src='../src/icon/java.png' /></span><span class='item-text'>Java组成员</span></h4>");
-                                    $(".top-nav-box tr").append("<th><h4 class='bar-item bar-item-6 java-item'><span><img class='icon' src='../src/icon/java.png' /></span><div class='item-text'>Java组成员</div></h4></th>");
+                                    leftbar_append += "<h4  class='bar-item java-item'><span><img class='icon' src='../src/icon/java.png' /></span><span class='item-text'>Java组成员</span></h4>";
+                                    topnav_append += "<th><h4 class='bar-item bar-item-6 java-item'><span><img class='icon' src='../src/icon/java.png' /></span><div class='item-text'>Java组成员</div></h4></th>";
                                     $(".main-bar").append("<div class='java-box box'><div class='title col-xs-12'><h4 class='title-left'>Java组成员</h4><button class='addBtn' value='java'><img src='../src/icon/add.png' /></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='java-display group-display table-sort table-sort-search'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>操作</th></tr></thead><tbody class='java-form'></tbody></table></div></div></div>");
                                 }
                                 i++;
                             }
+                            $(".left-display").after(leftbar_append);
+                            $(".top-display").after(topnav_append);
                         },
-                        error: function(err) {
-                        },
+                        error: function(err) {},
                     });
                     //是组长的话获取各组的信息
                     $.ajax({
@@ -287,6 +290,7 @@ $(document).ready(function() {
                                     appendText_java += subText_java;
                                     f++;
                                     //尾部添加编辑的图标
+                                    //本人信息不可在此修改
                                     if (e[i].number != userNumber) {
                                         subText_java = "<td><button class='group-edit-img' id='java' value='" + number + "'><img src='../src/icon/edit.png' /></button>";
                                         appendText_java += subText_java;
@@ -299,7 +303,7 @@ $(document).ready(function() {
                                         subText_java = "<button class='group-drop-img' id='java' value='" + number + "'><img src='../src/icon/drop.png' /></button></td></tr>";
                                         appendText_java += subText_java;
                                     } else {
-                                        subText_linux = "<span class='drop-no-img'></span></td></tr>";
+                                        subText_java = "<span class='drop-no-img'></span></td></tr>";
                                         appendText_java += subText_java;
                                     }
                                 }
@@ -400,7 +404,7 @@ $(document).ready(function() {
 });
 
 $(document).on("click", ".overview-item", function() {
-    $("#update-body").remove();
+    $(".update-box").empty();
     $(".overview-box").css("display", "block");
     $(".title").css("display", "block");
     $(".bar-item").css("background-color", "#435770");
@@ -417,7 +421,7 @@ $(document).on("click", ".overview-item", function() {
 });
 
 $(document).on("click", ".display-item", function() {
-    $("#update-body").remove();
+    $(".update-box").empty();
     $(".overview-box").css("display", "none");
     $(".display-box").css("display", "block");
     $(".title").css("display", "block");
@@ -434,7 +438,7 @@ $(document).on("click", ".display-item", function() {
 });
 
 $(document).on("click", ".activity-item", function() {
-    $("#update-body").remove();
+    $(".update-box").empty();
     $(".overview-box").css("display", "none");
     $(".display-box").css("display", "none");
     $(".update-box").css("display", "none");
@@ -451,7 +455,7 @@ $(document).on("click", ".activity-item", function() {
 });
 
 $(document).on("click", ".cpp-item", function() {
-    $("#update-body").remove();
+    $(".update-box").empty();
     $(".overview-box").css("display", "none");
     $(".display-box").css("display", "none");
     $(".update-box").css("display", "none");
@@ -468,7 +472,7 @@ $(document).on("click", ".cpp-item", function() {
 });
 
 $(document).on("click", ".algorithm-item", function() {
-    $("#update-body").remove();
+    $(".update-box").empty();
     $(".overview-box").css("display", "none");
     $(".display-box").css("display", "none");
     $(".update-box").css("display", "none");
@@ -485,7 +489,7 @@ $(document).on("click", ".algorithm-item", function() {
 });
 
 $(document).on("click", ".web-item", function() {
-    $("#update-body").remove();
+    $(".update-box").empty();
     $(".overview-box").css("display", "none");
     $(".display-box").css("display", "none");
     $(".update-box").css("display", "none");
@@ -502,7 +506,7 @@ $(document).on("click", ".web-item", function() {
 });
 
 $(document).on("click", ".linux-item", function() {
-    $("#update-body").remove();
+    $(".update-box").empty();
     $(".overview-box").css("display", "none");
     $(".display-box").css("display", "none");
     $(".update-box").css("display", "none");
@@ -519,7 +523,7 @@ $(document).on("click", ".linux-item", function() {
 });
 
 $(document).on("click", ".java-item", function() {
-    $("#update-body").remove();
+    $(".update-box").empty();
     $(".overview-box").css("display", "none");
     $(".display-box").css("display", "none");
     $(".update-box").css("display", "none");

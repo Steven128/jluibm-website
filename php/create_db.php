@@ -141,8 +141,8 @@ echo "数据表text创建成功<br><br>";
 
 
 $activity = "CREATE TABLE activity(".
-            "activityCode varchar(100) NOT NULL,".
-            "activityName varchar(100) NOT NULL,".
+            "activity_id varchar(100) NOT NULL,".
+            "activity_name varchar(100) NOT NULL,".
             "setBy varchar(10) NOT NULL,".
             "place varchar(100) NOT NULL,".
             "time varchar(30) NOT NULL,".

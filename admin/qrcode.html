@@ -49,7 +49,7 @@
         $(document).ready(function() {
             var href = window.location.search;
             href = unescape(href);
-            var activityCode = href.match(/\?activityCode=(.*?)\&/)[1];
+            var activity_id = href.match(/\?activity_id=(.*?)\&/)[1];
             var duration = href.match(/\&duration=(.*?)$/)[1];
             $.ajax({
                 type: "POST",
@@ -57,7 +57,7 @@
                 dataType: "JSON",
                 data: {
                     "request": "changeState",
-                    "activityCode": activityCode,
+                    "activity_id": activity_id,
                 },
                 success: function(res) {
                     if (res == "success") {
@@ -67,7 +67,7 @@
                             render: "canvas", // 渲染方式有table方式（IE兼容）和canvas方式
                             width: 350, //宽度
                             height: 350, //高度
-                            text: "www.jluibm.cn/jluibm-wx/activity.php?request=sign&activityCode=" + activityCode + "&terminal=" + terminal, //内容
+                            text: "www.jluibm.cn/jluibm-wx/activity.php?request=sign&activity_id=" + activity_id + "&terminal=" + terminal, //内容
                             typeNumber: -1, //计算模式
                             correctLevel: 2, //二维码纠错级别
                             background: "#ffffff", //背景颜色
@@ -82,22 +82,20 @@
                                 dataType: "JSON",
                                 data: {
                                     "request": "activity-finish",
-                                    "activityCode": activityCode,
+                                    "activity_id": activity_id,
                                 },
                                 success: function(e) {
                                     if (e == "success") {
                                         $(".box").append("<h3>签到已结束！</h3>");
                                     }
                                 },
-                                error: function(err1) {
-                                }
+                                error: function(err1) {}
                             })
                         }, duration)
                     }
 
                 },
-                error: function(err) {
-                }
+                error: function(err) {}
             })
 
         });
