@@ -43,6 +43,6 @@
     if($request=="logout"){
         unset($_SESSION);
         session_destroy();
-        echo json_encode("success logout");
+        echo json_encode("message"=>"success logout");
     }
 ?>

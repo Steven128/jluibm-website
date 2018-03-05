@@ -10,7 +10,7 @@ $(document).on("click", "#uploadPic", function() {
             "userPicData": userPicData,
         },
         success: function(e) {
-            if (e == "success") {
+            if (e.message == "success") {
                 window.wxc.xcConfirm("头像修改成功！", window.wxc.xcConfirm.typeEnum.success, {
                     onOk: function() {
                         window.location.reload();
@@ -78,7 +78,7 @@ $(document).ready(function() {
                     "newPasswd": newPasswd,
                 },
                 success: function(e) {
-                    if (e == "success") {
+                    if (e.message == "success") {
                         window.wxc.xcConfirm("密码修改成功！", window.wxc.xcConfirm.typeEnum.success, {
                             onOk: function() {
                                 window.location.reload();
@@ -88,7 +88,7 @@ $(document).ready(function() {
                             }
                         });
 
-                    } else if (e == "wrong oldPassword") {
+                    } else if (e.message == "wrong oldPassword") {
                         window.wxc.xcConfirm("原密码错误！", window.wxc.xcConfirm.typeEnum.error);
                     }
                 },
@@ -157,7 +157,7 @@ $(document).ready(function() {
                 },
 
                 success: function(e) {
-                    if (e == "success") {
+                    if (e.message == "success") {
                         window.wxc.xcConfirm("修改成功！", window.wxc.xcConfirm.typeEnum.success, {
                             onOk: function() {
                                 window.location.reload();
@@ -166,7 +166,7 @@ $(document).ready(function() {
                                 window.location.reload();
                             }
                         });
-                    } else if (e == "error") {
+                    } else if (e.message == "error") {
                         window.wxc.xcConfirm("出错啦，再试一次吧！", window.wxc.xcConfirm.typeEnum.error);
                     }
                 },

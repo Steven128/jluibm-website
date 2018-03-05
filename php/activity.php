@@ -86,10 +86,10 @@ else if($request == 'createActivity'){
         $retval = mysqli_query( $main_db, $activity_table );
         $retval=true;
         if($retval ){
-            echo json_encode("success");
+            echo json_encode("message"=>"success");
         }
        else {
-            echo json_encode("create activity-sign db".$retval);
+            echo json_encode("message"=>"create activity-sign db".$retval);
        }
     }
     else {
@@ -108,10 +108,10 @@ else if($request == 'changeState'){
     $sql_update = "UPDATE activity SET state='active' WHERE activity_id='$activity_id';";
     $retval = mysqli_query($main_db,$sql_update);
     if($retval){
-        echo json_encode("success");
+        echo json_encode("message"=>"success");
     }
     else {
-        echo json_encode("failed");
+        echo json_encode("message"=>"failed");
     }
 }
 
@@ -127,10 +127,10 @@ else if($request == 'activity-finish'){
     $sql_update = "UPDATE activity SET state='finished' WHERE activity_id='$activity_id';";
     $retval = mysqli_query($main_db,$sql_update);
     if($retval){
-        echo json_encode("success");
+        echo json_encode("message"=>"success");
     }
     else {
-        echo json_encode("failed");
+        echo json_encode("message"=>"failed");
     }
 }
 
@@ -149,22 +149,22 @@ else if($request == 'deleteActivity'){
         $sql_drop = "DROP TABLE $activity_id;";
         $step = mysqli_query($main_db,$sql_drop);
         if($step){
-            echo json_encode("success");
+            echo json_encode("message"=>"success");
         }
         else {
-            echo json_encode("failed");
+            echo json_encode("message"=>"failed");
         }
         
     }
     else {
-        echo json_encode("failed");
+        echo json_encode("message"=>"failed");
     }
 }
 
 //获取已签到列表
 else if($request == "getSignedList") {
     $activity_id = $_POST['activity_id'];
-    
+
     $main_db = mysqli_connect("127.0.0.1","root","JLUIBMclub123") or die ("failed!");
     mysqli_query($main_db,"set names utf8");
     mysqli_select_db($main_db,"JLUIBMclub");
@@ -175,7 +175,7 @@ else if($request == "getSignedList") {
     while($row_activity = mysqli_fetch_array($retval_list,MYSQLI_ASSOC)){
         $number = $row_activity['number'];
         $submitTime = $row_activity['submitTime'];
-        $location = $row['submitLocation'];
+        $location = $row_activity['submitLocation'];
         //在member表中获得其详细信息
         $sql_select_single = "SELECT name,college,major,gender,grade FROM member WHERE number='$number';";
         $retval_single = mysqli_query($main_db,$sql_select_single);

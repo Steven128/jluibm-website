@@ -21,9 +21,9 @@ if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_image_content, $resu
         //将头像位置存入数据库中
         $sql_update = "UPDATE member SET userPic='$new_file' WHERE number='$number';";
         $step = mysqli_query( $main_db,$sql_update );
-        if($step)echo json_encode("success");
+        if($step)echo json_encode("message"=>"success");
     } else{
-        echo json_encode("failed");
+        echo json_encode("message"=>"failed");
     }
 }
 

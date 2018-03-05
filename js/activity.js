@@ -348,7 +348,7 @@ $(document).on("click", ".delete-img", function() {
                     "activity_id": activity_id,
                 },
                 success: function(e) {
-                    if (e == "success") {
+                    if (e.message == "success") {
                         window.wxc.xcConfirm("删除成功！", window.wxc.xcConfirm.typeEnum.success, {
                             onOk: function() {
                                 window.location.reload();
@@ -400,7 +400,7 @@ $(document).on("click", "#delete-img", function() {
                     "activity_id": activity_id,
                 },
                 success: function(e) {
-                    if (e == "success") {
+                    if (e.message == "success") {
                         window.wxc.xcConfirm("删除成功！", window.wxc.xcConfirm.typeEnum.success, {
                             onOk: function() {
                                 window.location.reload();

@@ -216,7 +216,7 @@ $(document).ready(function() {
                         "isManager": isManager
                     },
                     success: function(e) {
-                        if (e == "success") {
+                        if (e.message == "success") {
                             window.wxc.xcConfirm("修改成功！", window.wxc.xcConfirm.typeEnum.success, {
                                 onOk: function() {
                                     window.location.reload();
@@ -225,7 +225,7 @@ $(document).ready(function() {
                                     window.location.reload();
                                 }
                             });
-                        } else if (e == "wrong") {
+                        } else if (e.message == "wrong") {
                             window.wxc.xcConfirm("出错啦！", window.wxc.xcConfirm.typeEnum.error);
                         }
                     },
@@ -276,7 +276,7 @@ $(document).ready(function() {
                         "isLeader": isLeader
                     },
                     success: function(e) {
-                        if (e == "success") {
+                        if (e.message == "success") {
                             window.wxc.xcConfirm("修改成功！", window.wxc.xcConfirm.typeEnum.success, {
                                 onOk: function() {
                                     window.location.reload();
@@ -320,7 +320,7 @@ $(document).on("click", ".drop-img", function() {
                     "number": number,
                 },
                 success: function(e) {
-                    if (e == "success") {
+                    if (e.message == "success") {
                         window.wxc.xcConfirm("删除成功！", window.wxc.xcConfirm.typeEnum.success, {
                             onOk: function() {
                                 window.location.reload();
@@ -363,7 +363,7 @@ $(document).on("click", ".group-drop-img", function() {
                     "number": number,
                 },
                 success: function(e) {
-                    if (e == "success") {
+                    if (e.message == "success") {
                         window.wxc.xcConfirm("删除成功！", window.wxc.xcConfirm.typeEnum.success, {
                             onOk: function() {
                                 window.location.reload();
@@ -420,7 +420,7 @@ $(document).on("click", "#add-group-member", function() {
                         "number": number
                     },
                     success: function(e) {
-                        if (e == "success") {
+                        if (e.message == "success") {
                             window.wxc.xcConfirm("添加成功！", window.wxc.xcConfirm.typeEnum.success, {
                                 onOk: function() {
                                     window.location.reload();
@@ -429,7 +429,7 @@ $(document).on("click", "#add-group-member", function() {
                                     window.location.reload();
                                 }
                             });
-                        } else if (e == "does_not_exist") {
+                        } else if (e.message == "does_not_exist") {
                             window.wxc.xcConfirm("社团中没有该成员", window.wxc.xcConfirm.typeEnum.error, {
                                 onOk: function() {
                                     window.location.reload();
@@ -438,9 +438,9 @@ $(document).on("click", "#add-group-member", function() {
                                     window.location.reload();
                                 }
                             });
-                        } else if (e == "already_in") {
+                        } else if (e.message == "already_in") {
                             window.wxc.xcConfirm("该成员已加入该组！", window.wxc.xcConfirm.typeEnum.warning);
-                        } else if (e == "error") {
+                        } else if (e.message == "error") {
                             window.wxc.xcConfirm("出错啦！", window.wxc.xcConfirm.typeEnum.error);
                         }
                     },

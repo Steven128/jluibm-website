@@ -15,14 +15,14 @@
         if($retval){
             $num = mysqli_num_rows($retval);
             if($num > 0) {
-                echo json_encode("has_active");
+                echo json_encode("message"=>"has_active");
             }
             else if($num == 0) {
-                echo json_encode("no_active");
+                echo json_encode("message"=>"no_active");
             }
         }
         else {
-            echo json_encode("error");
+            echo json_encode("message"=>"error");
         }
 
     }
@@ -41,21 +41,21 @@
         $sql_check = "SELECT * FROM $activity_id WHERE number=$number;";
         $check_retval = mysqli_query($main_db,$sql_check);
         if(mysqli_num_rows($check_retval) == 1) {
-            echo json_encode("already_signed");
+            echo json_encode("message"=>"already_signed");
         }
         else if(mysqli_num_rows($check_retval) == 0) {
             //签到
             $sql_insert = "INSERT INTO $activity_id"."(submitTime,number,submitLocation)"."VALUES('$submitTime','$number','$location');";
             $retval = mysqli_query($main_db,$sql_insert);
             if($retval) {
-                echo json_encode("success");
+                echo json_encode("message"=>"success");
             }
             else {
-                echo json_encode("error");
+                echo json_encode("message"=>"error");
             }
         }
         else {
-            echo json_encode("error");
+            echo json_encode("message"=>"error");
         }
         
     }

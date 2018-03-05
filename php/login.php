@@ -16,21 +16,32 @@
         mysqli_query($main_db,"set names utf8");
         mysqli_select_db($main_db,"JLUIBMclub");
 
+        $exist = 0;
         $check = 0;
         $sql_compare = "SELECT number,password,name,isManager from member;";
         $retval = mysqli_query($main_db,$sql_compare);
         while($row = mysqli_fetch_array($retval,MYSQLI_ASSOC)){
-            if( $row['number']==$number && $row['password']==$password ){
-                $check = 1;
-                $_SESSION['userName'] = $row['name'];
-                $_SESSION['userNumber'] = $row['number'];
-                echo json_encode(array("name"=>$_SESSION['userName'],"number"=>$_SESSION['userNumber']));
+            if( $row['number']==$number ){
+                $exist = 1;
+                if( $row['password']==$password ){
+                    $check = 1;
+                    $_SESSION['userName'] = $row['name'];
+                    $_SESSION['userNumber'] = $row['number'];
+                    echo json_encode(array("name"=>$_SESSION['userName'],"number"=>$_SESSION['userNumber']));
+                    break;
+                }
+                break;
             }
         }   
-        if($check==0){
+        if( $exist == 0 ) {
             unset($_SESSION);
             session_destroy();
-            echo json_encode("wrong passwd");
+            echo json_encode("message"=>"does_not_exist")；
+        }
+        else if( $exist == 1 && $check == 0 ) {
+            unset($_SESSION);
+            session_destroy();
+            echo json_encode("message"=>"wrong passwd");
         }
     }
 ?>

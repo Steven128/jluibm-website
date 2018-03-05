@@ -109,8 +109,17 @@ $(document).ready(function() {
                     "password": password,
                 },
                 success: function(e) {
-                    if (e == "wrong passwd") {
-                        window.wxc.xcConfirm("用户名或密码输入错误！", window.wxc.xcConfirm.typeEnum.error);
+                    if (e.message == "wrong passwd") {
+                        window.wxc.xcConfirm("密码输入错误！", window.wxc.xcConfirm.typeEnum.error);
+                    } else if (e.message == "does_not_exist") {
+                        window.wxc.xcConfirm("该用户不存在！", window.wxc.xcConfirm.typeEnum.error, {
+                            onOk: function() {
+                                window.location.reload();
+                            },
+                            onClose: function() {
+                                window.location.reload();
+                            }
+                        });
                     } else {
 
                         name = e.name;

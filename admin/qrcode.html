@@ -85,7 +85,7 @@
                                     "activity_id": activity_id,
                                 },
                                 success: function(e) {
-                                    if (e == "success") {
+                                    if (e.message == "success") {
                                         $(".box").append("<h3>签到已结束！</h3>");
                                     }
                                 },

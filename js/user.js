@@ -127,7 +127,6 @@ $(document).ready(function() {
                                 "request": "get_activity"
                             },
                             success: function(e) {
-                                console.log(e);
                                 if (e == '') {
                                     appendText_activity = '<div class="inner-text">这里空空如也，什么都没有。</div>';
                                 } else {
