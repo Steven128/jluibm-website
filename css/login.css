@@ -52,7 +52,7 @@ body {
 }
 
 .section {
-    margin: 4px auto;
+    margin: 4px 10px;
     padding: 0;
     text-align: center;
 }
@@ -60,12 +60,15 @@ body {
 .section__title {
     font-size: 14px;
     width: 40px;
-    display: inline-block;
+    float: left;
 }
 
 .form-group {
-    display: inline-block;
+    float: left;
     width: 210px;
+    height: 60px;
+    text-align: right;
+    margin-bottom: 0;
 }
 
 .input-text {
@@ -79,6 +82,10 @@ body {
     height: 30px;
     padding-left: 10px;
     width: 200px;
+}
+
+.clear {
+    clear: both;
 }
 
 #online-box {
@@ -321,7 +328,7 @@ label.error {
         width: 200px;
     }
     .section {
-        margin: 10px auto;
+        margin: 10px 15px;
         padding: 0;
         text-align: center;
     }

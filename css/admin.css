@@ -148,6 +148,7 @@ th {
 
 .text-outer {
     padding: 15px;
+    text-align: center;
 }
 
 .text {
@@ -155,6 +156,7 @@ th {
     position: relative;
     background-color: #fff;
     max-width: 1400px;
+    margin: auto;
 }
 
 .display-text {

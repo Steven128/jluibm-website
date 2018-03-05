@@ -137,7 +137,8 @@ $(document).ready(function() {
                     }
                 },
                 error: function(err) {
-
+                    window.wxc.xcConfirm("出错了，稍后再试吧！", window.wxc.xcConfirm.typeEnum.error);
+                    console.log(err);
                 }
             });
         },
