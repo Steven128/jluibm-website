@@ -82,7 +82,7 @@ function getSignedList(activity_id) {
         success: function(e) {
             console.log(e);
             var i = 0;
-            var appendText_list = '<table><thead><tr><th>姓名</th></tr><tr><th>学院/专业</th></tr><tr><th>年级</th></tr><tr><th>性别</th></tr><tr><th>签到地点</th></tr><tr><th>签到时间</th></tr></thead><tbody>'
+            var appendText_list = '<table><thead><tr><th>姓名</th><th>学院/专业</th><th>年级</th><th>性别</th><th>签到地点</th><th>签到时间</th></tr></thead><tbody>'
             while (e[i]) {
                 var name = e[i].name;
                 var college = e[i].college;
@@ -90,7 +90,7 @@ function getSignedList(activity_id) {
                 var grade = e[i].grade;
                 var gender = e[i].gender;
                 var location = e[i].location;
-                var time = e[i].time;
+                var time = e[i].submitTime;
                 if (gender == 'male') {
                     gender = '男';
                 } else {
@@ -106,7 +106,7 @@ function getSignedList(activity_id) {
                 } else {
                     grade = '大四';
                 }
-                appendText_list += '<tr><td>' + name + '</td></th><tr><td>' + college + '&nbsp;&nbsp;' + major + '</td></th><tr><td>' + grade + '</td></th><tr><td>' + gender + '</td></th><tr><td>' + location + '</td></th><tr><td>' + time + '</td></th>';
+                appendText_list += '<tr><td>' + name + '</td><td>' + college + '&nbsp;&nbsp;' + major + '</td><td>' + grade + '</td><td>' + gender + '</td><td>' + location + '</td><td>' + time + '</td></tr>';
                 i++;
             }
             appendText_list += '</tbody></table>';

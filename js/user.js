@@ -134,7 +134,7 @@ $(document).ready(function() {
                                     var i = 0;
                                     appendText_activity = '<table><tbody>';
                                     while (e[i]) {
-                                        appendText_activity += '<tr class="inner-text"><td>' + e[i].activity_name + '</td><td>' + e[i].time + '</td></tr>';
+                                        appendText_activity += '<tr class="inner-text"><td>' + e[i].activity_name + '</td><td>' + e[i].time.substring(0, 10) + '</td></tr>';
                                         i++;
                                     }
                                     appendText_activity += '</tbody></table>';

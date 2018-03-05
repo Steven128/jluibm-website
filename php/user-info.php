@@ -44,7 +44,7 @@
         mysqli_query($main_db,"set names utf8");
         mysqli_select_db($main_db,"JLUIBMclub");
         //获取所有活动的id
-        $sql_select_activity = "SELECT activity_id from activity WHERE state='finished';";
+        $sql_select_activity = "SELECT activity_id,activity_name,time from activity WHERE state='finished';";
         $retval_activity = mysqli_query($main_db,$sql_select_activity);
         $data = array();
         while($row_activity = mysqli_fetch_array($retval_activity,MYSQLI_ASSOC)) {
