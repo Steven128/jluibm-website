@@ -27,11 +27,11 @@ if(!empty($upload_name)){
             $sql_update = "UPDATE member SET userPic='$file' WHERE number='$number';";
             $step = mysqli_query( $main_db,$sql_update );
             if($step){
-                echo json_encode("message"=>"success");
+                echo json_encode(array("message"=>"success"));
             }
         }
 }
 else {
-    echo json_encode("message"=>"error");
+    echo json_encode(array("message"=>"error"));
 }
 ?>

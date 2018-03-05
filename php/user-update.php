@@ -16,10 +16,10 @@
         if($oldPasswd == $password){
             $sql_update = "UPDATE member SET password='$newPasswd' WHERE number='$number';";
             $step = mysqli_query( $main_db,$sql_update );
-            echo json_encode("message"=>"success");
+            echo json_encode(array("message"=>"success"));
         }
         else {
-            echo json_encode("message"=>"wrong oldPassword");
+            echo json_encode(array("message"=>"wrong oldPassword"));
         }
     }
 
@@ -33,6 +33,6 @@
         $step = mysqli_query( $main_db,$sql_update );
         $sql_update = "UPDATE member SET phone='$phone' WHERE number='$number';";
         $step = mysqli_query( $main_db,$sql_update );
-        echo json_encode("message"=>"success");
+        echo json_encode(array("message"=>"success"));
     }
 ?>

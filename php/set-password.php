@@ -10,6 +10,6 @@
 
     $sql_update = "UPDATE member SET password='$newPasswd' WHERE number='$number';";
     $step = mysqli_query( $main_db,$sql_update );
-    echo json_encode("message"=>"success");
+    echo json_encode(array("message"=>"success"));
 
 ?>

@@ -36,12 +36,12 @@
         if( $exist == 0 ) {
             unset($_SESSION);
             session_destroy();
-            echo json_encode("message"=>"does_not_exist")；
+            echo json_encode(array("message"=>"does_not_exist"));
         }
         else if( $exist == 1 && $check == 0 ) {
             unset($_SESSION);
             session_destroy();
-            echo json_encode("message"=>"wrong passwd");
+            echo json_encode(array("message"=>"wrong passwd"));
         }
     }
 ?>

@@ -20,10 +20,10 @@
             }
         }
         if($check==0){
-            echo json_encode("message"=>"has joined");
+            echo json_encode(array("message"=>"has joined"));
         }
         else{
-            echo json_encode("message"=>"not found");
+            echo json_encode(array("message"=>"not found"));
         }
     }
     else if($request == 'submit'){
@@ -73,7 +73,7 @@
         $sql_insert = "insert into join_infomation"."(join_date,name,number,college,major,gender,grade,qq,phone,cpp,algorithm,web,linux,java,learned)"."VALUES"."('$submitTime','$name','$number','$college','$major','$gender','$grade','$qq','$phone','$cpp','$algorithm','$web','$linux','$java','$learned');";
             $join = mysqli_query( $main_db,$sql_insert );
             if($join){
-                echo json_encode("message"=>"success");
+                echo json_encode(array("message"=>"success"));
                 session_start();
                 unset($_SESSION);
                 session_destroy(); 

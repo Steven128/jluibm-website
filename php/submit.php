@@ -21,10 +21,10 @@ if($request == 'check'){
 		}
 	}
 	if($check==0){
-		echo json_encode("message"=>"has joined");
+		echo json_encode(array("message"=>"has joined"));
 	}
 	else{
-		echo json_encode("message"=>"not found");
+		echo json_encode(array("message"=>"not found"));
 	}
 }
 
@@ -93,7 +93,7 @@ while($row = mysqli_fetch_array($retval,MYSQLI_ASSOC)){
 
 //信息插入数据库
 if($check==0){
-	echo json_encode("message"=>"has joined");
+	echo json_encode(array("message"=>"has joined"));
 }
 else{
 	$sql_insert = "insert into join_infomation"."(join_date,name,number,college,major,gender,grade,qq,phone,cpp,algorithm,web,linux,java,learned)"."VALUES"."('$submitTime','$name','$number','$college','$major','$gender','$grade','$qq','$phone','$cpp','$algorithm','$web','$linux','$java','$learned');";
@@ -136,15 +136,15 @@ else{
 			if($insert_text){
 				$sql_set_pic = "UPDATE member SET userPic='../../userPicUpload/default.png' WHERE number='$number';";
 				$set_pic = mysqli_query( $main_db,$sql_set_pic );
-				echo json_encode("message"=>"success");
+				echo json_encode(array("message"=>"success"));
 			}
 			else {
-				echo json_encode("message"=>"insert into text error");
+				echo json_encode(array("message"=>"insert into text error"));
 			}
 
 		}
 		else {
-			echo json_encode("message"=>"insert into member error");
+			echo json_encode(array("message"=>"insert into member error"));
 		}
 
 		//

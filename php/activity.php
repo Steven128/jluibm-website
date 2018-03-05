@@ -86,11 +86,11 @@ else if($request == 'createActivity'){
         $retval = mysqli_query( $main_db, $activity_table );
         $retval=true;
         if($retval ){
-            echo json_encode("message"=>"success");
+            echo json_encode(array("message"=>"success"));
         }
-       else {
-            echo json_encode("message"=>"create activity-sign db".$retval);
-       }
+        else {
+            echo json_encode(array("message"=>"failed"));
+        }
     }
     else {
         echo json_encode($step);
@@ -108,10 +108,10 @@ else if($request == 'changeState'){
     $sql_update = "UPDATE activity SET state='active' WHERE activity_id='$activity_id';";
     $retval = mysqli_query($main_db,$sql_update);
     if($retval){
-        echo json_encode("message"=>"success");
+        echo json_encode(array("message"=>"success"));
     }
     else {
-        echo json_encode("message"=>"failed");
+        echo json_encode(array("message"=>"failed"));
     }
 }
 
@@ -127,10 +127,10 @@ else if($request == 'activity-finish'){
     $sql_update = "UPDATE activity SET state='finished' WHERE activity_id='$activity_id';";
     $retval = mysqli_query($main_db,$sql_update);
     if($retval){
-        echo json_encode("message"=>"success");
+        echo json_encode(array("message"=>"success"));
     }
     else {
-        echo json_encode("message"=>"failed");
+        echo json_encode(array("message"=>"failed"));
     }
 }
 
@@ -149,15 +149,15 @@ else if($request == 'deleteActivity'){
         $sql_drop = "DROP TABLE $activity_id;";
         $step = mysqli_query($main_db,$sql_drop);
         if($step){
-            echo json_encode("message"=>"success");
+            echo json_encode(array("message"=>"success"));
         }
         else {
-            echo json_encode("message"=>"failed");
+            echo json_encode(array("message"=>"failed"));
         }
         
     }
     else {
-        echo json_encode("message"=>"failed");
+        echo json_encode(array("message"=>"failed"));
     }
 }
 

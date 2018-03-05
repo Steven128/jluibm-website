@@ -80,7 +80,7 @@
                 }
             }
         
-        echo json_encode("message"=>"success");
+        echo json_encode(array("message"=>"success"));
     }
 
 
@@ -163,7 +163,7 @@
 
 
         
-        echo json_encode("message"=>"success");
+        echo json_encode(array("message"=>"success"));
     }//////////////////////////////////////////////////////////////////////////////
 
 
@@ -229,7 +229,7 @@
             unlink($file);
         }
         
-        echo json_encode("message"=>"success");
+        echo json_encode(array("message"=>"success"));
     }
 
     else if($request == "delete-group-member"){
@@ -243,7 +243,7 @@
         $step = mysqli_query( $main_db,$sql_delete );
         $sql_delete = "UPDATE member SET $group=0 WHERE number='$number';";
         $step = mysqli_query( $main_db,$sql_delete );
-        echo json_encode("message"=>"success");
+        echo json_encode(array("message"=>"success"));
     }
 
     else if($request == "add-group-member"){
@@ -259,14 +259,14 @@
         $sql_check = "SELECT name,number,$group FROM member where number='$number';";
         $check_result = mysqli_query($main_db,$sql_check);
         if(mysqli_num_rows($check_result) == 0){
-            echo json_encode("message"=>"does_not_exist");
+            echo json_encode(array("message"=>"does_not_exist");
         }
         else {
             while($row = mysqli_fetch_array($check_result,MYSQLI_ASSOC)){
                 $name = $row['name'];
                 if($row['number'] == $number && $row[$group] == 1){
                     $isIn = 1;
-                    echo json_encode("message"=>"already_in");
+                    echo json_encode(array("message"=>"already_in"));
                 }
             }
             if($isIn == 0){
@@ -276,14 +276,14 @@
                     $sql_update = "UPDATE member SET $group=1 WHERE number='$number'";
                     $update = mysqli_query($main_db,$sql_update);
                     if($update){
-                        echo json_encode("message"=>"success");
+                        echo json_encode(array("message"=>"success"));
                     }
                     else {
-                        echo json_encode("message"=>"error");
+                        echo json_encode(array("message"=>"error"));
                     }
                 }
                 else {
-                    echo json_encode("message"=>"error");
+                    echo json_encode(array("message"=>"error"));
                 }
             }
         }
