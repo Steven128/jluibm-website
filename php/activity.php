@@ -175,7 +175,7 @@ else if($request == "getSignedList") {
     while($row_activity = mysqli_fetch_array($retval_list,MYSQLI_ASSOC)){
         $number = $row_activity['number'];
         $submitTime = $row_activity['submitTime'];
-        $location = $row['location'];
+        $location = $row['submitLocation'];
         //在member表中获得其详细信息
         $sql_select_single = "SELECT name,college,major,gender,grade FROM member WHERE number='$number';";
         $retval_single = mysqli_query($main_db,$sql_select_single);

@@ -135,6 +135,7 @@ $(document).ready(function() {
                                     appendText_activity = '<table><tbody>';
                                     while (e[i]) {
                                         appendText_activity += '<tr class="inner-text"><td>' + e[i].activity_name + '</td><td>' + e[i].time + '</td></tr>';
+                                        i++;
                                     }
                                     appendText_activity += '</tbody></table>';
                                 }

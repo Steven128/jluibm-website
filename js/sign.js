@@ -52,14 +52,16 @@ $(document).ready(function() {
                 appendText += '<div class="box"><h4>活动状态：</h4><p>未开始</p></div>';
                 //未开始的活动添加开始签到的按钮
                 appendText += '<div class="btn-area"><button id="sign-start" type="button" class="submit" value="' + activity_id + '">开始签到</button></div>';
+                $(".activity-text").append(appendText);
             } else if (state == 'active') {
                 appendText += '<div class="box"><h4>活动状态：</h4><p>正在进行</p></div>';
+                $(".activity-text").append(appendText);
             } else if (state == 'finished') {
                 appendText += '<div class="box"><h4>活动状态：</h4><p>已完成</p></div>';
+                $(".activity-text").append(appendText);
                 //已完成签到的活动，获取签到列表
                 getSignedList(e.activity_id);
             }
-            $(".activity-text").append(appendText);
         },
         error: function(err) {
 
@@ -79,6 +81,36 @@ function getSignedList(activity_id) {
         },
         success: function(e) {
             console.log(e);
+            var i = 0;
+            var appendText_list = '<table><thead><tr><th>姓名</th></tr><tr><th>学院/专业</th></tr><tr><th>年级</th></tr><tr><th>性别</th></tr><tr><th>签到地点</th></tr><tr><th>签到时间</th></tr></thead><tbody>'
+            while (e[i]) {
+                var name = e[i].name;
+                var college = e[i].college;
+                var major = e[i].major;
+                var grade = e[i].grade;
+                var gender = e[i].gender;
+                var location = e[i].location;
+                var time = e[i].time;
+                if (gender == 'male') {
+                    gender = '男';
+                } else {
+                    gender = '女';
+                }
+                var grade = '';
+                if (grade == '1') {
+                    grade = '大一';
+                } else if (grade == '2') {
+                    grade = '大二';
+                } else if (grade == '3') {
+                    grade = '大三';
+                } else {
+                    grade = '大四';
+                }
+                appendText_list += '<tr><td>' + name + '</td></th><tr><td>' + college + '&nbsp;&nbsp;' + major + '</td></th><tr><td>' + grade + '</td></th><tr><td>' + gender + '</td></th><tr><td>' + location + '</td></th><tr><td>' + time + '</td></th>';
+                i++;
+            }
+            appendText_list += '</tbody></table>';
+            $(".activity-text").append(appendText_list);
         },
         error: function(err) {
 

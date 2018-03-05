@@ -49,14 +49,14 @@
         $data = array();
         while($row_activity = mysqli_fetch_array($retval_activity,MYSQLI_ASSOC)) {
             $activity_id = $row_activity['activity_id'];
+            $activity_name = $row_activity['activity_name'];
+            $time = $row_activity['time'];
             //在活动签到表中检查是否有该生
             $sql_select_member = "SELECT number from $activity_id;";
             $retval_list = mysqli_query($main_db,$sql_select_member);
             while($row_member = mysqli_fetch_array($retval_list,MYSQLI_ASSOC)) {
                 if($row_member['number'] == $number) {
                     //参加过该活动
-                    $activity_name = $row_activity['activity_name'];
-                    $time = $row_activity['time'];
                     $arr = array("activity_name"=>$activity_name,"time"=>$time);
                     array_push($data,$arr);
                     break;
