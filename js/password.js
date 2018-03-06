@@ -46,7 +46,7 @@ $(document).ready(function() {
                 dataType: "JSON",
                 data: {},
                 success: function(info0) {
-                    if (info0 == "success") {
+                    if (info0.message == "success") {
                         //报名成功，这时把密码和邮件信息提交
                         password = 'JLUIBMclub' + number + password;
                         password = hex_md5(password);
@@ -60,7 +60,7 @@ $(document).ready(function() {
                                 email: email,
                             },
                             success: function(info1) {
-                                if (info1 == "success") {
+                                if (info1.message == "success") {
                                     //密码和邮箱提交成功，开始上传用户头像
                                     console.log(userPicData);
                                     if (userPicData.indexOf("data:") < 0) {
@@ -75,7 +75,7 @@ $(document).ready(function() {
                                                 userPicData: userPicData,
                                             },
                                             success: function(info2) {
-                                                if (info2 == "success") {
+                                                if (info2.message == "success") {
                                                     window.location.href = "submit-success.html";
                                                 } else {
                                                     console.log(info2);
@@ -99,7 +99,7 @@ $(document).ready(function() {
                                 window.wxc.xcConfirm("出错啦，再试一次吧！", window.wxc.xcConfirm.typeEnum.error);
                             }
                         });
-                    } else if (info0 == "has joined") {
+                    } else if (info0.message == "has joined") {
                         window.wxc.xcConfirm("你已经加入我们了，请直接登录", window.wxc.xcConfirm.typeEnum.info, {
                             onOk: function() {
                                 window.location.href = "../joinus/";
@@ -111,7 +111,7 @@ $(document).ready(function() {
                             }
                         });
 
-                    } else if (info0 == "error") {
+                    } else if (info0.message == "error") {
                         console.log(info0);
                         window.wxc.xcConfirm("出错啦，再试一次吧！", window.wxc.xcConfirm.typeEnum.error);
                     }

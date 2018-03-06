@@ -144,7 +144,8 @@ $(document).ready(function() {
                     "remarks": remarks
                 },
                 success: function(res) {
-                    if (res == "success") {
+                    if (res.message == "success") {
+                        $(".submit").attr("disabled", "disabled");
                         window.wxc.xcConfirm("新建活动成功！", window.wxc.xcConfirm.typeEnum.success);
                     } else {
                         window.wxc.xcConfirm("出错啦，再试一次吧！", window.wxc.xcConfirm.typeEnum.error);
@@ -211,7 +212,7 @@ $(document).ready(function() {
                             "remarks": remarks
                         },
                         success: function(res) {
-                            if (res == "success") {
+                            if (res.message == "success") {
                                 window.wxc.xcConfirm("修改成功！", window.wxc.xcConfirm.typeEnum.success, {
                                     onOk: function() {
                                         window.location.reload();
@@ -305,9 +306,9 @@ $(document).on("click", ".update-activity", function() {
                 } else if (time == 'evening') {
                     appendText_get += "<select id='selTime' class='form-control'><option class='option' value='morning'>上午</option><option class='option' value='afternoon'>下午</option><option class='option' value='evening' selected='selected'>晚上</option></select></div></div>";
                 }
-                appendText_get += "<script type='text/javascript'>var selYear = window.document.getElementById('selYear');var selMonth = window.document.getElementById('selMonth');var selDay = window.document.getElementById('selDay');var dateNow = new Date();new DateSelector(selYear, selMonth, selDay);</script></div></div>";
+                appendText_get += "<script type='text/javascript'>var selYear = window.document.getElementById('selYear');var selMonth = window.document.getElementById('selMonth');var selDay = window.document.getElementById('selDay');var dateNow = new Date();new DateSelector(selYear, selMonth, selDay);</script></div>";
                 var remarks = e.remarks;
-                appendText_get += "<div class='section'><label><div class='section__title'>备注</div><textarea id='remarks' class='form-control' name='remarks' rows='5' placeholder='在此填写备注'>" + remarks + "</textarea></label></div><div class='btn-area'><button type='submit' class='submit'>确认修改</button><button id='delete-img' type='button' value='" + activity_id + "'>删除活动</button></div></form></div>";
+                appendText_get += "<div class='section'><label><div class='section__title'>备注</div><textarea id='remarks' class='form-control' name='remarks' rows='5' placeholder='在此填写备注'>" + remarks + "</textarea></label></div><div class='btn-area'><button type='submit' class='submit'>确认修改</button><button id='delete-img' type='button' value='" + activity_id + "'>删除活动</button></div></form></div></div>";
                 $(".activity-info").append(appendText_get);
                 $("#selYear option[value='" + year + "']").attr("selected", "selected");
                 $('#selYear').attr("disabled", "disabled");

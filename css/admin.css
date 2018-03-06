@@ -296,6 +296,7 @@ textarea {
 .activity-update {
     padding: 0 15px 15px 15px !important;
     background-color: #fff;
+    overflow: hidden;
 }
 
 .activity-update select {

@@ -259,7 +259,7 @@
         $sql_check = "SELECT name,number,$group FROM member where number='$number';";
         $check_result = mysqli_query($main_db,$sql_check);
         if(mysqli_num_rows($check_result) == 0){
-            echo json_encode(array("message"=>"does_not_exist");
+            echo json_encode(array("message"=>"does_not_exist"));
         }
         else {
             while($row = mysqli_fetch_array($check_result,MYSQLI_ASSOC)){
