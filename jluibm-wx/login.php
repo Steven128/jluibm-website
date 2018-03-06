@@ -25,7 +25,7 @@
                     $check = 1;
                     $_SESSION['userName'] = $row['name'];
                     $_SESSION['userNumber'] = $row['number'];
-                    echo json_encode(array("name"=>$_SESSION['userName'],"number"=>$_SESSION['userNumber']));
+                    echo json_encode(array("message"=>"success","PHPSESSID"=>session_id(),"number"=>$_SESSION['userNumber']));
                     break;
                 }
                 break;

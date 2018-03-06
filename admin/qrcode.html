@@ -51,6 +51,8 @@
             href = unescape(href);
             var activity_id = href.match(/\?activity_id=(.*?)\&/)[1];
             var duration = href.match(/\&duration=(.*?)$/)[1];
+            console.log(activity_id);
+            console.log(duration);
             $.ajax({
                 type: "POST",
                 url: "../php/activity.php",
@@ -60,7 +62,7 @@
                     "activity_id": activity_id,
                 },
                 success: function(res) {
-                    if (res == "success") {
+                    if (res.message == "success") {
                         var timestamp = parseInt((new Date()).valueOf() / 1000);
                         var terminal = timestamp + duration * 60;
                         $("#qrCodeDiv").qrcode({

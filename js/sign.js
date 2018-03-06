@@ -95,7 +95,6 @@ function getSignedList(activity_id) {
                 } else {
                     gender = '女';
                 }
-                var grade = '';
                 if (grade == '1') {
                     grade = '大一';
                 } else if (grade == '2') {

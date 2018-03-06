@@ -17,8 +17,8 @@
         $qq = $row['qq'];
         $phone = $row['phone'];
         $isManager = $row['isManager'];
+        $arr = array("name"=>$name,"number"=>$number,"college"=>$college,"major"=>$major,"gender"=>$gender,"grade"=>$grade,"qq"=>$qq,"phone"=>$phone,"isManager"=>$isManager);
+        echo json_encode($arr);
         break;
-    $arr = array("name"=>$name,"number"=>$number,"college"=>$college,"major"=>$major,"gender"=>$gender,"grade"=>$grade,"qq"=>$qq,"phone"=>$phone,"isManager"=>$isManager);
-    echo json_encode($arr);
     }
 ?>
