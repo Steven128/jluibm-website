@@ -71,16 +71,30 @@ DateSelector.prototype.InitDaySelect = function() {
         // 清空原有的选项 
         this.selDay.options.length = 0;
         // 循环添加OPION元素到天数select对象中 
-        for (var i = dateNow.getDate(); i <= daysInMonth; i++) {
-            // 新建一个OPTION对象 
-            var op = window.document.createElement("OPTION");
-            // 设置OPTION对象的值 
-            op.value = i;
-            // 设置OPTION对象的内容 
-            op.innerHTML = i;
-            // 添加到天数select对象 
-            this.selDay.appendChild(op);
+        if (month == dateNow.getMonth() + 1) {
+            for (var i = dateNow.getDate(); i <= daysInMonth; i++) {
+                // 新建一个OPTION对象 
+                var op = window.document.createElement("OPTION");
+                // 设置OPTION对象的值 
+                op.value = i;
+                // 设置OPTION对象的内容 
+                op.innerHTML = i;
+                // 添加到天数select对象 
+                this.selDay.appendChild(op);
+            }
+        } else {
+            for (var i = 1; i <= daysInMonth; i++) {
+                // 新建一个OPTION对象 
+                var op = window.document.createElement("OPTION");
+                // 设置OPTION对象的值 
+                op.value = i;
+                // 设置OPTION对象的内容 
+                op.innerHTML = i;
+                // 添加到天数select对象 
+                this.selDay.appendChild(op);
+            }
         }
+
     }
     // 处理年份和月份onchange事件的方法，它获取事件来源对象（即selYear或selMonth） 
     // 并调用它的Group对象（即DateSelector实例，请见构造函数）提供的InitDaySelect方法重新初始化天数 
@@ -101,12 +115,12 @@ DateSelector.prototype.InitSelector = function(year, month, day) {
     // 设置年、月初始值 
     this.selYear.selectedIndex = this.MaxYear - year;
     this.selMonth.selectedIndex = month - 1;
+    var month = parseInt(dateNow.getMonth() + 1)
+    $("#selMonth option[value='" + month + "']").attr("selected", "selected");
     // 初始化天数 
     this.InitDaySelect();
     // 设置天数初始值 
     this.selDay.selectedIndex = day - 1;
     $('#selYear').attr("disabled", "disabled");
-    var month = parseInt(dateNow.getMonth() + 1)
-    $("#selMonth option[value='" + month + "']").attr("selected", "selected");
     $("#selDay option[value='" + day + "']").attr("selected", "selected");
 }

@@ -97,6 +97,11 @@ textarea {
     width: 93% !important;
 }
 
+.activity-text {
+    padding: 15px;
+    margin: 10px;
+}
+
 @media (min-width: 540px) {
     #selYear {
         display: inline-block;
