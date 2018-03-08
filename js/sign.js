@@ -1,3 +1,5 @@
+var latitude = '';
+var longitude = '';
 $(document).ready(function() {
     var activity_id = window.location.search;
     activity_id = unescape(activity_id);
@@ -88,7 +90,7 @@ function getSignedList(activity_id) {
                 var major = e[i].major;
                 var grade = e[i].grade;
                 var gender = e[i].gender;
-                var location = e[i].location;
+                var distance = e[i].distance;
                 var time = e[i].submitTime;
                 if (gender == 'male') {
                     gender = '男';
@@ -104,7 +106,7 @@ function getSignedList(activity_id) {
                 } else {
                     grade = '大四';
                 }
-                appendText_list += '<tr><td>' + name + '</td><td>' + college + '&nbsp;&nbsp;' + major + '</td><td>' + grade + '</td><td>' + gender + '</td><td>' + location + '</td><td>' + time + '</td></tr>';
+                appendText_list += '<tr><td>' + name + '</td><td>' + college + '&nbsp;&nbsp;' + major + '</td><td>' + grade + '</td><td>' + gender + '</td><td>' + distance + '</td><td>' + time + '</td></tr>';
                 i++;
             }
             appendText_list += '</tbody></table>';
@@ -120,13 +122,13 @@ function getSignedList(activity_id) {
 
 $(document).on("click", "#sign-start", function() {
     var activity_id = $(this).val();
-    $(".btn-area").remove();
-    var appendText = '<hr><div><h4>请选择签到时间</h4><select id="duration" class="select form-control"><option value="1">1分钟</option><option value="3">3分钟</option><option value="5">5分钟</option><option value="10">10分钟</option><option value="30">30分钟</option><option value="60">60分钟</option></select><div class="btn-area"><button id="qrcode" value="' + activity_id + '" type="button" class="submit">点击生成二维码</button></div></div>';
-    $(".activity-text").append(appendText);
+    window.location.href = "get-location.html?" + escape("activity_id=" + activity_id);
 })
 
 $(document).on("click", "#qrcode", function() {
-    var activity_id = $(this).val();
+    var activity_id = window.location.search;
+    activity_id = unescape(activity_id);
+    activity_id = activity_id.match(/\?activity_id=(.*?)$/)[1];
     var duration = $("#duration").val();
-    window.location.href = "qrcode.html?" + escape("activity_id=" + activity_id + "&duration=" + duration);
+    window.location.href = "qrcode.html?" + escape("activity_id=" + activity_id + "&duration=" + duration + "&longitude=" + longitude + "&latitude=" + latitude);
 })

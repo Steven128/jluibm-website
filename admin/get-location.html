@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>活动签到-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../css/Normalize.css" />
+    <link type="text/css" rel="stylesheet" href="../css/page.css" />
+    <link type="text/css" rel="stylesheet" href="../css/user.css" />
+    <link type="text/css" rel="stylesheet" href="../css/admin.css" />
+    <link type="text/css" rel="stylesheet" href="../css/activity.css" />
+    <link rel="stylesheet" href="../animsition/dist/css/animsition.min.css">
+
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/page.js"></script>
+    <script type="text/javascript" src="../js/check-login.js"></script>
+    <script type="text/javascript" src="../js/sign.js"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.4&key=adb620fc8eb23a94e3ed80a6268302fa"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <script type="text/javascript" src="../js/xcConfirm.js"></script>
+    <script type="text/javascript">
+        var activity_id = window.location.search;
+        activity_id = unescape(activity_id);
+        if (activity_id.match(/\?activity_id=(.*?)$/)) {
+            if (!getReferer()) {
+
+                activity_id = activity_id.match(/\?activity_id=(.*?)$/)[1];
+                goTo('?x=3&r=' + Math.random() + '&activity_id=' + activity_id);
+            } else {
+                var pre = "sign.html";
+                if (getReferer().indexOf(pre) < 0) {
+                    window.location.href = "../admin/";
+                    window.event.returnValue = false;
+                }
+            }
+        } else {
+            window.location.href = "../admin/";
+            window.event.returnValue = false;
+        }
+    </script>
+    <style>
+        .activity-container {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        
+        #map-container {
+            width: 100%;
+            height: 500px;
+            margin: auto;
+        }
+        
+        #tip {
+            background-color: #fff;
+            padding-left: 10px;
+            padding-right: 10px;
+            position: absolute;
+            font-size: 12px;
+            right: 30px;
+            top: 20px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container animsition">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../" rel="home">吉林大学IBM俱乐部</a>
+                    <h5>管理员系统</h5>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="bar-box">
+                <div class="left-bar">
+                    <div class="admin-box">
+                        <img class="userPic" src="../src/user.png" />
+                        <h4 class="online-user"></h4><img class="certificated-icon" src="../src/icon/certificated.png" />
+                        <h5>管理员</h5>
+                    </div>
+                    <h4 id='index-item' class='bar-item overview-item'><span class="item-text">活动签到</span></h4>
+                </div>
+                <div class="main-bar row">
+                    <div class="sub-text col-xs-12">
+                        <h3 class="title col-xs-12">活动签到</h3>
+                        <div class="activity-container col-xs-12">
+                            <div id='map-container'></div>
+                            <div id="tip"></div>
+                            <hr>
+                            <div class="form-group">
+                                <h4>请选择签到时间</h4>
+                                <select id="duration" class="select form-control">
+                                    <option value="1">1分钟</option>
+                                    <option value="3">3分钟</option>
+                                    <option value="5">5分钟</option>
+                                    <option value="10">10分钟</option>
+                                    <option value="30">30分钟</option>
+                                    <option value="60">60分钟</option>
+                                </select>
+                                <div class="btn-area">
+                                    <button id="qrcode" type="button" class="submit">点击生成二维码</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <div class="copyright-text">&copy;&nbsp;2018&nbsp;JLUIBMclub&nbsp;&nbsp;<a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../">返回主页</a><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../user/">返回上一级</a></div>
+            </div>
+        </div>
+    </div>
+    <img id="back_to_top" src="../src/icon/back_to_top.png" />
+    <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../js/activity.js"></script>
+    <!-- animsition js -->
+    <script src="../animsition/dist/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".animsition").animsition({
+
+                inClass: 'fade-in',
+                outClass: 'fade-out',
+                inDuration: 500,
+                outDuration: 400,
+                linkElement: '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading: true,
+                loadingParentElement: 'body', //animsition wrapper element
+                loadingClass: 'animsition-loading',
+                unSupportCss: ['animation-duration',
+                    '-webkit-animation-duration',
+                    '-o-animation-duration'
+                ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay: false,
+                overlayClass: 'animsition-overlay-slide',
+                overlayParentElement: 'body'
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        var map, geolocation;
+        //加载地图，调用浏览器定位服务
+        map = new AMap.Map('map-container', {
+            resizeEnable: true
+        });
+        map.plugin('AMap.Geolocation', function() {
+            geolocation = new AMap.Geolocation({
+                enableHighAccuracy: true, //是否使用高精度定位，默认:true
+                timeout: 10000, //超过10秒后停止定位，默认：无穷大
+                buttonOffset: new AMap.Pixel(10, 20), //定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+                zoomToAccuracy: true, //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+                buttonPosition: 'RB'
+            });
+            map.addControl(geolocation);
+            geolocation.getCurrentPosition();
+            AMap.event.addListener(geolocation, 'complete', onComplete); //返回定位信息
+            AMap.event.addListener(geolocation, 'error', onError); //返回定位出错信息
+        });
+        //解析定位结果
+        function onComplete(data) {
+            console.log(data);
+            latitude = data.position.lat;
+            longitude = data.position.lng;
+            var str = ['定位成功'];
+            str.push('经度：' + data.position.getLng());
+            str.push('纬度：' + data.position.getLat());
+            if (data.accuracy) {
+                str.push('精度：' + data.accuracy + ' 米');
+            } //如为IP精确定位结果则没有精度信息
+            str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
+            document.getElementById('tip').innerHTML = str.join('<br>');
+        }
+        //解析定位错误信息
+        function onError(data) {
+            document.getElementById('tip').innerHTML = '定位失败';
+        }
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

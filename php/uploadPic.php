@@ -7,7 +7,7 @@ $number = $_POST['number'];
 if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_image_content, $result)){
     $type = $result[2];
     $new_file = "../../userPicUpload/";
-    $new_file_backup = "../../../userPicUpload_backup/";
+    $new_file_backup = "/home/userPicUpload_backup/";
     if(!file_exists($new_file)){
         //检查是否有该文件夹，如果没有就创建，并给予最高权限
         mkdir($new_file, 0700);

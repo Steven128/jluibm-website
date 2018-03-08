@@ -22,7 +22,7 @@
         if (!getReferer()) {
             goTo('?x=3&r=' + Math.random());
         } else {
-            var pre = "admin/sign.html";
+            var pre = "admin/get-location.html";
             if (getReferer().indexOf(pre) < 0) {
                 window.location.href = "../admin/";
                 window.event.returnValue = false;
@@ -50,9 +50,9 @@
             var href = window.location.search;
             href = unescape(href);
             var activity_id = href.match(/\?activity_id=(.*?)\&/)[1];
-            var duration = href.match(/\&duration=(.*?)$/)[1];
-            console.log(activity_id);
-            console.log(duration);
+            var duration = href.match(/\&duration=(.*?)\&/)[1];
+            var longitude = href.match(/\&longitude=(.*?)\&/)[1];
+            var latitude = href.match(/\&latitude=(.*?)$/)[1];
             $.ajax({
                 type: "POST",
                 url: "../php/activity.php",
@@ -60,6 +60,8 @@
                 data: {
                     "request": "changeState",
                     "activity_id": activity_id,
+                    "longitude": longitude,
+                    "latitude": latitude
                 },
                 success: function(res) {
                     if (res.message == "success") {

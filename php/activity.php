@@ -97,10 +97,11 @@ else if($request == 'createActivity'){
     }
 }
 
-//修改活动状态
+//修改活动状态（开始签到）
 else if($request == 'changeState'){
     $activity_id = $_POST['activity_id'];
-
+    $longitude = $_POST['longitude'];
+    $latitude = $_POST['latitude'];
     $main_db = mysqli_connect("127.0.0.1","root","JLUIBMclub123") or die ("failed!");
     mysqli_query($main_db,"set names utf8");
     mysqli_select_db($main_db,"JLUIBMclub");
@@ -108,6 +109,10 @@ else if($request == 'changeState'){
     $sql_update = "UPDATE activity SET state='active' WHERE activity_id='$activity_id';";
     $retval = mysqli_query($main_db,$sql_update);
     if($retval){
+        $set_lng = "UPDATE activity SET longitude='$longitude' WHERE activity_id='$activity_id';";
+        $step_lng = mysqli_query($main_db,$set_lng);
+        $set_lat = "UPDATE activity SET latitude='$latitude' WHERE activity_id='$activity_id';";
+        $step_lat = mysqli_query($main_db,$set_lat);
         echo json_encode(array("message"=>"success"));
     }
     else {
@@ -175,7 +180,21 @@ else if($request == "getSignedList") {
     while($row_activity = mysqli_fetch_array($retval_list,MYSQLI_ASSOC)){
         $number = $row_activity['number'];
         $submitTime = $row_activity['submitTime'];
-        $location = $row_activity['submitLocation'];
+        //用户签到的地址
+        $submitLocation = $row_activity['submitLocation'];
+        $user_lng = substr($submitLocation,0,5);
+        $user_lat = substr($submitLocation,0,10);
+
+        //获取签到时的标识位置
+        $get_location = "SELECT longitude,latitude FROM activity WHERE activity_id='$activity_id';";
+        $return = mysqli_query($main_db,$get_location);
+        while($row_loc = mysqli_fetch_array($return,MYSQLI_ASSOC)) {
+            $default_lng = $row_lng['longitude'];
+            $default_lat = $row_lat['latitude'];
+            break;
+        }
+        //计算用户签地点与默认地点的距离
+        $distance = getDistance($default_lng, $default_lat, $user_lng, $user_lat, 1);
         //在member表中获得其详细信息
         $sql_select_single = "SELECT name,college,major,gender,grade FROM member WHERE number='$number';";
         $retval_single = mysqli_query($main_db,$sql_select_single);
@@ -185,12 +204,38 @@ else if($request == "getSignedList") {
             $major = $row_member['major'];
             $gender = $row_member['gender'];
             $grade = $row_member['grade'];
-            $arr = array("number"=>$number,"name"=>$name,"submitTime"=>$submitTime,"location"=>$location,"college"=>$college,"major"=>$major,"gender"=>$gender,"grade"=>$grade);
+            $arr = array("number"=>$number,"name"=>$name,"submitTime"=>$submitTime,"distance"=>$distance,"college"=>$college,"major"=>$major,"gender"=>$gender,"grade"=>$grade);
             array_push($data,$arr);
             break;
         }
     }
     echo json_encode($data);
+}
+
+function getDistance($longitude1, $latitude1, $longitude2, $latitude2, $unit , $decimal = 2)
+{
+
+    $EARTH_RADIUS = 6370.996; // 地球半径系数
+    $PI           = 3.1415926;
+
+    $radLat1 = $latitude1 * $PI / 180.0;
+    $radLat2 = $latitude2 * $PI / 180.0;
+
+    $radLng1 = $longitude1 * $PI / 180.0;
+    $radLng2 = $longitude2 * $PI / 180.0;
+
+    $a = $radLat1 - $radLat2;
+    $b = $radLng1 - $radLng2;
+
+    $distance = 2 * asin(sqrt(pow(sin($a / 2), 2) + cos($radLat1) * cos($radLat2) * pow(sin($b / 2), 2)));
+    $distance = $distance * $EARTH_RADIUS * 1000;
+
+    if ($unit == 2) {
+        $distance = $distance / 1000;
+    }
+
+    return round($distance, $decimal);
+
 }
 
 

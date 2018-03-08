@@ -6,7 +6,7 @@ $upload_name     = $_FILES['file']['name'];
 
 //保存目录
 $img_dir        = "../../userPicUpload/";
-$img_dir_backup = "../../../userPicUpload_backup/";
+$img_dir_backup = "/home/userPicUpload_backup/";
 //如果当前图片不为空
 if (!empty($upload_name)) {
     $upload_name = explode(".", $upload_name);

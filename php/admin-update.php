@@ -225,8 +225,12 @@
 
         //删除用户头像
         $file = "../../userPicUpload/".$number.".png";
+        $file_backup = "/home/userPicUpload_backup/".$number.".png";
         if(is_file($file)){
             unlink($file);
+        }
+        if(is_file($file_backup)){
+            unlink($file_backup);
         }
         
         echo json_encode(array("message"=>"success"));
