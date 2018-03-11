@@ -81,7 +81,8 @@ else if($request == 'createActivity'){
         $activity_table = "CREATE TABLE $activity_id(".
             "submitTime varchar(20) NOT NULL,".
             "number varchar(8) NOT NULL,".
-            "submitLocation varchar(100) NOT NULL".
+            "longitude varchar(20),".
+            "latitude varchar(20)".
             ") ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;";
         $retval = mysqli_query( $main_db, $activity_table );
         $retval=true;
@@ -93,7 +94,7 @@ else if($request == 'createActivity'){
         }
     }
     else {
-        echo json_encode($step);
+        echo json_encode(array("message"=>$step));
     }
 }
 
@@ -181,16 +182,15 @@ else if($request == "getSignedList") {
         $number = $row_activity['number'];
         $submitTime = $row_activity['submitTime'];
         //用户签到的地址
-        $submitLocation = $row_activity['submitLocation'];
-        $user_lng = substr($submitLocation,0,5);
-        $user_lat = substr($submitLocation,0,10);
+        $user_lng = $row_activity['longitude'];
+        $user_lat = $row_activity['latitude'];
 
         //获取签到时的标识位置
         $get_location = "SELECT longitude,latitude FROM activity WHERE activity_id='$activity_id';";
         $return = mysqli_query($main_db,$get_location);
         while($row_loc = mysqli_fetch_array($return,MYSQLI_ASSOC)) {
-            $default_lng = $row_lng['longitude'];
-            $default_lat = $row_lat['latitude'];
+            $default_lng = $row_loc['longitude'];
+            $default_lat = $row_loc['latitude'];
             break;
         }
         //计算用户签地点与默认地点的距离
@@ -212,7 +212,7 @@ else if($request == "getSignedList") {
     echo json_encode($data);
 }
 
-function getDistance($longitude1, $latitude1, $longitude2, $latitude2, $unit , $decimal = 2)
+function getDistance($longitude1, $latitude1, $longitude2, $latitude2, $unit , $decimal = 0)
 {
 
     $EARTH_RADIUS = 6370.996; // 地球半径系数

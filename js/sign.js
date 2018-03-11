@@ -106,7 +106,7 @@ function getSignedList(activity_id) {
                 } else {
                     grade = '大四';
                 }
-                appendText_list += '<tr><td>' + name + '</td><td>' + college + '&nbsp;&nbsp;' + major + '</td><td>' + grade + '</td><td>' + gender + '</td><td>' + distance + '</td><td>' + time + '</td></tr>';
+                appendText_list += '<tr><td>' + name + '</td><td>' + college + '&nbsp;&nbsp;' + major + '</td><td>' + grade + '</td><td>' + gender + '</td><td>' + distance + '米</td><td>' + time + '</td></tr>';
                 i++;
             }
             appendText_list += '</tbody></table>';

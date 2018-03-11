@@ -76,7 +76,7 @@ echo "数据表cpp_group创建成功<br><br>";
 
 $algorithm = "CREATE TABLE algorithm_group(".
 		"isLeader tinyint(1) DEFAULT 0,".
-	   "name varchar(100) NOT NULL,".
+	    "name varchar(100) NOT NULL,".
         "number varchar(8) NOT NULL".
         ") ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;";
 $retval = mysqli_query( $infodb, $algorithm );
@@ -87,8 +87,8 @@ if(!$retval )
 echo "数据表algorithm_group创建成功<br><br>";
 
 $web = "CREATE TABLE web_group(".
-	"isLeader tinyint(1) DEFAULT 0,".
-	   "name varchar(100) NOT NULL,".
+	    "isLeader tinyint(1) DEFAULT 0,".
+	    "name varchar(100) NOT NULL,".
         "number varchar(8) NOT NULL".
         ") ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;";
 $retval = mysqli_query( $infodb, $web );
@@ -99,8 +99,8 @@ if(!$retval )
 echo "数据表web_group创建成功<br><br>";
 
 $linux = "CREATE TABLE linux_group(".
-	"isLeader tinyint(1) DEFAULT 0,".
-	   "name varchar(100) NOT NULL,".
+	    "isLeader tinyint(1) DEFAULT 0,".
+	    "name varchar(100) NOT NULL,".
         "number varchar(8) NOT NULL".
         ") ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;";
 $retval = mysqli_query( $infodb, $linux );
@@ -147,6 +147,8 @@ $activity = "CREATE TABLE activity(".
             "place varchar(100) NOT NULL,".
             "time varchar(30) NOT NULL,".
             "remarks text(300) NOT NULL,".
+            "longitude varchar(20),".
+            "latitude varchar(20),".
             "state varchar(10) NOT NULL".
             ") ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;";
 $retval = mysqli_query( $infodb, $activity );

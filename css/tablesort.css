@@ -59,6 +59,11 @@ th.table-sort {
     border-top-color: rgba(255, 255, 255, 1);
 }
 
+.table-sort-search-empty {
+    border: 0;
+    padding: 0;
+}
+
 
 /* Table Sort Search */
 
