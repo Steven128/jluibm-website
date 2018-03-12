@@ -16,6 +16,16 @@ table {
     overflow: auto;
 }
 
+table a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+table a:hover {
+    color: #0067b8;
+    text-decoration: underline;
+}
+
 .head-content {
     height: 52px;
 }
@@ -144,6 +154,11 @@ td {
 
 th {
     border-bottom: 1px solid #bbbbbb;
+    border-right: 1px solid #d5d5d5;
+}
+
+th:last-child {
+    border-right: 0;
 }
 
 .text-outer {
@@ -199,7 +214,7 @@ th {
 }
 
 .drop-no-img {
-    padding: 16.5px !important;
+    margin: 32px 16.5px;
 }
 
 .box {

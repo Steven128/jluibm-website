@@ -316,6 +316,7 @@ body {
     left: 10px;
     padding: 5px;
     background-color: #fff;
+    text-align: center;
 }
 
 .info-box h4 {
@@ -340,6 +341,15 @@ body {
 
 .activities-box table {
     width: 100% !important;
+    text-align: center;
+}
+
+.activities-box table .table-name {
+    border-right: 1px solid #ccc;
+}
+
+.activities-box table .table-time {
+    width: 120px;
 }
 
 

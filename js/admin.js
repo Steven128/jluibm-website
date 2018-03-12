@@ -69,7 +69,8 @@ $(document).ready(function() {
                                 }
                                 //
                                 var j = i + 1;
-                                var subText_main = "<tr><td class='count'>" + j + "</td><td class='isManager'>" + isManager + "</td><td class='name'>" + name + "</td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
+                                var hrefNumber = escape('number=' + number);
+                                var subText_main = "<tr><td class='count'>" + j + "</td><td class='isManager'>" + isManager + "</td><td class='name'><a href='view.html?" + hrefNumber + "' target='_blank'>" + name + "</a></td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
                                 appendText_main += subText_main;
                                 //尾部添加编辑的图标
                                 //本人的信息不可在此处修改
@@ -195,10 +196,10 @@ $(document).ready(function() {
                                 } else {
                                     isLeader = '组员';
                                 }
-
+                                var hrefNumber = escape('number=' + number);
                                 //
                                 if (e[i].group == "cpp") {
-                                    var subText_cpp = "<tr><td class='count'>" + a + "</td><td class='isLeader'>" + isLeader + "</td><td class='name'>" + name + "</td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
+                                    var subText_cpp = "<tr><td class='count'>" + a + "</td><td class='isLeader'>" + isLeader + "</td><td class='name'><a href='view.html?" + hrefNumber + "' target='_blank'>" + name + "</a></td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
                                     appendText_cpp += subText_cpp;
                                     a++;
                                     //尾部添加编辑的图标
@@ -220,7 +221,7 @@ $(document).ready(function() {
                                     }
                                 }
                                 if (e[i].group == "algorithm") {
-                                    var subText_algorithm = "<tr><td class='count'>" + b + "</td><td class='isLeader'>" + isLeader + "</td><td class='name'>" + name + "</td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
+                                    var subText_algorithm = "<tr><td class='count'>" + b + "</td><td class='isLeader'>" + isLeader + "</td><td class='name'><a href='view.html?" + hrefNumber + "' target='_blank'>" + name + "</a></td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
                                     appendText_algorithm += subText_algorithm;
                                     b++;
                                     //尾部添加编辑的图标
@@ -242,7 +243,7 @@ $(document).ready(function() {
                                     }
                                 }
                                 if (e[i].group == "web") {
-                                    var subText_web = "<tr><td class='count'>" + c + "</td><td class='isLeader'>" + isLeader + "</td><td class='name'>" + name + "</td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
+                                    var subText_web = "<tr><td class='count'>" + c + "</td><td class='isLeader'>" + isLeader + "</td><td class='name'><a href='view.html?" + hrefNumber + "' target='_blank'>" + name + "</a></td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
                                     appendText_web += subText_web;
                                     c++;
                                     //尾部添加编辑的图标
@@ -264,7 +265,7 @@ $(document).ready(function() {
                                     }
                                 }
                                 if (e[i].group == "linux") {
-                                    var subText_linux = "<tr><td class='count'>" + d + "</td><td class='isLeader'>" + isLeader + "</td><td class='name'>" + name + "</td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
+                                    var subText_linux = "<tr><td class='count'>" + d + "</td><td class='isLeader'>" + isLeader + "</td><td class='name'><a href='view.html?" + hrefNumber + "' target='_blank'>" + name + "<a></td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
                                     appendText_linux += subText_linux;
                                     d++;
                                     //尾部添加编辑的图标
@@ -286,7 +287,7 @@ $(document).ready(function() {
                                     }
                                 }
                                 if (e[i].group == "java") {
-                                    var subText_java = "<tr><td class='count'>" + f + "</td><td class='isLeader'>" + isLeader + "</td><td class='name'>" + name + "</td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
+                                    var subText_java = "<tr><td class='count'>" + f + "</td><td class='isLeader'>" + isLeader + "</td><td class='name'><a href='view.html?" + hrefNumber + "' target='_blank'>" + name + "</a></td><td class='number'>" + number + "</td><td class='college'>" + college + "</td><td class='major'>" + major + "</td><td class='gender'>" + gender + "</td><td class='grade'>" + grade + "</td><td class='qq'>" + qq + "</td><td class='phone'>" + phone + "</td>";
                                     appendText_java += subText_java;
                                     f++;
                                     //尾部添加编辑的图标

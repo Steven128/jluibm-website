@@ -70,11 +70,11 @@
 </head>
 
 <body>
-    <div class="container animsition">
+    <div class="container">
         <div class="head-content">
             <div class="site-branding">
                 <div class="site-title">
-                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../" rel="home">吉林大学IBM俱乐部</a>
+                    <a href="../" rel="home">吉林大学IBM俱乐部</a>
                     <h5>管理员系统</h5>
                 </div>
             </div>
@@ -124,34 +124,7 @@
     <img id="back_to_top" src="../src/icon/back_to_top.png" />
     <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="../js/activity.js"></script>
-    <!-- animsition js -->
-    <script src="../animsition/dist/js/jquery.animsition.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
 
-            $(".animsition").animsition({
-
-                inClass: 'fade-in',
-                outClass: 'fade-out',
-                inDuration: 500,
-                outDuration: 400,
-                linkElement: '.animsition-link',
-                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
-                loading: true,
-                loadingParentElement: 'body', //animsition wrapper element
-                loadingClass: 'animsition-loading',
-                unSupportCss: ['animation-duration',
-                    '-webkit-animation-duration',
-                    '-o-animation-duration'
-                ],
-                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-                overlay: false,
-                overlayClass: 'animsition-overlay-slide',
-                overlayParentElement: 'body'
-            });
-        });
-    </script>
     <script type="text/javascript">
         var map, geolocation;
         //加载地图，调用浏览器定位服务

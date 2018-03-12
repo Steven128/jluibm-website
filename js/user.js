@@ -71,7 +71,7 @@ $(document).ready(function() {
                         }
                         appendText_user = "<div class='userName'><h3>" + e[0].name + "</h3></div><button id='logout-xs' type='button' class='submit logout'>退出登录</button><div class='clear'></div>";
                         $(".userPic-box").append(appendText_user);
-                        appendText_user = "<div class='info-box'><h4>我的基本信息</h4><div class='box-inner'><div class='inner-text'>学号：" + e[0].number + "</div>";
+                        appendText_user = "<div class='info-box'><h4>我的基本信息</h4><div class='box-inner'>";
                         appendText_user += "<div class='inner-text'>学院：" + e[0].college + "</div>";
                         appendText_user += "<div class='inner-text'>专业：" + e[0].major + "</div>";
                         appendText_user += "<div class='inner-text'>性别：" + gender + "</div>";
@@ -133,7 +133,7 @@ $(document).ready(function() {
                                     var i = 0;
                                     appendText_activity = '<table><tbody>';
                                     while (e[i]) {
-                                        appendText_activity += '<tr class="inner-text"><td>' + e[i].activity_name + '</td><td>' + e[i].time.substring(0, 10) + '</td></tr>';
+                                        appendText_activity += '<tr class="inner-text"><td class="table-name">' + e[i].activity_name + '</td><td class="table-time">' + e[i].time.substring(0, 10) + '</td></tr>';
                                         i++;
                                     }
                                     appendText_activity += '</tbody></table>';
