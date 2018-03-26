@@ -38,7 +38,7 @@ if ($request == 'check') {
     $languages  = $_POST['languages'];
     $learned    = urldecode($_POST['learned']);
 
-    $data = array("submitTime" => $submitTime, "name" => $name, "number" => $number, "college" => $college, "major" => $major, "gender" => $gender, "grade" => $grade, "qq" => $qq, "phone" => $phone, "languages" => $languages, "learned" => $learned);
+    //========================================
 
     $cpp       = 0;
     $algorithm = 0;
@@ -59,23 +59,6 @@ if ($request == 'check') {
 
     //==========================================
 
-    $main_db = mysqli_connect("127.0.0.1", "root", "JLUIBMclub123") or die("failed!");
-    mysqli_query($main_db, "set names utf8");
-    mysqli_select_db($main_db, "JLUIBMclub");
-    $submitTime = date("Y-m-d");
-
-    //信息插入数据库
-    $sql_insert = "insert into join_infomation" . "(join_date,name,number,college,major,gender,grade,qq,phone,cpp,algorithm,web,linux,java,learned)" . "VALUES" . "('$submitTime','$name','$number','$college','$major','$gender','$grade','$qq','$phone','$cpp','$algorithm','$web','$linux','$java','$learned');";
-    $join       = mysqli_query($main_db, $sql_insert);
-    if ($join) {
-        session_start();
-        unset($_SESSION);
-        session_destroy();
-    } else {
-        die("error");
-    }
-    //在社团成员系统中添加该学生信息
-
     foreach ($languages as $key) {
         if ($key == 'cpp') {
             $cpp = 1;
@@ -94,41 +77,72 @@ if ($request == 'check') {
         }
     }
 
-    $sql_insert = "insert into member" . "(name,number,college,major,gender,grade,qq,phone,cpp,algorithm,web,linux,java)" . "VALUES" . "('$name','$number','$college','$major','$gender','$grade','$qq','$phone','$cpp','$algorithm','$web','$linux','$java');";
-    $step       = mysqli_query($main_db, $sql_insert);
+    $main_db = mysqli_connect("127.0.0.1", "root", "JLUIBMclub123") or die("failed!");
+    mysqli_query($main_db, "set names utf8");
+    mysqli_select_db($main_db, "JLUIBMclub");
+    $submitTime = date("Y-m-d");
 
-    //根据该学生感兴趣的方向分组
-
-    foreach ($languages as $key) {
-        if ($key == 'cpp') {
-            $sql_insert = "insert into cpp_group" . "(name,number)" . "VALUES" . "('$name','$number');";
-            $step       = mysqli_query($main_db, $sql_insert);
-        }
-        if ($key == 'algorithm') {
-            $sql_insert = "insert into algorithm_group" . "(name,number)" . "VALUES" . "('$name','$number');";
-            $step       = mysqli_query($main_db, $sql_insert);
-        }
-        if ($key == 'web') {
-            $sql_insert = "insert into web_group" . "(name,number)" . "VALUES" . "('$name','$number');";
-            $step       = mysqli_query($main_db, $sql_insert);
-        }
-        if ($key == 'linux') {
-            $sql_insert = "insert into linux_group" . "(name,number)" . "VALUES" . "('$name','$number');";
-            $step       = mysqli_query($main_db, $sql_insert);
-        }
-        if ($key == 'java') {
-            $sql_insert = "insert into java_group" . "(name,number)" . "VALUES" . "('$name','$number');";
-            $step       = mysqli_query($main_db, $sql_insert);
+    $submit_check = 1;
+    if ($number == '') {
+        $submit_check = 0;
+    }
+    $sql_compare = "SELECT number from join_infomation;";
+    $retval      = mysqli_query($main_db, $sql_compare);
+    while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+        if ($row['number'] == $number) {
+            $submit_check = 0;
+            break;
         }
     }
+    if ($submit_check == 1) {
+        //数据库中没有该人信息
+        //信息插入数据库
+        $sql_insert = "insert into join_infomation" . "(join_date,name,number,college,major,gender,grade,qq,phone,cpp,algorithm,web,linux,java,learned)" . "VALUES" . "('$submitTime','$name','$number','$college','$major','$gender','$grade','$qq','$phone','$cpp','$algorithm','$web','$linux','$java','$learned');";
+        $join       = mysqli_query($main_db, $sql_insert);
+        if ($join) {
+            session_start();
+            unset($_SESSION);
+            session_destroy();
+        } else {
+            die("error");
+        }
 
-    //
-    $sql_insert = "insert into learned_text" . "(name,number,college,major,gender,grade,learned)" . "VALUES" . "('$name','$number','$college','$major','$gender','$grade','$learned');";
-    $step = mysqli_query($main_db, $sql_insert);
-    if ($step) {
-        $sql_set_pic = "UPDATE member SET userPic='../../userPicUpload/default.png' WHERE number='$number';";
-        $set_pic = mysqli_query($main_db, $sql_set_pic);
-        echo json_encode(array("message" => "success"));
+        $sql_insert = "insert into member" . "(name,number,college,major,gender,grade,qq,phone,cpp,algorithm,web,linux,java)" . "VALUES" . "('$name','$number','$college','$major','$gender','$grade','$qq','$phone','$cpp','$algorithm','$web','$linux','$java');";
+        $step       = mysqli_query($main_db, $sql_insert);
+
+        //根据该学生感兴趣的方向分组
+
+        foreach ($languages as $key) {
+            if ($key == 'cpp') {
+                $sql_insert = "insert into cpp_group" . "(name,number)" . "VALUES" . "('$name','$number');";
+                $step       = mysqli_query($main_db, $sql_insert);
+            }
+            if ($key == 'algorithm') {
+                $sql_insert = "insert into algorithm_group" . "(name,number)" . "VALUES" . "('$name','$number');";
+                $step       = mysqli_query($main_db, $sql_insert);
+            }
+            if ($key == 'web') {
+                $sql_insert = "insert into web_group" . "(name,number)" . "VALUES" . "('$name','$number');";
+                $step       = mysqli_query($main_db, $sql_insert);
+            }
+            if ($key == 'linux') {
+                $sql_insert = "insert into linux_group" . "(name,number)" . "VALUES" . "('$name','$number');";
+                $step       = mysqli_query($main_db, $sql_insert);
+            }
+            if ($key == 'java') {
+                $sql_insert = "insert into java_group" . "(name,number)" . "VALUES" . "('$name','$number');";
+                $step       = mysqli_query($main_db, $sql_insert);
+            }
+        }
+
+        //
+        $sql_insert = "insert into learned_text" . "(name,number,college,major,gender,grade,learned)" . "VALUES" . "('$name','$number','$college','$major','$gender','$grade','$learned');";
+        $step       = mysqli_query($main_db, $sql_insert);
+        if ($step) {
+            $sql_set_pic = "UPDATE member SET userPic='../../userPicUpload/default.png' WHERE number='$number';";
+            $set_pic     = mysqli_query($main_db, $sql_set_pic);
+            echo json_encode(array("message" => "success"));
+        }
+
     }
-
 }

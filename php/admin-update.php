@@ -58,7 +58,26 @@
                 $step = mysqli_query( $main_db,$sql_update );
             }
         }
-        
+        if($isManager == 0) {
+                //由管理员变为普通社员，取消所有组长权限
+                function cancelLeader($main_db,$number,$group) {
+                    $sql_select_group = "SELECT * FROM $group"."_group WHERE number='$number';";
+                    $retval_group = mysqli_query($main_db,$sql_select_group);
+                    while($row_group = mysqli_fetch_array($retval_group,MYSQLI_ASSOC)) {
+                        if($row['isLeader'] == 1) {
+                            //是该组组长，需要取消权限
+                            $sql_update_group = "UPDATE $group"."_group SET isLeader=0 WHERE number='$number';";
+                            $retval = mysqli_query($main_db,$sql_update_group);
+                        }
+                    }
+                }
+                cancelLeader($main_db,$number,"cpp");
+                cancelLeader($main_db,$number,"algorithm");
+                cancelLeader($main_db,$number,"web");
+                cancelLeader($main_db,$number,"linux");
+                cancelLeader($main_db,$number,"java");
+            }
+
         $sql_select = "SELECT number FROM learned_text;";
         $retval = mysqli_query($main_db,$sql_select);
         while($row = mysqli_fetch_array($retval,MYSQLI_ASSOC)){

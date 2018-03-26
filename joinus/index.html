@@ -14,6 +14,7 @@
 
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/page.js"></script>
+    <script type="text/javascript" src="../js/inputselect.js"></script>
     <script type="text/javascript" src="../js/joinus.js"></script>
     <script type="text/javascript" src="../js/check-login.js"></script>
     <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
@@ -155,12 +156,13 @@
                             <hr>
                             <div class="form-group">
                                 <div class="section__title">学院</div>
-                                <input id="college" type="text" class="input-text form-control" name="college" placeholder="请输入学院" onkeyup="value=value.replace(/[\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))" maxlength=15
-                                />
+                                <input id="college" list="collegeSelect" type="text" class="input-text form-control" name="college" placeholder="请输入学院" maxlength=15 />
+                                <datalist id="collegeSelect"></datalist>
                             </div>
                             <div class="form-group">
                                 <div class="section__title">专业</div>
-                                <input id="major" type="text" class="input-text form-control" name="major" placeholder="请输入专业" onkeyup="value=value.replace(/[\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))" maxlength=15 />
+                                <input id="major" list="majorSelect" type="text" class="input-text form-control" name="major" placeholder="请输入专业" maxlength=15 />
+                                <datalist id="majorSelect"></datalist>
                             </div>
                             <hr>
                             <div class="form-group">

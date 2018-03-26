@@ -2,8 +2,20 @@
     padding: 0;
 }
 
+.highcharts-container {
+    width: auto;
+    overflow: hidden;
+}
+
+.highcharts .highcharts-container {
+    width: 125% !important;
+    position: relative;
+    left: -10px;
+}
+
 .overview-text {
     background-color: #efefef;
+    max-width: 100%;
 }
 
 .overview-text .title {
@@ -11,7 +23,7 @@
 }
 
 .ratio {
-    margin: 15px 0;
+    margin: 15px 0 0 0;
     background-color: #fff;
     padding: 10px;
     text-align: center;
@@ -31,7 +43,7 @@
 
 .highcharts-container {
     background-color: #fff;
-    margin: 15px 0;
+    margin: 0 0 15px 0;
     padding: 10px;
 }
 

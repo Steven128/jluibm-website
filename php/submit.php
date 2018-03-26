@@ -70,7 +70,7 @@ foreach($lang as $key){
 
 //==========================================
 
-//连接MySQL数据库
+//连接数据库
 
 $main_db = mysqli_connect("127.0.0.1","root","JLUIBMclub123") or die ("failed!");
 mysqli_query($main_db,"set names utf8");
