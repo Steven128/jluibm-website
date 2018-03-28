@@ -2,11 +2,8 @@ $(document).ready(function() {
     //获取近10天加入社团的人数
     $.ajax({
         type: "GET",
-        url: "../php/overview.php",
+        url: "../php/overview.php?request=count",
         dataType: "JSON",
-        data: {
-            "request": "count",
-        },
         success: function(e) {
             var $categories = [];
             var $data = [];
@@ -87,11 +84,8 @@ $(document).ready(function() {
     //获取性别比例
     $.ajax({
         type: "GET",
-        url: "../php/overview.php",
+        url: "../php/overview.php?request=gender",
         dataType: "JSON",
-        data: {
-            "request": "gender",
-        },
         success: function(e) {
 
             var male_ratio = (e.male / (e.male + e.female));
@@ -108,11 +102,8 @@ $(document).ready(function() {
     //获取年级比例
     $.ajax({
         type: "GET",
-        url: "../php/overview.php",
+        url: "../php/overview.php?request=grade",
         dataType: "JSON",
-        data: {
-            "request": "grade",
-        },
         success: function(e) {
             var grade_1_ratio = e.grade_1_number / (e.grade_1_number + e.grade_2_number + e.grade_3_number + e.grade_4_number);
             var grade_2_ratio = e.grade_2_number / (e.grade_1_number + e.grade_2_number + e.grade_3_number + e.grade_4_number);
@@ -130,11 +121,8 @@ $(document).ready(function() {
     //获取各组人数比例
     $.ajax({
         type: "GET",
-        url: "../php/overview.php",
+        url: "../php/overview.php?request=group",
         dataType: "JSON",
-        data: {
-            "request": "group",
-        },
         success: function(e) {
 
             var cpp_ratio = e.cpp / e.all;

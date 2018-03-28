@@ -45,12 +45,8 @@ $(document).ready(function() {
                 number = e.number;
                 $.ajax({
                     type: "GET",
-                    url: "../php/user-info.php",
+                    url: "../php/user-info.php?request=get_info&number=" + number,
                     dataType: "JSON",
-                    data: {
-                        "number": number,
-                        "request": "get_info"
-                    },
                     success: function(e) {
 
                         var gender = '';
@@ -120,12 +116,8 @@ $(document).ready(function() {
                         //获取参加过的活动
                         $.ajax({
                             type: "GET",
-                            url: "../php/user-info.php",
+                            url: "../php/user-info.php?request=get_activity&number=" + number,
                             dataType: "JSON",
-                            data: {
-                                "number": number,
-                                "request": "get_activity"
-                            },
                             success: function(e) {
                                 if (e == '') {
                                     appendText_activity = '<div class="inner-text">这里空空如也，什么都没有。</div>';

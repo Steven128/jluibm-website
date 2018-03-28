@@ -20,12 +20,8 @@ $(document).ready(function() {
         $(".java-box").css("display", "none");
         $.ajax({
             type: "GET",
-            url: "../php/display.php",
+            url: "../php/display.php?request=single&target-user=" + target,
             dataType: "JSON",
-            data: {
-                "request": "single",
-                "target-user": target
-            },
             success: function(e) {
                 var appendText = "";
                 var name = e.name;
@@ -110,13 +106,8 @@ $(document).ready(function() {
         $(".java-box").css("display", "none");
         $.ajax({
             type: "GET",
-            url: "../php/display.php",
+            url: "../php/display.php?request=single-group&target-user=" + target + "&group=" + group,
             dataType: "JSON",
-            data: {
-                "request": "single-group",
-                "target-user": target,
-                "group": group
-            },
             success: function(e) {
                 var appendText = "";
                 var name = e.name;

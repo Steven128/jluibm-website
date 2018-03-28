@@ -10,6 +10,7 @@
     <link type="text/css" rel="stylesheet" href="../css/Normalize.css" />
     <link type="text/css" rel="stylesheet" href="../css/page.css" />
     <link type="text/css" rel="stylesheet" href="../css/user.css" />
+    <link type="text/css" rel="stylesheet" href="../css/tablesorter.css" />
     <link type="text/css" rel="stylesheet" href="../css/tablesort.css" />
     <link type="text/css" rel="stylesheet" href="../css/admin.css" />
 
@@ -24,6 +25,21 @@
     <script type="text/javascript" src="../js/overview.js"></script>
     <script type="text/javascript" src="../js/calendar.js"></script>
     <script type="text/javascript" src="../js/xcConfirm.js"></script>
+    <style class="cp-pen-styles">
+        .results tr[visible='false'],
+        .no-result {
+            display: none;
+        }
+        
+        .results tr[visible='true'] {
+            display: table-row;
+        }
+        
+        .counter {
+            padding: 8px;
+            color: #ccc;
+        }
+    </style>
 </head>
 
 <body>
@@ -110,10 +126,13 @@
                     <div class="display-box box col-xs-12">
                         <div class="title col-xs-12">
                             <h4 class="title-left">社团成员信息</h4>
+                            <!-- <div class="form-inline">
+                                <input type="text" class="search form-control" placeholder="请输入">
+                            </div> -->
                         </div>
                         <div class="text-outer col-xs-12">
                             <div class="display-text text">
-                                <table class='display-all table-sort table-sort-search'>
+                                <table class='display-all tablesorter result'>
                                     <thead>
                                         <tr>
                                             <th class="table-sort">序号</th>
@@ -185,10 +204,10 @@
     <script src="js/blob.js"></script>
     <script src="js/FileSaver.min.js"></script>
     <script src="js/tableexport.js"></script>
+    <script type="text/javascript" src="../js/jquery.tablesorter.min.js"></script>
     <script type="text/javascript" src="../js/admin.js"></script>
     <script type="text/javascript" src="../js/admin-update.js"></script>
     <script type="text/javascript" src="../js/activity.js"></script>
-    <script type="text/javascript" src="../js/tablesort.js"></script>
 
     <div class="add-box">
         <h4>添加成员</h4>
@@ -203,5 +222,8 @@
     </div>
     <div class="shelter"></div>
 </body>
+
+<script type="text/javascript">
+</script>
 
 </html>

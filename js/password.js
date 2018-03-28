@@ -44,7 +44,6 @@ $(document).ready(function() {
                 type: "GET",
                 url: "../php/submit.php?request=submit&" + formData,
                 dataType: "JSON",
-                data: {},
                 success: function(info0) {
                     if (info0.message == "success") {
                         //报名成功，这时把密码和邮件信息提交

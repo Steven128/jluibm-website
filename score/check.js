@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     $("#check").validate({
         onsubmit: true, // 是否在提交是验证
         rules: { //规则
@@ -17,7 +17,7 @@ $(document).ready(function () {
                 required: "请输入密码"
             }
         },
-        submitHandler: function (form) { //通过之后回调
+        submitHandler: function(form) { //通过之后回调
             var number = $("#number").val();
             var password = $("#password").val();
             var termId = $("#termId").val();
@@ -27,15 +27,9 @@ $(document).ready(function () {
             $(".info").append("<h4 class='checking'>查询中...</h4>");
             $.ajax({
                 type: "GET",
-                url: "test.php",
+                url: "test.php?number=" + number + "&password=" + password + "&termId=" + termId,
                 dataType: "JSON",
-                data: {
-                    "number": number,
-                    "password": password,
-                    "termId": termId,
-                },
-
-                success: function (e) {
+                success: function(e) {
                     $(".checking").remove();
                     var i = 0;
                     var append_text = "<div class='getScore'>";
@@ -57,19 +51,19 @@ $(document).ready(function () {
                     append_text += '</tbody></table></div><div>';
                     $(".info").append(append_text);
                 },
-                error: function (err) {
+                error: function(err) {
                     window.wxc.xcConfirm("出错啦，请稍后再试吧！", window.wxc.xcConfirm.typeEnum.error, {
-                        onOk: function () {
+                        onOk: function() {
                             window.location.reload();
                         },
-                        onClose: function () {
+                        onClose: function() {
                             window.location.reload();
                         }
                     });
                 }
             });
         },
-        invalidHandler: function (form, validator) {
+        invalidHandler: function(form, validator) {
             return false;
         }
     });
