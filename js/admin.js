@@ -94,7 +94,6 @@ $(document).ready(function() {
                                 i++;
                             }
                             $(".display-form").append(appendText_main);
-                            $("#main-statistics").append("<h5>当前共有" + i + "人</h5>");
                         },
                         error: function(err) {
 

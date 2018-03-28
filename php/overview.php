@@ -40,6 +40,16 @@ if ($request == "count"){
     
     echo json_encode($count_data);
 }
+else if($request == "amount") {
+    $main_db = mysqli_connect("127.0.0.1","root","JLUIBMclub123") or die ("failed!");
+    mysqli_query($main_db,"set names utf8");
+    mysqli_select_db($main_db,"JLUIBMclub");
+
+    $sql_get_amount = "SELECT * from member;";
+    $retval = mysqli_query($main_db,$sql_get_amount);
+    $amount = mysqli_num_rows($retval);
+    echo json_encode(array("amount"=>$amount));
+}
 else if($request == "gender"){
     $gender_data = array();
     $main_db = mysqli_connect("127.0.0.1","root","JLUIBMclub123") or die ("failed!");

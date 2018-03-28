@@ -2,6 +2,23 @@
     padding: 0;
 }
 
+.amount-container {
+    background-color: #fff;
+    margin: 0;
+    padding: 10px;
+}
+
+.amount-title {
+    font-size: 22px;
+}
+
+.amount-body {
+    padding: 30px;
+    font-size: 48px;
+    font-weight: 500;
+    color: #1296db;
+}
+
 .highcharts-container {
     width: auto;
     overflow: hidden;
@@ -35,6 +52,10 @@
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
+}
+
+.title-center {
+    text-align: center !important;
 }
 
 
