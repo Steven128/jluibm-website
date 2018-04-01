@@ -2,12 +2,18 @@
     padding-top: 0;
 }
 
+.main-bar {
+    overflow-x: hidden;
+}
+
 .main-content {
     top: 52px;
 }
 
 .box {
     padding-top: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 table {
@@ -105,6 +111,10 @@ table a:hover {
     margin: 0px 15px 0 0;
 }
 
+.overview-title {
+    border-bottom: 0 !important;
+}
+
 .search {
     background-color: transparent;
     border: 1px solid #ccc;
@@ -154,6 +164,7 @@ td {
 th {
     border-bottom: 1px solid #bbbbbb;
     border-right: 1px solid #d5d5d5;
+    background-color: #f5f5f5;
 }
 
 th:last-child {
@@ -161,7 +172,7 @@ th:last-child {
 }
 
 .text-outer {
-    padding: 15px;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -379,6 +390,9 @@ textarea {
     .add-box {
         top: 100px;
         left: 210px;
+    }
+    .text-outer {
+        padding: 15px;
     }
 }
 

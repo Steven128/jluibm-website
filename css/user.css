@@ -144,7 +144,7 @@ body {
     background-color: #fff;
     height: 45px;
     overflow: hidden;
-    border-bottom: #888;
+    border-bottom: 1px solid #ccc;
 }
 
 .box .text {

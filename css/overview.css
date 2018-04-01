@@ -26,9 +26,10 @@
 }
 
 .highcharts .highcharts-container {
-    width: 125% !important;
+    width: 100% !important;
     position: relative;
     left: -10px;
+    text-align: center !important;
 }
 
 .overview-text {
@@ -67,13 +68,14 @@
     background-color: #fff;
     margin: 0 0 15px 0;
     padding: 10px;
+    padding-right: 20px;
 }
 
 .highcharts-credits {
     display: none;
 }
 
-.highcharts-legend-item {
+.highcharts-legend {
     display: none;
 }
 

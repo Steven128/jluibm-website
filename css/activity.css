@@ -1,3 +1,7 @@
+.main-bar {
+    top: 0;
+}
+
 .box {
     display: block;
     overflow: hidden;
@@ -99,19 +103,24 @@ textarea {
 
 .activity-text {
     padding: 15px;
-    margin: 10px;
 }
 
-.signed-list {
-    padding: 15px;
-    margin: 10px;
-}
-
-table {
+.signed-list-inner {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 15px;
     border: 1px solid #bbbbbb;
 }
 
-.signed-list th {
+.sub-text {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 15px;
+    padding: 0;
+}
+
+.signed-list-inner th {
     background-color: #f5f5f5;
 }
 

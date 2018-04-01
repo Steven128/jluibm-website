@@ -49,9 +49,8 @@ $(document).ready(function() {
                         shared: true
                     },
                     legend: {
-                        layout: 'vertical',
+                        layout: 'horizental',
                         align: 'right',
-                        verticalAlign: 'middle',
                         borderWidth: 0
                     },
                     series: [{

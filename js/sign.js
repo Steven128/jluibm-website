@@ -83,8 +83,9 @@ function getSignedList(activity_id) {
         },
         success: function(e) {
             var i = 0;
-            var appendText_list = '<div class="signed-list"><table class="table-sort table-sort-search"><thead><tr><th>姓名</th><th>学院/专业</th><th>年级</th><th>性别</th><th>签到地点</th><th>签到时间</th></tr></thead><tbody>'
+            var appendText_list = '<hr><div class="signed-list"><h4>签到情况</h4><div class="signed-list-inner"><table class="table-sort table-sort-search"><thead><tr><th>序号</th><th>姓名</th><th>学院/专业</th><th>年级</th><th>性别</th><th>签到地点</th><th>签到时间</th></tr></thead><tbody>'
             while (e[i]) {
+                var j = i + 1;
                 var name = e[i].name;
                 var college = e[i].college;
                 var major = e[i].major;
@@ -106,10 +107,10 @@ function getSignedList(activity_id) {
                 } else {
                     grade = '大四';
                 }
-                appendText_list += '<tr><td>' + name + '</td><td>' + college + '&nbsp;&nbsp;' + major + '</td><td>' + grade + '</td><td>' + gender + '</td><td>' + distance + '米</td><td>' + time + '</td></tr>';
+                appendText_list += '<tr><td>' + j + '</td><td>' + name + '</td><td>' + college + '&nbsp;&nbsp;' + major + '</td><td>' + grade + '</td><td>' + gender + '</td><td>' + distance + '米</td><td>' + time + '</td></tr>';
                 i++;
             }
-            appendText_list += '</tbody></table><div>';
+            appendText_list += '</tbody></table><div></div>';
             $(".activity-text").after(appendText_list);
         },
         error: function(err) {
