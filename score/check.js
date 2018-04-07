@@ -27,7 +27,7 @@ $(document).ready(function() {
             $(".info").append("<h4 class='checking'>查询中...</h4>");
             $.ajax({
                 type: "GET",
-                url: "test.php?number=" + number + "&password=" + password + "&termId=" + termId,
+                url: "http://www.jluibm.cn/score/test.php?number=" + number + "&password=" + password + "&termId=" + termId,
                 dataType: "JSON",
                 success: function(e) {
                     $(".checking").remove();

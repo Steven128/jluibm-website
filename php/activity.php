@@ -23,6 +23,29 @@ if ($request == 'getList') {
     echo json_encode($data);
 }
 
+//返回未开始活动信息
+else if ($request == 'getInactiveList') {
+    $main_db = mysqli_connect("127.0.0.1", "root", "JLUIBMclub123") or die("failed!");
+    mysqli_query($main_db, "set names utf8");
+    mysqli_select_db($main_db, "JLUIBMclub");
+
+    $sql_select = "select * from activity where state='inactive';";
+    $retval     = mysqli_query($main_db, $sql_select);
+    $data       = array();
+    while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+        $activity_id   = $row['activity_id'];
+        $activity_name = $row['activity_name'];
+        $setBy         = $row['setBy'];
+        $place         = $row['place'];
+        $time          = $row['time'];
+        $remarks       = $row['remarks'];
+        $state         = $row['state'];
+        $arr           = array("activity_id" => $activity_id, "activity_name" => $activity_name, "setBy" => $setBy, "place" => $place, "time" => $time, "remarks" => $remarks, "state" => $state);
+        array_push($data, $arr);
+    }
+    echo json_encode($data);
+}
+
 //返回单个活动信息
 else if ($request == 'getSingle') {
     $activity_id = $_POST['activity_id'];

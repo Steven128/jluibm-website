@@ -3,21 +3,9 @@ $(document).ready(function() {
 
     //跳转到修改社员信息的页面，并加载内容
     $(document).on("click", ".edit-img", function() {
-        $(".title").css("display", "none");
-        $(".form-title").remove();
-        $(".update-text").remove();
+        $("#updateMember-text-outer").remove();
         var target = $(this).val();
         var appendText = "";
-        $(".display-box").css("display", "none");
-        $(".update-box").css("display", "block");
-        $(".bar-item").css("background-color", "#435770");
-        $(".update-item").css("background-color", "rgba(87, 110, 136, 0.85)");
-        $(".register-box").css("display", "none");
-        $(".cpp-box").css("display", "none");
-        $(".algorithm-box").css("display", "none");
-        $(".web-box").css("display", "none");
-        $(".linux-box").css("display", "none");
-        $(".java-box").css("display", "none");
         $.ajax({
             type: "GET",
             url: "../php/display.php?request=single&target-user=" + target,
@@ -32,7 +20,7 @@ $(document).ready(function() {
                 var qq = e.qq;
                 var phone = e.phone;
 
-                var subText = '<div class="title col-xs-12 form-title"><h4 class="title-left">修改社员信息</h4></div><div class="text-outer col-xs-12"><div class="update-text text">';
+                var subText = '<div id="updateMember-text-outer" class="text-outer col-xs-12"><div class="update-text text">';
                 appendText += subText;
                 var subText = "<div id='update-body'><form id='update-member' method='post' action=''><div id='update-member-subform'><div class='form-group'><div class='section__title id='name-title'>姓名</div><input id='name' type='text' class='input-text form-control' name='name' value='" + name + "' disabled /></div>";
                 appendText += subText;
@@ -75,8 +63,11 @@ $(document).ready(function() {
 
                 var subText = "<div class='btn-area'><button id='update-member-button' type='button' class='submit'>修改</button></div></div></form></div></div></div>"
                 appendText += subText;
-                $(".update-box").append(appendText);
-
+                $("#updateMember-tab").append(appendText);
+                $("#memberList-tab").removeClass("box-active");
+                $("#updateMember-tab").addClass("box-active");
+                $("#menu-memberList-item").removeClass("innerActive");
+                $("#menu-updateMember-item").addClass("innerActive");
             },
             error: function(err) {
 
@@ -87,23 +78,10 @@ $(document).ready(function() {
 
     //跳转到修改组员信息的页面，并加载内容
     $(document).on("click", ".group-edit-img", function() {
-        $(".title").css("display", "none");
-        $(".form-title").remove();
-        $(".update-text").remove();
+        $("#updateGrouper-text-outer").remove();
         var group = $(this).attr("id");
         var target = $(this).val();
         var appendText = "";
-
-        $(".display-box").css("display", "none");
-        $(".update-box").css("display", "block");
-        $(".bar-item").css("background-color", "#435770");
-        $(".update-item").css("background-color", "rgba(87, 110, 136, 0.85)");
-        $(".register-box").css("display", "none");
-        $(".cpp-box").css("display", "none");
-        $(".algorithm-box").css("display", "none");
-        $(".web-box").css("display", "none");
-        $(".linux-box").css("display", "none");
-        $(".java-box").css("display", "none");
         $.ajax({
             type: "GET",
             url: "../php/display.php?request=single-group&target-user=" + target + "&group=" + group,
@@ -128,7 +106,8 @@ $(document).ready(function() {
                 } else if (group == 'java') {
                     groupName = 'Java';
                 }
-                var subText = '<div class="title col-xs-12 form-title"><h4 class="title-left">修改组员信息（' + groupName + '组）</h4></div><div class="text-outer col-xs-12"><div class="update-text text">';
+                $("#updateGrouper-tab").find(".title").html("<h4 class=\"title-left\">修改 " + groupName + "组 组员信息</h4>");
+                var subText = '<div id="updateGrouper-text-outer" class="text-outer col-xs-12"><div class="update-text text">';
                 appendText += subText;
                 var subText = "<div id='update-body'><form id='update-groupMember' method='post' action=''><div id='update-member-subform'><div class='form-group group'><div class='section__title'></div><input id='group' type='text' class='input-text form-control' name='group' value='" + group + "' /></div>"
                 appendText += subText;
@@ -170,7 +149,11 @@ $(document).ready(function() {
                 appendText += subText;
                 var subText = "<div class='btn-area'><button id='update-group-button' type='button' class='submit'>修改</button></div></div></form></div></div></div>"
                 appendText += subText;
-                $(".update-box").append(appendText);
+                $("#updateGrouper-tab").append(appendText);
+                $("#" + group + "List-tab").removeClass("box-active");
+                $("#updateGrouper-tab").addClass("box-active");
+                $("#menu-" + group + "List-item").removeClass("innerActive");
+                $("#menu-updateGrouper-item").addClass("innerActive");
             },
             error: function(err) {
 
@@ -208,20 +191,22 @@ $(document).ready(function() {
                     },
                     success: function(e) {
                         if (e.message == "success") {
+                            localStorage.setItem("reason","update");
                             window.wxc.xcConfirm("修改成功！", window.wxc.xcConfirm.typeEnum.success, {
                                 onOk: function() {
-                                    window.location.reload();
+                                    window.location.href = "../admin/?back=memberList";
                                 },
                                 onClose: function() {
-                                    window.location.reload();
+                                    window.location.href = "../admin/?back=memberList";
                                 }
                             });
                         } else if (e.message == "wrong") {
                             window.wxc.xcConfirm("出错啦！", window.wxc.xcConfirm.typeEnum.error);
+                            console.log(e);
                         }
                     },
                     error: function(err) {
-
+                        console.log(err);
                         window.wxc.xcConfirm("出错啦！", window.wxc.xcConfirm.typeEnum.error);
                     }
                 });
@@ -268,12 +253,13 @@ $(document).ready(function() {
                     },
                     success: function(e) {
                         if (e.message == "success") {
+                            localStorage.setItem("reason","update");
                             window.wxc.xcConfirm("修改成功！", window.wxc.xcConfirm.typeEnum.success, {
                                 onOk: function() {
-                                    window.location.reload();
+                                    window.location.href = "../admin/?back="+group+"List";
                                 },
                                 onClose: function() {
-                                    window.location.reload();
+                                    window.location.href = "../admin/?back="+group+"List";
                                 }
                             });
                         } else {
@@ -297,8 +283,8 @@ $(document).ready(function() {
 
 });
 
-//全部社员信息页面，点击“删除”图标后删除相应社员
-$(document).on("click", ".drop-img", function() {
+//删除社员
+$(document).on("click", ".delete-member", function() {
     var number = $(this).val()
     window.wxc.xcConfirm("确定要删除学号为" + number + "的社员吗？", window.wxc.xcConfirm.typeEnum.confirm, {
         onOk: function() {
@@ -312,12 +298,13 @@ $(document).on("click", ".drop-img", function() {
                 },
                 success: function(e) {
                     if (e.message == "success") {
+                        localStorage.setItem("reason","update");
                         window.wxc.xcConfirm("删除成功！", window.wxc.xcConfirm.typeEnum.success, {
                             onOk: function() {
-                                window.location.reload();
+                                window.location.href = "../admin/?back=memberList";
                             },
                             onClose: function() {
-                                window.location.reload();
+                                window.location.href = "../admin/?back=memberList";
                             }
                         });
                     } else {
@@ -339,10 +326,23 @@ $(document).on("click", ".drop-img", function() {
 });
 
 //删除组员
-$(document).on("click", ".group-drop-img", function() {
+$(document).on("click", ".delete-grouper", function() {
     var group = $(this).attr("id");
     var number = $(this).val()
-    window.wxc.xcConfirm("确定要删除" + group + "组学号为" + number + "的组员吗？", window.wxc.xcConfirm.typeEnum.confirm, {
+    var groupName;
+    if(group == 'cpp') {
+        groupName = 'C/C++组'
+    }else if(group == 'algorithm') {
+        groupName = '算法组'
+    }else if(group == 'web') {
+        groupName = 'Web组'
+    }else if(group == 'linux') {
+        groupName = 'Linux组'
+    }else if(group == 'java') {
+        groupName = 'Java组'
+    }
+    console.log(group)
+    window.wxc.xcConfirm("确定要删除 " + groupName + " 学号为 " + number + " 的组员吗？", window.wxc.xcConfirm.typeEnum.confirm, {
         onOk: function() {
             $.ajax({
                 type: "POST",
@@ -355,12 +355,13 @@ $(document).on("click", ".group-drop-img", function() {
                 },
                 success: function(e) {
                     if (e.message == "success") {
+                        localStorage.setItem("reason","update");
                         window.wxc.xcConfirm("删除成功！", window.wxc.xcConfirm.typeEnum.success, {
                             onOk: function() {
-                                window.location.reload();
+                                window.location.href = "../admin/?back="+group+"List";
                             },
                             onClose: function() {
-                                window.location.reload();
+                                window.location.href = "../admin/?back="+group+"List";
                             }
                         });
                     } else {
@@ -412,23 +413,17 @@ $(document).on("click", "#add-group-member", function() {
                     },
                     success: function(e) {
                         if (e.message == "success") {
+                            localStorage.setItem("reason","update");
                             window.wxc.xcConfirm("添加成功！", window.wxc.xcConfirm.typeEnum.success, {
                                 onOk: function() {
-                                    window.location.reload();
+                                    window.location.href = "../admin/?back="+group+"List";
                                 },
                                 onClose: function() {
-                                    window.location.reload();
+                                    window.location.href = "../admin/?back="+group+"List";
                                 }
                             });
                         } else if (e.message == "does_not_exist") {
-                            window.wxc.xcConfirm("社团中没有该成员", window.wxc.xcConfirm.typeEnum.error, {
-                                onOk: function() {
-                                    window.location.reload();
-                                },
-                                onClose: function() {
-                                    window.location.reload();
-                                }
-                            });
+                            window.wxc.xcConfirm("社团中没有该成员", window.wxc.xcConfirm.typeEnum.error);
                         } else if (e.message == "already_in") {
                             window.wxc.xcConfirm("该成员已加入该组！", window.wxc.xcConfirm.typeEnum.warning);
                         } else if (e.message == "error") {

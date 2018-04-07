@@ -59,13 +59,13 @@ body {
 
 .top-nav th {
     padding: 0;
-    color: #b5c7d6;
+    color: #8aa4af;
     background-color: #435770;
     text-align: center;
 }
 
 .top-nav a {
-    color: #b5c7d6;
+    color: #8aa4af;
 }
 
 .item-text {
@@ -97,7 +97,7 @@ body {
 }
 
 .item-text {
-    color: #b5c7d6;
+    color: #8aa4af;
 }
 
 .main-bar {
@@ -145,6 +145,7 @@ body {
     height: 45px;
     overflow: hidden;
     border-bottom: 1px solid #ccc;
+    float: none;
 }
 
 .box .text {
@@ -398,7 +399,7 @@ label.error {
         float: left;
         width: 180px;
         background-color: #435770;
-        color: #b5c7d6;
+        color: #8aa4af;
         height: 100%;
         z-index: 5;
         padding-top: 80px;
@@ -414,7 +415,7 @@ label.error {
         background-color: #435770;
         cursor: pointer;
         width: 179px;
-        border-left: 3px solid #b5c7d6;
+        border-left: 3px solid #8aa4af;
     }
     .icon {
         display: inline;

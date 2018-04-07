@@ -6,6 +6,7 @@
     background-color: #fff;
     margin: 0;
     padding: 10px;
+    text-align: center;
 }
 
 .amount-title {
@@ -33,7 +34,7 @@
 }
 
 .overview-text {
-    background-color: #efefef;
+    background-color: #f5f5f5;
     max-width: 100%;
 }
 

@@ -30,7 +30,7 @@
                 activity_id = activity_id.match(/\?activity_id=(.*?)$/)[1];
                 goTo('?x=3&r=' + Math.random() + '&activity_id=' + activity_id);
             } else {
-                var pre = "sign.html";
+                var pre = "/admin/";
                 if (getReferer().indexOf(pre) < 0) {
                     window.location.href = "../admin/";
                     window.event.returnValue = false;

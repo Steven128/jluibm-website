@@ -31,12 +31,12 @@
     </script>
     <style>
         .sub-text {
-            padding-top: 30px;
+            padding-top: 10px;
         }
         
         .box {
             text-align: center;
-            padding-top: 10%;
+            padding-top: 50px;
         }
         
         #qrCodeDiv {
@@ -69,8 +69,8 @@
                         var terminal = timestamp + duration * 60;
                         $("#qrCodeDiv").qrcode({
                             render: "canvas", // 渲染方式有table方式（IE兼容）和canvas方式
-                            width: 350, //宽度
-                            height: 350, //高度
+                            width: 450, //宽度
+                            height: 450, //高度
                             text: "www.jluibm.cn/jluibm-wx/activity.php?request=sign&activity_id=" + activity_id + "&terminal=" + terminal, //内容
                             typeNumber: -1, //计算模式
                             correctLevel: 2, //二维码纠错级别
@@ -90,7 +90,8 @@
                                 },
                                 success: function(e) {
                                     if (e.message == "success") {
-                                        $(".box").append("<h3>签到已结束！</h3>");
+                                        $("h3").remove();
+                                        $(".box").append("<h2>签到已结束！</h2>");
                                     }
                                 },
                                 error: function(err1) {}
@@ -131,7 +132,9 @@
                         <div id="qrCodeDiv">
 
                         </div>
-                        <h3>请使用微信小程序扫描二维码完成签到</h3>
+                        <h2>请使用微信小程序签到</h2>
+                        <h3>签到方式：打开公众号【JLUIBMclub】，</h3>
+                        <h3>右下方菜单栏找到【快来撩我】&DoubleLongRightArrow;【活动签到】，登录后扫码完成签到</h3>
                     </div>
 
                 </div>

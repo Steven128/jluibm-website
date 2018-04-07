@@ -1,131 +1,52 @@
-var latitude = '';
-var longitude = '';
+//获取可签到活动的列表
 $(document).ready(function() {
-    var activity_id = window.location.search;
-    activity_id = unescape(activity_id);
-    activity_id = activity_id.match(/\?activity_id=(.*?)$/)[1];
+
     $.ajax({
         type: "POST",
         url: "../php/activity.php",
         dataType: "JSON",
         data: {
-            "request": "getSingle",
-            "activity_id": activity_id,
+            "request": "getInactiveList",
         },
         success: function(e) {
-            var activity_id = e.activity_id;
-            var activity_name = e.activity_name;
-            var place = e.place;
-            var appendText = '<div id="activity_id" class="box" value="' + activity_id + '"></div><div class="box"><h4>活动名称：</h4><p>' + activity_name + '</p></div><div class="box"><h4>活动地点：</h4><p>' + place + '</p></div>';
-            var setBy = e.setBy;
-            if (setBy == 'cpp') {
-                appendText += '<div class="box"><h4>组别：</h4><p>C/C++组</p></div>';
-            } else if (setBy == 'algorithm') {
-                appendText += '<div class="box"><h4>组别：</h4><p>算法组</p></div>';
-            } else if (setBy == 'web') {
-                appendText += '<div class="box"><h4>组别：</h4><p>Web组</p></div>';
-            } else if (setBy == 'linux') {
-                appendText += '<div class="box"><h4>组别：</h4><p>Linux组</p></div>';
-            } else if (setBy == 'java') {
-                appendText += '<div class="box"><h4>组别：</h4><p>Java组</p></div>';
+            var appendText = '<div class="text-outer"><div class="sign-item-outer">';
+            if (e == '') {
+                appendText += '<div class="inactive-item no-inactive-item"><h5>这里空空如也，什么也没有</h5><h5>还没有未签到的活动，先创建新的活动吧</h5><div class="animation-box"><div class="road"><div class="shadow"><div class="shelt"><div class="head"><div class="eyes"><div class="lefteye"><div class="eyeball"></div><div class="eyebrow"></div></div><div class="righteye"><div class="eyeball"></div><div class="eyebrow"></div></div></div></div></div><div class="hat"></div></div></div></div></div>';
             } else {
-                appendText += '<div class="box"><h4>组别：</h4><p>其他组</p></div>';
-            }
-            var time = (e.time);
-            var year = time.substring(0, 4);
-            var month = time.substring(5, 7);
-            var day = time.substring(8, 10);
-            var time = time.substring(11, 18);
-            var state = e.state;
-            //year,month,day
-            appendText += '<div class="box"><h4>举办时间：</h4><p>' + year + '年' + month + '月' + day + '日';
-            //time
-            if (time == 'morning') {
-                appendText += '上午</p></div>';
-            } else if (time == 'afternoon') {
-                appendText += '下午</p></div>';
-            } else if (time == 'evening') {
-                appendText += '晚上</p></div>';
-            }
-            var remarks = e.remarks;
-            appendText += '<div class="box"><h4>备注：</h4><p>' + remarks + '</p></div>';
+                var i = 0;
+                while (e[i]) {
+                    var date = e[i].time.substring(0, 10);
+                    var time = e[i].time.substring(11, 18);
+                    if (time == "morning") {
+                        time = "上午";
+                    } else if (time == "afternoon") {
+                        time = "下午";
+                    } else if (time == "evening") {
+                        time = "晚上";
+                    }
+                    appendText += '<div class="inactive-item"><div class="signup-text"><h2>' + e[i].activity_name + '</h2><h5>' + date + ' ' + time + '</h5><h5>地点：' + e[i].place + '</h5></div><div class="btn-area"><button class="start-signup" value="' + e[i].activity_id + '"><p>开始签到</p></button></div></div>';
 
-            if (state == 'inactive') {
-                appendText += '<div class="box"><h4>活动状态：</h4><p>未开始</p></div>';
-                //未开始的活动添加开始签到的按钮
-                appendText += '<div class="btn-area"><button id="sign-start" type="button" class="submit" value="' + activity_id + '">开始签到</button></div>';
-                $(".activity-text").append(appendText);
-            } else if (state == 'active') {
-                appendText += '<div class="box"><h4>活动状态：</h4><p>正在进行</p></div>';
-                $(".activity-text").append(appendText);
-            } else if (state == 'finished') {
-                appendText += '<div class="box"><h4>活动状态：</h4><p>已完成</p></div>';
-                $(".activity-text").append(appendText);
-                //已完成签到的活动，获取签到列表
-                getSignedList(e.activity_id);
+                    i++;
+                }
             }
+
+            appendText += '</div></div>';
+            $("#signUp-tab").append(appendText);
         },
         error: function(err) {
 
         }
-    })
+    });
+
 });
 
-
-function getSignedList(activity_id) {
-    $.ajax({
-        type: "POST",
-        url: "../php/activity.php",
-        dataType: "JSON",
-        data: {
-            "request": "getSignedList",
-            "activity_id": activity_id,
-        },
-        success: function(e) {
-            var i = 0;
-            var appendText_list = '<hr><div class="signed-list"><h4>签到情况</h4><div class="signed-list-inner"><table class="table-sort table-sort-search"><thead><tr><th>序号</th><th>姓名</th><th>学院/专业</th><th>年级</th><th>性别</th><th>签到地点</th><th>签到时间</th></tr></thead><tbody>'
-            while (e[i]) {
-                var j = i + 1;
-                var name = e[i].name;
-                var college = e[i].college;
-                var major = e[i].major;
-                var grade = e[i].grade;
-                var gender = e[i].gender;
-                var distance = e[i].distance;
-                var time = e[i].submitTime;
-                if (gender == 'male') {
-                    gender = '男';
-                } else {
-                    gender = '女';
-                }
-                if (grade == '1') {
-                    grade = '大一';
-                } else if (grade == '2') {
-                    grade = '大二';
-                } else if (grade == '3') {
-                    grade = '大三';
-                } else {
-                    grade = '大四';
-                }
-                appendText_list += '<tr><td>' + j + '</td><td>' + name + '</td><td>' + college + '&nbsp;&nbsp;' + major + '</td><td>' + grade + '</td><td>' + gender + '</td><td>' + distance + '米</td><td>' + time + '</td></tr>';
-                i++;
-            }
-            appendText_list += '</tbody></table><div></div>';
-            $(".activity-text").after(appendText_list);
-        },
-        error: function(err) {
-
-        }
-    })
-}
-
-
-
-$(document).on("click", "#sign-start", function() {
+$(document).on("click", ".start-signup", function() {
     var activity_id = $(this).val();
-    window.location.href = "get-location.html?" + escape("activity_id=" + activity_id);
+    window.open("get-location.html?" + escape("activity_id=" + activity_id));
 })
 
+var latitude = '';
+var longitude = '';
 $(document).on("click", "#qrcode", function() {
     var activity_id = window.location.search;
     activity_id = unescape(activity_id);

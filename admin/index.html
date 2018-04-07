@@ -12,6 +12,8 @@
     <link type="text/css" rel="stylesheet" href="../css/user.css" />
     <link type="text/css" rel="stylesheet" href="../css/tablesorter.css" />
     <link type="text/css" rel="stylesheet" href="../css/admin.css" />
+    <link type="text/css" rel="stylesheet" href="../css/sidebar-menu.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
 
     <link type="text/css" rel="stylesheet" href="../css/overview.css" />
     <link rel="stylesheet" href="../animsition/dist/css/animsition.min.css">
@@ -22,18 +24,17 @@
     <script type="text/javascript" src="../js/highcharts.js"></script>
     <script type="text/javascript" src="../js/ratio.js"></script>
     <script type="text/javascript" src="../js/overview.js"></script>
-    <script type="text/javascript" src="../js/calendar.js"></script>
     <script type="text/javascript" src="../js/xcConfirm.js"></script>
     <style class="cp-pen-styles">
         .results tr[visible='false'],
         .no-result {
             display: none;
         }
-        
+
         .results tr[visible='true'] {
             display: table-row;
         }
-        
+
         .counter {
             padding: 8px;
             color: #ccc;
@@ -45,6 +46,12 @@
     <div class="container">
         <div class="head-content">
             <div class="site-branding">
+                <a href="#" class="avatar-small">
+                    <div class="menu-button">
+                        <img src="../src/icon/menu.png" width="25px" height="25px" />
+                    </div>
+                </a>
+
                 <div class="site-title">
                     <a href="../" rel="home">吉林大学IBM俱乐部</a>
                     <h5>管理员系统</h5>
@@ -53,48 +60,111 @@
         </div>
         <div class="main-content">
             <div class="bar-box">
-                <div class="left-bar">
+                <aside class="left-bar">
                     <div class="admin-box">
                         <img class="userPic" src="../src/user.png" />
-                        <h4 class="online-user"></h4><img class="certificated-icon" src="../src/icon/certificated.png" />
+                        <h4 class="online-user"></h4>
+                        <img class="certificated-icon" src="../src/icon/certificated.png" />
                         <h5>管理员</h5>
                     </div>
-                    <h4 id='index-item' class='bar-item overview-item'><span class="item-text">总览</span></h4>
-                    <h4 class="bar-item display-item left-display"><span><img class="icon" src="../src/icon/display.png" /></span><span class="item-text">查看社员信息</span></h4>
-                    <h4 class="bar-item update-item"><span><img class="icon" src="../src/icon/settings.png" /></span><span class="item-text">修改社员信息</span></h4>
-                    <h4 class="bar-item activity-item"><span><img class="icon" src="../src/icon/update.png" /></span><span class="item-text">活动管理</span></h4>
-                </div>
-                <div class="top-nav">
-                    <table class="top-nav-box">
-                        <thead>
-                            <tr>
-                                <th>
-                                    <h4 class="bar-item bar-item-4 overview-item">
-                                        <div class="item-text">社团总览</div>
-                                    </h4>
-                                </th>
-                                <th class="top-display">
-                                    <h4 class="bar-item bar-item-6 display-item"><span><img class="icon" src="../src/icon/display.png" /></span>
-                                        <div class="item-text">查看社员信息</div>
-                                    </h4>
-                                </th>
-                                <th>
-                                    <h4 class="bar-item bar-item-6 update-item"><span><img class="icon" src="../src/icon/settings.png" /></span>
-                                        <div class="item-text">修改社员信息</div>
-                                    </h4>
-                                </th>
-                                <th>
-                                    <h4 class="bar-item bar-item-4 activity-item"><span><img class="icon" src="../src/icon/update.png" /></span>
-                                        <div class="item-text">活动管理</div>
-                                    </h4>
-                                </th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
+                    <section class="sidebar">
+                        <ul class="sidebar-menu">
+                            <!-- <li class="header">导航</li> -->
+                            <li class="treeview">
+                                <a id="menu-overview-item" href="#" class="outerActive">
+                                    <i class="iconfont-admin-menu icon-overview"></i>
+                                    <span>总览</span>
+                                    <span class="pull-right">
+                                        <img src="../src/icon/right-white.png" width="12px" />
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu" style="display: none;"></ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="iconfont-admin-menu icon-member"></i>
+                                    <span>社员管理</span>
+                                    <span class="pull-right">
+                                        <img src="../src/icon/down-white.png" width="12px" />
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu" style="display: none;">
+                                    <li>
+                                        <a id="menu-memberList-item" href="#">
+                                            <i class="iconfont-admin-menu icon-list"></i>
+                                            社员列表
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a id="menu-displayMember-item" href="#">
+                                            <i class="iconfont-admin-menu icon-display"></i>查看社员信息
+                                            <i class="iconfont-admin-menu icon-not-allowed"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a id="menu-updateMember-item" href="#">
+                                            <i class="iconfont-admin-menu icon-update"></i>修改信息
+                                            <i class="iconfont-admin-menu icon-not-allowed"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="iconfont-admin-menu icon-group"></i>
+                                    <span>组员管理</span>
+                                    <span class="pull-right">
+                                        <img src="../src/icon/down-white.png" width="12px" />
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu group-menu" style="display: none;"></ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="iconfont-admin-menu icon-activity"></i>
+                                    <span>活动管理</span>
+                                    <span class="pull-right">
+                                        <img src="../src/icon/down-white.png" width="12px" />
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu" style="display: none;">
+                                    <li>
+                                        <a id="menu-activityList-item" href="#">
+                                            <i class="iconfont-admin-menu icon-list"></i>活动列表</a>
+                                    </li>
+                                    <li>
+                                        <a id="menu-newActivity-item" href="#">
+                                            <i class="iconfont-admin-menu icon-new"></i>新建活动</a>
+                                    </li>
+                                    <li>
+                                        <a id="menu-updateActivity-item" href="#">
+                                            <i class="iconfont-admin-menu icon-update"></i>修改信息
+                                            <i class="iconfont-admin-menu icon-not-allowed"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a id="menu-displayActivity-item" href="#">
+                                            <i class="iconfont-admin-menu icon-display"></i>查看详情
+                                            <i class="iconfont-admin-menu icon-not-allowed"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a id="menu-signUp-item" href="#">
+                                            <i class="iconfont-admin-menu icon-sign"></i>活动签到</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <script src="../js/sidebar-menu.js"></script>
+                    <script>
+                        $.sidebarMenu($('.sidebar-menu'))
+                    </script>
+                </aside>
+                <div class="mask"></div>
                 <div id="main-bar" class="main-bar row">
-                    <div class="overview-box box col-xs-12">
-                        <div class="text-outer col-xs-12">
+                    <div id="overview-tab" class="box col-xs-12 box-active">
+                        <div class="overview-outer col-xs-12">
                             <div class="overview-text text">
                                 <div class="amount-container">
                                     <div class="title overview-title">总览</div>
@@ -104,7 +174,6 @@
                                     <div class="title title-center overview-title">近10天新增人数</div>
                                     <div class="highcharts"></div>
                                 </div>
-
                                 <div class="ratio">
                                     <div class="title overview-title">成员分布</div>
                                     <div class="inner-ratio-gender">
@@ -122,29 +191,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="display-box box col-xs-12">
+                    <div id="memberList-tab" class="box col-xs-12">
                         <div class="title col-xs-12">
                             <h4 class="title-left">社团成员信息</h4>
-                            <!-- <div class="form-inline">
-                                <input type="text" class="search form-control" placeholder="请输入">
-                            </div> -->
                         </div>
                         <div class="text-outer col-xs-12">
                             <div class="display-text text">
-                                <table class='display-all tablesorter result'>
+                                <table id="stu_list" class='display-all tablesorter result'>
                                     <thead>
                                         <tr>
-                                            <th class="table-sort">序号</th>
-                                            <th class="table-sort">类别</th>
-                                            <th class="table-sort">姓名</th>
-                                            <th class="table-sort">学号</th>
-                                            <th class="table-sort">学院</th>
-                                            <th class="table-sort">专业</th>
-                                            <th class="table-sort">性别</th>
-                                            <th class="table-sort">年级</th>
+                                            <th>序号</th>
+                                            <th>类别</th>
+                                            <th>姓名</th>
+                                            <th>学号</th>
+                                            <th>学院</th>
+                                            <th>专业</th>
+                                            <th>性别</th>
+                                            <th>年级</th>
                                             <th>QQ</th>
                                             <th>手机号码</th>
-                                            <th>操作</th>
+                                            <th>修改信息</th>
                                         </tr>
                                     </thead>
                                     <tbody class="display-form"></tbody>
@@ -152,12 +218,42 @@
                             </div>
                         </div>
                     </div>
-                    <div class="update-box box">
-
-                    </div>
-                    <div class="activity-box box">
+                    <div id="displayMember-tab" class="box">
                         <div class="title col-xs-12">
-                            <h4 class="title-left">活动管理</h4>
+                            <h4 class="title-left">查看社员信息</h4>
+                        </div>
+                        <div id="updateMember-text-outer" class="text-outer">
+                            <div class="user-main-head col-xs-12">
+                                <div class="userPic-box">
+                                    <img class="stuPic" src="" />
+                                </div>
+                            </div>
+                            <div class="user-main col-xs-12 col-md-6">
+                                <div class="user-text">
+                                </div>
+                                <div class="user-group"></div>
+                            </div>
+                            <div class="user-activities col-xs-12 col-md-6"></div>
+                        </div>
+                    </div>
+                    <div id="updateMember-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">修改社员信息</h4>
+                        </div>
+                    </div>
+                    <div id="displayGrouper-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">查看组员信息</h4>
+                        </div>
+                    </div>
+                    <div id="updateGrouper-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">修改组员信息</h4>
+                        </div>
+                    </div>
+                    <div id="activityList-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">活动列表</h4>
                         </div>
                         <div class="text-outer col-xs-12">
                             <div class="activity-text text">
@@ -173,27 +269,108 @@
                                             <th>操作</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="activity-form">
-
-                                    </tbody>
+                                    <tbody class="activity-form"></tbody>
                                 </table>
                             </div>
-                            <div class="btn-area">
-                                <button id="createActivity" type="button" class="submit">创建活动签到</button>
-                            </div>
-
                         </div>
-                        <div id="activity-statistics" class="statistics col-xs-12"></div>
                     </div>
-                    <div class="activity-info box col-xs-12"></div>
+                    <div id="newActivity-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">新建活动</h4>
+                        </div>
+                        <div class="text-outer col-xs-12">
+                            <div class="createActivity text">
+                                <form id="create-Activity" method="post" action="">
+                                    <div class="section">
+                                        <div class="section__title">活动名称</div>
+                                        <div class="form-group">
+                                            <input id="name" type="text" class="input-text form-control" name="name" placeholder="请输入活动名称" />
+                                        </div>
+                                    </div>
+                                    <div class="section">
+                                        <div class="section__title">活动地点</div>
+                                        <div class="form-group">
+                                            <input id="place" type="text" class="input-text form-control" name="place" placeholder="请输入活动地点" />
+                                        </div>
+                                    </div>
+                                    <div class="section">
+                                        <div class="section__title">举办时间</div>
+                                        <div class="select-time form-inline col-xs-12">
+                                            <div class="select-date">
+                                                <select id="selYear" class="form-control"></select>
+                                                <span>年</span>
+                                                <select id="selMonth" class="form-control"></select>
+                                                <span>月</span>
+                                                <select id="selDay" class="form-control"></select>
+                                                <span>日</span>
+                                            </div>
+                                            <select id="selTime" class="form-control">
+                                                <option class="option" value="morning">上午</option>
+                                                <option class="option" value="afternoon">下午</option>
+                                                <option class="option" value="evening">晚上</option>
+                                            </select>
+                                        </div>
+                                        <script type="text/javascript" src="../js/calendar.js"></script>
+                                        <script type="text/javascript">
+                                            var selYear = window.document.getElementById("selYear");
+                                            var selMonth = window.document.getElementById("selMonth");
+                                            var selDay = window.document.getElementById("selDay");
+                                            // 新建一个DateSelector类的实例，将三个select对象传进去 
+                                            var dateNow = new Date();
+                                            new DateSelector(selYear, selMonth, selDay);
+                                        </script>
+                                    </div>
+                                    <div class="section">
+                                        <div class="section__title">组别</div>
+                                        <select id="group" class="select form-control" name="group">
+                                            <option class="option" value="cpp">C/C++组</option>
+                                            <option class="option" value="algorithm">算法组</option>
+                                            <option class="option" value="web">Web组</option>
+                                            <option class="option" value="linux">Linux组</option>
+                                            <option class="option" value="java">Java组</option>
+                                            <option class="option" value="other">其他</option>
+                                        </select>
+                                    </div>
+                                    <div class="textarea">
+                                        <label>
+                                            <div class="section__title">备注</div>
+                                            <textarea id="remarks" class="form-control" name="remarks" rows="5" placeholder="在此填写备注"></textarea>
+                                        </label>
 
+                                    </div>
+                                    <div class="btn-area">
+                                        <button id="" type="submit" class="submit">确认添加</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="updateActivity-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">修改活动信息</h4>
+                        </div>
+                    </div>
+                    <div id="displayActivity-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">查看活动详情</h4>
+                        </div>
+                    </div>
+                    <div id="signUp-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">活动签到</h4>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
         <div class="foot-content">
             <div class="copyright">
-                <div class="copyright-text">&copy;&nbsp;2018&nbsp;JLUIBMclub&nbsp;&nbsp;<a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../">返回主页</a><a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../user/">返回上一级</a></div>
+                <div class="copyright-text">&copy;&nbsp;2018&nbsp;JLUIBMclub&nbsp;&nbsp;
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../">返回主页</a>
+                    <a class="animsition-link" data-animsition-out="fade-out-left-sm" href="../user/">返回上一级</a>
+                </div>
             </div>
         </div>
     </div>
@@ -207,6 +384,8 @@
     <script type="text/javascript" src="../js/admin.js"></script>
     <script type="text/javascript" src="../js/admin-update.js"></script>
     <script type="text/javascript" src="../js/activity.js"></script>
+    <script type="text/javascript" src="../js/view.js"></script>
+    <script type="text/javascript" src="../js/sign.js"></script>
 
     <div class="add-box">
         <h4>添加成员</h4>
@@ -219,9 +398,8 @@
         </div>
 
     </div>
-    <div class="shelter"></div>
 </body>
-
+<div class="shelter"></div>
 <script type="text/javascript">
 </script>
 
