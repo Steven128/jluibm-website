@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>找不到页面-吉大IBM俱乐部</title>
+    <script type="text/javascript" src="../../../../../../../../../../js/jQuery/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../../../../../../../../../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../../../../../../../../../../css/Normalize.css" />
+    <link type="text/css" rel="stylesheet" href="../../../../../../../../../../css/page.css" />
+    <link rel="stylesheet" href="../../../../../../../../../../404/css/404.css" />
+
+    <script type="text/javascript" src="../../../../../../../../../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../../../../../../../../js/page.js"></script>
+    <script type="text/javascript" src="../../../../../../../../../../js/xcConfirm.js"></script>
+    <script type="text/javascript" src="../../../../../../../../../../404/js/404.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head-content">
+            <div class="site-branding">
+                <div class="site-title">
+                    <a href="../../../../../../../../../../" class="site-title" rel="home">吉林大学IBM俱乐部</a>
+                    <div class="menu-button">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="road">
+                <div class="shadow">
+                    <div class="shelt">
+                        <div class="head">
+                            <div class="eyes">
+                                <div class="lefteye">
+                                    <div class="eyeball"></div>
+                                    <div class="eyebrow"></div>
+                                </div>
+                                <div class="righteye">
+                                    <div class="eyeball"></div>
+                                    <div class="eyebrow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hat"></div>
+                    <div class="bubble">
+                        <a href="../../../../../../../../../../">点我立即返回</a>
+                    </div>
+                </div>
+                <p>你要找的页面已经从这个星球上消失了</p>
+                <p class="pnext"><span id="mes">10</span> 秒后将返回首页</p>
+            </div>
+        </div>
+        <div class="foot-content">
+            <div class="copyright">
+                <h5 class="copyright-text">&copy;&nbsp;2018吉林大学IBM俱乐部&nbsp; All rights reserved.</h5>
+            </div>
+            <div class="wrap-bar"></div>
+            <div class="bottom-bar">
+            </div>
+        </div>
+    </div>
+    <script language="javascript" type="text/javascript">
+        var i = 10;
+        var intervalid;
+        intervalid = setInterval("fun()", 1000);
+
+        function fun() {
+            if (i == 0) {
+                window.location.href = "../../../../../../../../../../";
+                clearInterval(intervalid);
+            }
+            document.getElementById("mes").innerHTML = i;
+            i--;
+        }
+    </script>
+</body>
+
+</html>
