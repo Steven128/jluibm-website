@@ -4,7 +4,7 @@ $request = urldecode($_POST['request']);
 
 if ($request == "submit") {
     //提交信息
-    $baoming_id = urldecode($_POST['baoming_id']);
+    $enroll_id = urldecode($_POST['enroll_id']);
     $submitTime = urldecode($_POST['submitTime']);
     $name       = urldecode($_POST['name']);
     $number     = urldecode($_POST['number']);
@@ -18,7 +18,7 @@ if ($request == "submit") {
     mysqli_query($main_db, "set names utf8");
     mysqli_select_db($main_db, "JLUIBMclub");
 
-    $sql_compare  = "SELECT number FROM $baoming_id WHERE number='$number';";
+    $sql_compare  = "SELECT number FROM $enroll_id WHERE number='$number';";
     $retval       = mysqli_query($main_db, $sql_compare);
     $retval_check = mysqli_num_rows($retval);
     if ($retval_check > 0) {
@@ -26,7 +26,7 @@ if ($request == "submit") {
         echo json_encode(array("message" => "already_exists"));
     } else {
         //将报名信息存入数据库
-        $sql_insert = "INSERT INTO $baoming_id" .
+        $sql_insert = "INSERT INTO $enroll_id" .
             "(submitTime,name,number,college,gender,grade,qq,comeFrom)" .
             "VALUES" .
             "('$submitTime','$name','$number','$college','$gender',$grade,'$qq','$comeFrom');";

@@ -329,7 +329,7 @@ textarea {
   margin: 5px;
 }
 
-#delete-img,.deleteBaoming {
+#delete-img,.deleteEnroll {
   border-radius: 1px;
   border: 0.5px solid #cccccc;
   border-bottom: 0.5px solid #b2b2b2;
@@ -342,7 +342,7 @@ textarea {
   color: #efefef;
 }
 
-.updateBaoming-submit {
+.updateEnroll-submit {
     border-radius: 1px;
     border: 0.5px solid #cccccc;
     border-bottom: 0.5px solid #b2b2b2;
@@ -506,22 +506,22 @@ textarea {
 }
 
 #displayActivity-tab .text,
-#displayBaoming-tab .text {
+#displayEnroll-tab .text {
   padding: 20px;
 }
 
 .displayActivity-name,
-.displayBaoming-name {
+.displayEnroll-name {
   color: #1296db;
 }
 
 .displayActivity-name h2,
-.displayBaoming-name h2 {
+.displayEnroll-name h2 {
   margin: 15px;
 }
 
 .displayActivity-inner,
-.displayBaoming-inner {
+.displayEnroll-inner {
   margin-left: 30px;
 }
 
@@ -561,8 +561,8 @@ textarea {
 }
 
 #start-raffle,
-#start-baoming,
-#end-baoming {
+#start-enroll,
+#end-enroll {
   width: 200px;
   height: 80px;
   border-radius: 5px;
@@ -595,7 +595,7 @@ textarea {
   left: 10px;
 }
 
-.baoming_id_input {
+.enroll_id_input {
     visibility: hidden;
     height: 0;
     margin: 0;
@@ -625,16 +625,16 @@ textarea {
     padding-right: 30px;
   }
   #start-raffle,
-  #start-baoming,
-  #end-baoming {
+  #start-enroll,
+  #end-enroll {
     float: right;
     position: relative;
     top: -120px;
     right: 50px;
   }
 
-  #start-baoming,
-  #end-baoming {
+  #start-enroll,
+  #end-enroll {
     top: -100px;
   }
 }

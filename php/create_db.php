@@ -158,8 +158,8 @@ if(!$retval )
 }
  echo "数据表activity创建成功<br><br>";
 
- $baoming = "CREATE TABLE baoming(".
-            "baoming_id VARCHAR(30) NOT NULL PRIMARY KEY COMMENT '报名表ID',".
+ $enroll = "CREATE TABLE enroll(".
+            "enroll_id VARCHAR(30) NOT NULL PRIMARY KEY COMMENT '报名表ID',".
             "activity_name VARCHAR(30) NOT NULL COMMENT '活动名',".
             "date DATE NOT NULL COMMENT '活动举办时间',".
             "quantity INT NOT NULL COMMENT '报名人数限制',".
@@ -167,10 +167,10 @@ if(!$retval )
             "remarks TEXT COMMENT '备注',".
             "state TINYINT(1) DEFAULT 0 COMMENT '活动报名状态，0为未开放报名，1为报名期间，2为已结束报名'".
             ") ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 COMMENT '活动报名表';";
-            $retval = mysqli_query( $infodb, $baoming );
+            $retval = mysqli_query( $infodb, $enroll );
             if(!$retval )
             {
-                die('数据表baoming创建失败<br><br>' . mysqli_error($infodb));
+                die('数据表enroll创建失败<br><br>' . mysqli_error($infodb));
             }
-             echo "数据表baoming创建成功<br><br>";
+             echo "数据表enroll创建成功<br><br>";
 ?>

@@ -5,14 +5,14 @@
 $(document).ready(function() {
   $.ajax({
     type: "GET",
-    url: "../php/baoming.php?request=getList",
+    url: "../php/enroll.php?request=getList",
     dataType: "JSON",
     success: function(e) {
       console.log(e);
       var i = 0;
       var appendText = "";
       while (e[i]) {
-        var baoming_id = e[i].baoming_id;
+        var enroll_id = e[i].enroll_id;
         var activity_name = e[i].activity_name;
         var date = e[i].date;
         var hold = e[i].hold;
@@ -30,8 +30,8 @@ $(document).ready(function() {
         appendText +=
           "<tr><td>" +
           j +
-          "</td><td><a class='displayBaoming-button' href='#' value='" +
-          baoming_id +
+          "</td><td><a class='displayEnroll-button' href='#' value='" +
+          enroll_id +
           "'>" +
           activity_name +
           "</a></td><td>" +
@@ -45,8 +45,8 @@ $(document).ready(function() {
           "</td>";
         if (step == 0) {
           appendText +=
-            "<td><button class='update-baoming update-img' value='" +
-            baoming_id +
+            "<td><button class='update-enroll update-img' value='" +
+            enroll_id +
             "'><img src='../src/icon/edit.png' width='16px' /></button></td>";
         } else {
           appendText += "<td></td>";
@@ -54,7 +54,7 @@ $(document).ready(function() {
 
         i++;
       }
-      $(".baoming-list").append(appendText);
+      $(".enroll-list").append(appendText);
     },
     error: function(err) {
       console.log(err.responseText);
@@ -101,7 +101,7 @@ $(document).on("click", ".delete-hold", function() {
  * 创建活动报名-提交
  */
 $(document).ready(function() {
-  $("#create-Baoming").validate({
+  $("#create-Enroll").validate({
     onsubmit: true, // 是否在提交是验证
     rules: {
       //规则
@@ -129,11 +129,11 @@ $(document).ready(function() {
       }
     },
     submitHandler: function(form) {
-      var name = $("#baoming_name").val();
+      var name = $("#enroll_name").val();
       var date = $("#date").val();
       var quantity = $("#quantity").val();
       var remarks = $("#remarks").val();
-      var $this = $("#create-Baoming input");
+      var $this = $("#create-Enroll input");
       var length = $this.length - 1;
       var hold = "";
       for (var i = 0; i < length; i++) {
@@ -145,10 +145,10 @@ $(document).ready(function() {
       hold = hold.substring(0, hold.length - 1);
       $.ajax({
         type: "POST",
-        url: "../php/create-baoming.php",
+        url: "../php/create-enroll.php",
         dataType: "JSON",
         data: {
-          request: "createBaoming",
+          request: "createEnroll",
           name: name,
           date: date,
           quantity: quantity,
@@ -164,10 +164,10 @@ $(document).ready(function() {
               window.wxc.xcConfirm.typeEnum.success,
               {
                 onOk: function() {
-                  window.location.href = "../admin/?back=baomingList";
+                  window.location.href = "../admin/?back=enrollList";
                 },
                 onClose: function() {
-                  window.location.href = "../admin/?back=baomingList";
+                  window.location.href = "../admin/?back=enrollList";
                 }
               }
             );
@@ -190,15 +190,15 @@ $(document).ready(function() {
 /**
  * 查看活动报名详细信息
  */
-$(document).on("click", ".displayBaoming-button", function() {
-  var baoming_id = $(this).attr("value");
+$(document).on("click", ".displayEnroll-button", function() {
+  var enroll_id = $(this).attr("value");
   $.ajax({
     type: "GET",
-    url: "../php/baoming.php?request=displaySingle&baoming_id=" + baoming_id,
+    url: "../php/enroll.php?request=displaySingle&enroll_id=" + enroll_id,
     dataType: "JSON",
     success: function(e) {
-      $("#displayBaoming-text-outer").remove();
-      var baoming_id = e.baoming_id;
+      $("#displayEnroll-text-outer").remove();
+      var enroll_id = e.enroll_id;
       var activity_name = e.activity_name;
       var date = e.date;
       var hold = e.hold;
@@ -213,9 +213,9 @@ $(document).on("click", ".displayBaoming-button", function() {
         state = "已结束报名";
       }
       var appendText =
-        '<div id="displayBaoming-text-outer" class="text-outer"><div class="text"><div class="displayBaoming-name"><h2>' +
+        '<div id="displayEnroll-text-outer" class="text-outer"><div class="text"><div class="displayEnroll-name"><h2>' +
         activity_name +
-        '</h2></div><div class="displayBaoming-inner">';
+        '</h2></div><div class="displayEnroll-inner">';
       appendText += "<h5>举办时间：" + date + "</h5>";
       appendText += "<h5>举办社团：" + hold + "</h5>";
       appendText += "<h5>报名人数限制：" + quantity + "</h5>";
@@ -223,14 +223,14 @@ $(document).on("click", ".displayBaoming-button", function() {
       if (step == 0) {
         //添加开放报名的按钮
         appendText +=
-          '<button id="start-baoming" value="' +
-          baoming_id +
+          '<button id="start-enroll" value="' +
+          enroll_id +
           '">开放报名通道</button></div>';
       } else if (step == 1) {
         //添加结束报名的按钮
         appendText +=
-          '<button id="end-baoming" value="' +
-          baoming_id +
+          '<button id="end-enroll" value="' +
+          enroll_id +
           '">结束报名</button></div><hr>';
         //添加已报名人数和列表
         appendText += '<div class="stu-list"></div>';
@@ -239,14 +239,14 @@ $(document).on("click", ".displayBaoming-button", function() {
         appendText += '</div><hr><div class="stu-list"></div>';
       }
       appendText += "</div></div>";
-      $("#displayBaoming-tab").append(appendText);
+      $("#displayEnroll-tab").append(appendText);
       if (step != 0) {
-        getStuList(baoming_id);
+        getStuList(enroll_id);
       }
-      $("#baomingList-tab").removeClass("box-active");
-      $("#displayBaoming-tab").addClass("box-active");
-      $("#menu-baomingList-item").removeClass("innerActive");
-      $("#menu-displayBaoming-item").addClass("innerActive");
+      $("#enrollList-tab").removeClass("box-active");
+      $("#displayEnroll-tab").addClass("box-active");
+      $("#menu-enrollList-item").removeClass("innerActive");
+      $("#menu-displayEnroll-item").addClass("innerActive");
     },
     error: function(err) {
       console.log(err);
@@ -255,10 +255,10 @@ $(document).on("click", ".displayBaoming-button", function() {
   /**
    * 获得已报名同学的人数和列表
    */
-  function getStuList(baoming_id) {
+  function getStuList(enroll_id) {
     $.ajax({
       type: "GET",
-      url: "../php/baoming.php?request=getStuList&baoming_id=" + baoming_id,
+      url: "../php/enroll.php?request=getStuList&enroll_id=" + enroll_id,
       dataType: "JSON",
       success: function(e) {
         console.log(e);
@@ -302,15 +302,15 @@ $(document).on("click", ".displayBaoming-button", function() {
 /**
  * 点击修改活动按钮
  */
-$(document).on("click", ".update-baoming", function() {
-  var baoming_id = $(this).val();
+$(document).on("click", ".update-enroll", function() {
+  var enroll_id = $(this).val();
   $.ajax({
     type: "GET",
-    url: "../php/baoming.php?request=displaySingle&baoming_id=" + baoming_id,
+    url: "../php/enroll.php?request=displaySingle&enroll_id=" + enroll_id,
     dataType: "JSON",
     success: function(e) {
-      $("#displayBaoming-text-outer").remove();
-      var baoming_id = e.baoming_id;
+      $("#displayEnroll-text-outer").remove();
+      var enroll_id = e.enroll_id;
       var activity_name = e.activity_name;
       var date = e.date;
       var hold = e.hold;
@@ -326,10 +326,10 @@ $(document).on("click", ".update-baoming", function() {
         state = "已结束报名";
       }
       var appendText =
-        '<div id="updateActivity-text-outer" class="text-outer col-xs-12"><div class="activity-update text"><form id="baoming-update-form">';
+        '<div id="updateActivity-text-outer" class="text-outer col-xs-12"><div class="activity-update text"><form id="enroll-update-form">';
       appendText +=
-        '<div class="section baoming_id_input"><div class="section__title">活动名称</div><div class="form-group"><input id="baoming_id" type="text" class="input-text form-control" name="baoming_id" value="' +
-        baoming_id +
+        '<div class="section enroll_id_input"><div class="section__title">活动名称</div><div class="form-group"><input id="enroll_id" type="text" class="input-text form-control" name="enroll_id" value="' +
+        enroll_id +
         '" /></div></div>';
       appendText +=
         '<div class="section"><div class="section__title">活动名称</div><div class="form-group"><input id="name" type="text" class="input-text form-control" name="name" placeholder="请输入活动名称" value="' +
@@ -350,15 +350,15 @@ $(document).on("click", ".update-baoming", function() {
       appendText +=
         "<div class='section'><label><div class='section__title'>备注</div><textarea id='remarks' class='form-control' name='remarks' rows='5' placeholder='在此填写备注'>" +
         remarks +
-        "</textarea></label></div><div class='btn-area'><button type='submit' class='submit'>确认修改</button><button class='deleteBaoming' type='button' value='" +
-        baoming_id +
+        "</textarea></label></div><div class='btn-area'><button type='submit' class='submit'>确认修改</button><button class='deleteEnroll' type='button' value='" +
+        enroll_id +
         "'>删除活动</button></div></form></div></div></div>";
       appendText += "</form></div></div>";
-      $("#updateBaoming-tab").append(appendText);
-      $("#baomingList-tab").removeClass("box-active");
-      $("#updateBaoming-tab").addClass("box-active");
-      $("#menu-baomingList-item").removeClass("innerActive");
-      $("#menu-updateBaoming-item").addClass("innerActive");
+      $("#updateEnroll-tab").append(appendText);
+      $("#enrollList-tab").removeClass("box-active");
+      $("#updateEnroll-tab").addClass("box-active");
+      $("#menu-enrollList-item").removeClass("innerActive");
+      $("#menu-updateEnroll-item").addClass("innerActive");
     },
     error: function(err) {
       console.log(err);
@@ -370,7 +370,7 @@ $(document).on("click", ".update-baoming", function() {
  * 修改活动报名-提交
  */
 
-$("#baoming-update-form").validate({
+$("#enroll-update-form").validate({
   // onsubmit: true, // 是否在提交是验证
   // rules: {
   //   //规则
@@ -399,19 +399,19 @@ $("#baoming-update-form").validate({
   // },
   submitHandler: function(form) {
     // $(".submit").attr("disabled", "disabled");
-    var baoming_id = $("#baoming_id").val();
+    var enroll_id = $("#enroll_id").val();
     var name = $("#name").val();
     var date = $("#date").val();
     var quantity = $("#quantity").val();
     var remarks = $("#remarks").val();
     var hold = $("#hold").val();
-    console.log(baoming_id);
+    console.log(enroll_id);
     // $.ajax({
     //   type: "POST",
-    //   url: "../php/create-baoming.php",
+    //   url: "../php/create-enroll.php",
     //   dataType: "JSON",
     //   data: {
-    //     request: "createBaoming",
+    //     request: "createEnroll",
     //     name: name,
     //     date: date,
     //     quantity: quantity,
@@ -426,10 +426,10 @@ $("#baoming-update-form").validate({
     //         window.wxc.xcConfirm.typeEnum.success,
     //         {
     //           onOk: function() {
-    //             // window.location.href = "../admin/?back=baomingList";
+    //             // window.location.href = "../admin/?back=enrollList";
     //           },
     //           onClose: function() {
-    //             // window.location.href = "../admin/?back=baomingList";
+    //             // window.location.href = "../admin/?back=enrollList";
     //           }
     //         }
     //       );
@@ -451,8 +451,8 @@ $("#baoming-update-form").validate({
 /**
  * 删除活动报名
  */
-$(document).on("click", ".deleteBaoming", function() {
-  var baoming_id = $(this).val();
+$(document).on("click", ".deleteEnroll", function() {
+  var enroll_id = $(this).val();
   window.wxc.xcConfirm(
     "确定要删除此活动吗？",
     window.wxc.xcConfirm.typeEnum.confirm,
@@ -461,7 +461,7 @@ $(document).on("click", ".deleteBaoming", function() {
         $.ajax({
           type: "GET",
           url:
-            "../php/baoming.php?request=deleteBaoming&baoming_id=" + baoming_id,
+            "../php/enroll.php?request=deleteEnroll&enroll_id=" + enroll_id,
           dataType: "JSON",
           success: function(e) {
             if (e.message == "success") {
@@ -471,10 +471,10 @@ $(document).on("click", ".deleteBaoming", function() {
                 window.wxc.xcConfirm.typeEnum.success,
                 {
                   onOk: function() {
-                    window.location.href = "../admin/?back=baomingList";
+                    window.location.href = "../admin/?back=enrollList";
                   },
                   onClose: function() {
-                    window.location.href = "../admin/?back=baomingList";
+                    window.location.href = "../admin/?back=enrollList";
                   }
                 }
               );
@@ -502,11 +502,11 @@ $(document).on("click", ".deleteBaoming", function() {
 /**
  * 开放报名通道
  */
-$(document).on("click", "#start-baoming", function() {
-  var baoming_id = $(this).val();
+$(document).on("click", "#start-enroll", function() {
+  var enroll_id = $(this).val();
   $.ajax({
     type: "GET",
-    url: "../php/baoming.php?request=startBaoming&baoming_id=" + baoming_id,
+    url: "../php/enroll.php?request=startEnroll&enroll_id=" + enroll_id,
     dataType: "JSON",
     success: function(e) {
       if (e.message == "success") {
@@ -516,10 +516,10 @@ $(document).on("click", "#start-baoming", function() {
           window.wxc.xcConfirm.typeEnum.success,
           {
             onOk: function() {
-              window.location.href = "../admin/?back=baomingList";
+              window.location.href = "../admin/?back=enrollList";
             },
             onClose: function() {
-              window.location.href = "../admin/?back=baomingList";
+              window.location.href = "../admin/?back=enrollList";
             }
           }
         );
@@ -536,11 +536,11 @@ $(document).on("click", "#start-baoming", function() {
 /**
  * 关闭报名通道
  */
-$(document).on("click", "#end-baoming", function() {
-  var baoming_id = $(this).val();
+$(document).on("click", "#end-enroll", function() {
+  var enroll_id = $(this).val();
   $.ajax({
     type: "GET",
-    url: "../php/baoming.php?request=endBaoming&baoming_id=" + baoming_id,
+    url: "../php/enroll.php?request=endEnroll&enroll_id=" + enroll_id,
     dataType: "JSON",
     success: function(e) {
       if (e.message == "success") {
@@ -550,10 +550,10 @@ $(document).on("click", "#end-baoming", function() {
           window.wxc.xcConfirm.typeEnum.success,
           {
             onOk: function() {
-              window.location.href = "../admin/?back=baomingList";
+              window.location.href = "../admin/?back=enrollList";
             },
             onClose: function() {
-              window.location.href = "../admin/?back=baomingList";
+              window.location.href = "../admin/?back=enrollList";
             }
           }
         );
