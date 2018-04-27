@@ -380,20 +380,6 @@ $(document).on("click", "#deleteActivity-btn", function() {
                   }
                 }
               );
-              $(".display-box").css("display", "none");
-              $(".update-box").css("display", "none");
-              $(".activity-box").css("display", "block");
-              $(".title").css("display", "block");
-              $(".bar-item").css("background-color", "#435770");
-              $("#activity-item").css(
-                "background-color",
-                "rgba(87, 110, 136, 0.85)"
-              );
-              $(".cpp-box").css("display", "none");
-              $(".algorithm-box").css("display", "none");
-              $(".web-box").css("display", "none");
-              $(".linux-box").css("display", "none");
-              $(".java-box").css("display", "none");
             } else {
               window.wxc.xcConfirm(
                 "出错啦！",
@@ -503,7 +489,7 @@ $(document).on("click", ".displayActivity-button", function() {
       success: function(e) {
         var i = 0;
         var appendText_list =
-          '<hr><div class="signed-list"><h4>签到情况</h4><div class="signed-list-inner"><table class="table-sort table-sort-search"><thead><tr><th>序号</th><th>姓名</th><th>学院/专业</th><th>年级</th><th>性别</th><th>签到地点</th><th>签到时间</th></tr></thead><tbody>';
+          '<hr><div class="signed-list"><h4>签到情况</h4><div class="signed-list-inner"><table class=" tablesorter"><thead><tr><th>序号</th><th>姓名</th><th>学院/专业</th><th>年级</th><th>性别</th><th>签到地点</th><th>签到时间</th></tr></thead><tbody>';
         while (e[i]) {
           var j = i + 1;
           var name = e[i].name;

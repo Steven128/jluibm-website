@@ -102,11 +102,11 @@ else if ($request == 'createActivity') {
     if ($step) {
         //下面创建用于存储签到数据的数据表
         $activity_table = "CREATE TABLE $activity_id(" .
-            "submitTime varchar(20) NOT NULL," .
-            "number varchar(8) NOT NULL," .
-            "longitude varchar(20)," .
-            "latitude varchar(20)" .
-            ") ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;";
+            "submitTime VARCHAR(20) NOT NULL COMMENT '签到时间'," .
+            "number VARCHAR(8) NOT NULL PRIMARY KEY COMMENT '学号'," .
+            "longitude VARCHAR(20) COMMENT '签到地点经度'," .
+            "latitude VARCHAR(20) COMMENT '签到地点纬度'" .
+            ") ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 COMMENT '活动 " . $activity_name . " 签到表，表名对应activity_id';";
         $retval = mysqli_query($main_db, $activity_table);
         $retval = true;
         if ($retval) {

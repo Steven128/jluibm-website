@@ -160,51 +160,47 @@ $(document).ready(function() {
               i = 0;
               var leftbar_append = "";
               var topnav_append = "";
+              var mainbar_append = "";
               while (i < 5) {
                 if (e[i] == "cpp") {
                   leftbar_append +=
                     '<li><a id="menu-cppList-item" href="#"><i class="iconfont-admin-menu icon-cpp"></i>C/C++组成员</a></li>';
                   topnav_append +=
                     "<th><h4 class='bar-item bar-item-6 cpp-item'><span><img class='icon' src='../src/icon/cpp.png' /></span><div class='item-text'>C/C++组成员</div></h4></th>";
-                  $(".main-bar").append(
-                    "<div id=\"cppList-tab\" class='box'><div class='title col-xs-12'><h4 class='title-left'>C/C++组成员</h4><button class='addBtn' value='cpp'><img src='../src/icon/add.png' /></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='cpp-display group-display  tablesorter'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>修改信息</th></tr></thead><tbody class='cpp-form'></tbody></table></div></div></div>"
-                  );
+                  mainbar_append +=
+                    "<a name=\"cppList\"></a><div id=\"cppList-tab\" class='box'><div class='title col-xs-12'><h4 class='title-left'>C/C++组成员</h4><button class='addBtn' value='cpp'><i class=\"iconfont-admin-menu icon-add\"></i></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='cpp-display group-display  tablesorter'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>修改信息</th></tr></thead><tbody class='cpp-form'></tbody></table></div></div></div>";
                 }
                 if (e[i] == "algorithm") {
                   leftbar_append +=
                     '<li><a id="menu-algorithmList-item" href="#"><i class="iconfont-admin-menu icon-algorithm"></i>算法组成员</a></li>';
                   topnav_append +=
                     "<th><h4 class='bar-item bar-item-6 algorithm-item'><span><img class='icon' src='../src/icon/algorithm.png' /></span><div class='item-text'>算法组成员</div></h4></th>";
-                  $(".main-bar").append(
-                    "<div id=\"algorithmList-tab\" class='box'><div class='title col-xs-12'><h4 class='title-left'>算法组成员</h4><button class='addBtn' value='algorithm'><img src='../src/icon/add.png' /></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='algorithm-display group-display  tablesorter'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>修改信息</th></tr></thead><tbody class='algorithm-form'></tbody></table></div></div></div>"
-                  );
+                  mainbar_append +=
+                    "<a name=\"algorithmList\"></a><div id=\"algorithmList-tab\" class='box'><div class='title col-xs-12'><h4 class='title-left'>算法组成员</h4><button class='addBtn' value='algorithm'><i class=\"iconfont-admin-menu icon-add\"></i></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='algorithm-display group-display  tablesorter'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>修改信息</th></tr></thead><tbody class='algorithm-form'></tbody></table></div></div></div>";
                 }
                 if (e[i] == "web") {
                   leftbar_append +=
                     '<li><a id="menu-webList-item" href="#"><i class="iconfont-admin-menu icon-web"></i>Web组成员</a></li>';
                   topnav_append +=
                     "<th><h4 class='bar-item bar-item-6 web-item'><span><img class='icon' src='../src/icon/web.png' /></span><div class='item-text'>Web组成员</div></h4></th>";
-                  $(".main-bar").append(
-                    "<div id=\"webList-tab\" class='box'><div class='title col-xs-12'><h4 class='title-left'>Web组成员</h4><button class='addBtn' value='web'><img src='../src/icon/add.png' /></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='web-display group-display  tablesorter'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>修改信息</th></tr></thead><tbody class='web-form'></tbody></table></div></div></div>"
-                  );
+                  mainbar_append +=
+                    "<a name=\"webList\"></a><div id=\"webList-tab\" class='box'><div class='title col-xs-12'><h4 class='title-left'>Web组成员</h4><button class='addBtn' value='web'><i class=\"iconfont-admin-menu icon-add\"></i></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='web-display group-display  tablesorter'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>修改信息</th></tr></thead><tbody class='web-form'></tbody></table></div></div></div>";
                 }
                 if (e[i] == "linux") {
                   leftbar_append +=
                     '<li><a id="menu-linuxList-item" href="#"><i class="iconfont-admin-menu icon-linux"></i>Linux组成员</a></li>';
                   topnav_append +=
                     "<th><h4 class='bar-item bar-item-6 linux-item'><span><img class='icon' src='../src/icon/linux.png' /></span><div class='item-text'>Linux组成员</div></h4></th>";
-                  $(".main-bar").append(
-                    "<div id=\"linuxList-tab\" class='box'><div class='title col-xs-12'><h4 class='title-left'>Linux组成员</h4><button class='addBtn' value='linux'><img src='../src/icon/add.png' /></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='linux-display group-display  tablesorter'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>修改信息</th></tr></thead><tbody class='linux-form'></tbody></table></div></div></div>"
-                  );
+                  mainbar_append +=
+                    "<a name=\"linuxList\"></a><div id=\"linuxList-tab\" class='box'><div class='title col-xs-12'><h4 class='title-left'>Linux组成员</h4><button class='addBtn' value='linux'><i class=\"iconfont-admin-menu icon-add\"></i></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='linux-display group-display  tablesorter'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>修改信息</th></tr></thead><tbody class='linux-form'></tbody></table></div></div></div>";
                 }
                 if (e[i] == "java") {
                   leftbar_append +=
                     '<li><a id="menu-javaList-item" href="#"><i class="iconfont-admin-menu icon-java"></i>Java组成员</a></li>';
                   topnav_append +=
                     "<th><h4 class='bar-item bar-item-6 java-item'><span><img class='icon' src='../src/icon/java.png' /></span><div class='item-text'>Java组成员</div></h4></th>";
-                  $(".main-bar").append(
-                    "<div id=\"javaList-tab\" class='box'><div class='title col-xs-12'><h4 class='title-left'>Java组成员</h4><button class='addBtn' value='java'><img src='../src/icon/add.png' /></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='java-display group-display  tablesorter'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>修改信息</th></tr></thead><tbody class='java-form'></tbody></table></div></div></div>"
-                  );
+                  mainbar_append +=
+                    "<a name=\"javaList\"></a><div id=\"javaList-tab\" class='box'><div class='title col-xs-12'><h4 class='title-left'>Java组成员</h4><button class='addBtn' value='java'><i class=\"iconfont-admin-menu icon-add\"></i></button></div><div class='text-outer col-xs-12'><div class='display-text text'><table class='java-display group-display  tablesorter'><thead><tr><th class='table-sort'>序号</th><th class='table-sort'>类别</th><th class='table-sort'>姓名</th><th class='table-sort'>学号</th><th class='table-sort'>学院</th><th class='table-sort'>专业</th><th class='table-sort'>性别</th><th class='table-sort'>年级</th><th>QQ</th><th>手机号码</th><th>修改信息</th></tr></thead><tbody class='java-form'></tbody></table></div></div></div>";
                 }
                 i++;
               }
@@ -212,6 +208,7 @@ $(document).ready(function() {
                 '<li><a id="menu-displayGrouper-item" href="#"><i class="iconfont-admin-menu icon-display"></i>查看组员信息<i class="iconfont-admin-menu icon-not-allowed"></i></a></li><li><a id="menu-updateGrouper-item" href="#"><i class="iconfont-admin-menu icon-update"></i>修改信息<i class="iconfont-admin-menu icon-not-allowed"></i></a></li>';
               $(".group-menu").append(leftbar_append);
               $(".top-display").after(topnav_append);
+              $("#updateMember-tab").after(mainbar_append);
               getGroupMemberInfo();
             },
             error: function(err) {}

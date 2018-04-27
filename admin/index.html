@@ -154,6 +154,37 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="iconfont-admin-menu icon-baoming"></i>
+                                    <span>报名管理</span>
+                                    <span class="pull-right">
+                                        <img src="../src/icon/down-white.png" width="12px" />
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu" style="display: none;">
+                                    <li>
+                                        <a id="menu-baomingList-item" href="#">
+                                            <i class="iconfont-admin-menu icon-list"></i>报名列表</a>
+                                    </li>
+                                    <li>
+                                        <a id="menu-newBaoming-item" href="#">
+                                            <i class="iconfont-admin-menu icon-new"></i>新建报名</a>
+                                    </li>
+                                    <li>
+                                        <a id="menu-updateBaoming-item" href="#">
+                                            <i class="iconfont-admin-menu icon-update"></i>修改信息
+                                            <i class="iconfont-admin-menu icon-not-allowed"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a id="menu-displayBaoming-item" href="#">
+                                            <i class="iconfont-admin-menu icon-display"></i>查看详情
+                                            <i class="iconfont-admin-menu icon-not-allowed"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </section>
                     <script src="../js/sidebar-menu.js"></script>
@@ -163,6 +194,7 @@
                 </aside>
                 <div class="mask"></div>
                 <div id="main-bar" class="main-bar row">
+                    <a name="overview"></a>
                     <div id="overview-tab" class="box col-xs-12 box-active">
                         <div class="overview-outer col-xs-12">
                             <div class="overview-text text">
@@ -191,6 +223,7 @@
                             </div>
                         </div>
                     </div>
+                    <a name="memberList"></a>
                     <div id="memberList-tab" class="box col-xs-12">
                         <div class="title col-xs-12">
                             <h4 class="title-left">社团成员信息</h4>
@@ -218,6 +251,7 @@
                             </div>
                         </div>
                     </div>
+                    <a name="displayMember"></a>
                     <div id="displayMember-tab" class="box">
                         <div class="title col-xs-12">
                             <h4 class="title-left">查看社员信息</h4>
@@ -236,28 +270,32 @@
                             <div class="user-activities col-xs-12 col-md-6"></div>
                         </div>
                     </div>
+                    <a name="updateMember"></a>
                     <div id="updateMember-tab" class="box">
                         <div class="title col-xs-12">
                             <h4 class="title-left">修改社员信息</h4>
                         </div>
                     </div>
+                    <a name="displayGrouper"></a>
                     <div id="displayGrouper-tab" class="box">
                         <div class="title col-xs-12">
                             <h4 class="title-left">查看组员信息</h4>
                         </div>
                     </div>
+                    <a name="updateGrouper"></a>
                     <div id="updateGrouper-tab" class="box">
                         <div class="title col-xs-12">
                             <h4 class="title-left">修改组员信息</h4>
                         </div>
                     </div>
+                    <a name="activityList"></a>
                     <div id="activityList-tab" class="box">
                         <div class="title col-xs-12">
                             <h4 class="title-left">活动列表</h4>
                         </div>
                         <div class="text-outer col-xs-12">
                             <div class="activity-text text">
-                                <table class='display-all table-sort table-sort-search'>
+                                <table class='display-all tablesorter'>
                                     <thead>
                                         <tr>
                                             <th class="table-sort">序号</th>
@@ -274,6 +312,7 @@
                             </div>
                         </div>
                     </div>
+                    <a name="newActivity"></a>
                     <div id="newActivity-tab" class="box">
                         <div class="title col-xs-12">
                             <h4 class="title-left">新建活动</h4>
@@ -344,21 +383,109 @@
                                 </form>
                             </div>
                         </div>
-
                     </div>
+                    <a name="updateActivity"></a>
                     <div id="updateActivity-tab" class="box">
                         <div class="title col-xs-12">
                             <h4 class="title-left">修改活动信息</h4>
                         </div>
                     </div>
+                    <a name="displayActivity"></a>
                     <div id="displayActivity-tab" class="box">
                         <div class="title col-xs-12">
                             <h4 class="title-left">查看活动详情</h4>
                         </div>
                     </div>
+                    <a name="signUp"></a>
                     <div id="signUp-tab" class="box">
                         <div class="title col-xs-12">
                             <h4 class="title-left">活动签到</h4>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <a name="baomingList"></a>
+                    <div id="baomingList-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">报名列表</h4>
+                        </div>
+                        <div class="text-outer col-xs-12">
+                            <div class="activity-text text">
+                                <table class='display-all tablesorter'>
+                                    <thead>
+                                        <tr>
+                                            <th class="table-sort">序号</th>
+                                            <th>活动名称</th>
+                                            <th class="table-sort">举办时间</th>
+                                            <th class="table-sort">举办社团</th>
+                                            <th class="table-sort">人数限制</th>
+                                            <th class="table-sort">状态</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="baoming-list"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <a name="newBaoming"></a>
+                    <div id="newBaoming-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">新建活动报名</h4>
+                        </div>
+                        <div class="text-outer col-xs-12">
+                            <div class="createActivity text">
+                                <form id="create-Baoming" method="post" action="">
+                                    <div class="section">
+                                        <div class="section__title">活动名称</div>
+                                        <div class="form-group">
+                                            <input id="baoming_name" type="text" class="input-text form-control" name="name" placeholder="请输入活动名称" />
+                                        </div>
+                                    </div>
+                                    <div class="section">
+                                        <div class="section__title">活动日期（格式 yyyy-MM-dd）</div>
+                                        <div class="form-group">
+                                            <input id="date" type="text" class="input-text form-control" name="date" placeholder="请输入活动日期" />
+                                        </div>
+                                    </div>
+                                    <div class="section">
+                                        <div class="section__title">人数限制</div>
+                                        <div class="form-group">
+                                            <input id="quantity" type="text" class="input-text form-control" name="quantity " placeholder="请输入限制报名的人数" />
+                                        </div>
+                                    </div>
+                                    <div class="section hold_section">
+                                        <div class="section__title">举办活动的社团</div>
+                                        <div class="form-group hold_outer">
+                                            <input id="hold1" type="text" class="input-text form-control hold_input" name="hold1" placeholder="请输入社团名称" />
+                                            <button type="button" class="add-hold"><i class="iconfont-admin-menu icon-add"></i></button>
+                                            <hr>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="textarea">
+                                        <label>
+                                            <div class="section__title">备注</div>
+                                            <textarea id="remarks" class="form-control" name="remarks" rows="5" placeholder="在此填写备注"></textarea>
+                                        </label>
+
+                                    </div>
+                                    <div class="btn-area">
+                                        <button id="" type="submit" class="submit">确认添加</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <a name="updateBaoming"></a>
+                    <div id="updateBaoming-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">修改报名要求</h4>
+                        </div>
+                    </div>
+                    <a name="displayBaoming"></a>
+                    <div id="displayBaoming-tab" class="box">
+                        <div class="title col-xs-12">
+                            <h4 class="title-left">查看报名详情</h4>
                         </div>
                     </div>
                 </div>
@@ -386,6 +513,7 @@
     <script type="text/javascript" src="../js/activity.js"></script>
     <script type="text/javascript" src="../js/view.js"></script>
     <script type="text/javascript" src="../js/sign.js"></script>
+    <script type="text/javascript" src="../js/baoming.js"></script>
 
     <div class="add-box">
         <h4>添加成员</h4>
