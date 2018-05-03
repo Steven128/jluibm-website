@@ -4,7 +4,7 @@ $request = urldecode($_POST['request']);
 
 if ($request == "submit") {
     //提交信息
-    $enroll_id = urldecode($_POST['enroll_id']);
+    $enroll_id  = urldecode($_POST['enroll_id']);
     $submitTime = urldecode($_POST['submitTime']);
     $name       = urldecode($_POST['name']);
     $number     = urldecode($_POST['number']);
