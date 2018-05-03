@@ -77,7 +77,7 @@
         
         $ch = curl_init();
         $url = "http://cjcx.jlu.edu.cn/score/action/service_res.php";  //此处修改为教务系统免验证码登陆页URL
-        $data = array("tag"=>"lessonSelectResult@oldStudScore","params"=>array("xh"=>$number,"termId"=>$termId));
+        $data = array("tag"=>"lessonSelectResult@oldStudScore","params"=>array("xh"=>$number,"termId"=>$termId,"mousePath"=> "WDwABVAwAKVBQAYWEgApYGQA5ZHQBLaIABbbIwBsdKAB8fMACNhOgCdiQQCuiSQC/iTgDPiVQDgiWwDxiZQEAicQESifQEjihwEzijAFEikgFWimgFlhpQF2gqgGIgrAGXgrQITgsAIcguQItgxAI/gzAJPg0AJfg0gJxg1gKAg3gKRg5wKhC/gAM"));
         $data_string = json_encode($data);
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

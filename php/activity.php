@@ -83,7 +83,8 @@ else if ($request == 'createActivity') {
     mysqli_query($main_db, "set names utf8");
     mysqli_select_db($main_db, "JLUIBMclub");
 
-    $sql_select = "select * from activity where activity_id like 'activity" . "_" . "$setBy" . "_" . "$activityTime%';";
+    $_setBy     = substr($setBy, 0, 3);
+    $sql_select = "select * from activity where activity_id like 'act" . "_" . "$_setBy" . "_" . "$activityTime%';";
     $retval     = mysqli_query($main_db, $sql_select);
     $count      = 1;
     $arr        = array();
@@ -95,7 +96,7 @@ else if ($request == 'createActivity') {
     if (strlen($count) == 1) {
         $count = "0" . $count;
     }
-    $activity_id = "activity_" . "$setBy" . "_" . "$activityTime" . "_" . "$count";
+    $activity_id = "act_" . "$_setBy" . "_" . "$activityTime" . "_" . "$count";
 
     $sql_insert = "insert into activity" . "(activity_id,activity_name,setBy,place,time,remarks,state)" . "values" . "('$activity_id','$activity_name','$setBy','$place','$time','$remarks','inactive');";
     $step       = mysqli_query($main_db, $sql_insert);

@@ -601,6 +601,10 @@ textarea {
     margin: 0;
 }
 
+#displayEnroll-text-outer table {
+  border: 1px solid #ccc;
+}
+
 @media (min-width: 768px) {
   .menu-button {
     display: none;

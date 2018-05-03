@@ -8,7 +8,6 @@ $(document).ready(function() {
     url: "../php/enroll.php?request=getList",
     dataType: "JSON",
     success: function(e) {
-      console.log(e);
       var i = 0;
       var appendText = "";
       while (e[i]) {
@@ -68,7 +67,6 @@ $(document).ready(function() {
 $(document).on("click", ".add-hold", function() {
   var item = $(".hold_outer");
   item = item[item.length - 1];
-  console.log(item);
   var $id = item.firstElementChild;
   if ($id.value != "") {
     var count = $id.name;

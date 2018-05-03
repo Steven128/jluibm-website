@@ -33,13 +33,30 @@ if ($request == "getActiveList") {
     mysqli_query($main_db, "set names utf8");
     mysqli_select_db($main_db, "JLUIBMclub");
 
-    $sql_selete = "SELECT* FROM $enroll_id WHERE number='$number';";
+    $sql_selete = "SELECT * FROM $enroll_id WHERE number='$number';";
     $retval     = mysqli_query($main_db, $sql_select);
     $retval_check = mysqli_num_rows($retval);
     if($retval_check >0) {
         echo json_encode(array("message"=>"has_enrolled"));
     }
     else {
-        echo json_encode(array("message"=>"not_found"));
+        //检查人数是否已满
+        $sql_get_quantity = "SELECT * FROM enroll WHERE enroll_id='$enroll_id';";
+        $retval = mysqli_query($main_db, $sql_get_quantity);
+        $quantity=0;
+        while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+            $quantity = $row['quantity'];
+            break;
+        }
+
+        $sql_check_quantity = "SELECT * FROM $enroll_id;";
+        $retval = mysqli_query($main_db, $sql_check_quantity);
+        $retval_check = mysqli_num_rows($retval);
+        if($retval_check<$quantity) {
+            echo json_encode(array("message"=>"enroll_allowed"));
+        }
+        else {
+            echo json_encode(array("message"=>"not-allowed"));
+        }
     }
 }
