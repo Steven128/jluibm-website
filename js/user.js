@@ -50,10 +50,12 @@ $(document).ready(function() {
                     success: function(e) {
 
                         var gender = '';
-                        if (e[0].gender == 'male') {
+                        if (e[0].gender == '0') {
                             gender = '男';
-                        } else {
+                        } else if (gender == "1") {
                             gender = '女';
+                        } else {
+                            gender = undefined
                         }
                         var grade = '';
                         if (e[0].grade == '1') {
@@ -62,8 +64,10 @@ $(document).ready(function() {
                             grade = '大二';
                         } else if (e[0].grade == '3') {
                             grade = '大三';
-                        } else {
+                        } else if (e[0].grade == '4') {
                             grade = '大四';
+                        } else {
+                            grade = undefined;
                         }
                         appendText_user = "<div class='userName'><h3>" + e[0].name + "</h3></div><button id='logout-xs' type='button' class='submit logout'>退出登录</button><div class='clear'></div>";
                         $(".userPic-box").append(appendText_user);

@@ -31,10 +31,10 @@ $(document).ready(function() {
                 var subText = "<div class='form-group'><div class='section__title'>专业</div><input id='major' type='text' class='input-text form-control' name='major' value='" + major + "' /></div>";
                 appendText += subText;
                 //性别
-                if (e.gender == 'male') {
-                    var subText = "<div class='form-group'><div class='section__title'>性别</div><label class='gender'><input type='radio' id='male' class='radio-inline' name='gender' value='male' checked='checked' />男</label><label class='gender'><input type='radio' id='female' class='radio-inline' name='gender' value='female' />女</label></div>";
-                } else {
-                    var subText = "<div class='form-group'><div class='section__title'>性别</div><label class='gender'><input type='radio' id='male' class='radio-inline' name='gender' value='male' />男</label><label class='gender'><input type='radio' id='female' class='radio-inline' name='gender' value='female' checked='checked' />女</label></div>";
+                if (e.gender == '0') {
+                    var subText = "<div class='form-group'><div class='section__title'>性别</div><label class='gender'><input type='radio' id='male' class='radio-inline' name='gender' value='0' checked='checked' />男</label><label class='gender'><input type='radio' id='female' class='radio-inline' name='gender' value='1' />女</label></div>";
+                } else if (e.gender == '1') {
+                    var subText = "<div class='form-group'><div class='section__title'>性别</div><label class='gender'><input type='radio' id='male' class='radio-inline' name='gender' value='0' />男</label><label class='gender'><input type='radio' id='female' class='radio-inline' name='gender' value='1' checked='checked' />女</label></div>";
                 }
                 appendText += subText;
                 //年级
@@ -44,7 +44,7 @@ $(document).ready(function() {
                     var subText = '<div class="form-group"><div class="section__title">年级</div><select id="grade" class="select form-control" name="grade"><option class="option" value="1">大一</option><option class="option" value="2" selected="selected">大二</option><option class="option" value="3">大三</option><option class="option" value="4">大四</option></select></div>';
                 } else if (e.grade == '3') {
                     var subText = '<div class="form-group"><div class="section__title">年级</div><select id="grade" class="select form-control" name="grade"><option class="option" value="1">大一</option><option class="option" value="2">大二</option><option class="option" value="3" selected="selected">大三</option><option class="option" value="4">大四</option></select></div>';
-                } else {
+                } else if (e.grade == '4') {
                     var subText = '<div class="form-group"><div class="section__title">年级</div><select id="grade" class="select form-control" name="grade"><option class="option" value="1">大一</option><option class="option" value="2">大二</option><option class="option" value="3">大三</option><option class="option" value="4"  selected="selected">大四</option></select></div>';
                 }
                 appendText += subText;
@@ -120,10 +120,10 @@ $(document).ready(function() {
                 var subText = "<div class='form-group'><div class='section__title'>专业</div><input id='major' type='text' class='input-text form-control' name='major' value='" + major + "' /></div>";
                 appendText += subText;
                 //性别
-                if (e.gender == 'male') {
-                    var subText = "<div class='form-group'><div class='section__title'>性别</div><label class='gender'><input type='radio' id='male' class='radio-inline' name='gender' value='male' checked='checked' />男</label><label class='gender'><input type='radio' id='female' class='radio-inline' name='gender' value='female' />女</label></div>";
-                } else {
-                    var subText = "<div class='form-group'><div class='section__title'>性别</div><label class='gender'><input type='radio' id='male' class='radio-inline' name='gender' value='male' />男</label><label class='gender'><input type='radio' id='female' class='radio-inline' name='gender' value='female' checked='checked' />女</label></div>";
+                if (e.gender == '0') {
+                    var subText = "<div class='form-group'><div class='section__title'>性别</div><label class='gender'><input type='radio' id='male' class='radio-inline' name='gender' value='0' checked='checked' />男</label><label class='gender'><input type='radio' id='female' class='radio-inline' name='gender' value='1' />女</label></div>";
+                } else if (e.gender == '1') {
+                    var subText = "<div class='form-group'><div class='section__title'>性别</div><label class='gender'><input type='radio' id='male' class='radio-inline' name='gender' value='0' />男</label><label class='gender'><input type='radio' id='female' class='radio-inline' name='gender' value='1' checked='checked' />女</label></div>";
                 }
                 appendText += subText;
                 //年级
@@ -133,7 +133,7 @@ $(document).ready(function() {
                     var subText = '<div class="form-group"><div class="section__title">年级</div><select id="grade" class="select form-control" name="grade"><option class="option" value="1">大一</option><option class="option" value="2" selected="selected">大二</option><option class="option" value="3">大三</option><option class="option" value="4">大四</option></select></div>';
                 } else if (e.grade == '3') {
                     var subText = '<div class="form-group"><div class="section__title">年级</div><select id="grade" class="select form-control" name="grade"><option class="option" value="1">大一</option><option class="option" value="2">大二</option><option class="option" value="3" selected="selected">大三</option><option class="option" value="4">大四</option></select></div>';
-                } else {
+                } else if (e.grade == '4') {
                     var subText = '<div class="form-group"><div class="section__title">年级</div><select id="grade" class="select form-control" name="grade"><option class="option" value="1">大一</option><option class="option" value="2">大二</option><option class="option" value="3">大三</option><option class="option" value="4"  selected="selected">大四</option></select></div>';
                 }
                 appendText += subText;
@@ -191,7 +191,7 @@ $(document).ready(function() {
                     },
                     success: function(e) {
                         if (e.message == "success") {
-                            localStorage.setItem("reason","update");
+                            localStorage.setItem("reason", "update");
                             window.wxc.xcConfirm("修改成功！", window.wxc.xcConfirm.typeEnum.success, {
                                 onOk: function() {
                                     window.location.href = "../admin/?back=memberList";
@@ -253,13 +253,13 @@ $(document).ready(function() {
                     },
                     success: function(e) {
                         if (e.message == "success") {
-                            localStorage.setItem("reason","update");
+                            localStorage.setItem("reason", "update");
                             window.wxc.xcConfirm("修改成功！", window.wxc.xcConfirm.typeEnum.success, {
                                 onOk: function() {
-                                    window.location.href = "../admin/?back="+group+"List";
+                                    window.location.href = "../admin/?back=" + group + "List";
                                 },
                                 onClose: function() {
-                                    window.location.href = "../admin/?back="+group+"List";
+                                    window.location.href = "../admin/?back=" + group + "List";
                                 }
                             });
                         } else {
@@ -298,7 +298,7 @@ $(document).on("click", ".delete-member", function() {
                 },
                 success: function(e) {
                     if (e.message == "success") {
-                        localStorage.setItem("reason","update");
+                        localStorage.setItem("reason", "update");
                         window.wxc.xcConfirm("删除成功！", window.wxc.xcConfirm.typeEnum.success, {
                             onOk: function() {
                                 window.location.href = "../admin/?back=memberList";
@@ -330,15 +330,15 @@ $(document).on("click", ".delete-grouper", function() {
     var group = $(this).attr("id");
     var number = $(this).val()
     var groupName;
-    if(group == 'cpp') {
+    if (group == 'cpp') {
         groupName = 'C/C++组'
-    }else if(group == 'algorithm') {
+    } else if (group == 'algorithm') {
         groupName = '算法组'
-    }else if(group == 'web') {
+    } else if (group == 'web') {
         groupName = 'Web组'
-    }else if(group == 'linux') {
+    } else if (group == 'linux') {
         groupName = 'Linux组'
-    }else if(group == 'java') {
+    } else if (group == 'java') {
         groupName = 'Java组'
     }
     console.log(group)
@@ -355,13 +355,13 @@ $(document).on("click", ".delete-grouper", function() {
                 },
                 success: function(e) {
                     if (e.message == "success") {
-                        localStorage.setItem("reason","update");
+                        localStorage.setItem("reason", "update");
                         window.wxc.xcConfirm("删除成功！", window.wxc.xcConfirm.typeEnum.success, {
                             onOk: function() {
-                                window.location.href = "../admin/?back="+group+"List";
+                                window.location.href = "../admin/?back=" + group + "List";
                             },
                             onClose: function() {
-                                window.location.href = "../admin/?back="+group+"List";
+                                window.location.href = "../admin/?back=" + group + "List";
                             }
                         });
                     } else {
@@ -413,13 +413,13 @@ $(document).on("click", "#add-group-member", function() {
                     },
                     success: function(e) {
                         if (e.message == "success") {
-                            localStorage.setItem("reason","update");
+                            localStorage.setItem("reason", "update");
                             window.wxc.xcConfirm("添加成功！", window.wxc.xcConfirm.typeEnum.success, {
                                 onOk: function() {
-                                    window.location.href = "../admin/?back="+group+"List";
+                                    window.location.href = "../admin/?back=" + group + "List";
                                 },
                                 onClose: function() {
-                                    window.location.href = "../admin/?back="+group+"List";
+                                    window.location.href = "../admin/?back=" + group + "List";
                                 }
                             });
                         } else if (e.message == "does_not_exist") {

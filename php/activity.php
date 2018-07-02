@@ -6,7 +6,7 @@ if ($request == 'getList') {
     mysqli_query($main_db, "set names utf8");
     mysqli_select_db($main_db, "JLUIBMclub");
 
-    $sql_select = "select * from activity;";
+    $sql_select = "SELECT * from activity ORDER BY time;";
     $retval     = mysqli_query($main_db, $sql_select);
     $data       = array();
     while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
@@ -29,7 +29,7 @@ else if ($request == 'getInactiveList') {
     mysqli_query($main_db, "set names utf8");
     mysqli_select_db($main_db, "JLUIBMclub");
 
-    $sql_select = "select * from activity where state='inactive';";
+    $sql_select = "SELECT * from activity where state='inactive' ORDER BY time;";
     $retval     = mysqli_query($main_db, $sql_select);
     $data       = array();
     while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
@@ -192,7 +192,19 @@ else if ($request == "getSignedList") {
     mysqli_query($main_db, "set names utf8");
     mysqli_select_db($main_db, "JLUIBMclub");
 
-    $sql_select_list = "SELECT * FROM $activity_id;";
+
+    $default_lat = 0;
+    $default_lng = 0;
+    //获取签到时的标识位置
+    $get_location = "SELECT longitude,latitude FROM activity WHERE activity_id='$activity_id';";
+    $return       = mysqli_query($main_db, $get_location);
+    while ($row_loc = mysqli_fetch_array($return, MYSQLI_ASSOC)) {
+        $default_lng = $row_loc['longitude'];
+        $default_lat = $row_loc['latitude'];
+        break;
+    }
+
+    $sql_select_list = "SELECT submitTime,member.number,name,college,major,gender,grade,longitude,latitude FROM member,$activity_id WHERE member.number=$activity_id.number ORDER BY submitTime;";
     $retval_list     = mysqli_query($main_db, $sql_select_list);
     $data            = array();
     while ($row_activity = mysqli_fetch_array($retval_list, MYSQLI_ASSOC)) {
@@ -202,29 +214,16 @@ else if ($request == "getSignedList") {
         $user_lng = $row_activity['longitude'];
         $user_lat = $row_activity['latitude'];
 
-        //获取签到时的标识位置
-        $get_location = "SELECT longitude,latitude FROM activity WHERE activity_id='$activity_id';";
-        $return       = mysqli_query($main_db, $get_location);
-        while ($row_loc = mysqli_fetch_array($return, MYSQLI_ASSOC)) {
-            $default_lng = $row_loc['longitude'];
-            $default_lat = $row_loc['latitude'];
-            break;
-        }
         //计算用户签地点与默认地点的距离
         $distance = getDistance($default_lng, $default_lat, $user_lng, $user_lat, 1);
-        //在member表中获得其详细信息
-        $sql_select_single = "SELECT name,college,major,gender,grade FROM member WHERE number='$number';";
-        $retval_single     = mysqli_query($main_db, $sql_select_single);
-        while ($row_member = mysqli_fetch_array($retval_single, MYSQLI_ASSOC)) {
-            $name    = $row_member['name'];
-            $college = $row_member['college'];
-            $major   = $row_member['major'];
-            $gender  = $row_member['gender'];
-            $grade   = $row_member['grade'];
-            $arr     = array("number" => $number, "name" => $name, "submitTime" => $submitTime, "distance" => $distance, "college" => $college, "major" => $major, "gender" => $gender, "grade" => $grade);
-            array_push($data, $arr);
-            break;
-        }
+
+        $name    = $row_activity['name'];
+        $college = $row_activity['college'];
+        $major   = $row_activity['major'];
+        $gender  = $row_activity['gender'];
+        $grade   = $row_activity['grade'];
+        $arr     = array("number" => $number, "name" => $name, "submitTime" => $submitTime, "distance" => $distance, "college" => $college, "major" => $major, "gender" => $gender, "grade" => $grade);
+        array_push($data, $arr);    
     }
     echo json_encode($data);
 }

@@ -10,7 +10,7 @@ if($request == 'check'){
 	mysqli_select_db($main_db,"JLUIBMclub");
 
 	$check = 1;
-	$sql_compare = "SELECT number from join_infomation;";
+	$sql_compare = "SELECT number from join_date;";
 	$retval = mysqli_query($main_db,$sql_compare);
 	while($row = mysqli_fetch_array($retval,MYSQLI_ASSOC)){
 		if($row['number']==$number){
@@ -80,7 +80,7 @@ $submitTime = date("Y-m-d");
 //检测数据库中是否已经有该学号信息
 
 $check = 1;
-$sql_compare = "SELECT number from join_infomation;";
+$sql_compare = "SELECT number from member;";
 $retval = mysqli_query($main_db,$sql_compare);
 while($row = mysqli_fetch_array($retval,MYSQLI_ASSOC)){
 	if($row['number']==$number){
@@ -96,14 +96,16 @@ if($check==0){
 	echo json_encode(array("message"=>"has joined"));
 }
 else{
-	$sql_insert = "insert into join_infomation"."(join_date,name,number,college,major,gender,grade,qq,phone,cpp,algorithm,web,linux,java,learned)"."VALUES"."('$submitTime','$name','$number','$college','$major','$gender','$grade','$qq','$phone','$cpp','$algorithm','$web','$linux','$java','$learned');";
+	//在社团成员系统中添加该学生信息
+
+	$sql_insert = "insert into member"."(name,number,college,major,gender,grade,qq,phone,cpp,algorithm,web,linux,java)"."VALUES"."('$name','$number','$college','$major','$gender','$grade','$qq','$phone','$cpp','$algorithm','$web','$linux','$java');";
 	$join = mysqli_query( $main_db,$sql_insert );
+	
 	if($join){
 		unset($_SESSION);
 		session_destroy(); 
-		//在社团成员系统中添加该学生信息
 
-		$sql_insert = "insert into member"."(name,number,college,major,gender,grade,qq,phone,cpp,algorithm,web,linux,java)"."VALUES"."('$name','$number','$college','$major','$gender','$grade','$qq','$phone','$cpp','$algorithm','$web','$linux','$java');";
+		$sql_insert = "insert into join_date"."(date,number)"."VALUES"."('$submitTime','$number');";
 		$step = mysqli_query( $main_db,$sql_insert );
 
 		if($step){
@@ -111,27 +113,27 @@ else{
 
 			foreach($lang as $key){
 				if($key=='cpp'){
-					$sql_insert = "insert into cpp_group"."(name,number)"."VALUES"."('$name','$number');";
+					$sql_insert = "insert into cpp_group"."(number)"."VALUES"."('$number');";
 					$insert_cpp = mysqli_query( $main_db,$sql_insert );
 				}
 				if($key=='algorithm'){
-					$sql_insert = "insert into algorithm_group"."(name,number)"."VALUES"."('$name','$number');";
+					$sql_insert = "insert into algorithm_group"."(number)"."VALUES"."('$number');";
 					$insert_algorithm = mysqli_query( $main_db,$sql_insert );
 				}
 				if($key=='web'){
-					$sql_insert = "insert into web_group"."(name,number)"."VALUES"."('$name','$number');";
+					$sql_insert = "insert into web_group"."(number)"."VALUES"."('$number');";
 					$insert_web = mysqli_query( $main_db,$sql_insert );
 				}
 				if($key=='linux'){
-					$sql_insert = "insert into linux_group"."(name,number)"."VALUES"."('$name','$number');";
+					$sql_insert = "insert into linux_group"."(number)"."VALUES"."('$number');";
 					$insert_linux = mysqli_query( $main_db,$sql_insert );
 				}
 				if($key=='java'){
-					$sql_insert = "insert into java_group"."(name,number)"."VALUES"."('$name','$number');";
+					$sql_insert = "insert into java_group"."(number)"."VALUES"."('$number');";
 					$insert_java = mysqli_query( $main_db,$sql_insert );
 				}
 			}
-			$sql_insert = "insert into learned_text"."(name,number,college,major,gender,grade,learned)"."VALUES"."('$name','$number','$college','$major','$gender','$grade','$learned');";
+			$sql_insert = "insert into learned_text"."(number,learned)"."VALUES"."('$number','$learned');";
 			$insert_text = mysqli_query( $main_db,$sql_insert );
 			if($insert_text){
 				$sql_set_pic = "UPDATE member SET userPic='../../userPicUpload/default.png' WHERE number='$number';";
@@ -151,7 +153,7 @@ else{
 		
 	}
 	else {
-		die ("insert into join_infomation error");
+		die ("insert into join_date error");
 	}
 		
 }

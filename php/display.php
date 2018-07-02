@@ -8,7 +8,7 @@
     mysqli_select_db($main_db,"JLUIBMclub");
     //获取全部成员信息
     if($request == "all"){
-        $sql_select = "SELECT isManager,name,number,college,major,gender,grade,qq,phone from member ORDER BY isManager DESC;";
+        $sql_select = "SELECT isManager,name,number,college,major,gender,grade,qq,phone from member ORDER BY isManager DESC,grade DESC,number ASC,gender ASC;";
         $retval = mysqli_query($main_db,$sql_select);
         $data = array();
         $count = 1;

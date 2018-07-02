@@ -20,7 +20,7 @@ if ($request == "count"){
     mysqli_select_db($main_db,"JLUIBMclub");
     //获取指定日期加入社团的人数
     function getCount($main_db,$day){
-        $sql_select = "select join_date from join_infomation where join_date='$day';";
+        $sql_select = "select date from join_date where date='$day';";
         $retval = mysqli_query($main_db,$sql_select);
         $num = mysqli_num_rows($retval);
         $day = substr($day,5,2).".".substr($day,8,2);
@@ -56,10 +56,10 @@ else if($request == "gender"){
     mysqli_query($main_db,"set names utf8");
     mysqli_select_db($main_db,"JLUIBMclub");
 
-    $sql_select_gender = "select gender from member where gender='male';";
+    $sql_select_gender = "select gender from member where gender='0';";
     $retval_gender = mysqli_query($main_db,$sql_select_gender);
     $gender_male_number = mysqli_num_rows($retval_gender);
-    $sql_select_gender = "select gender from member where gender='female';";
+    $sql_select_gender = "select gender from member where gender='1';";
     $retval_gender = mysqli_query($main_db,$sql_select_gender);
     $gender_female_number = mysqli_num_rows($retval_gender);
     $gender_data = array("male"=>$gender_male_number,"female"=>$gender_female_number);

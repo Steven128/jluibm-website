@@ -78,27 +78,6 @@
                 cancelLeader($main_db,$number,"java");
             }
 
-        $sql_select = "SELECT number FROM learned_text;";
-        $retval = mysqli_query($main_db,$sql_select);
-        while($row = mysqli_fetch_array($retval,MYSQLI_ASSOC)){
-                if($college_updated == 1){
-                    $sql_update = "UPDATE learned_text SET college='$college' WHERE number='$number';";
-                    $step = mysqli_query( $main_db,$sql_update );
-                }
-                if($major_updated == 1){
-                    $sql_update = "UPDATE learned_text SET major='$major' WHERE number='$number';";
-                    $step = mysqli_query( $main_db,$sql_update );
-                }
-                if($gender_updated == 1){
-                    $sql_update = "UPDATE learned_text SET gender='$gender' WHERE number='$number';";
-                    $step = mysqli_query( $main_db,$sql_update );
-                }
-                if($grade_updated == 1){
-                    $sql_update = "UPDATE learned_text SET grade='$grade' WHERE number='$number';";
-                    $step = mysqli_query( $main_db,$sql_update );
-                }
-            }
-        
         echo json_encode(array("message"=>"success"));
     }
 
@@ -155,27 +134,6 @@
                 $step = mysqli_query( $main_db,$sql_update );
             }
         }
-        
-        $sql_select = "SELECT number FROM learned_text;";
-        $retval = mysqli_query($main_db,$sql_select);
-        while($row = mysqli_fetch_array($retval,MYSQLI_ASSOC)){
-            if($college_updated == 1){
-                $sql_update = "UPDATE learned_text SET college='$college' WHERE number='$number';";
-                $step = mysqli_query( $main_db,$sql_update );
-            }
-            if($major_updated == 1){
-                $sql_update = "UPDATE learned_text SET major='$major' WHERE number='$number';";
-                $step = mysqli_query( $main_db,$sql_update );
-            }
-            if($gender_updated == 1){
-                $sql_update = "UPDATE learned_text SET gender='$gender' WHERE number='$number';";
-                $step = mysqli_query( $main_db,$sql_update );
-            }
-            if($grade_updated == 1){
-                $sql_update = "UPDATE learned_text SET grade='$grade' WHERE number='$number';";
-                $step = mysqli_query( $main_db,$sql_update );
-            }
-        }
 
         $sql_select = "UPDATE $group"."_group SET isLeader='$isLeader' WHERE number='$number';";
         $retval = mysqli_query($main_db,$sql_select);
@@ -196,7 +154,7 @@
         mysqli_select_db($main_db,"JLUIBMclub");
         $sql_delete = "DELETE from member WHERE number='$number';";
         $step = mysqli_query( $main_db,$sql_delete );
-        $sql_delete = "DELETE from join_infomation WHERE number='$number';";
+        $sql_delete = "DELETE from join_date WHERE number='$number';";
         $step = mysqli_query( $main_db,$sql_delete );
         $sql_delete = "DELETE from learned_text WHERE number='$number';";
         $step = mysqli_query( $main_db,$sql_delete );
@@ -279,7 +237,7 @@
         
         $isIn = 0;
         $name = '';
-        $sql_check = "SELECT name,number,$group FROM member where number='$number';";
+        $sql_check = "SELECT number,$group FROM member where number='$number';";
         $check_result = mysqli_query($main_db,$sql_check);
         if(mysqli_num_rows($check_result) == 0){
             echo json_encode(array("message"=>"does_not_exist"));
@@ -293,7 +251,7 @@
                 }
             }
             if($isIn == 0){
-                $sql_insert = "INSERT INTO $group"."_group(name,number)"."VALUES('$name','$number');";
+                $sql_insert = "INSERT INTO $group"."_group(number)"."VALUES('$number');";
                 $retval = mysqli_query($main_db,$sql_insert);
                 if($retval){
                     $sql_update = "UPDATE member SET $group=1 WHERE number='$number'";
