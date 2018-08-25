@@ -18,7 +18,7 @@ if ($request == "submit") {
     mysqli_query($main_db, "set names utf8");
     mysqli_select_db($main_db, "JLUIBMclub");
 
-    $sql_compare  = "SELECT number FROM $enroll_id WHERE number='$number';";
+    $sql_compare  = "SELECT number FROM enroll_join WHERE number='$number' and enroll_id='$enroll_id';";
     $retval       = mysqli_query($main_db, $sql_compare);
     $retval_check = mysqli_num_rows($retval);
     if ($retval_check > 0) {
@@ -26,11 +26,10 @@ if ($request == "submit") {
         echo json_encode(array("message" => "already_exists"));
     } else {
         //将报名信息存入数据库
-        $sql_insert = "INSERT INTO $enroll_id" .
-            "(submitTime,name,number,college,gender,grade,qq,comeFrom)" .
+        $sql_insert = "INSERT INTO enroll_join" .
+            "(enroll_id,submitTime,name,number,college,gender,grade,qq,comeFrom)" .
             "VALUES" .
-            "('$submitTime','$name','$number','$college','$gender',$grade,'$qq','$comeFrom');";
-
+            "('$enroll_id','$submitTime','$name','$number','$college','$gender',$grade,'$qq','$comeFrom');";
         $retval = mysqli_query($main_db, $sql_insert);
         if ($retval) {
             echo json_encode(array("message" => "success"));

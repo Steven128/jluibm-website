@@ -54,7 +54,7 @@ if ($request == "getList") {
     mysqli_select_db($main_db, "JLUIBMclub");
 
     $data       = array();
-    $sql_select = "SELECT * FROM $enroll_id;";
+    $sql_select = "SELECT * FROM enroll_join where enroll_id='$enroll_id';";
     $retval     = mysqli_query($main_db, $sql_select);
     while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
         $submitTime = $row['submitTime'];

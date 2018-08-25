@@ -33,7 +33,7 @@ if ($request == "getActiveList") {
     mysqli_query($main_db, "set names utf8");
     mysqli_select_db($main_db, "JLUIBMclub");
 
-    $sql_selete   = "SELECT * FROM $enroll_id WHERE number='$number';";
+    $sql_selete   = "SELECT * FROM enroll_join where number='$number' and enroll_id='$enroll_id';";
     $retval       = mysqli_query($main_db, $sql_select);
     $retval_check = mysqli_num_rows($retval);
     if ($retval_check > 0) {
@@ -48,7 +48,7 @@ if ($request == "getActiveList") {
             break;
         }
 
-        $sql_check_quantity = "SELECT * FROM $enroll_id;";
+        $sql_check_quantity = "SELECT * FROM enroll_join enroll_id='$enroll_id';";
         $retval             = mysqli_query($main_db, $sql_check_quantity);
         $retval_check       = mysqli_num_rows($retval);
         if ($retval_check < $quantity) {
