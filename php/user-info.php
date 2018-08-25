@@ -52,7 +52,7 @@
             $activity_name = $row_activity['activity_name'];
             $time = $row_activity['time'];
             //在活动签到表中检查是否有该生
-            $sql_select_member = "SELECT number from $activity_id;";
+            $sql_select_member = "SELECT number from activity_sign where activity_id='$activity_id' and number='$number';";
             $retval_list = mysqli_query($main_db,$sql_select_member);
             while($row_member = mysqli_fetch_array($retval_list,MYSQLI_ASSOC)) {
                 if($row_member['number'] == $number) {

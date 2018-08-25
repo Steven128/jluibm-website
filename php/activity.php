@@ -101,20 +101,7 @@ else if ($request == 'createActivity') {
     $sql_insert = "insert into activity" . "(activity_id,activity_name,setBy,place,time,remarks,state)" . "values" . "('$activity_id','$activity_name','$setBy','$place','$time','$remarks','inactive');";
     $step       = mysqli_query($main_db, $sql_insert);
     if ($step) {
-        //下面创建用于存储签到数据的数据表
-        $activity_table = "CREATE TABLE $activity_id(" .
-            "submitTime VARCHAR(20) NOT NULL COMMENT '签到时间'," .
-            "number VARCHAR(8) NOT NULL PRIMARY KEY COMMENT '学号'," .
-            "longitude VARCHAR(20) COMMENT '签到地点经度'," .
-            "latitude VARCHAR(20) COMMENT '签到地点纬度'" .
-            ") ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 COMMENT '活动 " . $activity_name . " 签到表，表名对应activity_id';";
-        $retval = mysqli_query($main_db, $activity_table);
-        $retval = true;
-        if ($retval) {
-            echo json_encode(array("message" => "success"));
-        } else {
-            echo json_encode(array("message" => "failed"));
-        }
+        echo json_encode(array("message" => "success"));
     } else {
         echo json_encode(array("message" => $step));
     }
@@ -170,15 +157,7 @@ else if ($request == 'deleteActivity') {
     $sql_delete = "DELETE FROM activity WHERE activity_id='$activity_id';";
     $retval     = mysqli_query($main_db, $sql_delete);
     if ($retval) {
-        //删除用于存放签到数据的数据表
-        $sql_drop = "DROP TABLE $activity_id;";
-        $step     = mysqli_query($main_db, $sql_drop);
-        if ($step) {
-            echo json_encode(array("message" => "success"));
-        } else {
-            echo json_encode(array("message" => "failed"));
-        }
-
+        echo json_encode(array("message" => "success"));
     } else {
         echo json_encode(array("message" => "failed"));
     }
@@ -204,7 +183,7 @@ else if ($request == "getSignedList") {
         break;
     }
 
-    $sql_select_list = "SELECT submitTime,member.number,name,college,major,gender,grade,longitude,latitude FROM member,$activity_id WHERE member.number=$activity_id.number ORDER BY submitTime;";
+    $sql_select_list = "SELECT submitTime,member.number,name,college,major,gender,grade,longitude,latitude FROM member,activity_sign WHERE member.number=activity_sign.number and activity_sign.activity_id='$activity_id' ORDER BY submitTime;";
     $retval_list     = mysqli_query($main_db, $sql_select_list);
     $data            = array();
     while ($row_activity = mysqli_fetch_array($retval_list, MYSQLI_ASSOC)) {
