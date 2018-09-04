@@ -1,14 +1,18 @@
 //修改社团成员信息-------提交表单
+function getAdminNumber() {
+    return (reason = localStorage.getItem("adminNumber"));
+}
 $(document).ready(function() {
 
     //跳转到修改社员信息的页面，并加载内容
     $(document).on("click", ".edit-img", function() {
+
         $("#updateMember-text-outer").remove();
         var target = $(this).val();
         var appendText = "";
         $.ajax({
             type: "GET",
-            url: "../php/display.php?request=single&target-user=" + target,
+            url: "../php/display.php?request=single&target-user=" + target + "&adminNumber=" + getAdminNumber(),
             dataType: "JSON",
             success: function(e) {
                 var appendText = "";
@@ -84,7 +88,7 @@ $(document).ready(function() {
         var appendText = "";
         $.ajax({
             type: "GET",
-            url: "../php/display.php?request=single-group&target-user=" + target + "&group=" + group,
+            url: "../php/display.php?request=single-group&target-user=" + target + "&group=" + group + "&adminNumber=" + getAdminNumber(),
             dataType: "JSON",
             success: function(e) {
                 var appendText = "";
@@ -187,7 +191,8 @@ $(document).ready(function() {
                         "grade": grade,
                         "qq": qq,
                         "phone": phone,
-                        "isManager": isManager
+                        "isManager": isManager,
+                        "adminNumber": getAdminNumber()
                     },
                     success: function(e) {
                         if (e.message == "success") {
@@ -249,7 +254,8 @@ $(document).ready(function() {
                         "qq": qq,
                         "phone": phone,
                         "group": group,
-                        "isLeader": isLeader
+                        "isLeader": isLeader,
+                        "adminNumber": getAdminNumber()
                     },
                     success: function(e) {
                         if (e.message == "success") {
@@ -295,6 +301,7 @@ $(document).on("click", ".delete-member", function() {
                 data: {
                     "request": "delete-member",
                     "number": number,
+                    "adminNumber": getAdminNumber()
                 },
                 success: function(e) {
                     if (e.message == "success") {
@@ -352,6 +359,7 @@ $(document).on("click", ".delete-grouper", function() {
                     "request": "delete-group-member",
                     "group": group,
                     "number": number,
+                    "adminNumber": getAdminNumber()
                 },
                 success: function(e) {
                     if (e.message == "success") {
@@ -409,7 +417,8 @@ $(document).on("click", "#add-group-member", function() {
                     data: {
                         "request": "add-group-member",
                         "group": group,
-                        "number": number
+                        "number": number,
+                        "adminNumber": getAdminNumber()
                     },
                     success: function(e) {
                         if (e.message == "success") {

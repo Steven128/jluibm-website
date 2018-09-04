@@ -1,4 +1,8 @@
 var userNumber = "";
+
+function getAdminNumber() {
+    return (reason = localStorage.getItem("adminNumber"));
+}
 $(document).ready(function() {
     //打开页面时检查是否已经登录且是否有管理权限
     $.ajax({
@@ -15,6 +19,7 @@ $(document).ready(function() {
             } else {
                 userNumber = e.number;
                 if (e.isManager == "0") {
+                    localStorage.setItem("adminNumber", null);
                     window.wxc.xcConfirm(
                         "你不是管理员！",
                         window.wxc.xcConfirm.typeEnum.error, {
@@ -30,9 +35,10 @@ $(document).ready(function() {
                     );
                 } else {
                     //是管理员的话加载社员信息
+                    localStorage.setItem("adminNumber", userNumber);
                     $.ajax({
                         type: "GET",
-                        url: "../php/display.php?request=all",
+                        url: "../php/display.php?request=all&adminNumber=" + getAdminNumber(),
                         dataType: "JSON",
                         success: function(e) {
                             var appendText_main = "";
@@ -157,7 +163,7 @@ $(document).ready(function() {
                     //检查是哪个组的组长
                     $.ajax({
                         type: "GET",
-                        url: "../php/group_info.php?request=group&number=" + userNumber,
+                        url: "../php/group_info.php?request=group&adminNumber=" + getAdminNumber(),
                         dataType: "JSON",
                         success: function(e) {
                             i = 0;
@@ -167,7 +173,7 @@ $(document).ready(function() {
                             while (i < 5) {
                                 if (e[i] == "cpp") {
                                     leftbar_append +=
-                                        '<li><a id="menu-cppList-item" href="#"><i class="iconfont-admin-menu icon-cpp"></i>C/C++组成员</a></li>';
+                                        '<li><a id="menu-cppList-item" href="#cppList"><i class="iconfont-admin-menu icon-cpp"></i>C/C++组成员</a></li>';
                                     topnav_append +=
                                         "<th><h4 class='bar-item bar-item-6 cpp-item'><span><img class='icon' src='../src/icon/cpp.png' /></span><div class='item-text'>C/C++组成员</div></h4></th>";
                                     mainbar_append +=
@@ -175,7 +181,7 @@ $(document).ready(function() {
                                 }
                                 if (e[i] == "algorithm") {
                                     leftbar_append +=
-                                        '<li><a id="menu-algorithmList-item" href="#"><i class="iconfont-admin-menu icon-algorithm"></i>算法组成员</a></li>';
+                                        '<li><a id="menu-algorithmList-item" href="#algorithmList"><i class="iconfont-admin-menu icon-algorithm"></i>算法组成员</a></li>';
                                     topnav_append +=
                                         "<th><h4 class='bar-item bar-item-6 algorithm-item'><span><img class='icon' src='../src/icon/algorithm.png' /></span><div class='item-text'>算法组成员</div></h4></th>";
                                     mainbar_append +=
@@ -183,7 +189,7 @@ $(document).ready(function() {
                                 }
                                 if (e[i] == "web") {
                                     leftbar_append +=
-                                        '<li><a id="menu-webList-item" href="#"><i class="iconfont-admin-menu icon-web"></i>Web组成员</a></li>';
+                                        '<li><a id="menu-webList-item" href="#webList"><i class="iconfont-admin-menu icon-web"></i>Web组成员</a></li>';
                                     topnav_append +=
                                         "<th><h4 class='bar-item bar-item-6 web-item'><span><img class='icon' src='../src/icon/web.png' /></span><div class='item-text'>Web组成员</div></h4></th>";
                                     mainbar_append +=
@@ -191,7 +197,7 @@ $(document).ready(function() {
                                 }
                                 if (e[i] == "linux") {
                                     leftbar_append +=
-                                        '<li><a id="menu-linuxList-item" href="#"><i class="iconfont-admin-menu icon-linux"></i>Linux组成员</a></li>';
+                                        '<li><a id="menu-linuxList-item" href="#linuxList"><i class="iconfont-admin-menu icon-linux"></i>Linux组成员</a></li>';
                                     topnav_append +=
                                         "<th><h4 class='bar-item bar-item-6 linux-item'><span><img class='icon' src='../src/icon/linux.png' /></span><div class='item-text'>Linux组成员</div></h4></th>";
                                     mainbar_append +=
@@ -199,7 +205,7 @@ $(document).ready(function() {
                                 }
                                 if (e[i] == "java") {
                                     leftbar_append +=
-                                        '<li><a id="menu-javaList-item" href="#"><i class="iconfont-admin-menu icon-java"></i>Java组成员</a></li>';
+                                        '<li><a id="menu-javaList-item" href="#javaList"><i class="iconfont-admin-menu icon-java"></i>Java组成员</a></li>';
                                     topnav_append +=
                                         "<th><h4 class='bar-item bar-item-6 java-item'><span><img class='icon' src='../src/icon/java.png' /></span><div class='item-text'>Java组成员</div></h4></th>";
                                     mainbar_append +=
@@ -208,7 +214,7 @@ $(document).ready(function() {
                                 i++;
                             }
                             leftbar_append +=
-                                '<li><a id="menu-displayGrouper-item" href="#"><i class="iconfont-admin-menu icon-display"></i>查看组员信息<i class="iconfont-admin-menu icon-not-allowed"></i></a></li><li><a id="menu-updateGrouper-item" href="#"><i class="iconfont-admin-menu icon-update"></i>修改信息<i class="iconfont-admin-menu icon-not-allowed"></i></a></li>';
+                                '<li><a id="menu-displayGrouper-item" href="#displayGrouper"><i class="iconfont-admin-menu icon-display"></i>查看组员信息<i class="iconfont-admin-menu icon-not-allowed"></i></a></li><li><a id="menu-updateGrouper-item" href="#updateGrouper"><i class="iconfont-admin-menu icon-update"></i>修改信息<i class="iconfont-admin-menu icon-not-allowed"></i></a></li>';
                             $(".group-menu").append(leftbar_append);
                             $(".top-display").after(topnav_append);
                             $("#updateMember-tab").after(mainbar_append);
@@ -221,7 +227,7 @@ $(document).ready(function() {
                         //是组长的话获取各组的信息
                         $.ajax({
                             type: "GET",
-                            url: "../php/group_info.php?request=info&number=" + userNumber,
+                            url: "../php/group_info.php?request=info&adminNumber=" + getAdminNumber(),
                             dataType: "JSON",
                             success: function(e) {
                                 var i = 0;

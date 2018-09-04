@@ -5,7 +5,7 @@
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "../php/enroll.php?request=getList",
+        url: "../php/enroll.php?request=getList&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
             var i = 0;
@@ -151,7 +151,8 @@ $(document).ready(function() {
                     date: date,
                     quantity: quantity,
                     hold: hold,
-                    remarks: remarks
+                    remarks: remarks,
+                    adminNumber: getAdminNumber()
                 },
                 success: function(res) {
                     if (res.message == "success") {
@@ -191,7 +192,7 @@ $(document).on("click", ".displayEnroll-button", function() {
     var enroll_id = $(this).attr("value");
     $.ajax({
         type: "GET",
-        url: "../php/enroll.php?request=displaySingle&enroll_id=" + enroll_id,
+        url: "../php/enroll.php?request=displaySingle&enroll_id=" + enroll_id + "&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
             $("#displayEnroll-text-outer").remove();
@@ -255,7 +256,7 @@ $(document).on("click", ".displayEnroll-button", function() {
     function getStuList(enroll_id) {
         $.ajax({
             type: "GET",
-            url: "../php/enroll.php?request=getStuList&enroll_id=" + enroll_id,
+            url: "../php/enroll.php?request=getStuList&enroll_id=" + enroll_id + "&adminNumber=" + getAdminNumber(),
             dataType: "JSON",
             success: function(e) {
                 console.log(e);
@@ -319,7 +320,7 @@ $(document).on("click", ".update-enroll", function() {
     var enroll_id = $(this).val();
     $.ajax({
         type: "GET",
-        url: "../php/enroll.php?request=displaySingle&enroll_id=" + enroll_id,
+        url: "../php/enroll.php?request=displaySingle&enroll_id=" + enroll_id + "&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
             $("#displayEnroll-text-outer").remove();
@@ -472,7 +473,7 @@ $(document).on("click", ".deleteEnroll", function() {
             onOk: function() {
                 $.ajax({
                     type: "GET",
-                    url: "../php/enroll.php?request=deleteEnroll&enroll_id=" + enroll_id,
+                    url: "../php/enroll.php?request=deleteEnroll&enroll_id=" + enroll_id + "&adminNumber=" + getAdminNumber(),
                     dataType: "JSON",
                     success: function(e) {
                         if (e.message == "success") {
@@ -516,7 +517,7 @@ $(document).on("click", "#start-enroll", function() {
     var enroll_id = $(this).val();
     $.ajax({
         type: "GET",
-        url: "../php/enroll.php?request=startEnroll&enroll_id=" + enroll_id,
+        url: "../php/enroll.php?request=startEnroll&enroll_id=" + enroll_id + "&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
             if (e.message == "success") {
@@ -549,7 +550,7 @@ $(document).on("click", "#end-enroll", function() {
     var enroll_id = $(this).val();
     $.ajax({
         type: "GET",
-        url: "../php/enroll.php?request=endEnroll&enroll_id=" + enroll_id,
+        url: "../php/enroll.php?request=endEnroll&enroll_id=" + enroll_id + "&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
             if (e.message == "success") {

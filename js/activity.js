@@ -1,10 +1,14 @@
+function getAdminNumber() {
+    return (reason = localStorage.getItem("adminNumber"));
+}
 //获取活动列表
 $.ajax({
     type: "POST",
     url: "../php/activity.php",
     dataType: "JSON",
     data: {
-        request: "getList"
+        request: "getList",
+        adminNumber: getAdminNumber()
     },
     success: function(e) {
         var appendText_get = "";
@@ -119,7 +123,8 @@ $("#create-Activity").validate({
                 setBy: group,
                 place: place,
                 time: holdTime,
-                remarks: remarks
+                remarks: remarks,
+                adminNumber: getAdminNumber()
             },
             success: function(res) {
                 if (res.message == "success") {
@@ -161,7 +166,8 @@ $(document).on("click", ".update-activity", function() {
         dataType: "JSON",
         data: {
             request: "getSingle",
-            activity_id: activity_id
+            activity_id: activity_id,
+            adminNumber: getAdminNumber()
         },
         success: function(e) {
             if (e.state != "inactive") {
@@ -307,7 +313,8 @@ $("#activity-update-form").validate({
                             setBy: group,
                             place: place,
                             time: holdTime,
-                            remarks: remarks
+                            remarks: remarks,
+                            adminNumber: getAdminNumber()
                         },
                         success: function(res) {
                             if (res.message == "success") {
@@ -359,7 +366,8 @@ $(document).on("click", "#deleteActivity-btn", function() {
                     dataType: "JSON",
                     data: {
                         request: "deleteActivity",
-                        activity_id: activity_id
+                        activity_id: activity_id,
+                        adminNumber: getAdminNumber()
                     },
                     success: function(e) {
                         if (e.message == "success") {
@@ -406,7 +414,8 @@ $(document).on("click", ".displayActivity-button", function() {
         dataType: "JSON",
         data: {
             request: "getSingle",
-            activity_id: activity_id
+            activity_id: activity_id,
+            adminNumber: getAdminNumber()
         },
         success: function(e) {
             $("#displayActivity-text-outer").remove();
@@ -479,7 +488,8 @@ $(document).on("click", ".displayActivity-button", function() {
             dataType: "JSON",
             data: {
                 request: "getSignedList",
-                activity_id: activity_id
+                activity_id: activity_id,
+                adminNumber: getAdminNumber()
             },
             success: function(e) {
                 var i = 0;

@@ -1,9 +1,10 @@
 <?php
 @header("content-type:text/html;charset=utf8");
 session_start();
-$number = $_GET['number'];
 $request = $_GET['request'];
-if (isset($_SESSION['userNumber']) && $_SESSION['userNumber'] == $number) {
+$number = $_GET['number'];
+$adminNumber = $_GET['adminNumber'];
+if (isset($_SESSION['userNumber']) && $_SESSION['userNumber'] == $adminNumber) {
     if ($request == 'get_info') {
         $data = array();
         $main_db = mysqli_connect("127.0.0.1", "root", "JLUIBMclub123") or die("failed!");

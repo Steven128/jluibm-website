@@ -1,8 +1,11 @@
+function getAdminNumber() {
+    return (reason = localStorage.getItem("adminNumber"));
+}
 $(document).ready(function() {
     //获取近10天加入社团的人数
     $.ajax({
         type: "GET",
-        url: "../php/overview.php?request=count",
+        url: "../php/overview.php?request=count&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
             var $categories = [];
@@ -65,14 +68,14 @@ $(document).ready(function() {
             });
         },
         error: function(err) {
-
+            console.log(err.responseText)
         }
     });
 
     //获取总人数
     $.ajax({
         type: "GET",
-        url: "../php/overview.php?request=amount",
+        url: "../php/overview.php?request=amount&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
             var appendText = '<div class="amount-title">社团成员总数</div><div class="amount-body">' + e.amount + '人</div>';
@@ -83,7 +86,7 @@ $(document).ready(function() {
     //获取性别比例
     $.ajax({
         type: "GET",
-        url: "../php/overview.php?request=gender",
+        url: "../php/overview.php?request=gender&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
 
@@ -101,7 +104,7 @@ $(document).ready(function() {
     //获取年级比例
     $.ajax({
         type: "GET",
-        url: "../php/overview.php?request=grade",
+        url: "../php/overview.php?request=grade&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
             var grade_1_ratio = e.grade_1_number / (e.grade_1_number + e.grade_2_number + e.grade_3_number + e.grade_4_number);
@@ -120,7 +123,7 @@ $(document).ready(function() {
     //获取各组人数比例
     $.ajax({
         type: "GET",
-        url: "../php/overview.php?request=group",
+        url: "../php/overview.php?request=group&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
 

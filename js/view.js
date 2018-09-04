@@ -1,3 +1,6 @@
+function getAdminNumber() {
+    return (reason = localStorage.getItem("adminNumber"));
+}
 $(document).on("click", ".displayMember-button", function() {
     var stu_number = $(this).attr("value");
     //获取该社员的详细信息
@@ -9,7 +12,7 @@ $(document).on("click", ".displayMember-button", function() {
     var num = GetRandomNum(10000, 99999);
     $.ajax({
         type: "GET",
-        url: "../php/user-info.php?request=get_info&number=" + stu_number,
+        url: "../php/get-user-info.php?request=get_info&number=" + stu_number + "&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
             var gender = "";
@@ -103,7 +106,7 @@ $(document).on("click", ".displayMember-button", function() {
             //获取参加过的活动
             $.ajax({
                 type: "GET",
-                url: "../php/user-info.php?request=get_activity&number=" + stu_number,
+                url: "../php/get-user-info.php?request=get_activity&number=" + stu_number + "&adminNumber=" + getAdminNumber(),
                 dataType: "JSON",
                 success: function(e) {
                     if (e == "") {
@@ -145,7 +148,7 @@ $(document).on("click", ".displayGrouper-button", function() {
     var num = GetRandomNum(10000, 99999);
     $.ajax({
         type: "GET",
-        url: "../php/user-info.php?request=get_info&number=" + stu_number,
+        url: "../php/get-user-info.php?request=get_info&number=" + stu_number + "&adminNumber=" + getAdminNumber(),
         dataType: "JSON",
         success: function(e) {
             console.log(e);
@@ -256,7 +259,7 @@ $(document).on("click", ".displayGrouper-button", function() {
             //获取参加过的活动
             $.ajax({
                 type: "GET",
-                url: "../php/user-info.php?request=get_activity&number=" + stu_number,
+                url: "../php/get-user-info.php?request=get_activity&number=" + stu_number + "&adminNumber=" + getAdminNumber(),
                 dataType: "JSON",
                 success: function(e) {
                     if (e == "") {
